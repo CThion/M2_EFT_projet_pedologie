@@ -1,0 +1,30 @@
+---
+title: 'Master EFT: pédologie de la P16 de Paracou'
+author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
+date: "2023-09-25"
+output: html_document
+---
+
+```{r}
+library(readxl)
+
+dataAugur2022 <- read_excel(
+  "saisie données sols avec coordonnées.xlsx", 
+  col_types = c(
+    "text", "numeric", "text", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "text", "text", "text",
+    "text", "text", "text", "numeric",
+    "text", "numeric", "text", "text",
+    "numeric", "text", "text", "text",
+    "text", "text", "numeric", "text", 
+    "numeric", "text", "numeric", "numeric", 
+    "numeric", "numeric", "numeric"), 
+  na = "NA")
+
+dataPit <- read_excel("FOSSE 1-4.xlsx", na="NA")
+
+dataPit$Face <- as.factor(dataPit$Face)
+```
+
+
