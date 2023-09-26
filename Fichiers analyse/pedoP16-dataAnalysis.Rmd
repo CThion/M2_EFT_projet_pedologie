@@ -27,4 +27,4 @@ dataPit <- read_excel("FOSSE 1-4.xlsx", na="NA")
 dataPit$Face <- as.factor(dataPit$Face)
 ```
 
-
+hallo test 123
