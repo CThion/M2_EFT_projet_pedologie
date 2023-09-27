@@ -41,4 +41,6 @@ levels(dataPitAll$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "9
 
 dataPitAll$side <- as.factor(dataPitAll$side)
 levels(dataPitAll$side)
+dataPitAll$sideOrient <- substr(dataPitAll$side, 8, 20)
+dataPitAll$sideNumber <- substr(dataPitAll$side, 6, 7)
 ```
