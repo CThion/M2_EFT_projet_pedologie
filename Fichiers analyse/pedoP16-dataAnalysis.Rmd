@@ -4,27 +4,49 @@ author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
 ---
+Organisation of data files: there is separate sheet for each 4 pit data. In each sheet, you have the same 11 variable:
+
+3 variables serve for location of observation:
+- pit: the pit number, corresponding to the order in which it was dug
+- depth: depth in the pit, from 0cm to 100cm, by 20cm step
+- side: side of observation in the pit. There is two sides for each pit. The orientation of the side is indicated. Side's number correspond to the order of counting (S1 has been counted before S2)
+
+Then for each combination value of (pit, side, depth), we have measured and observed the next variables:
+- root1 ... root4: the amount of root for 4 diameter classes, counted in a square of 50cm long by 10cm deep, located at (pit, side, depth)
+- texture: the texture of the horizon
+- micas: the qualitative approximation of the amount of micas in the horizon, from 0 (no micas at all) to 3 (a lot of micas)
+- stoneContent: the percentage of stone content in the horizon
+
+MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
+
 
 ```{r}
 library(readxl)
 
-dataAugur2022 <- read_excel(
-  "saisie données sols avec coordonnées.xlsx", 
-  col_types = c(
-    "text", "numeric", "text", "numeric", 
-    "numeric", "numeric", "numeric", "numeric", 
-    "numeric", "text", "text", "text",
-    "text", "text", "text", "numeric",
-    "text", "numeric", "text", "text",
-    "numeric", "text", "text", "text",
-    "text", "text", "numeric", "text", 
-    "numeric", "text", "numeric", "numeric", 
-    "numeric", "numeric", "numeric"), 
-  na = "NA")
+#--import data from last year project (36 augur in the P16)
+dataAugur2022 <- read_excel("saisie données sols avec coordonnées.xlsx", na = "NA")
 
-dataPit <- read_excel("FOSSE 1-4.xlsx", na="NA")
+#--import data of each pit, and agregate them in one unique dataframe
+dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
+dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
+dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
+dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
+dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
 
-dataPit$Face <- as.factor(dataPit$Face)
+names(dataPitAll) <- c("depth", "side", "r1", "r2", "r3", "r4", "texture", "micas", "stoneElement", "waterReserve", "pit")
+
+dataPitAll$depth <- as.factor(dataPitAll$depth)
+levels(dataPitAll$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "90", "100")
+
+dataPitAll$side <- as.factor(dataPitAll$side)
+levels(dataPitAll$side)
 ```
 
-hallo test 123
+```{r}
+
+```
+
+
+
+
