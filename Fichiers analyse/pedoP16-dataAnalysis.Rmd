@@ -23,6 +23,10 @@ MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
 ```{r}
 library(readxl)
 library(tidyverse)
+library(ggplot2)
+library(corrplot)
+library(FactoMineR) # Pour l'analyse en composantes principales
+library(factoextra) # Pour la représentation de l'ACP
 ```
 
 
@@ -69,5 +73,55 @@ dataPitAll$waterReserve
 ```
 
 
+# not directed analysis
 
+```{r}
+dataPitAll %>% # Dans donnees sols
+  select_if(is.numeric) %>% # On ne sélectionne que les colonnes numériques
+  cor() %>% # On calcule la matrice de corrélation empirique
+  corrplot() # Puis on représente graphiquement cette matrice
+```
+
+```{r}
+dataPitAllNorm <- dataPitAll %>% 
+  select_if(is.numeric) %>% #On ne sélectionne que les colonnes numériques
+  mutate_all(.funs = scale) # On applique à touts les colonnes la fonction scale
+# La fonction scale centre et réduit un vecteur
+# donnees_reduites # Toujours regarder ce qu'on a créé!
+
+acpRes <- PCA(dataPitAllNorm, 
+               scale.unit = TRUE, # Option pour centrer et réduire les données
+               ncp = 18, # Nombre de composantes à conserver
+               graph = FALSE)
+
+acpRes
+
+fviz_eig(acpRes, choice = "variance")
+
+# Représentation dans le premier plan_principal
+fviz_pca_var(acpRes,
+             axes = c(1, 2)) # Numéro des axes à représenter 
+fviz_pca_var(acpRes,
+             axes = c(1, 3)) #
+fviz_pca_var(acpRes,
+             axes = c(2, 3)) # 
+fviz_pca_var(acpRes,
+             axes = c(1, 4))
+
+corrplot(acpRes$var$cor)
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2)) # Numéro des axes à représenter 
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2), # Numéro des axes à représenter 
+             col.ind = dataPitAll$texture) # Variable suppl. pour les individus
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2), # Numéro des axes à représenter 
+             col.ind = dataPitAll$depth)
+```
 
