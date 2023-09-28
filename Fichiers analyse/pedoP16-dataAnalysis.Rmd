@@ -4,27 +4,125 @@ author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
 ---
+Organisation of data files: there is separate sheet for each 4 pit data. In each sheet, you have the same 11 variable:
+
+3 variables serve for location of observation:
+- pit: the pit number, corresponding to the order in which it was dug
+- depth: depth in the pit, from 0cm to 100cm, by 20cm step
+- side: side of observation in the pit. There is two sides for each pit. The orientation of the side is indicated. Side's number correspond to the order of counting (S1 has been counted before S2)
+
+Then for each combination value of (pit, side, depth), we have measured and observed the next variables:
+- root1 ... root4: the amount of root for 4 diameter classes, counted in a square of 50cm long by 10cm deep, located at (pit, side, depth)
+- texture: the texture of the horizon
+- micas: the qualitative approximation of the amount of micas in the horizon, from 0 (no micas at all) to 3 (a lot of micas)
+- stoneContent: the percentage of stone content in the horizon
+
+MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
+
 
 ```{r}
 library(readxl)
-
-dataAugur2022 <- read_excel(
-  "saisie données sols avec coordonnées.xlsx", 
-  col_types = c(
-    "text", "numeric", "text", "numeric", 
-    "numeric", "numeric", "numeric", "numeric", 
-    "numeric", "text", "text", "text",
-    "text", "text", "text", "numeric",
-    "text", "numeric", "text", "text",
-    "numeric", "text", "text", "text",
-    "text", "text", "numeric", "text", 
-    "numeric", "text", "numeric", "numeric", 
-    "numeric", "numeric", "numeric"), 
-  na = "NA")
-
-dataPit <- read_excel("FOSSE 1-4.xlsx", na="NA")
-
-dataPit$Face <- as.factor(dataPit$Face)
+library(tidyverse)
+library(ggplot2)
+library(corrplot)
+library(FactoMineR) # Pour l'analyse en composantes principales
+library(factoextra) # Pour la représentation de l'ACP
 ```
 
+
+```{r}
+#--import data from last year project (36 augur in the P16)
+dataAugur2022 <- read_excel("saisie données sols avec coordonnées.xlsx", na = "NA")
+
+#--import data of each pit, and agregate them in one unique dataframe
+dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
+dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
+dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
+dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
+dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
+
+names(dataPitAll) <- c("depth", "side", "r1", "r2", "r3", "r4", "texture", "micas", "stoneElement", "waterReserve", "pit")
+
+dataPitAll$depth <- as.factor(dataPitAll$depth)
+levels(dataPitAll$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "90", "100")
+
+dataPitAll$side <- as.factor(dataPitAll$side)
+dataPitAll$sideOrient <- substr(dataPitAll$side, 8, 20)#create side Orient and sideNumber
+dataPitAll$sideNumber <- substr(dataPitAll$side, 6, 7)
+dataPitAll <- dataPitAll[,!(names(dataPitAll)=="side")]#remove side variable since it has been split
+```
+
+### Calculation of water reserve
+
+$$
+WR=\sum_{h} T_h\ R_h\ (1-S_h)
+$$
+with, for a ginven horizon $h$:
+
+- $R_h$ the usefull reserve (available in *Jamagne et al., 1977*). Require the texture of the horizon.
+- $S_h$ the percentage of stone element (estimated on the field)
+- $T_h$ the thickness of the horizon
+
+
+```{r}
+R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65)
+R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"LA",	"AS",	"A",	"AL",	"Alo")
+
+dataPitAll$waterReserve
+```
+
+
+# not directed analysis
+
+```{r}
+dataPitAll %>% # Dans donnees sols
+  select_if(is.numeric) %>% # On ne sélectionne que les colonnes numériques
+  cor() %>% # On calcule la matrice de corrélation empirique
+  corrplot() # Puis on représente graphiquement cette matrice
+```
+
+```{r}
+dataPitAllNorm <- dataPitAll %>% 
+  select_if(is.numeric) %>% #On ne sélectionne que les colonnes numériques
+  select(!stoneElement) %>%
+  mutate_all(.funs = scale) # On applique à touts les colonnes la fonction scale
+# La fonction scale centre et réduit un vecteur
+# donnees_reduites # Toujours regarder ce qu'on a créé!
+
+acpRes <- PCA(dataPitAllNorm, 
+               scale.unit = TRUE, # Option pour centrer et réduire les données
+               ncp = 18, # Nombre de composantes à conserver
+               graph = FALSE)
+
+acpRes
+
+fviz_eig(acpRes, choice = "variance")
+
+# Représentation dans le premier plan_principal
+fviz_pca_var(acpRes,
+             axes = c(1, 2)) # Numéro des axes à représenter 
+fviz_pca_var(acpRes,
+             axes = c(1, 3)) #
+fviz_pca_var(acpRes,
+             axes = c(2, 3)) # 
+fviz_pca_var(acpRes,
+             axes = c(1, 4))
+
+corrplot(acpRes$var$cor)
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2)) # Numéro des axes à représenter 
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2), # Numéro des axes à représenter 
+             col.ind = dataPitAll$texture) # Variable suppl. pour les individus
+
+# Représentation dans le premier plan_principal
+fviz_pca_ind(acpRes,
+             axes = c(1, 2), # Numéro des axes à représenter 
+             col.ind = dataPitAll$depth)
+```
 
