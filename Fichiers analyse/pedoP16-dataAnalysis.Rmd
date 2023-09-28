@@ -85,6 +85,7 @@ dataPitAll %>% # Dans donnees sols
 ```{r}
 dataPitAllNorm <- dataPitAll %>% 
   select_if(is.numeric) %>% #On ne sélectionne que les colonnes numériques
+  select(!stoneElement) %>%
   mutate_all(.funs = scale) # On applique à touts les colonnes la fonction scale
 # La fonction scale centre et réduit un vecteur
 # donnees_reduites # Toujours regarder ce qu'on a créé!
