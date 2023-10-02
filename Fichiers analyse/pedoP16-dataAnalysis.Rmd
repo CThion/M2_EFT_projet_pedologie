@@ -40,6 +40,7 @@ dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
 dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
 dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
 dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+
 dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
 
 names(dataPitAll) <- c("depth", "side", "r1", "r2", "r3", "r4", "texture", "micas", "stoneElement", "waterReserve", "pit")
@@ -50,7 +51,7 @@ levels(dataPitAll$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "9
 dataPitAll$side <- as.factor(dataPitAll$side)
 dataPitAll$sideOrient <- substr(dataPitAll$side, 8, 20)#create side Orient and sideNumber
 dataPitAll$sideNumber <- substr(dataPitAll$side, 6, 7)
-dataPitAll <- dataPitAll[,!(names(dataPitAll)=="side")]#remove side variable since it has been split
+dataPitAll <- dataPitAll[,!(names(dataPitAll) %in% c("side", "Humidité",	"Structure_type",	"Structure_taille",	"Compacité",	"Taches"))]#remove side variable since it has been split
 ```
 
 ### Calculation of water reserve
@@ -125,4 +126,29 @@ fviz_pca_ind(acpRes,
              axes = c(1, 2), # Numéro des axes à représenter 
              col.ind = dataPitAll$depth)
 ```
+
+analyser l'évolution de l'écart au dessus / dedans de l'horizon limoneux.
+
+Projet ALT: à échelle Amazonienne: prévenir l'évolution des forêts amazonienne en fonction changement climatique et antropiques.
+Basé sur simulateur Troll (basé sur arbre adulte) & sur modélateur fait par Vinciane sur l'impacte de l'exploitation forestière.
+
+Problème de la considération des arbres "adultes" (DBH>10cm). ==> obj est de prendre en compte les juvéniles
+
+Thèse Vinciane
+Comprendre quels sont les besoins environnementaux des arbres de sous-bois ==> mesure de pleins de données environnementales différentes (lumière humidité ect). Existence de niche écologique ?
+
+Hypothèse de l'effet de la topographie sur la pédologie.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
