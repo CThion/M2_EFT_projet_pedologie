@@ -16,6 +16,7 @@ Then for each combination value of (pit, side, depth), we have measured and obse
 - texture: the texture of the horizon
 - micas: the qualitative approximation of the amount of micas in the horizon, from 0 (no micas at all) to 3 (a lot of micas)
 - stoneContent: the percentage of stone content in the horizon
+- taches: in percentages
 
 MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
 
@@ -32,7 +33,7 @@ library(factoextra) # Pour la représentation de l'ACP
 
 ```{r}
 #--import data from last year project (36 augur in the P16)
-dataAugur2022 <- read_excel("saisie données sols avec coordonnées.xlsx", na = "NA")
+dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")
 
 #--import data of each pit, and agregate them in one unique dataframe
 dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
@@ -138,6 +139,8 @@ Thèse Vinciane
 Comprendre quels sont les besoins environnementaux des arbres de sous-bois ==> mesure de pleins de données environnementales différentes (lumière humidité ect). Existence de niche écologique ?
 
 Hypothèse de l'effet de la topographie sur la pédologie.
+
+regarder s'il y a une correlation entre la presence des mica et les limons.
 
 
 
