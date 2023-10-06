@@ -1,0 +1,45 @@
+---
+title: "pedo_Auger_Analsysis"
+author: "EmilieSanvito"
+date: "2023-10-05"
+output: html_document
+---
+
+
+```{r libraries}
+
+library(tidyverse)
+library(readxl)
+
+```
+
+```{r upload data}
+
+dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
+dataBotany2022 <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+
+
+
+
+
+Augur <- dataAugur2022 %>% select(c("Texture corrigée 2023", "racines", "sondage N°"))  #make shorter dataset with only variables we will use
+```
+
+```{r}
+dataAugur2022 %>% filter(`Numéro horizon` == 1) %>% count()  #36
+dataAugur2022 %>% filter(`Numéro horizon` == 3) %>% count() #34
+dataAugur2022 %>% filter(`Numéro horizon` == 4) %>% count()  #28
+dataAugur2022 %>% filter(`Numéro horizon` == 5) %>% count()  #17
+dataAugur2022 %>% filter(`Numéro horizon` == 6) %>% count()  #5
+
+
+
+dataBotany2022 %>% filter(subplot == 14)
+dataBotany2022 %>% filter(Ycoordinates.quadrant == 3) %>% count()
+
+dataBotany2022 %>% filter(subplot == 14) %>% count()
+dataBotany2022 %>% filter(TreeID == 143932)
+dataBotany2022 %>% filter(TreeID == 142097)
+```
+
+
