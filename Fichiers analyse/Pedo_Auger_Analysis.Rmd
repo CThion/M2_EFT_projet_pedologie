@@ -16,7 +16,8 @@ library(readxl)
 ```{r upload and structure data}
 
 dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
-dataBotany2022 <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+dataBotany2022 <- dataBotany2022_NA %>% na.omit
 
 Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture corrigée 2023", "profondeur limite supérieure (cm)")) 
  #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
@@ -31,11 +32,43 @@ make a new column in which the textures are grouped based on the importance of s
 
 Augur$Texture_class <- ifelse(Augur$`Texture corrigée 2023` %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$`Texture corrigée 2023` == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
 
+#class A has most amount of silt, class C has least amount of silt
+
 ```
 
 ```{r group plots with buffer per auger}
+#take all data that is found within buffer length of a certain tree
+
+radius <- 50
+xCenter_radius <- 285444 - radius
+xCenter <- 285444 + radius
+yCenter <- 581493.6 + radius
+yCenter_radius <- 581493.6 - radius
 
 
+Circle_x <- dataBotany2022$Xutm[dataBotany2022$Xutm >= xCenter_radius & dataBotany2022$Xutm <= xCenter]  #all x coordinates in between X value of augur minus and plus buffer
+Circle_y <- dataBotany2022$Yutm[dataBotany2022$Yutm >= yCenter_radius & dataBotany2022$Yutm <= yCenter]  #all y coordinates in between Y value of augur minus and plus buffer
+
+Xvariables_withinbuffer <- dataBotany2022 %>% filter(Xutm %in% Circle_x)  #filter only x coordinates from botany data that are present in the common_x variable
+length(Xvariables_withinbuffer$TreeID)
+
+YandX_variableswithinbuffer <- Xvariables_withinbuffer %>% filter(Yutm %in% Circle_y) #same for Y values
+length(YandX_variableswithinbuffer$TreeID)
+
+dataBotany2022 %>% filter(Xutm == Xvariables_withinbuffer, Yutm == Yvariables_withinbuffer) 
+
+A <- c(1,2,34,55,45,654,22,3,4,5)
+B <- c(1,33,43, 654, 22, 9,8)
+common <- A[(A %in% B)]
+common
+
+install.packages("sos")  #package for function find Fn,
+library(sos)
+findFn("calculateCircle")  #function to learn which package is necessary for your function
+
+install.packages("conicfit")
+library(conicfit)
+calculateCircle(xCenter, yCenter, radius)   #generates random points within the circle defined by x, y and r
 
 ```
 
@@ -46,26 +79,9 @@ dataAugur2022 %>% select(`Texture corrigée 2023`)
 
 
 dataAugur2022 %>% filter(sondage_N == 14.2)
-dataBotany2022 %>% filter(TreeID == 142097)
+dataBotany2022 %>% filter(TreeID == 141004)
 
-xCenter <- 285471.9
-yCenter <- 581503.4
-radius <- 5
 
-#take all data that is found within buffer length of a certain tree
-for (x = xCenter - radius ; x <= xCenter; x++)
-{
-    for (y = yCenter - radius ; y <= yCenter; y++)
-    {
-        if ((x - xCenter)*(x - xCenter) + (y - yCenter)*(y - yCenter) <= r*r) 
-        {
-            xSym = xCenter - (x - xCenter);
-            ySym = yCenter - (y - yCenter);
-            // (x, y), (x, ySym), (xSym , y), (xSym, ySym) are in the circle
-        }
-    }
-}
- 
 dataBotany2022 %>% filter(Ycoordinates.quadrant == c(1,2,3)) %>% filter(Xcoordinates.quadrant == c(7,8,9)) %>% select(TreeID) %>% count()  #this is the code to count the number of trees present on the plot for the augur 14.1 data
 
 ```
