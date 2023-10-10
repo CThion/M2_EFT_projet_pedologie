@@ -29,16 +29,15 @@ make a new column in which the textures are grouped based on the importance of s
 
 ```{r make classes of textures}
 
-C <- c("A", "Alo", "AS", "SA")
-A <- c("LAS", "LmS", "LS", "LSA")
-B <- c("SL")
-
-Augur$Texture_class <- with(Augur, ifelse('Texture corrigée 2023' = c("A", "Alo", "AS", "SA"), C, ifelse('Texture corrigée 2023' = LS, B, A)))   #still figuring out this code :)
+Augur$Texture_class <- ifelse(Augur$`Texture corrigée 2023` %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$`Texture corrigée 2023` == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
 
 ```
 
+```{r group plots with buffer per auger}
 
 
+
+```
 
 
 ```{r viewing data}
@@ -46,15 +45,33 @@ Augur$Texture_class <- with(Augur, ifelse('Texture corrigée 2023' = c("A", "Alo
 dataAugur2022 %>% select(`Texture corrigée 2023`)
 
 
-Augur %>% filter(sondage_N == 14.2) 
+dataAugur2022 %>% filter(sondage_N == 14.2)
+dataBotany2022 %>% filter(TreeID == 142097)
+
+xCenter <- 285471.9
+yCenter <- 581503.4
+radius <- 5
+
+#take all data that is found within buffer length of a certain tree
+for (x = xCenter - radius ; x <= xCenter; x++)
+{
+    for (y = yCenter - radius ; y <= yCenter; y++)
+    {
+        if ((x - xCenter)*(x - xCenter) + (y - yCenter)*(y - yCenter) <= r*r) 
+        {
+            xSym = xCenter - (x - xCenter);
+            ySym = yCenter - (y - yCenter);
+            // (x, y), (x, ySym), (xSym , y), (xSym, ySym) are in the circle
+        }
+    }
+}
  
 dataBotany2022 %>% filter(Ycoordinates.quadrant == c(1,2,3)) %>% filter(Xcoordinates.quadrant == c(7,8,9)) %>% select(TreeID) %>% count()  #this is the code to count the number of trees present on the plot for the augur 14.1 data
 
-
-
 ```
 
-```{r}
-#goal is to get depth of texture when it changes to silt (starts with "L") for each auger measurement (14.1, 14.2, ...)
-```
+
+Idea now is to check link between texture_class and the aboveground biomass
+
+
 
