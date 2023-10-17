@@ -11,6 +11,7 @@ rm(list=ls()) #to empty your work environment
 
 library(tidyverse)
 library(readxl)
+library(dplyr)
 
 #install.packages("ggforce")
 library(ggforce)   #look again why I used it
@@ -42,30 +43,40 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35',
 make a new column in which the textures are grouped based on the importance of silt present:
 
 ```{r}
-Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_inf")) 
+Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche")) 
  #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
 Augur <- Augur_NA %>% na.omit   #take out NA variables
 
-```
-
-
-```{r make classes of textures}
-
-Augur$Texture_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$Texture_2023 == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
-
+Augur$Texture_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "S"), "C", ifelse(Augur$Texture_2023 == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
 #class A has most amount of silt, class C has least amount of silt
 
-```
+Augur$Texture_simplified <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "SL", "S"), "B", "A")
 
+Botany <- dataBotany2022 %>% select(c("TreeID", "Family", "Genus", "species", "Xutm", "Yutm"))   #make a more precise df with variables we will use
 
-```{r draw circle}
-ggplot(data = dataBotany2022, aes(Xutm, Yutm)) + geom_point()
-
-ggplot(data = Augur, aes(depth_inf, Texture_class)) +
-  geom_point()
+Botany_augur <- merge(Augur, Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID')   #create a merged dataframe of both the botany and the augur data based on the columns "arbre_plus_proche" and "TreeID"
 
 ```
 
+
+```{r visualize augur points}
+
+ggplot(data = Botany_augur, aes(Xutm, Yutm)) + geom_point()   #a plot to show all the augur measurements on a "map"
+
+```
+```{r}
+?wich   #fucntion to get line number of your data with a specific condition
+```
+
+```{r}
+
+df_restructured <- Augur %>% group_by(sondage_N) %>% filter(Texture_simplified == "A") %>% arrange(sondage_N, depth_sup) %>% distinct(sondage_N, .keep_all = TRUE) %>% select(sondage_N,depth_sup, arbre_plus_proche)
+
+# remade a df in which for each augur measurement the depth at which the silt occurs in high quantities (so class A) is noted down
+
+df_merged_restructured <- merge(df_restructured, Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID')   #create a merged dataframe of both the botany and the augur data based on the columns "arbre_plus_proche" and "TreeID" ; this time in which the data is not repeated for all the horizons
+
+```
 
 ```{r group plots with buffer per auger}
 #take all data that is found within buffer length of a certain tree
@@ -108,49 +119,17 @@ B <- c(1,33,43, 654, 22, 9,8)
 common <- A[(A %in% B)]
 common
 
-install.packages("conicfit")
-library(conicfit)
-calculateCircle(xCenter, yCenter, radius)   #generates random points within the circle defined by x, y and r
 
 ```
 
+
 ```{r code to find package of a function}
-install.packages("sos")  #package for function find Fn,
+#install.packages("sos")  #package for function find Fn,
 library(sos)
 findFn("geosphere")  #function to learn which package is necessary for your function
 ```
 
-```{r}
-coord <- cbind("longitude" = c(-2.141177, -2.09096, -2.118894, -2.14009, -2.113988, -2.123892, -2.144685, -2.220046, -2.114343, -2.285314, -2.092354, -2.149571, -2.126605, -2.097045, -2.183441, -2.166915, -2.133863, -2.100909, -2.10677, -2.251495, -2.118894, -2.14009, -2.123201, -2.114343, -2.140327, -2.148826, -2.120553, -2.133902, -2.094246, -2.11317, -2.251495, -2.09096, -2.212955, -2.118894, -2.183501, -2.14009, -2.249217, -2.123201, -2.114343, -2.092354, -2.148826, -2.120553, -2.117338, -2.116486, -2.094981, -2.232998, -2.118894, -2.14009, -2.123201, -2.104092, -2.114343, -2.148826, -2.175179, -2.090713, -2.09096, -2.118894, -2.14009), 
-               "latitude" = c(57.16278, 57.18079, 57.12292, 57.13763, 57.13855, 57.13585, 57.17207, 57.1915, 57.09301, 57.20138, 57.14279, 57.15334, 57.15615, 57.10443, 57.15051, 57.15089, 57.15201, 57.18968, 57.1567, 57.19315, 57.12292, 57.13763, 57.12686, 57.09301, 57.15676, 57.17355, 57.12507, 57.16279, 57.1718, 57.14125, 57.19315, 57.18079, 57.10941, 57.12292, 57.19596, 57.13763, 57.10063, 57.12686, 57.09301, 57.14279, 57.17355, 57.12507, 57.15301, 57.14484, 57.13614, 57.14629, 57.12292, 57.13763, 57.12686, 57.14485, 57.09301, 57.17355, 57.15079, 57.14755, 57.18079, 57.12292, 57.13763))
 
-str(coord)    # like data above, a matrix, not a data.frame
-#>  num [1:57, 1:2] -2.14 -2.09 -2.12 -2.14 -2.11 ...
-#>  - attr(*, "dimnames")=List of 2
-#>   ..$ : NULL
-#>   ..$ : chr [1:2] "longitude" "latitude"
-
-# make a data.frame to hold both numeric and logical values
-coord_df <- data.frame(coord, 
-                       within_5km = geosphere::distHaversine(
-                           coord, 
-                           c(-2.106472, 57.14455)
-                       ) / 1000 < 5)
-```
-
-
-```{r viewing data}
-
-dataAugur2022 %>% select(`Texture corrigée 2023`)
-
-
-dataAugur2022 %>% filter(sondage_N == 14.2)
-new_dataBotany2022 %>% filter(TreeID == 141004)
-
-
-dataBotany2022 %>% filter(Ycoordinates.quadrant == c(1,2,3)) %>% filter(Xcoordinates.quadrant == c(7,8,9)) %>% select(TreeID) %>% count()  #this is the code to count the number of trees present on the plot for the augur 14.1 data
-
-```
 
 
 Idea now is to check link between texture_class and the aboveground biomass
