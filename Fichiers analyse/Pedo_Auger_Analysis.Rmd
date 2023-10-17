@@ -7,36 +7,135 @@ output: html_document
 
 
 ```{r libraries}
+rm(list=ls()) #to empty your work environment
 
 library(tidyverse)
 library(readxl)
+
+#install.packages("ggforce")
+library(ggforce)   #look again why I used it
 
 ```
 
 ```{r upload and structure data}
 
 dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
-dataBotany2022 <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+dataBotany2022 <- dataBotany2022_NA %>% na.omit
 
-Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture corrigée 2023", "profondeur limite supérieure (cm)")) 
+```
+
+```{r rename titles in data}
+
+dataAugur2022 <- dataAugur2022 %>% rename_at('% pente', ~'pente')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Numéro horizon', ~'horizon')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')  #idk why it doesn't work here
+dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
+
+```
+
+
+make a new column in which the textures are grouped based on the importance of silt present:
+
+```{r}
+Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_inf")) 
  #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
 Augur <- Augur_NA %>% na.omit   #take out NA variables
 
 ```
 
-make a new column in which the textures are grouped based on the importance of silt present:
-
 
 ```{r make classes of textures}
 
-Augur$Texture_class <- ifelse(Augur$`Texture corrigée 2023` %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$`Texture corrigée 2023` == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
+Augur$Texture_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$Texture_2023 == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
+
+#class A has most amount of silt, class C has least amount of silt
 
 ```
 
+
+```{r draw circle}
+ggplot(data = dataBotany2022, aes(Xutm, Yutm)) + geom_point()
+
+ggplot(data = Augur, aes(depth_inf, Texture_class)) +
+  geom_point()
+
+```
+
+
 ```{r group plots with buffer per auger}
+#take all data that is found within buffer length of a certain tree
+
+radius <- 50
+xCenter_radius <- 285444 - radius
+xCenter <- 285444 + radius
+yCenter <- 581493.6 + radius
+yCenter_radius <- 581493.6 - radius
 
 
+coord <- cbind("longitude" = dataBotany2022$Xutm/1000, "latitude" = dataBotany2022$Yutm/1000)
+str(coord)
 
+
+library(geosphere)   #library for geopshere function
+coord_df <- data.frame(coord, 
+                       within_5km = geosphere::distHaversine(
+                           coord, 
+                           c(28.5444, 58.14936)
+                           )/1000 < 1)    #convert m to km, check < 5
+
+
+table(coord_df$within_1km)
+
+
+Circle_x <- dataBotany2022$Xutm[dataBotany2022$Xutm >= xCenter_radius & dataBotany2022$Xutm <= xCenter]  #all x coordinates in between X value of augur minus and plus buffer
+Circle_y <- dataBotany2022$Yutm[dataBotany2022$Yutm >= yCenter_radius & dataBotany2022$Yutm <= yCenter]  #all y coordinates in between Y value of augur minus and plus buffer
+
+Xvariables_withinbuffer <- dataBotany2022 %>% filter(Xutm %in% Circle_x)  #filter only x coordinates from botany data that are present in the common_x variable
+length(Xvariables_withinbuffer$TreeID)
+
+YandX_variableswithinbuffer <- Xvariables_withinbuffer %>% filter(Yutm %in% Circle_y) #same for Y values
+length(YandX_variableswithinbuffer$TreeID)
+
+dataBotany2022 %>% filter(Xutm == Xvariables_withinbuffer, Yutm == Yvariables_withinbuffer) 
+
+A <- c(1,2,34,55,45,654,22,3,4,5)
+B <- c(1,33,43, 654, 22, 9,8)
+common <- A[(A %in% B)]
+common
+
+install.packages("conicfit")
+library(conicfit)
+calculateCircle(xCenter, yCenter, radius)   #generates random points within the circle defined by x, y and r
+
+```
+
+```{r code to find package of a function}
+install.packages("sos")  #package for function find Fn,
+library(sos)
+findFn("geosphere")  #function to learn which package is necessary for your function
+```
+
+```{r}
+coord <- cbind("longitude" = c(-2.141177, -2.09096, -2.118894, -2.14009, -2.113988, -2.123892, -2.144685, -2.220046, -2.114343, -2.285314, -2.092354, -2.149571, -2.126605, -2.097045, -2.183441, -2.166915, -2.133863, -2.100909, -2.10677, -2.251495, -2.118894, -2.14009, -2.123201, -2.114343, -2.140327, -2.148826, -2.120553, -2.133902, -2.094246, -2.11317, -2.251495, -2.09096, -2.212955, -2.118894, -2.183501, -2.14009, -2.249217, -2.123201, -2.114343, -2.092354, -2.148826, -2.120553, -2.117338, -2.116486, -2.094981, -2.232998, -2.118894, -2.14009, -2.123201, -2.104092, -2.114343, -2.148826, -2.175179, -2.090713, -2.09096, -2.118894, -2.14009), 
+               "latitude" = c(57.16278, 57.18079, 57.12292, 57.13763, 57.13855, 57.13585, 57.17207, 57.1915, 57.09301, 57.20138, 57.14279, 57.15334, 57.15615, 57.10443, 57.15051, 57.15089, 57.15201, 57.18968, 57.1567, 57.19315, 57.12292, 57.13763, 57.12686, 57.09301, 57.15676, 57.17355, 57.12507, 57.16279, 57.1718, 57.14125, 57.19315, 57.18079, 57.10941, 57.12292, 57.19596, 57.13763, 57.10063, 57.12686, 57.09301, 57.14279, 57.17355, 57.12507, 57.15301, 57.14484, 57.13614, 57.14629, 57.12292, 57.13763, 57.12686, 57.14485, 57.09301, 57.17355, 57.15079, 57.14755, 57.18079, 57.12292, 57.13763))
+
+str(coord)    # like data above, a matrix, not a data.frame
+#>  num [1:57, 1:2] -2.14 -2.09 -2.12 -2.14 -2.11 ...
+#>  - attr(*, "dimnames")=List of 2
+#>   ..$ : NULL
+#>   ..$ : chr [1:2] "longitude" "latitude"
+
+# make a data.frame to hold both numeric and logical values
+coord_df <- data.frame(coord, 
+                       within_5km = geosphere::distHaversine(
+                           coord, 
+                           c(-2.106472, 57.14455)
+                       ) / 1000 < 5)
 ```
 
 
@@ -46,26 +145,9 @@ dataAugur2022 %>% select(`Texture corrigée 2023`)
 
 
 dataAugur2022 %>% filter(sondage_N == 14.2)
-dataBotany2022 %>% filter(TreeID == 142097)
+new_dataBotany2022 %>% filter(TreeID == 141004)
 
-xCenter <- 285471.9
-yCenter <- 581503.4
-radius <- 5
 
-#take all data that is found within buffer length of a certain tree
-for (x = xCenter - radius ; x <= xCenter; x++)
-{
-    for (y = yCenter - radius ; y <= yCenter; y++)
-    {
-        if ((x - xCenter)*(x - xCenter) + (y - yCenter)*(y - yCenter) <= r*r) 
-        {
-            xSym = xCenter - (x - xCenter);
-            ySym = yCenter - (y - yCenter);
-            // (x, y), (x, ySym), (xSym , y), (xSym, ySym) are in the circle
-        }
-    }
-}
- 
 dataBotany2022 %>% filter(Ycoordinates.quadrant == c(1,2,3)) %>% filter(Xcoordinates.quadrant == c(7,8,9)) %>% select(TreeID) %>% count()  #this is the code to count the number of trees present on the plot for the augur 14.1 data
 
 ```
