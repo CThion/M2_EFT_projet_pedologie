@@ -12,6 +12,9 @@ rm(list=ls()) #to empty your work environment
 library(tidyverse)
 library(readxl)
 
+#install.packages("ggforce")
+library(ggforce)   #look again why I used it
+
 ```
 
 ```{r upload and structure data}
@@ -20,22 +23,35 @@ dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from
 dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
 dataBotany2022 <- dataBotany2022_NA %>% na.omit
 
-Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture corrigée 2023", "profondeur limite inférieure (cm)2")) 
- #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
-Augur <- Augur_NA %>% na.omit   #take out NA variables
+```
 
+```{r rename titles in data}
 
-Augur <- Augur %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
-Augur <- Augur %>% rename_at('Texture corrigée 2023', ~'texture')
+dataAugur2022 <- dataAugur2022 %>% rename_at('% pente', ~'pente')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Numéro horizon', ~'horizon')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')  #idk why it doesn't work here
+dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
 
 ```
 
+
 make a new column in which the textures are grouped based on the importance of silt present:
+
+```{r}
+Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_inf")) 
+ #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
+Augur <- Augur_NA %>% na.omit   #take out NA variables
+
+```
 
 
 ```{r make classes of textures}
 
-Augur$Texture_class <- ifelse(Augur$texture %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$texture == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
+Augur$Texture_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA"), "C", ifelse(Augur$Texture_2023 == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
 
 #class A has most amount of silt, class C has least amount of silt
 
@@ -43,11 +59,7 @@ Augur$Texture_class <- ifelse(Augur$texture %in% c("A", "Alo", "AS", "SA"), "C",
 
 
 ```{r draw circle}
-
-#install.packages("ggforce")
-library(ggforce)
-
-ggplot(data = dataBotany2022, aes(Xutm, Yutm, col=ifelse(Xutm==285444, red, black))) + geom_point()
+ggplot(data = dataBotany2022, aes(Xutm, Yutm)) + geom_point()
 
 ggplot(data = Augur, aes(depth_inf, Texture_class)) +
   geom_point()
