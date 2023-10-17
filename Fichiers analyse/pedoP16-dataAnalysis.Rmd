@@ -4,7 +4,11 @@ author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
 ---
-Organisation of data files: there is separate sheet for each 4 pit data. In each sheet, you have the same 11 variable:
+# INTRODUCTION
+
+## DATA DESCRIPTION
+
+Organisation of data files: there is separate sheet for each 4 pit data. In each sheet, you have the same 11 variables:
 
 3 variables serve for location of observation:
 - pit: the pit number, corresponding to the order in which it was dug
@@ -20,6 +24,10 @@ Then for each combination value of (pit, side, depth), we have measured and obse
 
 MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
 
+## GOALS OF THIS ANALYSIS
+
+The goals of the code in this file is to study, in the ground of tropical forest (P16 Paracou) the link between the root abundance and soil texture, and specialy the occurence of silt horizon.
+
 
 ```{r}
 library(readxl)
@@ -32,27 +40,45 @@ library(factoextra) # Pour la représentation de l'ACP
 
 
 ```{r}
-#--import data from last year project (36 augur in the P16)
-dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")
-
-#--import data of each pit, and agregate them in one unique dataframe
+#--import data of each pit
 dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
 dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
 dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
 dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
-dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data before merging them
 
-dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
+dataPit <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)#merge them in one unique dataframe
+remove(dataPitF1, dataPitF2, dataPitF3, dataPitF4) #remove separated sheets
 
-names(dataPitAll) <- c("depth", "side", "r1", "r2", "r3", "r4", "texture", "micas", "stoneElement", "waterReserve", "pit") #changes names of variables to enlgish
+#--convert depth code (P1 to P10) to their corresponding depth value (10 to 100cm)
+dataPit$depth <- as.factor(dataPit$depth)
+levels(dataPit$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "90", "100")
 
-dataPitAll$depth <- as.factor(dataPitAll$depth)
-levels(dataPitAll$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "90", "100")
+#--we split the side variable into two different one: sideOrient and sideNumber
+dataPit$exposure <- as.factor(dataPit$exposure)
+dataPit$exposure_orient <- substr(dataPit$exposure, 8, 20)#create side Orient and sideNumber
+dataPit$exposure_number <- substr(dataPit$exposure, 6, 7)
+dataPit <- dataPit[,!names(dataPit) =="exposure"]#remove side variable since it has been split
 
-dataPitAll$side <- as.factor(dataPitAll$side)
-dataPitAll$sideOrient <- substr(dataPitAll$side, 8, 20)#create side Orient and sideNumber
-dataPitAll$sideNumber <- substr(dataPitAll$side, 6, 7)
-dataPitAll <- dataPitAll[,!(names(dataPitAll) %in% c("side", "Humidité",	"Structure_type",	"Structure_taille",	"Compacité",	"Taches"))]#remove side variable since it has been split
+#--
+dataPit$rd1 <- as.numeric(dataPit$rd1)
+dataPit$rd2 <- as.numeric(dataPit$rd2)
+dataPit$rd3 <- as.numeric(dataPit$rd3)
+dataPit$rd4 <- as.numeric(dataPit$rd4)
+dataPit$texture <- as.factor(dataPit$texture)
+dataPit$micas <- as.factor(dataPit$micas)
+dataPit$coarse_element <- as.numeric(dataPit$coarse_element) #WARNING, only 11 differents values
+dataPit$water_reserve <- as.numeric(dataPit$water_reserve)
+dataPit$humidity <- as.factor(dataPit$humidity)
+dataPit$structure_type <- as.factor(dataPit$structure_type)
+dataPit$structure_size <- as.numeric(dataPit$structure_size)
+dataPit$density <- as.factor(dataPit$density)
+dataPit$smudges <- as.numeric(dataPit$smudges) #WARNING, only 5 differents values
+dataPit$colour1 <- as.factor(dataPit$colour1)
+dataPit$colour2 <- as.factor(dataPit$colour2)
+dataPit$pit <- as.factor(dataPit$pit)
+dataPit$exposure_orient <- as.factor(dataPit$exposure_orient)
+dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 ```
 
 ### Calculation of water reserve
@@ -71,28 +97,33 @@ with, for a ginven horizon $h$:
 R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65)
 R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"LA",	"AS",	"A",	"AL",	"Alo")
 
-dataPitAll$waterReserve
+dataPit$waterReserve
+```
+## Reorganisation of data
+```{r}
+dataPit %>%
+  pivot_longer ( - religion, names_to = "income", values_to = "count")
 ```
 
 
 # not directed analysis
 
 ```{r}
-dataPitAll %>% # Dans donnees sols
+dataPit %>% # Dans donnees sols
   select_if(is.numeric) %>% # On ne sélectionne que les colonnes numériques
   cor() %>% # On calcule la matrice de corrélation empirique
   corrplot() # Puis on représente graphiquement cette matrice
 ```
 
 ```{r}
-dataPitAllNorm <- dataPitAll %>% 
+dataPitNorm <- dataPit %>% 
   select_if(is.numeric) %>% #On ne sélectionne que les colonnes numériques
   select(!stoneElement) %>%
   mutate_all(.funs = scale) # On applique à touts les colonnes la fonction scale
 # La fonction scale centre et réduit un vecteur
 # donnees_reduites # Toujours regarder ce qu'on a créé!
 
-acpRes <- PCA(dataPitAllNorm, 
+acpRes <- PCA(dataPitNorm, 
                scale.unit = TRUE, # Option pour centrer et réduire les données
                ncp = 18, # Nombre de composantes à conserver
                graph = FALSE)
@@ -120,12 +151,12 @@ fviz_pca_ind(acpRes,
 # Représentation dans le premier plan_principal
 fviz_pca_ind(acpRes,
              axes = c(1, 2), # Numéro des axes à représenter 
-             col.ind = dataPitAll$texture) # Variable suppl. pour les individus
+             col.ind = dataPit$texture) # Variable suppl. pour les individus
 
 # Représentation dans le premier plan_principal
 fviz_pca_ind(acpRes,
              axes = c(1, 2), # Numéro des axes à représenter 
-             col.ind = dataPitAll$depth)
+             col.ind = dataPit$depth)
 ```
 
 analyser l'évolution de l'écart au dessus / dedans de l'horizon limoneux.
