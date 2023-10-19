@@ -1,0 +1,99 @@
+---
+title: "silt mica relation"
+author: "Greta Dobetsberger"
+date: '2023-10-19'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Silt content and mica content relation
+
+If we think about soil horizons high in silt and its effect on root development and root depth, it is also crucial to have a look into the relation between silt and mica content. This allows us to conclude 
+
+```{r packages and data}
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(corrplot)
+library(FactoMineR) # Pour l'analyse en composantes principales
+library(factoextra)
+library(psych)
+install.packages("hrbrthemes")
+library(hrbrthemes)
+install.packages("gdtools")
+library(gdtools)
+library(viridis)
+library(wesanderson)
+install.packages("viridisLite")
+dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
+dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
+dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
+dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
+
+dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
+```
+Soil texture classes are difficult to bring in order according to their silt content. Soil horizons put into the LSA class for example can have more silt content than LAS horizons, but it can also contain the same proportion in silt or more. Hence, we grouped them into three soil texture classes.
+
+group A: high silt content: LSA, LAS
+group B: intermediate silt content: SL
+group C: low silt content: SA, AS, A
+
+```{r}
+silt_content <- c(LSA= "high", LAS= "high", SL= "interm", SA="low", AS="low", A="low")
+dataPitAll$siltcontent<-silt_content[substr(dataPitAll$texture, 1, 3)]
+```
+To visually explore the relationship between two ordinal/categorical variables, a mosaic plot was created. Hence, to find out whether there can be a pattern found in our data, a mosaic plot was created
+
+common correlation tests are not appropriate
+
+```{r mosaicplot}
+mosaicplot(table(dataPitAll$siltcontent, dataPitAll$micas), color = TRUE, xlab="silt content categories", ylab="mica content categories", type="pearson")
+#is type="pearson" really useful? unanswered question
+
+#how to use nice colours? like in this example:         
+#dataPitAll %>%
+#  ggplot()+
+#               aes(x=siltcontent, y=micas) +
+#               plot(texture, micas) +
+#               geom_jitter(height=0, size=0.5, aes(col=pit)) +
+#               scale_fill_manual(values=wesanderson::wes_palette(name="Royal2"))
+```
+To quantitatively test the association and assess the statistical significance of the association between the two ordinal variables, a statistical test like the chi-square test for independence was performed. It provides a p-value indicating the strength of the association.
+
+```{r}
+chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
+chisq_result <- chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
+
+cramer_v <- sqrt(chisq_result$statistic / (sum(chisq_result$observed) * min(nrow(chisq_result$observed) - 1, ncol(chisq_result$observed) - 1))) #
+print(cramer_v)
+```
+
+
+```{r}
+#For testing a relationship between the two variables, which have both three categories now, different options have been trialed.
+
+#cor.test(dataPitAll$micas,dataPitAll$siltcontent, method = 'spearman') doesnt work because of two ordinal variables
+#correl<-cor_pb(dataPitAll$micas,dataPitAll$siltcontent) is an
+# option for ordinal variables but Rstudio doesn't find the function although package is installed.
+
+#another option suggested by chatgpt, but y axis in the wrong way (high mica content, low silt content)
+#ggplot(dataPitAll, aes(x = siltcontent, fill = micas)) +
+# geom_bar(position = "dodge") +
+#  labs(title = "Clustered Bar Chart", x = "Silt content", y = "Mica content") +
+#  scale_y_discrete(limits = rev(levels(dataPitAll$siltcontent)))
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
