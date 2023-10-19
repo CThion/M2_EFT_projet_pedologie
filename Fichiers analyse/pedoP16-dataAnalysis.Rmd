@@ -3,31 +3,40 @@ title: 'Master EFT: pédologie de la P16 de Paracou'
 author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
+
 # INTRODUCTION
 
 ## DATA DESCRIPTION
 
-Organisation of data files: there is separate sheet for each 4 pit data. In each sheet, you have the same 11 variables:
+Organisation of data files: there is separate sheet for each 4 pit data.
+In each sheet, you have the same 11 variables:
 
-3 variables serve for location of observation:
-- pit: the pit number, corresponding to the order in which it was dug
-- depth: depth in the pit, from 0cm to 100cm, by 20cm step
-- side: side of observation in the pit. There is two sides for each pit. The orientation of the side is indicated. Side's number correspond to the order of counting (S1 has been counted before S2)
+3 variables serve for location of observation: - pit: the pit number,
+corresponding to the order in which it was dug - depth: depth in the
+pit, from 0cm to 100cm, by 20cm step - side: side of observation in the
+pit. There is two sides for each pit. The orientation of the side is
+indicated. Side's number correspond to the order of counting (S1 has
+been counted before S2)
 
-Then for each combination value of (pit, side, depth), we have measured and observed the next variables:
-- root1 ... root4: the amount of root for 4 diameter classes, counted in a square of 50cm long by 10cm deep, located at (pit, side, depth)
-- texture: the texture of the horizon
-- micas: the qualitative approximation of the amount of micas in the horizon, from 0 (no micas at all) to 3 (a lot of micas)
-- stoneContent: the percentage of stone content in the horizon
-- taches: in percentages
+Then for each combination value of (pit, side, depth), we have measured
+and observed the next variables: - root1 ... root4: the amount of root
+for 4 diameter classes, counted in a square of 50cm long by 10cm deep,
+located at (pit, side, depth) - texture: the texture of the horizon -
+micas: the qualitative approximation of the amount of micas in the
+horizon, from 0 (no micas at all) to 3 (a lot of micas) - stoneContent:
+the percentage of stone content in the horizon - taches: in percentages
 
 MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
 
 ## GOALS OF THIS ANALYSIS
 
-The goals of the code in this file is to study, in the ground of tropical forest (P16 Paracou) the link between the root abundance and soil texture, and specialy the occurence of silt horizon.
-
+The goals of the code in this file is to study, in the ground of
+tropical forest (P16 Paracou) the link between the root abundance and
+soil texture, and specialy the occurence of silt horizon.
 
 ```{r}
 library(readxl)
@@ -37,7 +46,6 @@ library(corrplot)
 library(FactoMineR) # Pour l'analyse en composantes principales
 library(factoextra) # Pour la représentation de l'ACP
 ```
-
 
 ```{r}
 #--import data of each pit
@@ -85,13 +93,12 @@ dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 
 $$
 WR=\sum_{h} T_h\ R_h\ (1-S_h)
-$$
-with, for a ginven horizon $h$:
+$$ with, for a ginven horizon $h$:
 
-- $R_h$ the usefull reserve (available in *Jamagne et al., 1977*). Require the texture of the horizon.
-- $S_h$ the percentage of stone element (estimated on the field)
-- $T_h$ the thickness of the horizon
-
+-   $R_h$ the usefull reserve (available in *Jamagne et al., 1977*).
+    Require the texture of the horizon.
+-   $S_h$ the percentage of stone element (estimated on the field)
+-   $T_h$ the thickness of the horizon
 
 ```{r}
 R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65)
@@ -99,12 +106,17 @@ R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"L
 
 dataPit$waterReserve
 ```
-## Reorganisation of data
-```{r}
-dataPit %>%
-  pivot_longer ( - religion, names_to = "income", values_to = "count")
-```
 
+## Reorganisation of data
+
+```{r}
+dataPitHorizon <- dataPit %>%
+  pivot_wider(
+    names_from = pit, 
+    names_sep = ".",
+    values_from = c(texture)
+      )
+```
 
 # not directed analysis
 
@@ -159,30 +171,22 @@ fviz_pca_ind(acpRes,
              col.ind = dataPit$depth)
 ```
 
-analyser l'évolution de l'écart au dessus / dedans de l'horizon limoneux.
+analyser l'évolution de l'écart au dessus / dedans de l'horizon
+limoneux.
 
-Projet ALT: à échelle Amazonienne: prévenir l'évolution des forêts amazonienne en fonction changement climatique et antropiques.
-Basé sur simulateur Troll (basé sur arbre adulte) & sur modélateur fait par Vinciane sur l'impacte de l'exploitation forestière.
+Projet ALT: à échelle Amazonienne: prévenir l'évolution des forêts
+amazonienne en fonction changement climatique et antropiques. Basé sur
+simulateur Troll (basé sur arbre adulte) & sur modélateur fait par
+Vinciane sur l'impacte de l'exploitation forestière.
 
-Problème de la considération des arbres "adultes" (DBH>10cm). ==> obj est de prendre en compte les juvéniles
+Problème de la considération des arbres "adultes" (DBH\>10cm). ==\> obj
+est de prendre en compte les juvéniles
 
-Thèse Vinciane
-Comprendre quels sont les besoins environnementaux des arbres de sous-bois ==> mesure de pleins de données environnementales différentes (lumière humidité ect). Existence de niche écologique ?
+Thèse Vinciane Comprendre quels sont les besoins environnementaux des
+arbres de sous-bois ==\> mesure de pleins de données environnementales
+différentes (lumière humidité ect). Existence de niche écologique ?
 
 Hypothèse de l'effet de la topographie sur la pédologie.
 
-regarder s'il y a une correlation entre la presence des mica et les limons.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+regarder s'il y a une correlation entre la presence des mica et les
+limons.
