@@ -4,10 +4,13 @@ author: "EmilieSanvito"
 date: "2023-10-05"
 output: html_document
 ---
+###Pedologie projet
 
+##data organization
 
 ```{r libraries}
 rm(list=ls()) #to empty your work environment
+
 
 library(tidyverse)
 library(readxl)
@@ -15,6 +18,13 @@ library(dplyr)
 
 #install.packages("ggforce")
 library(ggforce)   #look again why I used it
+library(knitr)
+
+library(geosphere)  #library for calculating distances of latitudes
+
+
+install.packages("memoiR")
+library(memoiR)
 
 ```
 
@@ -22,7 +32,7 @@ library(ggforce)   #look again why I used it
 
 dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
 dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
-dataBotany2022 <- dataBotany2022_NA %>% na.omit
+dataBotany2022 <- dataBotany2022_NA %>% na.omit  #remove NA objects
 
 ```
 
@@ -40,7 +50,7 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35',
 ```
 
 
-make a new column in which the textures are grouped based on the importance of silt present:
+Make a new column in which the textures are grouped based on the importance of silt present:
 
 ```{r}
 Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche")) 
@@ -58,6 +68,7 @@ Botany_augur <- merge(Augur, Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID'
 
 ```
 
+## Data visualizations
 
 ```{r visualize augur points}
 
@@ -68,7 +79,7 @@ ggplot(data = Botany_augur, aes(Xutm, Yutm)) + geom_point()   #a plot to show al
 ?wich   #fucntion to get line number of your data with a specific condition
 ```
 
-```{r}
+```{r define silt appearance depth}
 
 df_restructured <- Augur %>% group_by(sondage_N) %>% filter(Texture_simplified == "A") %>% arrange(sondage_N, depth_sup) %>% distinct(sondage_N, .keep_all = TRUE) %>% select(sondage_N,depth_sup, arbre_plus_proche)
 
@@ -78,50 +89,19 @@ df_merged_restructured <- merge(df_restructured, Botany, by.x = 'arbre_plus_proc
 
 ```
 
-```{r group plots with buffer per auger}
-#take all data that is found within buffer length of a certain tree
+Create dataframe where points are grouped by distance from center point (arbre_plus_proche)
 
-radius <- 50
-xCenter_radius <- 285444 - radius
-xCenter <- 285444 + radius
-yCenter <- 581493.6 + radius
-yCenter_radius <- 581493.6 - radius
+```{r}
+
+write_csv(Botany, "Botany_export.csv")      # export data to QGis
+write_csv(df_merged_restructured, "Augur_points.csv") # export data to bring to QGis
 
 
-coord <- cbind("longitude" = dataBotany2022$Xutm/1000, "latitude" = dataBotany2022$Yutm/1000)
-str(coord)
-
-
-library(geosphere)   #library for geopshere function
-coord_df <- data.frame(coord, 
-                       within_5km = geosphere::distHaversine(
-                           coord, 
-                           c(28.5444, 58.14936)
-                           )/1000 < 1)    #convert m to km, check < 5
-
-
-table(coord_df$within_1km)
-
-
-Circle_x <- dataBotany2022$Xutm[dataBotany2022$Xutm >= xCenter_radius & dataBotany2022$Xutm <= xCenter]  #all x coordinates in between X value of augur minus and plus buffer
-Circle_y <- dataBotany2022$Yutm[dataBotany2022$Yutm >= yCenter_radius & dataBotany2022$Yutm <= yCenter]  #all y coordinates in between Y value of augur minus and plus buffer
-
-Xvariables_withinbuffer <- dataBotany2022 %>% filter(Xutm %in% Circle_x)  #filter only x coordinates from botany data that are present in the common_x variable
-length(Xvariables_withinbuffer$TreeID)
-
-YandX_variableswithinbuffer <- Xvariables_withinbuffer %>% filter(Yutm %in% Circle_y) #same for Y values
-length(YandX_variableswithinbuffer$TreeID)
-
-dataBotany2022 %>% filter(Xutm == Xvariables_withinbuffer, Yutm == Yvariables_withinbuffer) 
-
-A <- c(1,2,34,55,45,654,22,3,4,5)
-B <- c(1,33,43, 654, 22, 9,8)
-common <- A[(A %in% B)]
-common
-
-
+Buffer_points <- read.csv("buffer_points.csv")  #upload data that contains zones of 5m around center augur points
 ```
 
+
+## extra
 
 ```{r code to find package of a function}
 #install.packages("sos")  #package for function find Fn,
@@ -131,8 +111,6 @@ findFn("geosphere")  #function to learn which package is necessary for your func
 
 
 
-
 Idea now is to check link between texture_class and the aboveground biomass
-
 
 
