@@ -23,16 +23,18 @@ library(knitr)
 library(geosphere)  #library for calculating distances of latitudes
 
 
-install.packages("memoiR")
-library(memoiR)
+#install.packages("memoiR")
+#library(memoiR)
 
 ```
 
 ```{r upload and structure data}
 
 dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
+
 dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
-dataBotany2022 <- dataBotany2022_NA %>% na.omit  #remove NA objects
+dataBotany2022 <- dataBotany2022_NA %>% 
+  na.omit  #remove NA objects
 
 ```
 
@@ -53,52 +55,86 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35',
 Make a new column in which the textures are grouped based on the importance of silt present:
 
 ```{r}
-Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>% select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche")) 
+Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>%
+  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche")) 
  #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
-Augur <- Augur_NA %>% na.omit   #take out NA variables
 
-Augur$Texture_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "S"), "C", ifelse(Augur$Texture_2023 == "SL", "B", "A"))  #create new column with textures divided in three classes based upon their presence of silt
+Augur <- Augur_NA %>% 
+  na.omit   #take out NA variables
+
+Augur$Silt_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "S"), "low", ifelse(Augur$Texture_2023 == "SL", "intermediate", "high"))  
+#create new column with textures divided in three classes based upon their presence of silt
 #class A has most amount of silt, class C has least amount of silt
 
-Augur$Texture_simplified <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "SL", "S"), "B", "A")
+Augur$Silt <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS", "SA", "SL", "S"), "low", "high")
 
-Botany <- dataBotany2022 %>% select(c("TreeID", "Family", "Genus", "species", "Xutm", "Yutm"))   #make a more precise df with variables we will use
-
-Botany_augur <- merge(Augur, Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID')   #create a merged dataframe of both the botany and the augur data based on the columns "arbre_plus_proche" and "TreeID"
+Botany <- dataBotany2022 %>% 
+  select(c("TreeID", "Family", "Genus", "species", "Xutm", "Yutm")) #make a more precise df with variables we will use
 
 ```
 
 ## Data visualizations
 
-```{r visualize augur points}
-
-ggplot(data = Botany_augur, aes(Xutm, Yutm)) + geom_point()   #a plot to show all the augur measurements on a "map"
-
-```
-```{r}
-?wich   #fucntion to get line number of your data with a specific condition
-```
 
 ```{r define silt appearance depth}
 
-df_restructured <- Augur %>% group_by(sondage_N) %>% filter(Texture_simplified == "A") %>% arrange(sondage_N, depth_sup) %>% distinct(sondage_N, .keep_all = TRUE) %>% select(sondage_N,depth_sup, arbre_plus_proche)
+df_restructured <- Augur %>% 
+  group_by(sondage_N) %>% 
+  filter(Texture_simplified == "high") %>% 
+  arrange(sondage_N, depth_sup) %>% 
+  distinct(sondage_N, .keep_all = TRUE) %>% 
+  select(sondage_N,depth_sup, arbre_plus_proche) %>% 
+  merge(Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID' )
 
 # remade a df in which for each augur measurement the depth at which the silt occurs in high quantities (so class A) is noted down
+# last merge: create a merged dataframe of both the botany and the augur data based on the columns "arbre_plus_proche" and "TreeID" ; this time in which the data is not repeated for all the horizons
 
-df_merged_restructured <- merge(df_restructured, Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID')   #create a merged dataframe of both the botany and the augur data based on the columns "arbre_plus_proche" and "TreeID" ; this time in which the data is not repeated for all the horizons
+df_restructured <- Augur %>% 
+  group_by(sondage_N) %>% 
+  arrange(sondage_N, depth_sup) %>%
+  
+
+
+df_restructured$sondage_N <- as.numeric(df_merged_restructured$sondage_N)
 
 ```
 
 Create dataframe where points are grouped by distance from center point (arbre_plus_proche)
 
-```{r}
+```{r create good buffer dataframe}
 
-write_csv(Botany, "Botany_export.csv")      # export data to QGis
-write_csv(df_merged_restructured, "Augur_points.csv") # export data to bring to QGis
+#write_csv(Botany, "Botany_export.csv")      # export data to QGis
+#write_csv(df_merged_restructured, "Augur_points.csv") # export data to bring to QGis
 
 
 Buffer_points <- read.csv("buffer_points.csv")  #upload data that contains zones of 5m around center augur points
+
+
+Final_df <- Buffer_points %>%
+  group_by(sondage_N) %>%
+  summarise(amount_trees = n(),
+            sp_richness = n_distinct(species) 
+            )
+  
+  
+result <- Buffer_points %>%
+  group_by(sondage_N, Family) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count)) %>%
+  slice(1) %>%
+  ungroup() %>%
+  group_by(sondage_N) %>%
+  summarise(most_abundant_family = Family[1], 
+            most_abundant_count = count[1],
+            total_families_seen = n_distinct(Family))
+
+
 ```
+
+## test if there is an effect of the depth of the silt horizon appearance on the number of trees
+
+
+
 
 
 ## extra
