@@ -92,19 +92,38 @@ dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 ### Calculation of water reserve
 
 $$
-WR=\sum_{h} T_h\ R_h\ (1-S_h)
-$$ with, for a ginven horizon $h$:
+WR=\sum_{h} T_h\ R_h\ (1-C_h)
+$$ 
+
+with, for a ginven horizon $h$:
 
 -   $R_h$ the usefull reserve (available in *Jamagne et al., 1977*).
     Require the texture of the horizon.
--   $S_h$ the percentage of stone element (estimated on the field)
+-   $C_h$ the percentage of coarse element (estimated on the field)
 -   $T_h$ the thickness of the horizon
 
-```{r}
-R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65)
-R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"LA",	"AS",	"A",	"AL",	"Alo")
+During our field campaign, we tried to estimate the percentage of coarse element
+in each horizon, but the estimation was not really accurate. Then we decided to regroup coarse element data into three classes: C<0.1, 0.1<C<0.4, 0.4<C.
+For each class we choose the mean of coarse element as value, wich will be used
+in the calculation of water reserve. 
+This new coarse element variable is considered as an qualitative ordinal variable.
 
-dataPit$waterReserve
+```{r}
+R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65) #values get from Jamagne et al. 1977
+R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"LA",	"AS",	"A",	"AL",	"Alo")#corresponding texture class for each R_value
+
+dataPit$coarse_element_class <- dataPit$coarse_element #initialize variable
+
+dataPit$coarse_element_class[dataPit$coarse_element>=0.4]<-mean(dataPit$coarse_element_class[dataPit$coarse_element>=0.4]) #first class
+
+dataPit$coarse_element_class[between(dataPit$coarse_element,0.1,0.4)]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<0.4])#second class
+
+dataPit$coarse_element_class[dataPit$coarse_element<=0.1]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<=0.1])#last class
+
+dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class)
+summary(dataPit$coarse_element_class)
+
+#miss only the horizon thickness part: need to regroupe data by horizon !
 ```
 
 ## Reorganisation of data
