@@ -62,7 +62,8 @@ remove(dataPitF1, dataPitF2, dataPitF3, dataPitF4) #remove separated sheets
 
 #--convert depth code (P1 to P10) to their corresponding depth value (10 to 100cm)
 dataPit$depth <- as.factor(dataPit$depth)
-levels(dataPit$depth) <- c("10", "20", "30", "40", "50", "60", "70", "80", "90", "100")
+levels(dataPit$depth)  <- c("10", "100", "20", "30", "40", "50", "60", "70", "80", "90")
+dataPit$depth <- as.numeric(as.character(dataPit$depth))
 
 #--we split the side variable into two different one: sideOrient and sideNumber
 dataPit$exposure <- as.factor(dataPit$exposure)
@@ -131,7 +132,6 @@ summary(dataPit$coarse_element_class)
 ## Reorganisation of data
 
 ```{r}
-dataPit$depth <- as.numeric(dataPit$depth)
 dataPitHorizon <- dataPit %>%
   # filter(pit=="F1") %>%
   select(c(pit, depth, texture, rd1)) %>%
