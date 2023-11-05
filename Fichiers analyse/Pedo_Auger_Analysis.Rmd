@@ -1,5 +1,5 @@
 ---
-title: "pedo_Auger_Analsysis"
+title: "pedo_Auger_Analysis"
 author: "EmilieSanvito"
 date: "2023-10-05"
 output: html_document
@@ -9,7 +9,8 @@ output: html_document
 ##data organization
 
 ```{r libraries}
-rm(list=ls()) #to empty your work environment
+#to empty your work environment
+rm(list=ls()) 
 
 
 library(tidyverse)
@@ -29,12 +30,15 @@ library(geosphere)  #library for calculating distances of latitudes
 ```
 
 ```{r upload and structure data}
+#import data from last year project (36 augur in the P16)
+dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   
 
-dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")   #import data from last year project (36 augur in the P16)
+#import botany data
+dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  
 
-dataBotany2022_NA <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  #import botany data
+#remove NA objects
 dataBotany2022 <- dataBotany2022_NA %>% 
-  na.omit  #remove NA objects
+  na.omit  
 
 ```
 
@@ -49,16 +53,29 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture
 dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
 dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
 
+#create a new column for topography that only contains the number of the topography 
+dataAugur2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAugur2022$topographie))
+#6: bas fonds
+#5: versant bas de pente
+#4: versant mi-pente
+#3: versant haut de pente
+#2: ...
+#1: plateau
+
 ```
 
+We have 36 augur points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data.
+
+Of the 22 texture available, there are 16 that have high texture present
 
 Make a new column in which the textures are grouped based on the importance of silt present:
 
 ```{r}
 #filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
-Augur_NA <- dataAugur2022 %>% filter(Classification == "Drainage latéral superficiel") %>%
-  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche")) 
- 
+Augur_NA <- dataAugur2022 %>% 
+  filter(topo %in% c("5", "4", "3")) %>%
+  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
+
 #take out NA variables
 Augur <- Augur_NA %>% 
   na.omit   
@@ -66,10 +83,30 @@ Augur <- Augur_NA %>%
 #create new column with textures divided in three classes based upon their presence of silt
 Augur$Silt_class <- ifelse(Augur$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Augur$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
 
-
 #make a more precise df with variables we will use
 Botany <- dataBotany2022 %>% 
-  select(c("TreeID", "Family", "Genus", "species", "Xutm", "Yutm")) 
+  select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
+
+
+
+# ## there are duplicates of DBH??
+# library(dplyr)
+# 
+# # Group the dataframe by TreeID and count the distinct values of DBH
+# treeid_summary <- dataBotany2022 %>%
+#   group_by(TreeID) %>%
+#   summarise(distinct_dbh_count = n_distinct(DBH))
+# 
+# # Count the number of TreeIDs with 1, 2, or more than 2 distinct DBH values
+# treeids_with_1_dbh <- sum(treeid_summary$distinct_dbh_count == 1)
+# treeids_with_2_dbh <- sum(treeid_summary$distinct_dbh_count == 2)
+# treeids_with_more_than_2_dbh <- sum(treeid_summary$distinct_dbh_count > 2)
+# 
+# cat("Number of TreeIDs with 1 distinct DBH value:", treeids_with_1_dbh, "\n")
+# cat("Number of TreeIDs with 2 distinct DBH values:", treeids_with_2_dbh, "\n")
+# cat("Number of TreeIDs with more than 2 distinct DBH values:", treeids_with_more_than_2_dbh, "\n")
+
+
 ```
 
 
@@ -77,14 +114,12 @@ Botany <- dataBotany2022 %>%
 
 #creata dataframe in which for every augur point you have defined depth at which silt concentration becomes high
 df_restructured <- Augur %>% 
-  group_by(sondage_N) %>%     #group by augur
+  group_by(sondage_N) %>%             #group by augur
   filter(Silt_class == "high") %>%    #get only augurs for which the silt concentration is high
-  arrange(sondage_N, depth_sup) %>%     #arrange the data so that every measurment in one augur is arranged with depth
+  arrange(sondage_N, depth_sup) %>%   #arrange the data so that every measurement in one augur is arranged with depth
   distinct(sondage_N, .keep_all = TRUE) %>%  #keep only one value per augur (the first depth)
-  select(sondage_N,depth_sup, arbre_plus_proche) %>% #maintain only three variables from the dataframe
-  merge(Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID' )   #merge with botany dataframe for common values of treeID and arbre plus proch
-
-df_restructured$sondage_N <- as.numeric(df_restructured$sondage_N)
+  select(sondage_N,depth_sup, arbre_plus_proche, topo) %>% #maintain only three variables from the dataframe
+  merge(Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID' )   #merge with botany dataframe for common values of treeID and arbre plus proche
 
 ```
 
@@ -96,46 +131,100 @@ Create dataframe where points are grouped by distance from center point (arbre_p
 #export data to QGis
 
 #upload data that contains zones of 5m around center augur points
-Buffer_points <- read.csv("final_bufferpoints.csv")
+Buffer_points <- read.csv("Final_intersection.csv")
 
 AGB_buffer <- Buffer_points %>%
   group_by(sondage_N) %>%
   summarise(amount_trees = n(),
-            sp_richness = n_distinct(species) 
+            sp_richness = n_distinct(species)
             )
 
+AGB_buffer$DBH <- df_restructured$DBH
 Final_df <- df_restructured %>%
-  select(sondage_N, depth_sup) %>%
+  select(sondage_N, depth_sup, topo) %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
 
-  
-  
-#result <- Buffer_points %>%
-#  group_by(sondage_N, Family) %>%
+
+   
+# result <- Buffer_points %>%
+# group_by(sondage_N, Family) %>%
 # summarise(count = n()) %>%
 # arrange(desc(count)) %>%
 # slice(1) %>%
 # ungroup() %>%
-#group_by(sondage_N) %>%
-# summarise(most_abundant_family = Family[1], 
+# group_by(sondage_N) %>%
+# summarise(most_abundant_family = Family[1],
 #           most_abundant_count = count[1],
 #           total_families_seen = n_distinct(Family))
 
 
 ```
 
+we want a dataframe to be able to make a nice map of the different depths at which silt occurs in the whole 4ha plot that was studied with the augurs
+```{r}
+
+#filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
+map_Augur_NA <- dataAugur2022  %>%
+  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
+
+#take out NA variables
+map_Augur <- map_Augur_NA %>% 
+  na.omit   
+
+#create new column with textures divided in three classes based upon their presence of silt
+map_Augur$Silt_class <- ifelse(map_Augur$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(map_Augur$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+
+map_df_restructured <- map_Augur %>%
+  group_by(sondage_N) %>%             # Group by augur
+  filter(Silt_class == "high") %>%    # Get only augurs with high silt concentration
+  arrange(sondage_N) %>%              # Arrange data by "sondage_N"
+  left_join(Botany, by = c("arbre_plus_proche" = "TreeID")) %>% # Left join with Botany
+  group_by(sondage_N) %>%             # Regroup by "sondage_N"
+  filter(DBH == max(DBH)) %>%         # Filter to keep rows with the highest DBH
+  distinct(sondage_N, .keep_all = TRUE) %>% # Keep only one row per sondage_N
+  select(sondage_N, depth_sup, arbre_plus_proche, topo, DBH, Xutm, Yutm) # Maintain selected variables
+
+#export map data to csv to be able to use it in QGIS
+write_csv(map_df_restructured, "map_augurdata.csv")
+
+#created this df to be able to know which sondage_N have only intermediate/low silt class concentration
+df <- map_Augur %>%
+  group_by(sondage_N) %>%     
+  filter(Silt_class == "high")
+
+lost_sondage_N <- map_Augur %>%
+  select(sondage_N) %>%
+  anti_join(df, by = "sondage_N") %>%
+  distinct(sondage_N)
+
+print(lost_sondage_N)
+
+```
+
+
+
 ## data visualisation
 
 ```{r}
-ggplot(Final_df$depth_sup, Final_df$amount_trees)
+
 plot(Final_df$depth_sup, Final_df$amount_trees)
-plot(Final_df$depth_sup, Final_df$sp_richness )
+plot(Final_df$depth_sup, Final_df$sp_richness)
+plot(Final_df$depth_sup, Final_df$DBH)
 ```
 
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
+```{r}
+shapiro.test(Final_df$depth_sup)
+shapiro.test(Final_df$amount_trees)   #not normal?
+shapiro.test(Final_df$sp_richness)
 
+library(ggfortify)
+M1 <- lm(log(Final_df$amount_trees) ~ Final_df$depth_sup)
+autoplot(M1)
+
+```
 
 
 ## extra
@@ -145,9 +234,5 @@ plot(Final_df$depth_sup, Final_df$sp_richness )
 library(sos)
 findFn("geosphere")  #function to learn which package is necessary for your function
 ```
-
-
-
-Idea now is to check link between texture_class and the aboveground biomass
 
 
