@@ -64,6 +64,8 @@ The goals of the code in this file is to study, in the ground of
 tropical forest (P16 Paracou) the link between the root abundance and
 soil texture, in particular the depth occurrence of silt horizon.
 
+## Data pre-treatment
+
 ```{r}
 library(readxl)
 library(tidyverse)
@@ -117,16 +119,42 @@ dataPit$exposure_orient <- as.factor(dataPit$exposure_orient)
 dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 ```
 
-## Reorganization of data
+### Coars element
+During our field campaign, we tried to estimate the percentage of coarse
+element in each horizon, but the estimation was not really accurate.
+Then we decided to regroup coarse element data into three classes:
+C\<0.1, 0.1\<C\<0.4, 0.4\<C. For each class we choose the mean of coarse
+element as value, which will be used in the calculation of water
+reserve. This new coarse element variable is considered as an
+qualitative ordinal variable.
+
+```{r}
+dataPit$coarse_element_class <- dataPit$coarse_element #initialize variable
+#first class
+dataPit$coarse_element_class[dataPit$coarse_element>=0.4]<-mean(dataPit$coarse_element_class[dataPit$coarse_element>=0.4]) 
+#second class
+dataPit$coarse_element_class[between(dataPit$coarse_element,0.1,0.4)]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<0.4])
+#last class
+dataPit$coarse_element_class[dataPit$coarse_element<=0.1]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<=0.1])
+dataPit$coarse_element_class <- round(dataPit$coarse_element_class, 2) #rounding to get clear value
+
+dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class) #setting as ordered
+# summary(dataPit$coarse_element_class)
+```
+
+### Reorganization of data
+
+#### By layer
 
 ```{r}
 #--regroup data by layer of 10cm
 dataPitLayer <- dataPit %>%
   # filter(pit=="F1") %>%
-  select(c(pit, depth, texture, rd1, rd2, rd3, rd4)) %>%
+  select(c(pit, depth, texture, rd1, rd2, rd3, rd4, coarse_element_class)) %>%
   group_by(pit, depth) %>% 
   summarise(
     texture=unique(texture),
+    coarse_element=mean(as.numeric(as.character(coarse_element_class))),
     rd1= mean(rd1),
     rd2=mean(rd2),
     rd3=mean(rd3),
@@ -135,8 +163,12 @@ dataPitLayer <- dataPit %>%
 ungroup(dataPitLayer)
 ```
 
+#### By horizon
+
 ```{r}
-dataPitHorizon <- dataPitLayer
+dataPitHorizon <- dataPitLayer #initialize dataPitHorizon dataframe
+dataPitHorizon <- dataPitHorizon %>% mutate(thickness=depth*0+10) #initialize thickness variable
+
 d=1 #counter id
 while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
   up <- dataPitHorizon$texture[d]
@@ -148,15 +180,20 @@ while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
     dataPitHorizon$rd3[d] <- dataPitHorizon$rd3[d]+ dataPitHorizon$rd3[d+1] 
     dataPitHorizon$rd4[d] <- dataPitHorizon$rd4[d]+ dataPitHorizon$rd4[d+1] 
     dataPitHorizon$root[d] <- dataPitHorizon$root[d]+ dataPitHorizon$root[d+1]
+    dataPitHorizon$coarse_element[d] <- dataPitHorizon$coarse_element[d] + dataPitHorizon$coarse_element[d+1]
+    dataPitHorizon$thickness[d] <- dataPitHorizon$thickness[d]+10
     dataPitHorizon <- dataPitHorizon[-(d+1),] #remove down layer
     #don't change d: the down is coming up
   }
   else{d <- d+1} #going down
 }
+
+#meaning coars_element by thickness, which is equivalent to the number of layer
+dataPitHorizon$coarse_element <- dataPitHorizon$coarse_element / (dataPitHorizon$thickness/10)
 ```
 
 
-## Calculation of water reserve
+### Calculation of water reserve
 
 $$
 WR=\sum_{h} T_h\ R_h\ (1-C_h)
@@ -170,29 +207,14 @@ with, for a ginven horizon $h$:
 -   $C_h$ the percentage of coarse element (estimated on the field)
 -   $T_h$ the thickness of the horizon
 
-During our field campaign, we tried to estimate the percentage of coarse
-element in each horizon, but the estimation was not really accurate.
-Then we decided to regroup coarse element data into three classes:
-C\<0.1, 0.1\<C\<0.4, 0.4\<C. For each class we choose the mean of coarse
-element as value, which will be used in the calculation of water
-reserve. This new coarse element variable is considered as an
-qualitative ordinal variable.
-
 ```{r}
 R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65) #values get from Jamagne et al. 1977
 R_texture <- c("S",	"SL",	"SA",	"LIS"	,"LS",	"LmS",	"LSA",	"LAS",	"Ll",	"Lm",	"LA",	"AS",	"A",	"AL",	"Alo")#corresponding texture class for each R_value
 
-dataPit$coarse_element_class <- dataPit$coarse_element #initialize variable
-
-dataPit$coarse_element_class[dataPit$coarse_element>=0.4]<-mean(dataPit$coarse_element_class[dataPit$coarse_element>=0.4]) #first class
-
-dataPit$coarse_element_class[between(dataPit$coarse_element,0.1,0.4)]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<0.4])#second class
-
-dataPit$coarse_element_class[dataPit$coarse_element<=0.1]<-mean(dataPit$coarse_element_class[dataPit$coarse_element<=0.1])#last class
-
-dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class)
-summary(dataPit$coarse_element_class)
-
+dataPitHorizon <- dataPitHorizon %>% 
+  mutate(WR=root*0)
+RU <- R_value[which(dataPitHorizon$texture %in% R_texture)]
+dataPitHorizon$WR <- dataPitHorizon$thickness * dataPitHorizon$coarse_element * setNames(R_value, R_texture)[dataPitHorizon$texture]
 ```
 
 ## Root biomass
