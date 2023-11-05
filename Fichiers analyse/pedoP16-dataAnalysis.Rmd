@@ -14,30 +14,55 @@ editor_options:
 ## DATA DESCRIPTION
 
 Organisation of data files: there is separate sheet for each 4 pit data.
-In each sheet, you have the same 11 variables:
+In each sheet, you have the same 16 variables:
 
-3 variables serve for location of observation: - pit: the pit number,
-corresponding to the order in which it was dug - depth: depth in the
-pit, from 0cm to 100cm, by 20cm step - side: side of observation in the
-pit. There is two sides for each pit. The orientation of the side is
-indicated. Side's number correspond to the order of counting (S1 has
-been counted before S2)
+3 variables serve for location of observation:
+
+-   pit: the pit number, corresponding to the order in which it was dug
+
+-   depth: depth in the pit, from 0cm to 100cm, by 20cm step
+
+-   exposure: side of observation in the pit. There is two sides for
+    each pit. The orientation of the side is indicated. Side's number
+    correspond to the order of counting (S1 has been counted before S2)
 
 Then for each combination value of (pit, side, depth), we have measured
-and observed the next variables: - root1 ... root4: the amount of root
-for 4 diameter classes, counted in a square of 50cm long by 10cm deep,
-located at (pit, side, depth) - texture: the texture of the horizon -
-micas: the qualitative approximation of the amount of micas in the
-horizon, from 0 (no micas at all) to 3 (a lot of micas) - stoneContent:
-the percentage of stone content in the horizon - taches: in percentages
+and observed the next variables:
 
-MANQUE LES VARIABLES PAS ENCORE RETRANSCRITES DANS EXCEL
+-   root1 ... root4: numeric, the amount of root for 4 diameter classes,
+    counted in a square of 50cm long by 10cm deep, located at (pit,
+    side, depth)
+
+-   texture: factor, the texture of the horizon (see figure 1)
+
+-   micas: ordered, the qualitative approximation of the amount of micas
+    in the horizon, from 0 (no micas at all) to 3 (a lot of micas)
+
+-   coarse_element: numeric, the percentage of stone content in the
+    horizon
+
+-   humidity: factor, dry or moist
+
+-   structure_size: character, with first number corresponding to the
+    size of small element, and second number corresponding to the size
+    of big elements
+
+-   density: ordered, dense firm or very dense
+
+-   smudges: numeric, in percentage, estimated approximately by looking
+
+-   colour1: factor, estimated with the Munsell color palette. Colour 1
+    is the principal colour
+
+-   colour2: factor, the second colour in proportion
+
+![](Image1.png){width="500"}
 
 ## GOALS OF THIS ANALYSIS
 
 The goals of the code in this file is to study, in the ground of
 tropical forest (P16 Paracou) the link between the root abundance and
-soil texture, and specialy the occurence of silt horizon.
+soil texture, in particular the depth occurrence of silt horizon.
 
 ```{r}
 library(readxl)
@@ -82,7 +107,7 @@ dataPit$coarse_element <- as.numeric(dataPit$coarse_element) #WARNING, only 11 d
 dataPit$water_reserve <- as.numeric(dataPit$water_reserve)
 dataPit$humidity <- as.factor(dataPit$humidity)
 dataPit$structure_type <- as.factor(dataPit$structure_type)
-dataPit$structure_size <- as.numeric(dataPit$structure_size)
+dataPit$structure_size <- as.character(dataPit$structure_size)
 dataPit$density <- as.factor(dataPit$density)
 dataPit$smudges <- as.numeric(dataPit$smudges) #WARNING, only 5 differents values
 dataPit$colour1 <- as.factor(dataPit$colour1)
@@ -92,24 +117,66 @@ dataPit$exposure_orient <- as.factor(dataPit$exposure_orient)
 dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 ```
 
-### Calculation of water reserve
+## Reorganization of data
+
+```{r}
+#--regroup data by layer of 10cm
+dataPitLayer <- dataPit %>%
+  # filter(pit=="F1") %>%
+  select(c(pit, depth, texture, rd1, rd2, rd3, rd4)) %>%
+  group_by(pit, depth) %>% 
+  summarise(
+    texture=unique(texture),
+    rd1= mean(rd1),
+    rd2=mean(rd2),
+    rd3=mean(rd3),
+    rd4=mean(rd4),
+    root=mean(rd1+rd2+rd3+rd4))
+ungroup(dataPitLayer)
+```
+
+```{r}
+dataPitHorizon <- dataPitLayer
+d=1 #counter id
+while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
+  up <- dataPitHorizon$texture[d]
+  down <- dataPitHorizon$texture[d+1]
+  if(up==down){#if the next layer has the same texture
+    #agregate down layer with top layer
+    dataPitHorizon$rd1[d] <- dataPitHorizon$rd1[d] + dataPitHorizon$rd1[d+1] 
+    dataPitHorizon$rd2[d] <- dataPitHorizon$rd2[d]+ dataPitHorizon$rd2[d+1]
+    dataPitHorizon$rd3[d] <- dataPitHorizon$rd3[d]+ dataPitHorizon$rd3[d+1] 
+    dataPitHorizon$rd4[d] <- dataPitHorizon$rd4[d]+ dataPitHorizon$rd4[d+1] 
+    dataPitHorizon$root[d] <- dataPitHorizon$root[d]+ dataPitHorizon$root[d+1]
+    dataPitHorizon <- dataPitHorizon[-(d+1),] #remove down layer
+    #don't change d: the down is coming up
+  }
+  else{d <- d+1} #going down
+}
+```
+
+
+## Calculation of water reserve
 
 $$
 WR=\sum_{h} T_h\ R_h\ (1-C_h)
-$$ 
+$$
 
 with, for a ginven horizon $h$:
 
--   $R_h$ the usefull reserve (available in *Jamagne et al., 1977*).
-    Require the texture of the horizon.
+-   $R_h$ the usefull reserve (available in [Jamagne et al.,
+    1977](https://appgeodb.nancy.inra.fr/biljou/fr/fiche/reserve-en-eau-du-sol)
+    )
 -   $C_h$ the percentage of coarse element (estimated on the field)
 -   $T_h$ the thickness of the horizon
 
-During our field campaign, we tried to estimate the percentage of coarse element
-in each horizon, but the estimation was not really accurate. Then we decided to regroup coarse element data into three classes: C<0.1, 0.1<C<0.4, 0.4<C.
-For each class we choose the mean of coarse element as value, wich will be used
-in the calculation of water reserve. 
-This new coarse element variable is considered as an qualitative ordinal variable.
+During our field campaign, we tried to estimate the percentage of coarse
+element in each horizon, but the estimation was not really accurate.
+Then we decided to regroup coarse element data into three classes:
+C\<0.1, 0.1\<C\<0.4, 0.4\<C. For each class we choose the mean of coarse
+element as value, which will be used in the calculation of water
+reserve. This new coarse element variable is considered as an
+qualitative ordinal variable.
 
 ```{r}
 R_value <- c(0.70, 1.00,	1.35,	1.20,	1.45,	1.60,	1.65,	1.75,	1.30,	1.75,	1.95,	1.70,	1.75,	1.80,	1.65) #values get from Jamagne et al. 1977
@@ -126,34 +193,12 @@ dataPit$coarse_element_class[dataPit$coarse_element<=0.1]<-mean(dataPit$coarse_e
 dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class)
 summary(dataPit$coarse_element_class)
 
-#miss only the horizon thickness part: need to regroupe data by horizon !
 ```
 
-## Reorganisation of data
+## Root biomass
 
-```{r}
-dataPitHorizon <- dataPit %>%
-  # filter(pit=="F1") %>%
-  select(c(pit, depth, texture, rd1)) %>%
-  group_by(pit, depth) %>% 
-  summarise(
-    texture=unique(texture),
-    rd1=mean(rd1))
-ungroup(dataPitHorizon)
-
-d=1 #counter id
-while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
-  up <- dataPitHorizon$texture[d]
-  down <- dataPitHorizon$texture[d+1]
-  if(up==down){#if the next layer has the same texture
-    #agregate down layer with top layer
-    dataPitHorizon$rd1[d] <- mean(dataPitHorizon$rd1[d], dataPitHorizon$rd1[d+1]) 
-    dataPitHorizon <- dataPitHorizon[-(d+1),] #remove down layer
-    #don't change d: the down is coming up
-  }
-  else{d <- d+1} #going down
-}
-```
+For the calculation of root biomass, we weight each root count by the
+diameter of the root class. The diameter classes are in millimeter: d1: $<2$, d2: $2-5$, d3: $5-10$ and d4: $≥ 10$.
 
 # not directed analysis
 
