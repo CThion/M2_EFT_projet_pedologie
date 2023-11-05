@@ -4,6 +4,7 @@ author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
 editor_options: 
+  chunk_output_type: console
   markdown: 
     wrap: 72
 ---
@@ -45,6 +46,7 @@ library(ggplot2)
 library(corrplot)
 library(FactoMineR) # Pour l'analyse en composantes principales
 library(factoextra) # Pour la représentation de l'ACP
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 ```{r}
@@ -129,12 +131,28 @@ summary(dataPit$coarse_element_class)
 ## Reorganisation of data
 
 ```{r}
+dataPit$depth <- as.numeric(dataPit$depth)
 dataPitHorizon <- dataPit %>%
-  pivot_wider(
-    names_from = pit, 
-    names_sep = ".",
-    values_from = c(texture)
-      )
+  # filter(pit=="F1") %>%
+  select(c(pit, depth, texture, rd1)) %>%
+  group_by(pit, depth) %>% 
+  summarise(
+    texture=unique(texture),
+    rd1=mean(rd1))
+ungroup(dataPitHorizon)
+
+d=1 #counter id
+while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
+  up <- dataPitHorizon$texture[d]
+  down <- dataPitHorizon$texture[d+1]
+  if(up==down){#if the next layer has the same texture
+    #agregate down layer with top layer
+    dataPitHorizon$rd1[d] <- mean(dataPitHorizon$rd1[d], dataPitHorizon$rd1[d+1]) 
+    dataPitHorizon <- dataPitHorizon[-(d+1),] #remove down layer
+    #don't change d: the down is coming up
+  }
+  else{d <- d+1} #going down
+}
 ```
 
 # not directed analysis
