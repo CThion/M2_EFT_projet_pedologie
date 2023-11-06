@@ -5,6 +5,7 @@ date: '2023-10-19'
 output: pdf_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -68,10 +69,8 @@ To quantitatively test the association and assess the statistical significance o
 chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
 chisq_result <- chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
 
-cramer_v <- sqrt(chisq_result$statistic / (sum(chisq_result$observed) * min(nrow(chisq_result$observed) - 1, ncol(chisq_result$observed) - 1))) #
-print(cramer_v)
+fisher_result<-fisher.test(dataPitAll$siltcontent, dataPitAll$micas) # fisher's exact test due to small sampling size
 ```
-
 
 ```{r}
 #For testing a relationship between the two variables, which have both three categories now, different options have been trialed.
@@ -86,14 +85,81 @@ print(cramer_v)
 #  labs(title = "Clustered Bar Chart", x = "Silt content", y = "Mica content") +
 #  scale_y_discrete(limits = rev(levels(dataPitAll$siltcontent)))
 ```
-
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
+
+
+
+
+Now we are interested in the data from 2022, as there is more data points, hence, it looks more promising to find interesting information
+```{r}
+setwd("/Users/admin/Documents/GitHub/M2_EFT_projet_pedologie/Fichiers analyse")
+dataAuger2022 <- read_excel("DataAuger2022.xlsx", sheet=1, na="NA")
+
+
+#SCRIPT EMILIE
+
+dataAuger2022 <- dataAuger2022 %>% rename_at('% pente', ~'pente')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Numéro horizon', ~'horizon')
+dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
+dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')  #idk why it doesn't work here
+dataAuger2022 <- dataAuger2022 %>% rename_at('EG %', ~'stone_elements')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
+
+#create a new column for topography that only contains the number of the topography 
+dataAuger2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAuger2022$topographie))
+#filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
+Auger_NA <- dataAuger2022 %>% 
+  filter(topo %in% c("5", "4", "3")) %>%
+  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo", "mica")) 
+##mica as well (different from Emilies df)
+#take out NA variables
+Auger <- Auger_NA %>% 
+  na.omit   
+
+#create new column with textures divided in three classes based upon their presence of silt
+Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+
+#silt 
+```
+From this part from the vegetation analysis (idk how we want to refer to emilies part correctly) we want to now analyse the relation between mica and silt content
+
+```{r}
+#mica content from 0-3 (4 categories)
+
+#not sure whether mosaic plot is the right thing to do
+##mosaicplot(table(Auger$Silt_class, Auger$mica), color = TRUE, xlab="silt content categories", ylab="mica content categories", type="pearson")
+
+#two columns have to be transformed into a factor 
+Auger$mica=as.factor(Auger$mica)
+Auger$Silt_class=as.factor(Auger$Silt_class)
+
+# Perform the chi-squared test
+chi_sq_test <- chisq.test(Auger$mica, Auger$Silt_class)
+print(chi_sq_test)
+
+
+
+# Install and load the vcd package
+install.packages("vcd")
+library(vcd)
+install.packages("vcdExtra", lib = "path_to_your_preferred_directory")
+install.packages("vcdExtra")
+library(vcdExtra)
+install.packages("vcdExtra", lib = "/var/folders/m1/xff7vx7x5h5bb386lhznh50c0000gn/T//RtmpvgNQj7/downloaded_packages")
+
+# Create a mosaic plot
+mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
+           color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
+
+
+#not really looking like anything useful...?
+
+## didnt work due to package associationPlot(Auger$mica, Auger$Silt_class, main = "Association Plot")
+
+```
+This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
+
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
