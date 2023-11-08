@@ -1,0 +1,299 @@
+<!DOCTYPE qgis-layer-definition>
+<qlr>
+  <layer-tree-group expanded="1" name="" checked="Qt::Checked">
+    <customproperties>
+      <Option/>
+    </customproperties>
+    <layer-tree-layer expanded="1" legend_exp="" patch_size="-1,-1" legend_split_behavior="0" providerKey="delimitedtext" id="map_augurdata_d75bfb3e_4d66_4215_b29d_a55b0b02679b" source="../Fichiers analyse/map_augurdata.csv?type=csv&amp;maxFields=10000&amp;detectTypes=yes&amp;xField=Xutm&amp;yField=Yutm&amp;crs=EPSG:32622&amp;spatialIndex=no&amp;subsetIndex=no&amp;watchFile=no" name="map_augurdata" checked="Qt::Unchecked">
+      <customproperties>
+        <Option/>
+      </customproperties>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer geometry="Point" simplifyLocal="1" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" type="vector" legendPlaceholderImage="" styleCategories="AllStyleCategories" maxScale="0" simplifyDrawingHints="1" labelsEnabled="0" simplifyMaxScale="1" minScale="100000000" simplifyAlgorithm="0" readOnly="0" autoRefreshTime="0" symbologyReferenceScale="-1" wkbType="Point" simplifyDrawingTol="1">
+      <extent>
+        <xmin>285421.72606890002498403</xmin>
+        <ymin>581410.11750000005122274</ymin>
+        <xmax>285626.15643350000027567</xmax>
+        <ymax>581578.41899999999441206</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>-52.93609184316689209</xmin>
+        <ymin>5.25704566332829248</ymin>
+        <xmax>-52.93424332747802197</xmax>
+        <ymax>5.25857306019692672</ymax>
+      </wgs84extent>
+      <id>map_augurdata_d75bfb3e_4d66_4215_b29d_a55b0b02679b</id>
+      <datasource>file:../Fichiers%20analyse/map_augurdata.csv?type=csv&amp;maxFields=10000&amp;detectTypes=yes&amp;xField=Xutm&amp;yField=Yutm&amp;crs=EPSG:32622&amp;spatialIndex=no&amp;subsetIndex=no&amp;watchFile=no</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>map_augurdata</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["WGS 84 / UTM zone 22N",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 22N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-51,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["World - N hemisphere - 54°W to 48°W - by country"],BBOX[0,-54,84,-48]],ID["EPSG",32622]]</wkt>
+          <proj4>+proj=utm +zone=22 +datum=WGS84 +units=m +no_defs</proj4>
+          <srsid>3106</srsid>
+          <srid>32622</srid>
+          <authid>EPSG:32622</authid>
+          <description>WGS 84 / UTM zone 22N</description>
+          <projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="">delimitedtext</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <metadataUrls/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+        <Private>0</Private>
+      </flags>
+      <temporal mode="0" durationField="" durationUnit="min" endField="" startExpression="" endExpression="" accumulate="0" limitMode="0" startField="" fixedDuration="0" enabled="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 enableorderby="0" forceraster="0" type="singleSymbol" symbollevels="0" referencescale="-1">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" force_rhr="0" type="marker" name="0">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option value="" type="QString" name="name"/>
+                <Option name="properties"/>
+                <Option value="collection" type="QString" name="type"/>
+              </Option>
+            </data_defined_properties>
+            <layer locked="0" class="SimpleMarker" pass="0" enabled="1">
+              <Option type="Map">
+                <Option value="0" type="QString" name="angle"/>
+                <Option value="square" type="QString" name="cap_style"/>
+                <Option value="232,113,141,255" type="QString" name="color"/>
+                <Option value="1" type="QString" name="horizontal_anchor_point"/>
+                <Option value="bevel" type="QString" name="joinstyle"/>
+                <Option value="circle" type="QString" name="name"/>
+                <Option value="0,0" type="QString" name="offset"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+                <Option value="MM" type="QString" name="offset_unit"/>
+                <Option value="35,35,35,255" type="QString" name="outline_color"/>
+                <Option value="solid" type="QString" name="outline_style"/>
+                <Option value="0" type="QString" name="outline_width"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="outline_width_map_unit_scale"/>
+                <Option value="MM" type="QString" name="outline_width_unit"/>
+                <Option value="diameter" type="QString" name="scale_method"/>
+                <Option value="2" type="QString" name="size"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="size_map_unit_scale"/>
+                <Option value="MM" type="QString" name="size_unit"/>
+                <Option value="1" type="QString" name="vertical_anchor_point"/>
+              </Option>
+              <prop k="angle" v="0"/>
+              <prop k="cap_style" v="square"/>
+              <prop k="color" v="232,113,141,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <Option type="Map">
+          <Option type="List" name="dualview/previewExpressions">
+            <Option value="&quot;sondage_N&quot;" type="QString"/>
+          </Option>
+        </Option>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend showLabelLegend="0" type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="sondage_N">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="depth_sup">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="arbre_plus_proche">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="topo">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="DBH">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="Xutm">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="Yutm">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="sondage_N" index="0" name=""/>
+        <alias field="depth_sup" index="1" name=""/>
+        <alias field="arbre_plus_proche" index="2" name=""/>
+        <alias field="topo" index="3" name=""/>
+        <alias field="DBH" index="4" name=""/>
+        <alias field="Xutm" index="5" name=""/>
+        <alias field="Yutm" index="6" name=""/>
+      </aliases>
+      <defaults>
+        <default field="sondage_N" expression="" applyOnUpdate="0"/>
+        <default field="depth_sup" expression="" applyOnUpdate="0"/>
+        <default field="arbre_plus_proche" expression="" applyOnUpdate="0"/>
+        <default field="topo" expression="" applyOnUpdate="0"/>
+        <default field="DBH" expression="" applyOnUpdate="0"/>
+        <default field="Xutm" expression="" applyOnUpdate="0"/>
+        <default field="Yutm" expression="" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint field="sondage_N" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="depth_sup" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="arbre_plus_proche" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="topo" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="DBH" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="Xutm" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+        <constraint field="Yutm" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint field="sondage_N" exp="" desc=""/>
+        <constraint field="depth_sup" exp="" desc=""/>
+        <constraint field="arbre_plus_proche" exp="" desc=""/>
+        <constraint field="topo" exp="" desc=""/>
+        <constraint field="DBH" exp="" desc=""/>
+        <constraint field="Xutm" exp="" desc=""/>
+        <constraint field="Yutm" exp="" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;sondage_N&quot;" sortOrder="0">
+        <columns>
+          <column hidden="0" width="-1" type="field" name="sondage_N"/>
+          <column hidden="0" width="-1" type="field" name="depth_sup"/>
+          <column hidden="0" width="-1" type="field" name="arbre_plus_proche"/>
+          <column hidden="0" width="-1" type="field" name="topo"/>
+          <column hidden="0" width="-1" type="field" name="DBH"/>
+          <column hidden="0" width="-1" type="field" name="Xutm"/>
+          <column hidden="0" width="-1" type="field" name="Yutm"/>
+          <column hidden="1" width="-1" type="actions"/>
+        </columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <reuseLastValue/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression>"sondage_N"</previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+  </maplayers>
+</qlr>

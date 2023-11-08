@@ -96,6 +96,7 @@ setwd("/Users/admin/Documents/GitHub/M2_EFT_projet_pedologie/Fichiers analyse")
 dataAuger2022 <- read_excel("DataAuger2022.xlsx", sheet=1, na="NA")
 
 
+
 #SCRIPT EMILIE
 
 dataAuger2022 <- dataAuger2022 %>% rename_at('% pente', ~'pente')
