@@ -40,36 +40,30 @@ dataPitAll <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
 Soil texture classes are difficult to bring in order according to their silt content. Soil horizons put into the LSA class for example can have more silt content than LAS horizons, but it can also contain the same proportion in silt or more. Hence, we grouped them into three soil texture classes.
 
 group A: high silt content: LSA, LAS
-group B: intermediate silt content: SL
-group C: low silt content: SA, AS, A
+group B: intermediate silt content: SL, SA
+group C: low silt content: AS, A
 
 ```{r}
-silt_content <- c(LSA= "high", LAS= "high", SL= "interm", SA="low", AS="low", A="low")
+silt_content <- c(LSA= "high", LAS= "high", SL= "intermediate", SA="intermediate", AS="low", A="low")
 dataPitAll$siltcontent<-silt_content[substr(dataPitAll$texture, 1, 3)]
-```
-To visually explore the relationship between two ordinal/categorical variables, a mosaic plot was created. Hence, to find out whether there can be a pattern found in our data, a mosaic plot was created
 
-common correlation tests are not appropriate
+#create new column with textures divided in three classes based upon their presence of silt
+#to write it like Emilie, correct it like this: Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+```
+To visually explore the relationship between two ordinal/categorical variables and find out whether there can be a pattern found in our data, a mosaic plot was created.
+Common correlation tests are not appropriate. 
 
 ```{r mosaicplot}
-mosaicplot(table(dataPitAll$siltcontent, dataPitAll$micas), color = TRUE, xlab="silt content categories", ylab="mica content categories", type="pearson")
+mosaicplot(table(dataPitAll$micas, dataPitAll$siltcontent), main= "Mica-Silt relationship in pits", color = TRUE, xlab="silt content", ylab="mica content", type="pearson")
 #is type="pearson" really useful? unanswered question
-
-#how to use nice colours? like in this example:         
-#dataPitAll %>%
-#  ggplot()+
-#               aes(x=siltcontent, y=micas) +
-#               plot(texture, micas) +
-#               geom_jitter(height=0, size=0.5, aes(col=pit)) +
-#               scale_fill_manual(values=wesanderson::wes_palette(name="Royal2"))
 ```
 To quantitatively test the association and assess the statistical significance of the association between the two ordinal variables, a statistical test like the chi-square test for independence was performed. It provides a p-value indicating the strength of the association.
 
 ```{r}
-chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
-chisq_result <- chisq.test(dataPitAll$siltcontent, dataPitAll$micas)
+#Perform a chi-square test for the Mica-Silt relationship for the pit data
+print(chisq.test(dataPitAll$micas, dataPitAll$siltcontent))
 
-fisher_result<-fisher.test(dataPitAll$siltcontent, dataPitAll$micas) # fisher's exact test due to small sampling size
+print(fisher.test(dataPitAll$micas, dataPitAll$siltcontent)) # fisher's exact test due to small sampling size?
 ```
 
 ```{r}
@@ -93,7 +87,9 @@ fisher_result<-fisher.test(dataPitAll$siltcontent, dataPitAll$micas) # fisher's 
 Now we are interested in the data from 2022, as there is more data points, hence, it looks more promising to find interesting information
 ```{r}
 setwd("/Users/admin/Documents/GitHub/M2_EFT_projet_pedologie/Fichiers analyse")
+
 dataAuger2022 <- read_excel("DataAuger2022.xlsx", sheet=1, na="NA")
+
 
 
 #SCRIPT EMILIE
@@ -138,16 +134,6 @@ Auger$Silt_class=as.factor(Auger$Silt_class)
 # Perform the chi-squared test
 chi_sq_test <- chisq.test(Auger$mica, Auger$Silt_class)
 print(chi_sq_test)
-
-
-
-# Install and load the vcd package
-install.packages("vcd")
-library(vcd)
-install.packages("vcdExtra", lib = "path_to_your_preferred_directory")
-install.packages("vcdExtra")
-library(vcdExtra)
-install.packages("vcdExtra", lib = "/var/folders/m1/xff7vx7x5h5bb386lhznh50c0000gn/T//RtmpvgNQj7/downloaded_packages")
 
 # Create a mosaic plot
 mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
