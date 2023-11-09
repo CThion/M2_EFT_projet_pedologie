@@ -3,8 +3,8 @@ title: 'Master EFT: pédologie de la P16 de Paracou'
 author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
 output: html_document
-editor_options: 
-  chunk_output_type: console
+editor_options:
+  chunk_output_type: inline
   markdown: 
     wrap: 72
 ---
@@ -64,6 +64,25 @@ The goals of the code in this file is to study, in the ground of
 tropical forest (P16 Paracou) the link between the root abundance and
 soil texture, in particular the depth occurrence of silt horizon.
 
+### Hypothesis
+
+a.  Does particle size in soil, more specifically the presence of a silt
+    horizon, pose a constraint to the growth of trees, considering both
+    roots and above ground biomass?
+    a.  Do roots react differently to soil texture, taking the diameter
+        of the roots into account?
+    b.  How does the depth of the silt horizon impact the concentration
+        of the roots? a.3) Is the mica proportion in the soil correlated
+        with the silt horizon occurrence?
+    c.  Is above ground biomass (DBH, basal area, diversity, ...)
+        influenced by the occurrence of a certain silt horizon?
+    d.  Is there a difference between intermediate and big
+        concentrations of silt in the effect? How does the silt effect
+        vary with the silt concentration?
+    e.  Is the relationship observed between root sand the silt horizon
+        like the relationship between above ground biomass and the silt
+        horizon?
+
 ## Data pre-treatment
 
 ```{r}
@@ -73,6 +92,7 @@ library(ggplot2)
 library(corrplot)
 library(FactoMineR) # Pour l'analyse en composantes principales
 library(factoextra) # Pour la représentation de l'ACP
+require("rstudioapi")
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
@@ -104,6 +124,7 @@ dataPit$rd2 <- as.numeric(dataPit$rd2)
 dataPit$rd3 <- as.numeric(dataPit$rd3)
 dataPit$rd4 <- as.numeric(dataPit$rd4)
 dataPit$texture <- as.factor(dataPit$texture)
+dataPit$texture <- factor(dataPit$texture, levels = rev(levels(dataPit$texture)))
 dataPit$micas <- as.factor(dataPit$micas)
 dataPit$coarse_element <- as.numeric(dataPit$coarse_element) #WARNING, only 11 differents values
 dataPit$water_reserve <- as.numeric(dataPit$water_reserve)
@@ -120,6 +141,7 @@ dataPit$exposure_number <- as.factor(dataPit$exposure_number)
 ```
 
 ### Coars element
+
 During our field campaign, we tried to estimate the percentage of coarse
 element in each horizon, but the estimation was not really accurate.
 Then we decided to regroup coarse element data into three classes:
@@ -146,6 +168,8 @@ dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class) #settin
 
 #### By layer
 
+Each pit is made of 10 layers of 10cm depth by 50cm long.
+
 ```{r}
 #--regroup data by layer of 10cm
 dataPitLayer <- dataPit %>%
@@ -164,6 +188,10 @@ ungroup(dataPitLayer)
 ```
 
 #### By horizon
+
+We discriminate horizon according to the texture variable: one horizon
+has one texture. One the field, the horizon were made according to the
+color.
 
 ```{r}
 dataPitHorizon <- dataPitLayer #initialize dataPitHorizon dataframe
@@ -190,8 +218,9 @@ while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
 
 #meaning coars_element by thickness, which is equivalent to the number of layer
 dataPitHorizon$coarse_element <- dataPitHorizon$coarse_element / (dataPitHorizon$thickness/10)
-```
 
+remove(d, down, up) #remove temporary variables
+```
 
 ### Calculation of water reserve
 
@@ -220,7 +249,99 @@ dataPitHorizon$WR <- dataPitHorizon$thickness * dataPitHorizon$coarse_element * 
 ## Root biomass
 
 For the calculation of root biomass, we weight each root count by the
-diameter of the root class. The diameter classes are in millimeter: d1: $<2$, d2: $2-5$, d3: $5-10$ and d4: $≥ 10$.
+diameter of the root class. The diameter classes are in millimeter: d1:
+$<2$, d2: $2-5$, d3: $5-10$ and d4: $≥ 10$.
+
+The root density
+
+```{r}
+# root biomass by horizon
+dataPitHorizon <- dataPitHorizon %>% mutate(rootDensity=round((rd1*2+rd2*5+rd3*10+rd4*20)/thickness, 2))
+
+# root biomass by layer
+dataPitLayer <- dataPitLayer %>% mutate(rootDensity=(rd1*2+rd2*5+rd3*10+rd4*20)/10)
+```
+
+```{r}
+y_limits <- with(dataPitHorizon, range(rootDensity))
+ggplot(dataPitHorizon, aes(x = texture, y = rootDensity)) +
+  geom_point() +  # Use points to represent the data
+  facet_wrap(~ pit, scales = "free") +  # Separate by 'pit'
+  labs(x = "Texture", y = "Root Density", title = "Root Density across Pits and Textures") +
+  ylim(y_limits)  # Setting constant y-axis scale
+
+ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture, label = rootDensity)) +
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
+  labs(x = "Pit", y = "Thickness", title = "Root Density by Texture across Pits") +
+  scale_fill_discrete(name = "Texture") +  # Legend title for texture
+  theme(legend.position = "right")  # Adjust legend position if needed
+
+# Plotting all pits in a facet grid
+ggplot(dataPitLayer, aes(x = depth, y = rootDensity, color = texture, group = texture)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
+  scale_color_discrete(name = "Texture") +
+  facet_wrap(~ pit, ncol = 2) +  # Facet by pit, adjust ncol as needed
+  theme_minimal()
+
+# Plotting all pits in a single graph
+ggplot(dataPitLayer, aes(x = depth, y = rootDensity, color = texture, group = interaction(pit, texture))) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
+  scale_color_discrete(name = "Texture") +
+  facet_grid(. ~ pit, scales = "free_y", space = "free_y") +
+  theme_minimal()
+
+# Plotting all pits in a single graph with inverted axes
+ggplot(dataPitLayer, aes(x = rootDensity, y = depth, color = texture, group = interaction(pit, texture))) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Root Density", y = "Depth", title = "Root Density by Texture across Pits") +
+  scale_color_discrete(name = "Texture") +
+  facet_grid(pit ~ ., scales = "free_x", space = "free_x") +
+  coord_flip() +
+  theme_minimal()
+
+
+# Selecting a specific pit (change 'Pit_1' to the desired pit ID)
+selected_pit <- c("F1", "F2","F3", "F4")
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+#data_subset <- subset(data_subset, depth>=50)
+ggplot(data_subset, aes(x = depth, y = rootDensity, color = texture, shape = pit, group = interaction(pit, texture))) +
+  geom_line() +
+  geom_point(size = 3) +
+  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
+  scale_color_discrete(name = "Texture") +
+  scale_shape_discrete(name = "Pit") +
+  theme_minimal()
+```
+```{r}
+
+library(ggplot2)
+library(tidyr)
+
+# Selecting a specific pit
+selected_pit <- c("F1", "F2", "F3", "F4")
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+data_subset <- subset(data_subset, depth >= 50)
+
+# Reshaping the data to long format to include all diameter classes into one column
+data_subset_long <- gather(data_subset, diameter_class, value, rd1:rd4)
+
+ggplot(data_subset_long, aes(x = depth, y = value, color = texture, linetype = pit, group = interaction(pit, texture))) +
+  geom_line() +
+  geom_point(size = 3) +
+  labs(x = "Depth", y = "Diameter Classes", title = "Diameter Classes by Texture across Pits") +
+  scale_color_discrete(name = "Texture") +
+  scale_linetype_discrete(name = "Pit") +
+  facet_wrap(~diameter_class, scales = "free_y", ncol = 1) +
+  theme_minimal()
+
+```
+
 
 # not directed analysis
 
@@ -231,49 +352,6 @@ dataPit %>% # Dans donnees sols
   corrplot() # Puis on représente graphiquement cette matrice
 ```
 
-```{r}
-dataPitNorm <- dataPit %>% 
-  select_if(is.numeric) %>% #On ne sélectionne que les colonnes numériques
-  select(!stoneElement) %>%
-  mutate_all(.funs = scale) # On applique à touts les colonnes la fonction scale
-# La fonction scale centre et réduit un vecteur
-# donnees_reduites # Toujours regarder ce qu'on a créé!
-
-acpRes <- PCA(dataPitNorm, 
-               scale.unit = TRUE, # Option pour centrer et réduire les données
-               ncp = 18, # Nombre de composantes à conserver
-               graph = FALSE)
-
-acpRes
-
-fviz_eig(acpRes, choice = "variance")
-
-# Représentation dans le premier plan_principal
-fviz_pca_var(acpRes,
-             axes = c(1, 2)) # Numéro des axes à représenter 
-fviz_pca_var(acpRes,
-             axes = c(1, 3)) #
-fviz_pca_var(acpRes,
-             axes = c(2, 3)) # 
-fviz_pca_var(acpRes,
-             axes = c(1, 4))
-
-corrplot(acpRes$var$cor)
-
-# Représentation dans le premier plan_principal
-fviz_pca_ind(acpRes,
-             axes = c(1, 2)) # Numéro des axes à représenter 
-
-# Représentation dans le premier plan_principal
-fviz_pca_ind(acpRes,
-             axes = c(1, 2), # Numéro des axes à représenter 
-             col.ind = dataPit$texture) # Variable suppl. pour les individus
-
-# Représentation dans le premier plan_principal
-fviz_pca_ind(acpRes,
-             axes = c(1, 2), # Numéro des axes à représenter 
-             col.ind = dataPit$depth)
-```
 
 analyser l'évolution de l'écart au dessus / dedans de l'horizon
 limoneux.
