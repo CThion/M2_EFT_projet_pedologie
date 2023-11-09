@@ -166,6 +166,24 @@ dataPit$coarse_element_class <- as.ordered(dataPit$coarse_element_class) #settin
 
 ### Reorganization of data
 
+#### Regrouping textures by silt class
+
+Soil texture classes are difficult to bring in order according to their silt content. Soil horizons put into the LSA class for example can have more silt content than LAS horizons, but it can also contain the same proportion in silt or more. Hence, we grouped them into three soil texture classes.
+
+group A: high silt content: LSA, LAS
+group B: intermediate silt content: SL, SA
+group C: low silt content: AS, A
+
+```{r}
+silt_content <- c(LSA= "high", LAS= "high", SL= "intermediate", SA="intermediate", AS="low", A="low")
+dataPit$siltcontent<-silt_content[substr(dataPit$texture, 1, 3)]
+dataPit$siltcontent <- as.ordered(dataPit$siltcontent)
+summary(dataPit$siltcontent)
+
+#Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+```
+
+
 #### By layer
 
 Each pit is made of 10 layers of 10cm depth by 50cm long.
@@ -174,7 +192,7 @@ Each pit is made of 10 layers of 10cm depth by 50cm long.
 #--regroup data by layer of 10cm
 dataPitLayer <- dataPit %>%
   # filter(pit=="F1") %>%
-  select(c(pit, depth, texture, rd1, rd2, rd3, rd4, coarse_element_class)) %>%
+  select(c(pit, depth, texture, rd1, rd2, rd3, rd4, coarse_element_class, micas)) %>%
   group_by(pit, depth) %>% 
   summarise(
     texture=unique(texture),
@@ -183,7 +201,8 @@ dataPitLayer <- dataPit %>%
     rd2=mean(rd2),
     rd3=mean(rd3),
     rd4=mean(rd4),
-    root=mean(rd1+rd2+rd3+rd4))
+    root=mean(rd1+rd2+rd3+rd4),
+    micas=unique(micas))
 ungroup(dataPitLayer)
 ```
 
@@ -196,7 +215,7 @@ color.
 ```{r}
 dataPitHorizon <- dataPitLayer #initialize dataPitHorizon dataframe
 dataPitHorizon <- dataPitHorizon %>% mutate(thickness=depth*0+10) #initialize thickness variable
-
+dataPitHorizon$micas <- as.numeric(dataPitHorizon$micas) #swithhing to numeric juste for calculation in the loop
 d=1 #counter id
 while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
   up <- dataPitHorizon$texture[d]
@@ -210,14 +229,20 @@ while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
     dataPitHorizon$root[d] <- dataPitHorizon$root[d]+ dataPitHorizon$root[d+1]
     dataPitHorizon$coarse_element[d] <- dataPitHorizon$coarse_element[d] + dataPitHorizon$coarse_element[d+1]
     dataPitHorizon$thickness[d] <- dataPitHorizon$thickness[d]+10
+    dataPitHorizon$micas[d] <- dataPitHorizon$micas[d] + dataPitHorizon$micas[d+1]
     dataPitHorizon <- dataPitHorizon[-(d+1),] #remove down layer
     #don't change d: the down is coming up
   }
   else{d <- d+1} #going down
 }
 
-#meaning coars_element by thickness, which is equivalent to the number of layer
+#meaning coars_element and micas by thickness/10, which is equivalent to the number of layers in one given horizon
 dataPitHorizon$coarse_element <- dataPitHorizon$coarse_element / (dataPitHorizon$thickness/10)
+
+dataPitHorizon$micas <- round(dataPitHorizon$micas / (dataPitHorizon$thickness/10))
+dataPitHorizon$micas <- ifelse(dataPitHorizon$micas>3, 3, dataPitHorizon$micas)
+dataPitHorizon$micas <- as.factor(dataPitHorizon$micas)
+
 
 remove(d, down, up) #remove temporary variables
 ```
@@ -246,6 +271,18 @@ RU <- R_value[which(dataPitHorizon$texture %in% R_texture)]
 dataPitHorizon$WR <- dataPitHorizon$thickness * dataPitHorizon$coarse_element * setNames(R_value, R_texture)[dataPitHorizon$texture]
 ```
 
+## Micas
+```{r}
+ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture, label = micas)) +
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
+  labs(x = "Pit", y = "Thickness", title = "Root Density by Texture across Pits") +
+  scale_fill_discrete(name = "Texture") +  # Legend title for texture
+  theme(legend.position = "right")  # Adjust legend position if needed
+```
+
+
+
 ## Root biomass
 
 For the calculation of root biomass, we weight each root count by the
@@ -256,10 +293,10 @@ The root density
 
 ```{r}
 # root biomass by horizon
-dataPitHorizon <- dataPitHorizon %>% mutate(rootDensity=round((rd1*2+rd2*5+rd3*10+rd4*20)/thickness, 2))
+dataPitHorizon <- dataPitHorizon %>% mutate(rootDensity=round((rd1+rd2*2+rd3*5+rd4*10)/thickness, 2))
 
 # root biomass by layer
-dataPitLayer <- dataPitLayer %>% mutate(rootDensity=(rd1*2+rd2*5+rd3*10+rd4*20)/10)
+dataPitLayer <- dataPitLayer %>% mutate(rootDensity=(rd1+rd2*2+rd3*5+rd4*10)/10)
 ```
 
 ```{r}
@@ -309,7 +346,7 @@ ggplot(dataPitLayer, aes(x = rootDensity, y = depth, color = texture, group = in
 # Selecting a specific pit (change 'Pit_1' to the desired pit ID)
 selected_pit <- c("F1", "F2","F3", "F4")
 data_subset <- subset(dataPitLayer, pit %in% selected_pit)
-#data_subset <- subset(data_subset, depth>=50)
+data_subset <- subset(data_subset, between(depth, 0, 100))
 ggplot(data_subset, aes(x = depth, y = rootDensity, color = texture, shape = pit, group = interaction(pit, texture))) +
   geom_line() +
   geom_point(size = 3) +
@@ -318,6 +355,11 @@ ggplot(data_subset, aes(x = depth, y = rootDensity, color = texture, shape = pit
   scale_shape_discrete(name = "Pit") +
   theme_minimal()
 ```
+- Add square on top of the plot, to hilight the intervall between F2 and F3, with the rootdensity difference calculated.
+- Look at the difference between SL and SA for small roots.
+
+
+### Distinction of root diameter
 ```{r}
 
 library(ggplot2)
