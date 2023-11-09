@@ -15,6 +15,8 @@ knitr::opts_chunk$set(echo = TRUE)
 If we think about soil horizons high in silt and its effect on root development and root depth, it is also crucial to have a look into the relation between silt and mica content. This allows us to conclude 
 
 ```{r packages and data}
+install.packages("GoodmanKruskal")
+library(GoodmanKruskal)
 library(readxl)
 library(tidyverse)
 library(ggplot2)
@@ -60,10 +62,18 @@ mosaicplot(table(dataPitAll$micas, dataPitAll$siltcontent), main= "Mica-Silt rel
 To quantitatively test the association and assess the statistical significance of the association between the two ordinal variables, a statistical test like the chi-square test for independence was performed. It provides a p-value indicating the strength of the association.
 
 ```{r}
+#Apparently the chi-square test is not appropriate cause it ignores the ordinal nature of the variables
 #Perform a chi-square test for the Mica-Silt relationship for the pit data
 print(chisq.test(dataPitAll$micas, dataPitAll$siltcontent))
 
 print(fisher.test(dataPitAll$micas, dataPitAll$siltcontent)) # fisher's exact test due to small sampling size?
+
+
+#Kruskal-Wallis rank sum test for ordinal data
+kruskal_result <- kruskal.test(dataPitAll$micas, dataPitAll$siltcontent)
+print(kruskal_result)
+
+
 ```
 
 ```{r}
@@ -131,10 +141,19 @@ From this part from the vegetation analysis (idk how we want to refer to emilies
 Auger$mica=as.factor(Auger$mica)
 Auger$Silt_class=as.factor(Auger$Silt_class)
 
-# Perform the chi-squared test
+# Perform the chi-squared test (doesn't take into account that the variables ar ordinal)
 chi_sq_test <- chisq.test(Auger$mica, Auger$Silt_class)
 print(chi_sq_test)
 
+# Kruskal-Wallis test (takes ordinal nature of the variables into account)
+kruskal_result <- kruskal.test(Auger$mica, Auger$Silt_class)
+print(kruskal_result)
+
+
+```
+
+To visually show the relation we use a mosaic plot.
+```{r}
 # Create a mosaic plot
 mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
            color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
@@ -144,8 +163,43 @@ mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
 
 ## didnt work due to package associationPlot(Auger$mica, Auger$Silt_class, main = "Association Plot")
 
+
+
 ```
 This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
 
+```{r}
+Greta_pente<-read.csv("/Users/admin/Documents/GitHub/M2_EFT_projet_pedologie/Qgis/Greta_including_pente.csv")
+
+#remove NA objects
+Greta_pente_without_na <- Greta_pente %>% 
+  na.omit 
+  
+Greta_pente_without_na$Slope=as_factor(Greta_pente_without_na$Slope)
+Greta_pente_without_na$depth_sup=as.numeric(Greta_pente_without_na$depth_sup)
+str(Greta_pente_without_na$Slope)
+str(Greta_pente_without_na$depth_sup)
+
+
+library(ggplot2)
+
+ggplot(Greta_pente_without_na, aes(x = Slope, y = depth_sup)) +
+  geom_boxplot(fill = "lightblue", color = "blue") +
+  labs(
+    title = "Soil Depth by Hill Position",
+    x = "Hill Position",
+    y = "HSD"
+  )
+linear_model=lm(Greta_pente_without_na$depth_sup~Greta_pente_without_na$Slope)
+plot(linear_model)
+anova(linear_model)
+
+
+#or: 
+#install.packages("analyzer")
+#library(analyzer)
+#CQassociation(Greta_pente_without_na$depth_sup, Greta_pente_without_na$Slope, method= "non-parametric")
+
+```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
