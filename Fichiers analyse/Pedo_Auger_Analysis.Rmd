@@ -17,15 +17,8 @@ library(tidyverse)
 library(readxl)
 library(dplyr)
 
-#install.packages("ggforce")
 library(ggforce)   #look again why I used it
 library(knitr)
-
-library(geosphere)  #library for calculating distances of latitudes
-
-
-#install.packages("memoiR")
-#library(memoiR)
 
 ```
 
@@ -49,6 +42,10 @@ Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")
 Botany <- Botany %>% 
   na.omit  
 
+#make a more precise df with variables we will use
+Botany <- Botany %>% 
+  select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
+
 ```
 
 ```{r rename titles in data}
@@ -58,9 +55,20 @@ dataAuger2022 <- dataAuger2022 %>% rename_at('Numéro horizon', ~'horizon')
 dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
 dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
 dataAuger2022 <- dataAuger2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
-dataAuger2022 <- dataAuger2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')  #idk why it doesn't work here
+dataAuger2022 <- dataAuger2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
 dataAuger2022 <- dataAuger2022 %>% rename_at('EG %', ~'stone_elements')
 dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
+
+```
+
+
+```{r}
+Auger <- dataAuger2022 %>%
+  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Texture_2023")) %>%
+  na.omit
+
+#create new column with textures divided in three classes based upon their presence of silt
+Auger $Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
 
 ```
 
@@ -69,46 +77,75 @@ We have 36 Auger points, of which some do not have corrected texture analysis so
 Of the 22 texture available, there are 16 that have high texture present
 
 
-```{r}
-Auger <- dataAuger2022 %>% 
+```{r part for correlation test}
+#create a cleaner dataframe with only necessary informations
+Auger_cor <- dataAuger2022 %>% 
   select(c("sondage_N", "depth_sup", "texture", "Texture_2023", "topo", "arbre_plus_proche"))
 
-Auger$final_texture <- ifelse(
+#create new texture variable that contains some non-corrected textures
+Auger_cor$final_texture <- ifelse(
   is.na(dataAuger2022$Texture_2023) & !(dataAuger2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
   dataAuger2022$texture,
   dataAuger2022$Texture_2023
 )
 
 #create dataframe with only final texture as texture, and then only eliminate the rows for which we have not data of
-Auger_cor <- Auger %>%
+Auger_cor <- Auger_cor %>%
   select(c("sondage_N", "depth_sup", "final_texture", "topo", "arbre_plus_proche")) %>%
   na.omit
 
 #create new column with textures divided in three classes based upon their presence of silt
 Auger_cor$Silt_class <- ifelse(Auger_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Auger_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
 
-#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high, or if intermediate that it is 110 (!!Important to check this)
-Auger_cor_2 <- Auger_cor %>%
-  group_by(sondage_N) %>%
-  filter(Silt_class == "high") %>%
-  arrange(sondage_N, depth_sup) %>%
-  distinct(sondage_N, .keep_all = TRUE) %>%
-  select(sondage_N, depth_sup, arbre_plus_proche, topo) %>%
-  merge(Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID')
-
-# Set depth_sup to 110 for "intermediate" Silt_class
+#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high, or if intermediate that it is 120 (!!Important to check this)
 Auger_cor <- Auger_cor %>%
   group_by(sondage_N) %>%
-  mutate(depth_sup = ifelse(all(Silt_class != "high"), 110, depth_sup))
+  mutate(
+    final_depth = ifelse(any(Silt_class == "high"), 
+                         min(depth_sup[Silt_class == "high"]), 
+                         120)
+  ) %>%
+  ungroup() %>%
+  distinct(sondage_N, .keep_all = TRUE) %>%
+  select(sondage_N, final_depth, topo, arbre_plus_proche)
+
+#import elevation data of topography
+Elevation <- read.csv("Elevation_exact.csv")
+
+#merge two dataframes 
+Elevation <- Elevation %>%
+  select(c("sondage_N", "Elevation_Paracou_depth1")) %>%
+  merge(Auger_cor, by.x = 'sondage_N', by.y = 'sondage_N')
+
+#correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values )
+cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearman")
+
+cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
+c("spearman"))
 
 ```
 
+```{r little data visualisation for correlation}
+hist(Elevation$final_depth)
+hist(Elevation$Elevation_Paracou_depth1)
+plot(Elevation$Elevation_Paracou_depth1, Elevation$final_depth)
+
+ggplot(Elevation, aes(x=as.factor(topo), y=final_depth)) + geom_boxplot() + geom_point()
+
+ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point()
+```
+
+Assumptions for correlation test:
+linearity, normality
+
+
 Make a new column in which the textures are grouped based on the importance of silt present:
 
-```{r}
-#filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
+```{r cleaning data}
+
+#filter out all data that isn't on a certain topography and make smaller usable dataframe
 Auger <- dataAuger2022 %>% 
-  filter(topo %in% c("5", "4", "3")) %>%
+  filter(topo %in% c("3")) %>%
   select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
 
 #take out NA variables
@@ -117,11 +154,6 @@ Auger <- Auger %>%
 
 #create new column with textures divided in three classes based upon their presence of silt
 Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
-
-#make a more precise df with variables we will use
-Botany <- Botany %>% 
-  select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
-
 
 ```
 
@@ -141,14 +173,14 @@ Auger <- Auger %>%
 
 ```
 
-Create dataframe where points are grouped by distance from center point (arbre_plus_proche)
+Points are grouped by distance from center point (arbre_plus_proche)
 
 ```{r create good buffer dataframe}
 
 #write_csv(Botany, "Botany_export.csv")      
 #export data to QGis
 
-#upload data that contains zones of 5m around center Auger points
+#upload data that contains zones of 10m around center Auger points
 Buffer_points <- read.csv("Final_intersection.csv")
 
 AGB_buffer <- Buffer_points %>%
@@ -157,37 +189,12 @@ AGB_buffer <- Buffer_points %>%
             sp_richness = n_distinct(species)
             )
 
-AGB_buffer$DBH <- Auger$DBH   #problem to fix
-
-Final_df <- Auger %>%
+Final <- Auger %>%
   select(sondage_N, depth_sup, topo) %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
 
-
-   
-# result <- Buffer_points %>%
-# group_by(sondage_N, Family) %>%
-# summarise(count = n()) %>%
-# arrange(desc(count)) %>%
-# slice(1) %>%
-# ungroup() %>%
-# group_by(sondage_N) %>%
-# summarise(most_abundant_family = Family[1],
-#           most_abundant_count = count[1],
-#           total_families_seen = n_distinct(Family))
-
-
 ```
 
-```{r}
-Elevation_exact <- read.csv("Elevation_exact.csv")
-
-hist(log(Elevation_exact$Elevation_Paracou_depth1))
-
-Elevation_exact <- Elevation_exact %>%
-  na.omit
-cor(Elevation_exact$depth_sup, Elevation_exact$Elevation_Paracou_depth1, method = "pearson")
-```
 I will make a new column that includes all textures, no NA anymore, so to keep all Augers
 ```{r ugh pause on this part}
 
@@ -226,47 +233,7 @@ Greta <- Greta1 %>%
 ```
 
 
-we want a dataframe to be able to make a nice map of the different depths at which silt occurs in the whole 4ha plot that was studied with the Augers
-```{r map part}
-
-#filter out all data that isn't on the slope (drainage type DLS) and make smaller usable dataframe
-map_Auger_NA <- dataAuger2022  %>%
-  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
-
-#take out NA variables
-map_Auger <- map_Auger_NA %>% 
-  na.omit   
-
-#create new column with textures divided in three classes based upon their presence of silt
-map_Auger$Silt_class <- ifelse(map_Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(map_Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
-
-map_Auger <- map_Auger %>%
-  group_by(sondage_N) %>%             # Group by Auger
-  filter(Silt_class == "high") %>%    # Get only Augers with high silt concentration
-  arrange(sondage_N) %>%              # Arrange data by "sondage_N"
-  left_join(Botany, by = c("arbre_plus_proche" = "TreeID")) %>% # Left join with Botany
-  group_by(sondage_N) %>%             # Regroup by "sondage_N"
-  filter(DBH == max(DBH)) %>%         # Filter to keep rows with the highest DBH
-  distinct(sondage_N, .keep_all = TRUE) %>% # Keep only one row per sondage_N
-  select(sondage_N, depth_sup, arbre_plus_proche, topo, DBH, Xutm, Yutm) # Maintain selected variables
-
-#export map data to csv to be able to use it in QGIS
-write_csv(map_Auger, "map_Augerdata.csv")
-
-#created this df to be able to know which sondage_N have only intermediate/low silt class concentration
-df <- map_Auger %>%
-  group_by(sondage_N) %>%     
-  filter(Silt_class == "high")
-
-lost_sondage_N <- map_Auger %>%
-  select(sondage_N) %>%
-  anti_join(df, by = "sondage_N") %>%
-  distinct(sondage_N)
-
-print(lost_sondage_N)
-
-```
-
+For map in QGis we exported a dataframe with X and Y coordinates and auger points, with every its designed depth.
 
 ## data visualisation
 
@@ -279,51 +246,11 @@ plot(Final_df$depth_sup, Final_df$DBH)
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
-```{r}
 
-shapiro.test(Final_df$depth_sup)
-shapiro.test(Final_df$amount_trees)   #not normal?
-shapiro.test(Final_df$sp_richness)
+check correlation between depth and topo!!
+make boxplot of profondeur de limon with topography, be aware of this
 
-library(ggfortify)
-M1 <- lm(Final_df$amount_trees ~ Final_df$depth_sup)
-summary(M1)
-autoplot(M1)
+if there is a correlation between the silt depth and distance of bas fonds => will complicate your things because we know there is a link between topo and species so then you cannot say anything 
 
-library(car)   #library for Anova function
-
-Final_df$topo <- as.factor(Final_df$topo)
-
-M2 <- lm(Final_df$amount_trees ~ Final_df$topo)
-summary(M2)
-Anova(M2)
-
-M3 <- lm(Final_df$amount_trees ~ Final_df$topo*Final_df$depth_sup)
-summary(M3)
-Anova(M3)
-```
-
-
-```{r}
-Anova(M1)
-Anova(M2)
-Anova(M3)
-
-#check correlation between depth and topo!!
-#make boxplot of profondeur de limon with topography, be aware of this
-
-#if there is a correlation between the silt depth and distance of bas fonds => will complicate your things because we know there is a link between topo and species so then you cannot say anything 
-
-#it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
-```
-
-
-## extra
-
-```{r code to find package of a function}
-#install.packages("sos")  #package for function find Fn,
-library(sos)
-findFn("geosphere")  #function to learn which package is necessary for your function
-```
-
+it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
