@@ -20,6 +20,9 @@ library(dplyr)
 library(ggforce)   #look again why I used it
 library(knitr)
 
+library(car)  #for anvoa
+library(ggfortify)   #for autoplot function
+
 ```
 
 ```{r upload and structure data}
@@ -193,7 +196,11 @@ AGB_buffer <- Buffer_points %>%
   mutate(full_species = paste(Genus, species, sep = " ")) %>%
   summarise(amount_trees = n(),
             sp_richness = n_distinct(full_species)
-            )
+            ) %>%
+  merge(Elevation, by.x = 'sondage_N', by.y = 'sondage_N') %>%
+  select(c("sondage_N", "sp_richness", "amount_trees", "Elevation_Paracou_depth1"))
+
+AGB_buffer <- AGB_buffer %>% rename_at('Elevation_Paracou_depth1', ~'elevation')
 
 Final <- Auger %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
@@ -215,21 +222,53 @@ plot(Final$depth, Final$DBH)
 it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
 ```{r aboveground biomass}
-library(car)
+M0 <- lm(Final$amount_trees ~ 1)
+M4 <- lm(Final$amount_trees ~ Final$elevation*Final$depth)
+M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth)
+M1 <- lm(Final$amount_trees ~ Final$elevation)
+M2 <- lm(Final$amount_trees ~ Final$depth)
 
-M1 <- lm(Final$amount_trees ~ Final$topo*Final$depth)
-Anova(M1)   # type2
+Anova(M0, M1)  #significant effect of adding elevation
+Anova(M1, M2)  #significant effect of adding depth to model with only elevation
+Anova(M0, M2)  #significant effect of depth on model with nothing
+Anova(M3, M4)
+Anova(M3, M2)  #how interpreting this again?
 
-M2<- lm(Final$amount_trees ~ Final$topo + Final$depth)   #no interaction
-Anova(M2)
+autoplot(M1)  #assumptions do not seem to be completed
+summary(M2)
+
+#what does a significant intercept mean??
+
 ```
-```{r DBH and species richness}
 
-M3 <- lm(Final$DBH ~ Final$topo*Final$depth)
-Anova(M3)
 
-M4 <- lm(Final$sp_richness ~ Final$topo*Final$depth)
-Anova(M4)
+
+```{r DBH}
+
+M0 <- lm(Final$DBH ~ 1)
+M4 <- lm(Final$DBH ~ Final$elevation*Final$depth)
+M3 <- lm(Final$DBH ~ Final$elevation + Final$depth)
+M1 <- lm(Final$DBH ~ Final$elevation)
+M2 <- lm(Final$DBH ~ Final$depth)
+
+
+Anova(M0, M1)    #significant effect of adding elevation
+Anova(M1, M2)    #significant effect of adding depth to model with only elevation (depth explains also things)
+Anova(M0, M2)   #significant effect of adding depth to model with nothing
+Anova(M0, M3) 
+Anova(M3, M4)   #confused with interpretation
+
+autoplot(M1)   #assumptions do not seem to be completed??
+summary(M3)    #how come here then no significance?
+
+```
+
+
+
+```{r species richness}
+
+M4 <- lm(Final$sp_richness ~ Final$elevation*Final$depth)
+autoplot(M4)
 ```
 
 
