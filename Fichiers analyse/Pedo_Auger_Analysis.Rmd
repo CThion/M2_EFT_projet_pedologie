@@ -62,16 +62,6 @@ dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35',
 ```
 
 
-```{r}
-Auger <- dataAuger2022 %>%
-  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Texture_2023")) %>%
-  na.omit
-
-#create new column with textures divided in three classes based upon their presence of silt
-Auger $Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
-
-```
-
 We have 36 Auger points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data.
 
 Of the 22 texture available, there are 16 that have high texture present
@@ -117,7 +107,7 @@ Elevation <- Elevation %>%
   select(c("sondage_N", "Elevation_Paracou_depth1")) %>%
   merge(Auger_cor, by.x = 'sondage_N', by.y = 'sondage_N')
 
-#correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values )
+#correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values of no HSD appearance)
 cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearman")
 
 cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
@@ -140,48 +130,74 @@ linearity, normality
 
 
 Make a new column in which the textures are grouped based on the importance of silt present:
+(already done earlier)
 
-```{r cleaning data}
+```{r create Auger dataframe}
 
-#filter out all data that isn't on a certain topography and make smaller usable dataframe
-Auger <- dataAuger2022 %>% 
-  filter(topo %in% c("3")) %>%
-  select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
+Auger <- dataAuger2022 %>%
+  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Texture_2023"))
 
-#take out NA variables
-Auger <- Auger %>% 
-  na.omit   
+#create new texture variable that contains some non-corrected textures
+Auger$final_texture <- ifelse(
+  is.na(dataAuger2022$Texture_2023) & !(dataAuger2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
+  dataAuger2022$texture,
+  dataAuger2022$Texture_2023
+)
 
 #create new column with textures divided in three classes based upon their presence of silt
-Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+Auger$Silt_class <- ifelse(Auger$final_texture == "NA", NA, ifelse(
+  Auger$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Auger$final_texture %in% c("SL", "SA", "S"), "intermediate", "high")))
+
+
+Auger <- Auger %>% 
+  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Silt_class", "final_texture")) %>%
+  na.omit()
 
 ```
 
-!There are multiple DBH measurements because some trees have multiple stems!
+```{r cleaning data}
+
+# #filter out all data that isn't on a certain topography and make smaller usable dataframe
+# Auger <- dataAuger2022 %>% 
+#   filter(topo %in% c("3")) %>%
+#   select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
+
+# #take out NA variables
+# Auger <- Auger %>% 
+#   na.omit   
+
+#create new column with textures divided in three classes based upon their presence of silt
+# Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
+
+```
+
+!There are multiple DBH measurements because some trees have multiple stems! => only keep biggest one
 
 
-```{r define silt appearance depth}
+```{r define silt appearance depth for every auger point and merge with botany data}
 
-#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high
-Auger <- Auger %>% 
-  group_by(sondage_N) %>%             #group by Auger
-  filter(Silt_class == "high") %>%    #get only Augers for which the silt concentration is high
-  arrange(sondage_N, depth_sup) %>%   #arrange the data so that every measurement in one Auger is arranged with depth
-  distinct(sondage_N, .keep_all = TRUE) %>%  #keep only one value per Auger (the first depth)
-  select(sondage_N,depth_sup, arbre_plus_proche, topo) %>% #maintain only three variables from the dataframe
-  merge(Botany, by.x = 'arbre_plus_proche', by.y = 'TreeID' )   #merge with botany dataframe for common values of treeID and arbre plus proche
+#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high (or if no high it is 120)
 
+Auger_test <- Auger %>% 
+  group_by(sondage_N) %>%  #group by Auger
+  mutate(depth = ifelse(any(Silt_class == "high"), 
+                         min(depth_sup[Silt_class == "high"]), 
+                         120) ) %>%
+  left_join(Botany, by = c("arbre_plus_proche" = "TreeID")) %>%
+  group_by(sondage_N) %>%
+  filter(DBH == max(DBH)) %>%
+  distinct(sondage_N, .keep_all = TRUE) %>%
+  select(c("sondage_N", "arbre_plus_proche", "topo", "depth", "DBH", "Family", "Genus", "species", "Xutm", "Yutm"))
+  
 ```
 
 Points are grouped by distance from center point (arbre_plus_proche)
 
 ```{r create good buffer dataframe}
+#write_csv(Auger_test, "Em_auger.csv")
+#import data in Qgis
 
-#write_csv(Botany, "Botany_export.csv")      
-#export data to QGis
-
-#upload data that contains zones of 10m around center Auger points
-Buffer_points <- read.csv("Final_intersection.csv")
+Buffer_points <- read.csv("Em_bufferpoints.csv")
 
 AGB_buffer <- Buffer_points %>%
   group_by(sondage_N) %>%
@@ -189,75 +205,43 @@ AGB_buffer <- Buffer_points %>%
             sp_richness = n_distinct(species)
             )
 
-Final <- Auger %>%
-  select(sondage_N, depth_sup, topo) %>%
+Final <- Auger_test %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
 
 ```
 
-I will make a new column that includes all textures, no NA anymore, so to keep all Augers
-```{r ugh pause on this part}
-
-#creates a new column for all textures combining the corrected and the not corrected ones (if topography is 5 or 6 and if it is not three points decided by visual that they are not good to)
-dataAuger2022$final_texture <- ifelse(
-  is.na(dataAuger2022$Texture_2023) & (dataAuger2022$topo == 5 | dataAuger2022$topo == 6) & !(dataAuger2022$sondage_N %in% c("15.1", "15.5", "15.7")),
-  dataAuger2022$texture,
-  dataAuger2022$Texture_2023
-)
-
-
-Greta1 <- dataAuger2022 %>% 
-  select(c("sondage_N", "Texture_2023", "final_texture", "texture", "depth_sup", "arbre_plus_proche", "topo"))
-
-#create new column with textures divided in three classes based upon their presence of silt
-Greta1$Silt_class <- ifelse(Greta1$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Greta1$final_texture %in% c("SL", "SA", "S"), "intermediate", ifelse(Greta1$final_texture == "NA", "NA", "high")))
-
-Greta_merged <- merge(Greta1, Botany, by.x = "arbre_plus_proche", by.y = "TreeID") %>%
-  group_by(sondage_N) %>%             # Regroup by "sondage_N"
-  filter(DBH == max(DBH)) %>%         # Filter to keep rows with the highest DBH
-  distinct(sondage_N, .keep_all = TRUE) # Keep only one row per sondage_N
-
-write_csv(Greta_merged, "Greta.csv")   #for greta
-
-Greta <- Greta1 %>%
-  group_by(sondage_N) %>%             # Group by Auger
-  filter(Silt_class == "high") %>%    # Get only Augers with high silt concentration
-  arrange(sondage_N) %>%              # Arrange data by "sondage_N"
-  left_join(Botany, by = c("arbre_plus_proche" = "TreeID")) %>% # Left join with Botany
-  group_by(sondage_N) %>%             # Regroup by "sondage_N"
-  filter(DBH == max(DBH)) %>%         # Filter to keep rows with the highest DBH
-  distinct(sondage_N, .keep_all = TRUE) %>% # Keep only one row per sondage_N
-  select(sondage_N, depth_sup, arbre_plus_proche, topo, DBH, Xutm, Yutm) # Maintain selected variables
-
-
-```
-
-
-For map in QGis we exported a dataframe with X and Y coordinates and auger points, with every its designed depth.
 
 ## data visualisation
 
 ```{r quick plots}
-
-plot(Final_df$depth_sup, Final_df$amount_trees)
-plot(Final_df$depth_sup, Final_df$sp_richness)
-plot(Final_df$depth_sup, Final_df$DBH)
+plot(Final$depth, Final$amount_trees)
+plot(Final$depth, Final$sp_richness)
+plot(Final$depth, Final$DBH)
 ```
 do test with species richness too, not only biomass(amount of trees)
 
-```{r}
-
-M3 <- lm(Final$amount_trees ~ Final$topo*Final$depth_sup)
-summary(M3)
+```{r aboveground biomass}
 library(car)
-anova(M3)  #type1
-Anova(M3)   # type2
 
-M4<- lm(Final$amount_trees ~ Final$topo + Final$depth_sup)   #no interaction
+M1 <- lm(Final$amount_trees ~ Final$topo*Final$depth)
+anova(M1)  #type1
+Anova(M1)   # type2
+
+M2<- lm(Final$amount_trees ~ Final$topo + Final$depth)   #no interaction
+Anova(M2)
+```
+```{r DBH and species richness}
+
+M3 <- lm(Final$DBH ~ Final$topo*Final$depth)
+Anova(M3)
+anova(M3)
+
+M4 <- lm(Final$sp_richness ~ Final$topo*Final$depth)
 summary(M4)
-library(car)
 Anova(M4)
 ```
+
+
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
