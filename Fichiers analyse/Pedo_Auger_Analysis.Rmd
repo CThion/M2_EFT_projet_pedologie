@@ -67,6 +67,8 @@ We have 36 Auger points, of which some do not have corrected texture analysis so
 Of the 22 texture available, there are 16 that have high texture present
 
 
+## check for correlation between topography and high silt depth occurences
+
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
 Auger_cor <- dataAuger2022 %>% 
@@ -118,19 +120,21 @@ c("spearman"))
 ```{r little data visualisation for correlation}
 hist(Elevation$final_depth)
 hist(Elevation$Elevation_Paracou_depth1)
-plot(Elevation$Elevation_Paracou_depth1, Elevation$final_depth)
 
 ggplot(Elevation, aes(x=as.factor(topo), y=final_depth)) + geom_boxplot() + geom_point()
 
-ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point()
+ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point() + geom_smooth(method = "lm")
+
+#create graph without augers that do not have high silt occurences (they are all attributed 120 for analyses purposes)
+ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
+  geom_point(data = subset(Elevation, final_depth != 120)) +
+  geom_smooth(data = subset(Elevation, final_depth != 120), method = "lm")
+
 ```
 
 Assumptions for correlation test:
 linearity, normality
 
-
-Make a new column in which the textures are grouped based on the importance of silt present:
-(already done earlier)
 
 ```{r create Auger dataframe}
 
@@ -155,22 +159,6 @@ Auger <- Auger %>%
 
 ```
 
-```{r cleaning data}
-
-# #filter out all data that isn't on a certain topography and make smaller usable dataframe
-# Auger <- dataAuger2022 %>% 
-#   filter(topo %in% c("3")) %>%
-#   select(c("sondage_N", "Texture_2023", "depth_sup", "arbre_plus_proche", "topo")) 
-
-# #take out NA variables
-# Auger <- Auger %>% 
-#   na.omit   
-
-#create new column with textures divided in three classes based upon their presence of silt
-# Auger$Silt_class <- ifelse(Auger$Texture_2023 %in% c("A", "Alo", "AS"), "low", ifelse(Auger$Texture_2023 %in% c("SL", "SA", "S"), "intermediate", "high"))
-
-```
-
 !There are multiple DBH measurements because some trees have multiple stems! => only keep biggest one
 
 
@@ -178,7 +166,7 @@ Auger <- Auger %>%
 
 #creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high (or if no high it is 120)
 
-Auger_test <- Auger %>% 
+Auger <- Auger %>% 
   group_by(sondage_N) %>%  #group by Auger
   mutate(depth = ifelse(any(Silt_class == "high"), 
                          min(depth_sup[Silt_class == "high"]), 
@@ -199,13 +187,15 @@ Points are grouped by distance from center point (arbre_plus_proche)
 
 Buffer_points <- read.csv("Em_bufferpoints.csv")
 
+
 AGB_buffer <- Buffer_points %>%
   group_by(sondage_N) %>%
+  mutate(full_species = paste(Genus, species, sep = " ")) %>%
   summarise(amount_trees = n(),
-            sp_richness = n_distinct(species)
+            sp_richness = n_distinct(full_species)
             )
 
-Final <- Auger_test %>%
+Final <- Auger %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
 
 ```
@@ -218,13 +208,16 @@ plot(Final$depth, Final$amount_trees)
 plot(Final$depth, Final$sp_richness)
 plot(Final$depth, Final$DBH)
 ```
-do test with species richness too, not only biomass(amount of trees)
+
+
+## test if there is an effect of the depth of the silt horizon appearance on the number of trees
+
+it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
 ```{r aboveground biomass}
 library(car)
 
 M1 <- lm(Final$amount_trees ~ Final$topo*Final$depth)
-anova(M1)  #type1
 Anova(M1)   # type2
 
 M2<- lm(Final$amount_trees ~ Final$topo + Final$depth)   #no interaction
@@ -234,22 +227,11 @@ Anova(M2)
 
 M3 <- lm(Final$DBH ~ Final$topo*Final$depth)
 Anova(M3)
-anova(M3)
 
 M4 <- lm(Final$sp_richness ~ Final$topo*Final$depth)
-summary(M4)
 Anova(M4)
 ```
 
 
 
-## test if there is an effect of the depth of the silt horizon appearance on the number of trees
-
-
-check correlation between depth and topo!!
-make boxplot of profondeur de limon with topography, be aware of this
-
-if there is a correlation between the silt depth and distance of bas fonds => will complicate your things because we know there is a link between topo and species so then you cannot say anything 
-
-it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
