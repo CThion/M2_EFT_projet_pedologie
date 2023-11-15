@@ -243,6 +243,21 @@ plot(Final_df$depth_sup, Final_df$amount_trees)
 plot(Final_df$depth_sup, Final_df$sp_richness)
 plot(Final_df$depth_sup, Final_df$DBH)
 ```
+do test with species richness too, not only biomass(amount of trees)
+
+```{r}
+
+M3 <- lm(Final$amount_trees ~ Final$topo*Final$depth_sup)
+summary(M3)
+library(car)
+anova(M3)  #type1
+Anova(M3)   # type2
+
+M4<- lm(Final$amount_trees ~ Final$topo + Final$depth_sup)   #no interaction
+summary(M4)
+library(car)
+Anova(M4)
+```
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
