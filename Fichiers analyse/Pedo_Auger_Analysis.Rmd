@@ -67,7 +67,7 @@ dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35',
 
 We have 36 Auger points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data.
 
-Of the 22 texture available, there are 16 that have high texture present
+Of the 22 texture available over all topography, there are 16 that have high texture present
 
 
 ## check for correlation between topography and high silt depth occurences
@@ -145,7 +145,6 @@ linearity, normality
 ## define buffer zone
 
 We will calculate the spatial autocorrelation between the different HSD points, to be able to see whether there is a big variation at a distance of 10 m from the auger point.
-
 -> ask Stéphan how to do this best
 
 
@@ -234,33 +233,27 @@ it might be interesting to look at type1 test because then you can put importanc
 
 ```{r aboveground biomass}
 M0 <- lm(Final$amount_trees ~ 1)
-M4 <- lm(Final$amount_trees ~ Final$elevation*Final$depth)
-M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth)
 M1 <- lm(Final$amount_trees ~ Final$elevation)
 M2 <- lm(Final$amount_trees ~ Final$depth)
+M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth)
+M4 <- lm(Final$amount_trees ~ Final$elevation*Final$depth)
 
 
-Anova(M0,M3)  #is there a difference by adding both depth and elevaiton in model
-Anova(M1, M3)   #significant effect of adding depth to model with only elevation
+autoplot(M4)  #assumptions do not seem to be met!
+shapiro.test(Final$elevation)
+shapiro.test(Final$depth)
+shapiro.test(Final$amount_trees)
+hist(Final$amount_trees)
 
+# Anova(M0,M3)  #is there a difference by adding both depth and elevaiton in model
+# Anova(M1, M3)   #significant effect of adding depth to model with only elevation
+# 
+# Anova(M0, M1)  #significant effect of adding elevation
+# Anova(M1, M2)  #significant effect of adding depth to model with only elevation
+# Anova(M0, M2)  #significant effect of depth on model with nothing
+# Anova(M3, M4)
+# Anova(M3, M2)  #how interpreting this again?
 
-
-vif(M3)
-summary(M3)
-
-vif(M4)
-summary(M4)
-
-Anova(M0, M1)  #significant effect of adding elevation
-Anova(M1, M2)  #significant effect of adding depth to model with only elevation
-Anova(M0, M2)  #significant effect of depth on model with nothing
-Anova(M3, M4)
-Anova(M3, M2)  #how interpreting this again?
-
-autoplot(M3)  #assumptions do not seem to be completed
-
-summary(M2)
-#what does a significant intercept mean??
 ```
 
 
@@ -268,25 +261,27 @@ summary(M2)
 ```{r DBH}
 
 M0 <- lm(Final$DBH ~ 1)
-M4 <- lm(Final$DBH ~ Final$elevation*Final$depth)
-M3 <- lm(Final$DBH ~ Final$elevation + Final$depth)
 M1 <- lm(Final$DBH ~ Final$elevation)
 M2 <- lm(Final$DBH ~ Final$depth)
-
-
-Anova(M0, M1)    #significant effect of adding elevation
-Anova(M1, M2)    #significant effect of adding depth to model with only elevation (depth explains also things)
-Anova(M0, M2)   #significant effect of adding depth to model with nothing
-Anova(M0, M3) 
-Anova(M3, M4)   #confused with interpretation
-
-autoplot(M1)   #assumptions do not seem to be completed??
-summary(M3) #how come here then no significance?
+M3 <- lm(Final$DBH ~ Final$elevation + Final$depth)
+M4 <- lm(Final$DBH ~ Final$elevation*Final$depth)
 
 
 
-autoplot(M3)
-shapiro.test(Final$elevation)
+# Anova(M0, M1)    #significant effect of adding elevation
+# Anova(M1, M2)    #significant effect of adding depth to model with only elevation (depth explains also things)
+# Anova(M0, M2)   #significant effect of adding depth to model with nothing
+# Anova(M0, M3) 
+# Anova(M3, M4)   #confused with interpretation
+# 
+# autoplot(M1)   #assumptions do not seem to be completed??
+# summary(M3) #how come here then no significance?
+
+
+
+autoplot(M4)
+shapiro.test(Final$DBH)
+
 ```
 
 
@@ -295,6 +290,8 @@ shapiro.test(Final$elevation)
 
 M4 <- lm(Final$sp_richness ~ Final$elevation*Final$depth)
 autoplot(M4)
+shapiro.test(Final$sp_richness)
+hist(Final$sp_richness)
 ```
 
 
