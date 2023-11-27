@@ -72,6 +72,8 @@ Of the 22 texture available over all topography, there are 16 that have high tex
 
 ## check for correlation between topography and high silt depth occurences
 
+do also check of correlation without the "intermediate" samples (samples with no high silt in the auger), as the value given to the "intermediate" samples easily changes the value of correlation
+
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
 Auger_cor <- dataAuger2022 %>% 
@@ -86,7 +88,7 @@ Auger_cor$final_texture <- ifelse(
 
 #create dataframe with only final texture as texture, and then only eliminate the rows for which we have not data of
 Auger_cor <- Auger_cor %>%
-  select(c("sondage_N", "depth_sup", "final_texture", "topo", "arbre_plus_proche")) %>%
+  select(c("sondage_N", "depth_sup", "final_texture", "topo")) %>%
   na.omit
 
 #create new column with textures divided in three classes based upon their presence of silt
@@ -102,7 +104,7 @@ Auger_cor <- Auger_cor %>%
   ) %>%
   ungroup() %>%
   distinct(sondage_N, .keep_all = TRUE) %>%
-  select(sondage_N, final_depth, topo, arbre_plus_proche)
+  select(sondage_N, final_depth, topo)
 
 #import elevation data of topography
 Elevation <- read.csv("Elevation_exact.csv")
@@ -118,8 +120,24 @@ cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearma
 cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
 c("spearman"))
 
+#do check whether choosing intermediate classes to be 100 of silt depht
+# Filter out rows where final_depth is 100
+Elevation_filtered <- Elevation[Elevation$final_depth != 100,]
+
+# Correlation test between topography and high silt depth appearance, pearson method
+shapiro.test(Elevation_filtered$final_depth)
+shapiro.test(Elevation_filtered$Elevation_Paracou_depth1)
+
+cor(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
+
+cor.test(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
+
+
 ```
 There is a correlation of - 0.634 between the topography and the depth at which silt occurs in high levels. This means that with higher elevation silt appears quicker in high concentrations (depth gets smaller).
+Without the intermediate: r = -0.531, it is a little lower than earlier
+
+
 
 => this causes multicollinearity in our model
 the effects of multicollinearity are that the predictions are way less precise and can quickly completely change of direction/relationship.     
@@ -217,6 +235,13 @@ Final <- Auger %>%
 
 ```
 
+lessivage sera moins intense avec une grosse couche d'humus
+
+maybe go deeper into topography and HSD correlation and look into that instead of roots
+the idea of linking roots with the other variables is not good, like you are linking a proxy with a proxy
+
+autocorrelation thing: Camille doesn't see the sense of it, you will not be able to say anything about your buffer, better to link it with bibliography and just stick with something
+
 
 ## data visualisation
 
@@ -226,18 +251,51 @@ plot(Final$depth, Final$sp_richness)
 plot(Final$depth, Final$DBH)
 ```
 
+limon and humus link
+
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
 it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
+```{r amount of trees in buffer zone}
+library(MASS)
+M1 <- glm.nb(amount_trees ~ elevation*depth, data = Final)
+M2 <- glm.nb(amount_trees ~ elevation + depth, data = Final)
+summary(M1)
+summary(M2)
+
+```
+
+very difficult to interpret these results as the predictor variables are strongly correlated, which 
+
+
 ```{r aboveground biomass}
 M0 <- lm(Final$amount_trees ~ 1)
 M1 <- lm(Final$amount_trees ~ Final$elevation)
 M2 <- lm(Final$amount_trees ~ Final$depth)
-M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth)
-M4 <- lm(Final$amount_trees ~ Final$elevation*Final$depth)
+M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth, family = "poisson")
+M4 <- glm(Final$amount_trees ~ Final$elevation*Final$depth, family = "poisson")
+summary(M4)
+summary(M3)
+Anova(M4)
+anova(M4)  #if you take everything that depth also explains inside the topo (so sequence matters) then topo significantly explains the amount of trees
 
+#check assumptions for overdispersion for poisson regression
+overdisp_fun <- function(model) { rdf <- df.residual(model) 
+rp <- residuals(model,type="pearson") 
+Pearson.chisq <- sum(rp^2) 
+prat <- Pearson.chisq/rdf 
+pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE) 
+c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval) } 
+overdisp_fun(M1)
+
+install.packages("AER")
+library(AER)
+dispersiontest(M4)
+
+
+#kruskal?
 
 autoplot(M4)  #assumptions do not seem to be met!
 shapiro.test(Final$elevation)
@@ -288,10 +346,20 @@ shapiro.test(Final$DBH)
 
 ```{r species richness}
 
-M4 <- lm(Final$sp_richness ~ Final$elevation*Final$depth)
+library(MASS)
+# Fit a Negative Binomial regression model
+negbin_model <- glm.nb(amount_trees ~ elevation * depth, data = Final)
+
+# View summary of the model
+summary(negbin_model)
+
+M4 <- glm(Final$sp_richness ~ Final$elevation*Final$depth, family = "poisson")
+summary(M4)
+Anova(M4)
 autoplot(M4)
 shapiro.test(Final$sp_richness)
 hist(Final$sp_richness)
+dispersiontest(M4)
 ```
 
 
