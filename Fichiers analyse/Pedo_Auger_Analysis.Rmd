@@ -270,7 +270,8 @@ AGB_contour <- Merged_contour %>%
   summarise(
     amount_trees = n(),
     sp_richness = n_distinct(full_species),
-    trees_per_area = sum(amount_trees) / total_area,
+    trees_per_area = amount_trees / total_area,
+    sp_richness_area = sp_richness / total_area,
     mean_DBH = mean(mean_DBH, na.rm = TRUE)  # Calculate the mean of mean_DBH per HSD_class
   ) %>%
   distinct(HSD_class, .keep_all = TRUE)
@@ -279,7 +280,7 @@ AGB_contour$HSD_class <- as.factor(AGB_contour$HSD_class)
 
 ```
 
-```{r}
+```{r Anova test for DBH}
 shapiro.test(AGB_contour$mean_DBH)   #test normality
 
 ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()  #boxplot looks strange
@@ -295,15 +296,24 @@ dunnTest(Merged_contour$DBH, Merged_contour$HSD_class, method = "bonferroni")  #
 
 ```
 
+in pairwise no significant effect anywhere, but there is in main total test -> explain this how?
+ask question about DBH
+
 shapiro test: 0.9472 p value => normally distributed
 but not homogeneous variances
-=> 
+=> Kruskal wallis
+
+```{r poisson model for amount of trees}
+
+install.packages("betareg")
+library(betareg)
+M1 <- betareg(trees_per_area ~ HSD_class, data = AGB_contour)
+
+```
+
 
 ## define buffer zone
-
-We will calculate the spatial autocorrelation between the different HSD points, to be able to see whether there is a big variation at a distance of 10 m from the auger point.
--> ask Stéphan how to do this best
-
+ no idea abandoned now.
 
 ## further analysis
 ```{r create Auger dataframe}
@@ -374,14 +384,6 @@ Final <- Auger %>%
 
 ```
 
-lessivage sera moins intense avec une grosse couche d'humus
-
-maybe go deeper into topography and HSD correlation and look into that instead of roots
-the idea of linking roots with the other variables is not good, like you are linking a proxy with a proxy
-
-autocorrelation thing: Camille doesn't see the sense of it, you will not be able to say anything about your buffer, better to link it with bibliography and just stick with something
-
-
 ## data visualisation
 
 ```{r quick plots}
@@ -390,7 +392,7 @@ plot(Final$depth, Final$sp_richness)
 plot(Final$depth, Final$DBH)
 ```
 
-limon and humus link
+limon and hummus link?
 
 
 ## test if there is an effect of the depth of the silt horizon appearance on the number of trees
