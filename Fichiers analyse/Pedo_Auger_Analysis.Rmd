@@ -23,6 +23,9 @@ library(knitr)
 library(car)  #for anvoa
 library(ggfortify)   #for autoplot function
 
+library(datasets)   #library for KW test
+library(FSA)        #library for dunn test
+
 ```
 
 ```{r upload and structure data}
@@ -160,6 +163,142 @@ ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
 Assumptions for correlation test:
 linearity, normality
 
+
+##Contour line analysis
+
+```{r made dataframes}
+#write_csv(Auger, "Em_auger.csv")
+#import data in Qgis
+
+#read QGIS used data
+Contour_40to50 <- read.csv("Clip_40to50.csv")
+Contour_50to60 <- read.csv("Clip_50to60.csv")
+Contour_60to70 <- read.csv("Clip_60to70.csv")
+Contour_70to80 <- read.csv("Clip_70to80.csv")
+Contour_80to90 <- read.csv("Clip_80to90.csv")
+Contour_90to100 <- read.csv("Clip_90to100.csv")
+Contour_100 <- read.csv("Clip_100.csv")
+
+#assign new column to all conotour line dataframes to be able to class them correctly
+Contour_100$HSD_class <- "100"
+Contour_40to50$HSD_class <- "40to50"
+Contour_50to60$HSD_class <- "50to60"
+Contour_60to70$HSD_class <- "60to70"
+Contour_70to80$HSD_class <- "70to80"
+Contour_80to90$HSD_class <- "80to90"
+Contour_90to100$HSD_class <- "90to100"
+
+#create one contour line dataframe
+Total_contour <- rbind(Contour_100, Contour_40to50, Contour_50to60, Contour_60to70, Contour_70to80, Contour_80to90, Contour_90to100)
+
+```
+
+
+```{r}
+#import area data
+Area_1 <- read.csv("Em_40to50.csv")
+Area_2 <- read.csv("Em_50to60.csv") %>%
+  na.omit
+Area_3 <- read.csv("Em_60to70.csv")
+Area_4 <- read.csv("Em_70to80.csv")
+Area_5 <- read.csv("Em_80to90.csv")
+Area_6 <- read.csv("Em_90to100.csv")
+Area_7 <- read.csv("Em_100.csv")
+
+#assign new column to all area dataframes to be able to class them correctly
+Area_7$HSD_class <- "100"
+Area_1$HSD_class <- "40to50"
+Area_2$HSD_class <- "50to60"
+Area_3$HSD_class <- "60to70"
+Area_4$HSD_class <- "70to80"
+Area_5$HSD_class <- "80to90"
+Area_6$HSD_class <- "90to100"
+
+
+
+```
+
+Total_contour %>%
+  group_by(HSD_class) %>%
+  mutate(full_species = paste(Genus, species, sep = " ")) %>%
+  summarise(amount_trees = n(),
+            sp_richness = n_distinct(full_species))
+
+```{r loop to sum areas per dataframe to get total area}
+# List of Area dataframes
+area_dfs <- list(Area_1, Area_2, Area_3, Area_4, Area_5, Area_6, Area_7)
+
+# Function to add total_area column to each dataframe
+add_total_area_column <- function(df) {
+  total_area <- sum(df$Area)  # Calculate the sum of 'Area' column within the dataframe
+  df$total_area <- total_area  # Add a new column with the total area for this dataframe
+  return(df)
+}
+
+# Apply the function to each dataframe in the list
+area_dfs_with_total_area <- lapply(area_dfs, add_total_area_column)
+
+# Assign the updated dataframes back to their respective variables
+Area_1 <- area_dfs_with_total_area[[1]]
+Area_2 <- area_dfs_with_total_area[[2]]
+Area_3 <- area_dfs_with_total_area[[3]]
+Area_4 <- area_dfs_with_total_area[[4]]
+Area_5 <- area_dfs_with_total_area[[5]]
+Area_6 <- area_dfs_with_total_area[[6]]
+Area_7 <- area_dfs_with_total_area[[7]]
+
+
+#create one area dataframe
+Area <- rbind(Area_1, Area_2, Area_3, Area_4, Area_5, Area_6, Area_7) %>%
+  distinct(HSD_class, .keep_all = TRUE) %>%
+  select(c("HSD_class", "total_area"))
+
+#create merged dataframe so every class also has the area it covers
+Merged_contour <- merge(Area, Total_contour, by.x = "HSD_class", by.y = "HSD_class")
+
+```
+
+
+```{r AGB calculations}
+#create dataframe with mean DBH and amount of trees and species richness per HSD_class
+AGB_contour <- Merged_contour %>%
+  group_by(HSD_class) %>%
+  mutate(
+    full_species = paste(Genus, species, sep = " "),
+    mean_DBH = mean(DBH, na.rm = TRUE)  # Calculate mean DBH within each HSD_class
+  ) %>%
+  summarise(
+    amount_trees = n(),
+    sp_richness = n_distinct(full_species),
+    trees_per_area = sum(amount_trees) / total_area,
+    mean_DBH = mean(mean_DBH, na.rm = TRUE)  # Calculate the mean of mean_DBH per HSD_class
+  ) %>%
+  distinct(HSD_class, .keep_all = TRUE)
+
+AGB_contour$HSD_class <- as.factor(AGB_contour$HSD_class)
+
+```
+
+```{r}
+shapiro.test(AGB_contour$mean_DBH)   #test normality
+
+ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()  #boxplot looks strange
+
+leveneTest(aov(Merged_contour$DBH ~ Merged_contour$HSD_class))  #test homoscedasticity
+
+
+kruskal.test(Merged_contour$DBH ~ Merged_contour$HSD_class)
+
+pairwise.wilcox.test(Merged_contour$DBH, Merged_contour$HSD_class, p.adjust.method="bonferroni")
+
+dunnTest(Merged_contour$DBH, Merged_contour$HSD_class, method = "bonferroni")  #normally good method for unbalanced designs (we have more DBH measurements for certain classes!)
+
+```
+
+shapiro test: 0.9472 p value => normally distributed
+but not homogeneous variances
+=> 
+
 ## define buffer zone
 
 We will calculate the spatial autocorrelation between the different HSD points, to be able to see whether there is a big variation at a distance of 10 m from the auger point.
@@ -213,7 +352,7 @@ Auger <- Auger %>%
 Points are grouped by distance from center point (arbre_plus_proche)
 
 ```{r create good buffer dataframe}
-#write_csv(Auger_test, "Em_auger.csv")
+write_csv(Auger, "Em_auger.csv")
 #import data in Qgis
 
 Buffer_points <- read.csv("Em_bufferpoints.csv")
