@@ -2,9 +2,19 @@
 title: 'Master EFT: pédologie de la P16 de Paracou'
 author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
 date: "2023-09-25"
-output: html_document
+output: 
+  html_document:
+    code_folding: hide
+    fig_caption: true
+    fig_height: 6
+    fig_width: 8
+    keep_md: true
+    number_sections: true
+    toc: true
+    toc_depth: 3
+    fig_path: "pedoP16-plots/"
 editor_options:
-  chunk_output_type: inline
+  chunk_output_type: console
   markdown: 
     wrap: 72
 ---
@@ -192,10 +202,11 @@ Each pit is made of 10 layers of 10cm depth by 50cm long.
 #--regroup data by layer of 10cm
 dataPitLayer <- dataPit %>%
   # filter(pit=="F1") %>%
-  select(c(pit, depth, texture, rd1, rd2, rd3, rd4, coarse_element_class, micas)) %>%
+  select(c(pit, depth, texture, siltcontent, rd1, rd2, rd3, rd4, coarse_element_class, micas)) %>%
   group_by(pit, depth) %>% 
   summarise(
     texture=unique(texture),
+    siltcontent=unique(siltcontent),
     coarse_element=mean(as.numeric(as.character(coarse_element_class))),
     rd1= mean(rd1),
     rd2=mean(rd2),
@@ -271,95 +282,160 @@ RU <- R_value[which(dataPitHorizon$texture %in% R_texture)]
 dataPitHorizon$WR <- dataPitHorizon$thickness * dataPitHorizon$coarse_element * setNames(R_value, R_texture)[dataPitHorizon$texture]
 ```
 
-## Micas
-```{r}
-ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture, label = micas)) +
-  geom_bar(stat = "identity") +  # Stacked bar plot
-  geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
-  labs(x = "Pit", y = "Thickness", title = "Root Density by Texture across Pits") +
-  scale_fill_discrete(name = "Texture") +  # Legend title for texture
-  theme(legend.position = "right")  # Adjust legend position if needed
-```
-
-
-
 ## Root biomass
 
 For the calculation of root biomass, we weight each root count by the
 diameter of the root class. The diameter classes are in millimeter: d1:
 $<2$, d2: $2-5$, d3: $5-10$ and d4: $≥ 10$.
 
-The root density
-
 ```{r}
 # root biomass by horizon
-dataPitHorizon <- dataPitHorizon %>% mutate(rootDensity=round((rd1+rd2*2+rd3*5+rd4*10)/thickness, 2))
+dataPitHorizon <- dataPitHorizon %>% mutate(rootBiomass=round((rd1+rd2*2+rd3*5+rd4*10), 2)) #add rootBiomass variable
 
 # root biomass by layer
-dataPitLayer <- dataPitLayer %>% mutate(rootDensity=(rd1+rd2*2+rd3*5+rd4*10)/10)
+dataPitLayer <- dataPitLayer %>% mutate(rootBiomass=(rd1+rd2*2+rd3*5+rd4*10))
+```
+
+
+## Micas
+
+```{r}
+#======== rootBiomass by TEXTURE========
+ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture, label = rootBiomass)) +
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
+  labs(x = "Pit", y = "Thickness", title = "root biomass by Texture across Pits") +
+  scale_fill_discrete(name = "Texture") +  # Legend title for texture
+  scale_y_continuous(breaks = seq(0, 100, by = 10), labels = c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0")) + #reverse y axis value to have 0 at the top
+  theme(legend.position = "right")  # Adjust legend position if needed
+
+#======= rootBiomass by SILTCONTENT========
+
+ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = siltcontent, label = rootBiomass)) +
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  # geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
+  labs(x = "Pit", y = "Thickness", title = "root biomass by silt content across Pits") +
+  scale_fill_discrete(name = "Silt content") +  # Legend title for texture
+  scale_y_reverse(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) + 
+  geom_rect(data = NULL, aes(xmin = 1.5, xmax = 3.5, ymin = 47, ymax = 73),
+            fill = "transparent", color = "black", size = 1, inherit.aes = FALSE)+
+  # theme(legend.position = "right")  # Adjust legend position if needed
+  theme(legend.position = "right", 
+        panel.background = element_rect(fill = "white"),  # Change the background color
+        panel.grid.major = element_line(color = "gray", linewidth = 0.5),  # Horizontal lines
+        panel.grid.major.y = element_line(color = "lightgray", linewidth = 1),  # Y-axis lines
+        axis.line = element_line(color = "black"))  # Add black axis lines
 ```
 
 ```{r}
-y_limits <- with(dataPitHorizon, range(rootDensity))
-ggplot(dataPitHorizon, aes(x = texture, y = rootDensity)) +
-  geom_point() +  # Use points to represent the data
-  facet_wrap(~ pit, scales = "free") +  # Separate by 'pit'
-  labs(x = "Texture", y = "Root Density", title = "Root Density across Pits and Textures") +
-  ylim(y_limits)  # Setting constant y-axis scale
+library(ggplot2)
 
-ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture, label = rootDensity)) +
+ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = siltcontent, label = rootBiomass)) +
   geom_bar(stat = "identity") +  # Stacked bar plot
-  geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
-  labs(x = "Pit", y = "Thickness", title = "Root Density by Texture across Pits") +
+  labs(x = "Pit", y = "Thickness", title = "Root biomass by silt content across Pits") +
+  scale_fill_discrete(name = "Silt content") +  # Legend title for texture
+  scale_y_reverse(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) + 
+  geom_rect(data = NULL, aes(xmin = 1.5, xmax = 3.5, ymin = 47, ymax = 73),
+            fill = "transparent", color = "black", size = 1, inherit.aes = FALSE) +
+  annotate("text", x = 1.6, y = 53, label = "Focus range", hjust = 0, vjust = 0, color = "black") +
+  theme(legend.position = "right", 
+        panel.background = element_rect(fill = "white"),  # Change the background color
+        panel.grid.major = element_line(color = "gray", linewidth = 0.5),  # Horizontal lines
+        panel.grid.major.y = element_line(color = "lightgray", linewidth = 1),  # Y-axis lines
+        axis.line = element_line(color = "black"))  # Add black axis lines
+
+```
+
+
+# Descriptive analysis of silt effect on root biomass
+
+```{r}
+barplotHorizon <- ggplot(dataPitHorizon, 
+                         aes(x = pit, 
+                             y = thickness, 
+                             fill = texture)
+                             #label = rootBiomass)
+                         ) +
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  #geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +  # Add text labels
+  labs(x = "Pit", y = "Thickness", title = "root biomass by Texture across Pits") +
   scale_fill_discrete(name = "Texture") +  # Legend title for texture
   theme(legend.position = "right")  # Adjust legend position if needed
+# 
+# barplotHorizon + geom_rect(data = NULL, aes(xmin = 1.5, xmax = 3.5, ymin = 28, ymax = 52),
+#             fill = "transparent", color = "black", size = 1, inherit.aes = FALSE) +
+# geom_text(data = data.frame(x = 2.5, y = 40, label = "Highlighted", stringsAsFactors = FALSE),
+#             aes(x, y, label = label), color = "blue", size = 4)
 
-# Plotting all pits in a facet grid
-ggplot(dataPitLayer, aes(x = depth, y = rootDensity, color = texture, group = texture)) +
-  geom_line() +
-  geom_point() +
-  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
-  scale_color_discrete(name = "Texture") +
-  facet_wrap(~ pit, ncol = 2) +  # Facet by pit, adjust ncol as needed
-  theme_minimal()
-
-# Plotting all pits in a single graph
-ggplot(dataPitLayer, aes(x = depth, y = rootDensity, color = texture, group = interaction(pit, texture))) +
-  geom_line() +
-  geom_point() +
-  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
-  scale_color_discrete(name = "Texture") +
-  facet_grid(. ~ pit, scales = "free_y", space = "free_y") +
-  theme_minimal()
-
-# Plotting all pits in a single graph with inverted axes
-ggplot(dataPitLayer, aes(x = rootDensity, y = depth, color = texture, group = interaction(pit, texture))) +
-  geom_line() +
-  geom_point() +
-  labs(x = "Root Density", y = "Depth", title = "Root Density by Texture across Pits") +
-  scale_color_discrete(name = "Texture") +
-  facet_grid(pit ~ ., scales = "free_x", space = "free_x") +
-  coord_flip() +
-  theme_minimal()
+```
 
 
-# Selecting a specific pit (change 'Pit_1' to the desired pit ID)
-selected_pit <- c("F1", "F2","F3", "F4")
+```{r}
+# # Your existing plot code without rootBiomass label
+# your_plot <- ggplot(dataPitHorizon, aes(x = pit, y = thickness, fill = texture)) +
+#   geom_bar(stat = "identity") +
+#   # geom_text(position = position_stack(vjust = 0.5), size = 3, color = "black") +
+#   labs(x = "Pit", y = "Thickness", title = "root biomass by Texture across Pits") +
+#   scale_fill_discrete(name = "Texture") +
+#   theme(legend.position = "right")
+# 
+# # Add an empty rectangle with colored border and text label
+# highlighted_plot <- your_plot +
+#   geom_rect(data = NULL, aes(xmin = 2, xmax = 3, ymin = 100, ymax = 150),
+#             fill = "transparent", color = "blue", size = 1, inherit.aes = FALSE) +
+#   geom_text(data = data.frame(x = 2.5, y = 125, label = "Highlighted", stringsAsFactors = FALSE),
+#             aes(x, y, label = label), color = "blue", size = 4)
+# 
+# highlighted_plot
+
+```
+
+
+```{r}
+#========using SILT CONTENT========
+
+selected_pit <- c("F1", "F2", "F3", "F4") # Selecting a specific pit
 data_subset <- subset(dataPitLayer, pit %in% selected_pit)
-data_subset <- subset(data_subset, between(depth, 0, 100))
-ggplot(data_subset, aes(x = depth, y = rootDensity, color = texture, shape = pit, group = interaction(pit, texture))) +
-  geom_line() +
+data_subset <- subset(data_subset, between(depth, 0, 100)) # Selecting a specific depth range
+data_subset <- transform(data_subset, siltcontent = factor(siltcontent, levels = unique(siltcontent)))# Set the order of siltcontent levels within each pit
+
+ggplot(data_subset, aes(x = depth, y = rootBiomass, color = siltcontent, shape = pit, group = pit)) +
+  geom_path() +
   geom_point(size = 3) +
-  labs(x = "Depth", y = "Root Density", title = "Root Density by Texture across Pits") +
-  scale_color_discrete(name = "Texture") +
+  labs(x = "Depth", y = "Root biomass", title = "Root biomass by silt content across pits") +
+  scale_x_continuous(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) +
+  scale_color_discrete(name = "Silt content") +
   scale_shape_discrete(name = "Pit") +
   theme_minimal()
+
+#========using MICAS========
+
+selected_pit <- c("F1", "F2", "F3", "F4") # Selecting a specific pit
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+data_subset <- subset(data_subset, between(depth, 50, 100)) # Selecting a specific depth range
+data_subset <- transform(data_subset, micas = factor(micas, levels = unique(micas))) # Set the order of siltcontent levels within each pit
+
+ggplot(data_subset, aes(x = depth, y = rootBiomass, color = micas, shape = pit, group = pit)) +
+  geom_path() +
+  geom_point(size = 3) +
+  labs(x = "Depth", y = "Root biomass", title = "Root biomass by micas content across pits") +
+  scale_x_continuous(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) +
+  scale_shape_discrete(name = "Pit") +
+  scale_color_discrete(name = "Micas", breaks = c("0", "1", "2", "3")) +
+  theme_minimal()
+
+dataPitLayer$rootBiomass[c(6,26,36,46)]
 ```
-- Add square on top of the plot, to hilight the intervall between F2 and F3, with the rootdensity difference calculated.
+
+
+
+
+- Add square on top of the plot, to hilight the intervall between F2 and F3, with the rootBiomass difference calculated.
 - Look at the difference between SL and SA for small roots.
 
 
 ### Distinction of root diameter
+
 ```{r}
 
 library(ggplot2)
@@ -384,33 +460,11 @@ ggplot(data_subset_long, aes(x = depth, y = value, color = texture, linetype = p
 
 ```
 
-
-# not directed analysis
-
-```{r}
-dataPit %>% # Dans donnees sols
-  select_if(is.numeric) %>% # On ne sélectionne que les colonnes numériques
-  cor() %>% # On calcule la matrice de corrélation empirique
-  corrplot() # Puis on représente graphiquement cette matrice
-```
-
-
-analyser l'évolution de l'écart au dessus / dedans de l'horizon
-limoneux.
-
 Projet ALT: à échelle Amazonienne: prévenir l'évolution des forêts
 amazonienne en fonction changement climatique et antropiques. Basé sur
 simulateur Troll (basé sur arbre adulte) & sur modélateur fait par
 Vinciane sur l'impacte de l'exploitation forestière.
 
-Problème de la considération des arbres "adultes" (DBH\>10cm). ==\> obj
-est de prendre en compte les juvéniles
-
 Thèse Vinciane Comprendre quels sont les besoins environnementaux des
 arbres de sous-bois ==\> mesure de pleins de données environnementales
 différentes (lumière humidité ect). Existence de niche écologique ?
-
-Hypothèse de l'effet de la topographie sur la pédologie.
-
-regarder s'il y a une correlation entre la presence des mica et les
-limons.

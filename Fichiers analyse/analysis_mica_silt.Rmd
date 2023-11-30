@@ -16,16 +16,36 @@ If we think about soil horizons high in silt and its effect on root development 
 
 ```{r packages and data}
 require("rstudioapi")
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) #to set working directory as current file location
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) #to set working directory as current fil location
 #install.packages("GoodmanKruskal")
 library(GoodmanKruskal)
 library(readxl)
 library(tidyverse)
-
-#install.packages("gdtools")
+library(ggplot2)
+library(corrplot)
+library(FactoMineR) # Pour l'analyse en composantes principales
+library(factoextra)
+#install.packages("psych")
+library(psych)
+install.packages("hrbrthemes")
+library(hrbrthemes)
+install.packages("gdtools")
 library(gdtools)
+library(viridis)
+library(wesanderson)
+install.packages("viridisLite")
+dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
+dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
+dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
+dataPitF4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
 
+dataPitF1$pit <- rep("F1", 100); dataPitF2$pit <- rep("F2", 100); dataPitF3$pit <- rep("F3", 100); dataPitF4$pit <- rep("F4", 100) #add a the variable pit to distinguish each sheet data
+dataPit <- rbind(dataPitF1, dataPitF2, dataPitF3, dataPitF4)
 ```
+
+
+
+
 
 ## Regrouping silt content
 
@@ -52,7 +72,7 @@ To quantitatively test the association and assess the statistical significance o
 
 Now we are interested in the data from 2022, as there is more data points, hence, it looks more promising to find interesting information
 
-## Auger data
+## Augure's data
 
 ```{r}
 dataAuger2022 <- read_excel("DataAuger2022.xlsx", sheet=1, na="NA")
@@ -100,26 +120,10 @@ Auger$Silt_class=as.factor(Auger$Silt_class)
 chi_sq_test <- chisq.test(Auger$mica, Auger$Silt_class)
 print(chi_sq_test)
 
-# Create a contingency table
-contingency_table <- table(Auger$mica, Auger$Silt_class)
-#print
-print(contingency_table)
-# Obtain Cramér's V and other statistics
-assoc_stats <- assocstats(contingency_table)
-
-#print results
-print(assoc_stats)
 # Kruskal-Wallis test (takes ordinal nature of the variables into account)
 kruskal_result <- kruskal.test(Auger$mica, Auger$Silt_class)
 print(kruskal_result)
 
-install.packages("DescTools")
-library(DescTools)
-# Calculate Goodman and Kruskal's gamma to see force of association
-GoodmanKruskalGamma(contingency_table)
-
-# View the result
-print(gamma_result)
 
 ```
 
@@ -131,32 +135,45 @@ mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
 
 mosaicplot(Auger$Silt_class ~ Auger$mica, data = Auger,
            color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
-#legend("topright", legend = colnames(Auger$mica), fill = c("lightgrey","grey", "darkgrey"))
-# Define shades of grey and corresponding legend labels
-shades_of_grey <- c("lightgrey", "grey", "darkgrey")
-legend_labels <- c("Low", "Medium", "High")
 
-# Add legend to the plot
-legend("topright", legend = legend_labels, fill = shades_of_grey, title = "Silt Class")
 #not really looking like anything useful...?
 
 ## didnt work due to package associationPlot(Auger$mica, Auger$Silt_class, main = "Association Plot")
-# Your data and mosaic plot
-mosaicplot(Auger$Silt_class ~ Auger$mica, data = Auger,
-           color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
 
-# Manually define a color palette
-color_palette <- gray.colors(length(unique(Auger$Silt_class)))
 
-# Define legend labels
-legend_labels <- levels(Auger$Silt_class)
-
-# Add legend to the plot with correct colors
-legend("topright", legend = legend_labels, fill = color_palette, title = "Silt Class")
-
-cat("Number of levels in Silt_class:", length(levels(Auger$Silt_class)), "\n")
-cat("Length of color_palette:", length(color_palette), "\n")
 
 ```
 This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
 
+```{r}
+Greta_pente<-read.csv("Qgis/Greta_including_pente.csv")
+
+#remove NA objects
+Greta_pente_without_na <- Greta_pente %>% 
+  na.omit 
+  
+Greta_pente_without_na$Slope=as_factor(Greta_pente_without_na$Slope)
+Greta_pente_without_na$depth_sup=as.numeric(Greta_pente_without_na$depth_sup)
+str(Greta_pente_without_na$Slope)
+str(Greta_pente_without_na$depth_sup)
+
+ggplot(Greta_pente_without_na, aes(x = Slope, y = depth_sup)) +
+  geom_boxplot(fill = "lightblue", color = "blue") +
+  labs(
+    title = "Soil Depth by Hill Position",
+    x = "Hill Position",
+    y = "HSD"
+  )
+linear_model=lm(Greta_pente_without_na$depth_sup~Greta_pente_without_na$Slope)
+plot(linear_model)
+anova(linear_model)
+
+
+#or: 
+#install.packages("analyzer")
+#library(analyzer)
+#CQassociation(Greta_pente_without_na$depth_sup, Greta_pente_without_na$Slope, method= "non-parametric")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
