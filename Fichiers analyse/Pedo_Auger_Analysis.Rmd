@@ -305,7 +305,6 @@ glm_richness <- glm(sp_richness ~ HSD_cont, data = AGB_contour, family = poisson
 
 summary(glm_richness)
 
-
 #plot to show species richness per HSD class
 plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
 ```
