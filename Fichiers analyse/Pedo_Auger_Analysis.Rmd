@@ -129,7 +129,6 @@ cor(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth,
 
 cor.test(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
 
-
 ```
 
 There is a correlation of - 0.634 between the topography and the depth at which silt occurs in high levels. This means that with higher elevation silt appears quicker in high concentrations (depth gets smaller).
@@ -239,12 +238,28 @@ Area <- rbind(Area_1, Area_2, Area_3, Area_4, Area_5, Area_6, Area_7) %>%
 #create merged dataframe so every class also has the area it covers
 Merged_contour <- merge(Area, Total_contour, by.x = "HSD_class", by.y = "HSD_class")
 
+#consider HSD class as a factor
+Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
+
+
+#create a continuous variable of HSD
+Merged_contour <- Merged_contour %>%
+  mutate(HSD_cont = case_when(
+    HSD_class == "40to50" ~ 45,
+    HSD_class == "50to60" ~ 55,
+    HSD_class == "60to70" ~ 65,
+    HSD_class == "70to80" ~ 75,
+    HSD_class == "80to90" ~ 85,
+    HSD_class == "90to100" ~ 95,
+    HSD_class == "100" ~ 105,
+    # Add more conditions for other HSD_class values here
+    TRUE ~ NA_real_
+  ))
+
 #creata dataframe with area only per HSD class
 SumArea <- Merged_contour %>%
   distinct(area_class, .keep_all = TRUE) %>%
   select(area_class, HSD_class)
-
-
 
 ```
 
@@ -261,38 +276,92 @@ AGB_contour <- Merged_contour %>%
   summarise(
     amount_trees = n(),
     sp_richness = n_distinct(full_species),
-    trees_per_area = amount_trees / area_class,
-    sp_richness_area = sp_richness / area_class,
+    tree_density = amount_trees / area_class,
+    sp_richness_density = sp_richness / area_class,
     mean_DBH = mean(mean_DBH, na.rm = TRUE)
   ) %>%
   distinct(HSD_class, .keep_all = TRUE) %>%
   merge(SumArea, by.x = "HSD_class", by.y = "HSD_class")
-  
-AGB_contour$HSD_class <- as.factor(AGB_contour$HSD_class)
-Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
+
+#create a continuous variable of HSD
+AGB_contour$HSD_cont = c(105, 45, 55,65, 75, 85, 95)
 
 ```
 
-```{r visual mean DBH}
 
+```{r analysis tree density}
+glm_density <- glm(amount_trees ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
+
+summary(glm_density)
+
+
+#plot to show tree density per HSD class
+plot(AGB_contour$HSD_class, AGB_contour$tree_density)
+
+```
+
+```{r analysis species richness density}
+glm_richness <- glm(sp_richness ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
+
+summary(glm_richness)
+
+
+#plot to show species richness per HSD class
+plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
+```
+40to50 HSD has much higher species richness per area, is this linked to a specific topography? why would this be?
+
+```{r visual mean DBH}
+#DBH in function of different HSD classes
+ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()
+
+#mean DBH (one value) per class
 ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point()
 
 ```
 
-```{r}
+```{r analysis of DBH with HSD}
+model_DBH <- lm(Merged_contour$DBH ~ log(Merged_contour$HSD_cont))
 
-M1 <- lm(Merged_contour$DBH ~ as.factor(Merged_contour$HSD_class))
-summary(M1)
-autoplot(M1)
+#check assumptions with plots below
+autoplot(model_DBH)
+#or
+par(mfrow = c(2,2))
+plot(model_DBH)
+
+#non normal data
+#maybe make bigger groups of classes
+#create a continuous variable of HSD
+Merged_contour_new <- Merged_contour %>%
+  mutate(HSD_class = case_when(
+    HSD_class == "40to50" ~ 60,
+    HSD_class == "50to60" ~ 60,
+    HSD_class == "60to70" ~ 60,
+    HSD_class == "70to80" ~ 80,
+    HSD_class == "80to90" ~ 80,
+    HSD_class == "90to100" ~ 80,
+    HSD_class == "100" ~ 105,
+    # Add more conditions for other HSD_class values here
+    TRUE ~ NA_real_
+  ))
+
+#make it so the HSD_class is seen as a factor
+Merged_contour_new$HSD_class <- as.factor(Merged_contour_new$HSD_class)
+
+#plot the DBH and HSD class that are grouped together
+ggplot(data = Merged_contour_new, aes(HSD_class, DBH)) + geom_boxplot()  #still no difference
+
+#create model with fewer classes
+model_DBH_new <- lm(Merged_contour_new$DBH ~ Merged_contour_new$HSD_cont)
+
+#check assumptions with plots below
+autoplot(model_DBH_new)                #nothing changed in assumptions either, still not met
+#or
+par(mfrow = c(2,2))
+plot(model_DBH_new)
+
 ```
-
-
-for mean DBH consider HSD as continuous and see if there is a relationship, also look at max DBH (from the total DBH measurements to also check whether there is a link between this)
-
-```{r DBH}
-
-ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()
-
+```{r filter out certaini DBH}
 # Filter data for DBH values between 0 and 10
 filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 
@@ -301,17 +370,16 @@ ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
   geom_point()
 
+#still no difference visible in mean, again outliers that play a big role
+
 ```
 
 
+for mean DBH consider HSD as continuous and see if there is a relationship, also look at max DBH (from the total DBH measurements to also check whether there is a link between this)
 
-```{r}
-AGB_contour$HSD_cont = c(105, 45, 55,65, 75, 85, 95)
 
-glm_trees <- glm(amount_trees ~ HSD_cont, data = AGB_contour, family = "poisson")
 
-glm_trees <- glm(trees_per_area ~ HSD_cont, data = AGB_contour, family ="poisson")
-```
+
 
 
 
