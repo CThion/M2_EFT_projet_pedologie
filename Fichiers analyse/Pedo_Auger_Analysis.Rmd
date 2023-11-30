@@ -1,5 +1,5 @@
 ---
-title: "pedo_Auger_Analysis"
+title: "pedo_Augur_Analysis"
 author: "EmilieSanvito"
 date: "2023-10-05"
 output: html_document
@@ -9,18 +9,18 @@ output: html_document
 ##data organization
 
 ```{r libraries}
-#to empty your work environment
+#empty your work environment
 rm(list=ls()) 
 
-
+#load all libraries
 library(tidyverse)
 library(readxl)
 library(dplyr)
 
-library(ggforce)   #look again why I used it
+#library(ggforce)   #look again why I used it
 library(knitr)
 
-library(car)  #for anvoa
+library(car)          #for anvoa
 library(ggfortify)   #for autoplot function
 
 library(datasets)   #library for KW test
@@ -29,11 +29,11 @@ library(FSA)        #library for dunn test
 ```
 
 ```{r upload and structure data}
-#import data from last year project (36 Auger in the P16)
-dataAuger2022 <- read_excel("DataAuger2022.xlsx", na = "NA")  
+#import data from last year project (36 Augur in the P16)
+dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")  
 
 #create a new column for topography that only contains the number of the topography 
-dataAuger2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAuger2022$topographie))
+dataAugur2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAugur2022$topographie))
 #6: bas fonds
 #5: versant bas de pente
 #4: versant mi-pente
@@ -42,63 +42,58 @@ dataAuger2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAuger2022$topographie))
 #1: plateau
 
 #import botany data
-Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")  
+Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")
 
-#remove NA objects
+#remove NA objects and select specific variables of interest
 Botany <- Botany %>% 
-  na.omit  
-
-#make a more precise df with variables we will use
-Botany <- Botany %>% 
+  na.omit %>%
   select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
 
 ```
 
-```{r rename titles in data}
+```{r rename titles in Augur data}
 
-dataAuger2022 <- dataAuger2022 %>% rename_at('% pente', ~'pente')
-dataAuger2022 <- dataAuger2022 %>% rename_at('Numéro horizon', ~'horizon')
-dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
-dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
-dataAuger2022 <- dataAuger2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
-dataAuger2022 <- dataAuger2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
-dataAuger2022 <- dataAuger2022 %>% rename_at('EG %', ~'stone_elements')
-dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
+dataAugur2022 <- dataAugur2022 %>% rename_at('% pente', ~'pente')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Numéro horizon', ~'horizon')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
+dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
+dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
+dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
 
 ```
 
 
-We have 36 Auger points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data.
-
-Of the 22 texture available over all topography, there are 16 that have high texture present
+We have 36 Augur points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data. Of the 22 texture available over all topography, there are 16 that have high texture present.
 
 
 ## check for correlation between topography and high silt depth occurences
 
-do also check of correlation without the "intermediate" samples (samples with no high silt in the auger), as the value given to the "intermediate" samples easily changes the value of correlation
+do also check of correlation without the "intermediate" samples (samples with no high silt in the Augur), as the value given to the "intermediate" samples might cause changes to the value of correlation
 
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
-Auger_cor <- dataAuger2022 %>% 
+Augur_cor <- dataAugur2022 %>% 
   select(c("sondage_N", "depth_sup", "texture", "Texture_2023", "topo", "arbre_plus_proche"))
 
-#create new texture variable that contains some non-corrected textures
-Auger_cor$final_texture <- ifelse(
-  is.na(dataAuger2022$Texture_2023) & !(dataAuger2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
-  dataAuger2022$texture,
-  dataAuger2022$Texture_2023
+#create new texture variable that contains some additional corrected textures
+Augur_cor$final_texture <- ifelse(
+  is.na(dataAugur2022$Texture_2023) & !(dataAugur2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
+  dataAugur2022$texture,
+  dataAugur2022$Texture_2023
 )
 
-#create dataframe with only final texture as texture, and then only eliminate the rows for which we have not data of
-Auger_cor <- Auger_cor %>%
+#create dataframe with only final texture as texture, and then only eliminate the rows for which we have no data for
+Augur_cor <- Augur_cor %>%
   select(c("sondage_N", "depth_sup", "final_texture", "topo")) %>%
   na.omit
 
 #create new column with textures divided in three classes based upon their presence of silt
-Auger_cor$Silt_class <- ifelse(Auger_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Auger_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
+Augur_cor$Silt_class <- ifelse(Augur_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
 
-#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high, or if intermediate that it is 100 (!!Important to check this)
-Auger_cor <- Auger_cor %>%
+#For every Augur point you define depth at which silt concentration becomes high, or if intermediate that it is 100 (!!Important to check this)
+Augur_cor <- Augur_cor %>%
   group_by(sondage_N) %>%
   mutate(
     final_depth = ifelse(any(Silt_class == "high"), 
@@ -115,7 +110,7 @@ Elevation <- read.csv("Elevation_exact.csv")
 #merge two dataframes 
 Elevation <- Elevation %>%
   select(c("sondage_N", "Elevation_Paracou_depth1")) %>%
-  merge(Auger_cor, by.x = 'sondage_N', by.y = 'sondage_N')
+  merge(Augur_cor, by.x = 'sondage_N', by.y = 'sondage_N')
 
 #correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values of no HSD appearance)
 cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearman")
@@ -123,8 +118,7 @@ cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearma
 cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
 c("spearman"))
 
-#do check whether choosing intermediate classes to be 100 of silt depht
-# Filter out rows where final_depth is 100
+#Filter out rows where final_depth is 100
 Elevation_filtered <- Elevation[Elevation$final_depth != 100,]
 
 # Correlation test between topography and high silt depth appearance, pearson method
@@ -137,10 +131,9 @@ cor.test(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_d
 
 
 ```
+
 There is a correlation of - 0.634 between the topography and the depth at which silt occurs in high levels. This means that with higher elevation silt appears quicker in high concentrations (depth gets smaller).
-Without the intermediate: r = -0.531, it is a little lower than earlier
-
-
+Without the intermediate: r = -0.593, it is only a little lower than earlier
 
 => this causes multicollinearity in our model
 the effects of multicollinearity are that the predictions are way less precise and can quickly completely change of direction/relationship.     
@@ -148,12 +141,13 @@ the effects of multicollinearity are that the predictions are way less precise a
 ```{r little data visualisation for correlation}
 hist(Elevation$final_depth)
 hist(Elevation$Elevation_Paracou_depth1)
+# ggplot(Elevation, aes(x=Elevation_Paracou_depth1)) + geom_histogram()
+# ggplot(Elevation, aes(x=final_depth)) + geom_histogram()
 
 ggplot(Elevation, aes(x=as.factor(topo), y=final_depth)) + geom_boxplot() + geom_point()
-
 ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point() + geom_smooth(method = "lm")
 
-#create graph without augers that do not have high silt occurences (they are all attributed 100 for analyses purposes)
+#create graph without Augurs that do not have high silt occurrences (they are all attributed 100 for analyses purposes)
 ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
   geom_point(data = subset(Elevation, final_depth != 100)) +
   geom_smooth(data = subset(Elevation, final_depth != 100), method = "lm")
@@ -166,8 +160,8 @@ linearity, normality
 
 ##Contour line analysis
 
-```{r made dataframes}
-#write_csv(Auger, "Em_auger.csv")
+```{r import contour data}
+#write_csv(Augur, "Em_Augur.csv")
 #import data in Qgis
 
 #read QGIS used data
@@ -194,7 +188,7 @@ Total_contour <- rbind(Contour_100, Contour_40to50, Contour_50to60, Contour_60to
 ```
 
 
-```{r}
+```{r combine area data with contour data}
 #import area data
 Area_1 <- read.csv("Em_40to50.csv")
 Area_2 <- read.csv("Em_50to60.csv") %>%
@@ -214,126 +208,149 @@ Area_4$HSD_class <- "70to80"
 Area_5$HSD_class <- "80to90"
 Area_6$HSD_class <- "90to100"
 
-
-
-```
-
-Total_contour %>%
-  group_by(HSD_class) %>%
-  mutate(full_species = paste(Genus, species, sep = " ")) %>%
-  summarise(amount_trees = n(),
-            sp_richness = n_distinct(full_species))
-
-```{r loop to sum areas per dataframe to get total area}
+#get total area per dataframe (so sum areas in each dataframe)
 # List of Area dataframes
 area_dfs <- list(Area_1, Area_2, Area_3, Area_4, Area_5, Area_6, Area_7)
 
-# Function to add total_area column to each dataframe
-add_total_area_column <- function(df) {
-  total_area <- sum(df$Area)  # Calculate the sum of 'Area' column within the dataframe
-  df$total_area <- total_area  # Add a new column with the total area for this dataframe
+# Function to add area_class column to each dataframe
+add_area_class_column <- function(df) {
+  area_class <- sum(df$Area)   # Calculate the sum of 'Area' column within the dataframe
+  df$area_class <- area_class  # Add a new column with the total area for this dataframe
   return(df)
 }
 
 # Apply the function to each dataframe in the list
-area_dfs_with_total_area <- lapply(area_dfs, add_total_area_column)
+area_dfs_with_area_class <- lapply(area_dfs, add_area_class_column)
 
 # Assign the updated dataframes back to their respective variables
-Area_1 <- area_dfs_with_total_area[[1]]
-Area_2 <- area_dfs_with_total_area[[2]]
-Area_3 <- area_dfs_with_total_area[[3]]
-Area_4 <- area_dfs_with_total_area[[4]]
-Area_5 <- area_dfs_with_total_area[[5]]
-Area_6 <- area_dfs_with_total_area[[6]]
-Area_7 <- area_dfs_with_total_area[[7]]
-
+Area_1 <- area_dfs_with_area_class[[1]]
+Area_2 <- area_dfs_with_area_class[[2]]
+Area_3 <- area_dfs_with_area_class[[3]]
+Area_4 <- area_dfs_with_area_class[[4]]
+Area_5 <- area_dfs_with_area_class[[5]]
+Area_6 <- area_dfs_with_area_class[[6]]
+Area_7 <- area_dfs_with_area_class[[7]]
 
 #create one area dataframe
 Area <- rbind(Area_1, Area_2, Area_3, Area_4, Area_5, Area_6, Area_7) %>%
   distinct(HSD_class, .keep_all = TRUE) %>%
-  select(c("HSD_class", "total_area"))
+  select(c("HSD_class", "area_class"))
 
 #create merged dataframe so every class also has the area it covers
 Merged_contour <- merge(Area, Total_contour, by.x = "HSD_class", by.y = "HSD_class")
 
+#creata dataframe with area only per HSD class
+SumArea <- Merged_contour %>%
+  distinct(area_class, .keep_all = TRUE) %>%
+  select(area_class, HSD_class)
+
+
+
 ```
 
 
-```{r AGB calculations}
+
+```{r AGB dataframe creation}
 #create dataframe with mean DBH and amount of trees and species richness per HSD_class
 AGB_contour <- Merged_contour %>%
   group_by(HSD_class) %>%
   mutate(
     full_species = paste(Genus, species, sep = " "),
-    mean_DBH = mean(DBH, na.rm = TRUE)  # Calculate mean DBH within each HSD_class
+    mean_DBH = mean(DBH, na.rm = TRUE)
   ) %>%
   summarise(
     amount_trees = n(),
     sp_richness = n_distinct(full_species),
-    trees_per_area = amount_trees / total_area,
-    sp_richness_area = sp_richness / total_area,
-    mean_DBH = mean(mean_DBH, na.rm = TRUE)  # Calculate the mean of mean_DBH per HSD_class
+    trees_per_area = amount_trees / area_class,
+    sp_richness_area = sp_richness / area_class,
+    mean_DBH = mean(mean_DBH, na.rm = TRUE)
   ) %>%
-  distinct(HSD_class, .keep_all = TRUE)
-
+  distinct(HSD_class, .keep_all = TRUE) %>%
+  merge(SumArea, by.x = "HSD_class", by.y = "HSD_class")
+  
 AGB_contour$HSD_class <- as.factor(AGB_contour$HSD_class)
+Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
 
 ```
 
-```{r Anova test for DBH}
-shapiro.test(AGB_contour$mean_DBH)   #test normality
+```{r visual mean DBH}
 
-ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()  #boxplot looks strange
-
-leveneTest(aov(Merged_contour$DBH ~ Merged_contour$HSD_class))  #test homoscedasticity
-
-
-kruskal.test(Merged_contour$DBH ~ Merged_contour$HSD_class)
-
-pairwise.wilcox.test(Merged_contour$DBH, Merged_contour$HSD_class, p.adjust.method="bonferroni")
-
-dunnTest(Merged_contour$DBH, Merged_contour$HSD_class, method = "bonferroni")  #normally good method for unbalanced designs (we have more DBH measurements for certain classes!)
+ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point()
 
 ```
 
-in pairwise no significant effect anywhere, but there is in main total test -> explain this how?
-ask question about DBH
+```{r}
 
-shapiro test: 0.9472 p value => normally distributed
-but not homogeneous variances
-=> Kruskal wallis
+M1 <- lm(Merged_contour$DBH ~ as.factor(Merged_contour$HSD_class))
+summary(M1)
+autoplot(M1)
+```
 
-```{r poisson model for amount of trees}
 
-install.packages("betareg")
-library(betareg)
-M1 <- betareg(trees_per_area ~ HSD_class, data = AGB_contour)
+for mean DBH consider HSD as continuous and see if there is a relationship, also look at max DBH (from the total DBH measurements to also check whether there is a link between this)
+
+```{r DBH}
+
+ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()
+
+# Filter data for DBH values between 0 and 10
+filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
+
+# Plot the filtered data
+ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
+  geom_boxplot() +
+  geom_point()
 
 ```
 
 
-## define buffer zone
+
+```{r}
+AGB_contour$HSD_cont = c(105, 45, 55,65, 75, 85, 95)
+
+glm_trees <- glm(amount_trees ~ HSD_cont, data = AGB_contour, family = "poisson")
+
+glm_trees <- glm(trees_per_area ~ HSD_cont, data = AGB_contour, family ="poisson")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##############################################################################################
+##############################################################################################
+
+## Buffer zone analysis
  no idea abandoned now.
 
-## further analysis
-```{r create Auger dataframe}
+```{r create Augur dataframe}
 
-Auger <- dataAuger2022 %>%
+Augur <- dataAugur2022 %>%
   select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Texture_2023"))
 
 #create new texture variable that contains some non-corrected textures
-Auger$final_texture <- ifelse(
-  is.na(dataAuger2022$Texture_2023) & !(dataAuger2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
-  dataAuger2022$texture,
-  dataAuger2022$Texture_2023
+Augur$final_texture <- ifelse(
+  is.na(dataAugur2022$Texture_2023) & !(dataAugur2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
+  dataAugur2022$texture,
+  dataAugur2022$Texture_2023
 )
 
 #create new column with textures divided in three classes based upon their presence of silt
-Auger$Silt_class <- ifelse(Auger$final_texture == "NA", NA, ifelse(
-  Auger$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Auger$final_texture %in% c("SL", "SA", "S"), "intermediate", "high")))
+Augur$Silt_class <- ifelse(Augur$final_texture == "NA", NA, ifelse(
+  Augur$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur$final_texture %in% c("SL", "SA", "S"), "intermediate", "high")))
 
 
-Auger <- Auger %>% 
+Augur <- Augur %>% 
   select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Silt_class", "final_texture")) %>%
   na.omit()
 
@@ -342,12 +359,12 @@ Auger <- Auger %>%
 !There are multiple DBH measurements because some trees have multiple stems! => only keep biggest one
 
 
-```{r define silt appearance depth for every auger point and merge with botany data}
+```{r define silt appearance depth for every Augur point and merge with botany data}
 
-#creata dataframe in which for every Auger point you have defined depth at which silt concentration becomes high (or if no high it is 100 because consider it as "usefull soil for tree)
+#creata dataframe in which for every Augur point you have defined depth at which silt concentration becomes high (or if no high it is 100 because consider it as "usefull soil for tree)
 
-Auger <- Auger %>% 
-  group_by(sondage_N) %>%  #group by Auger
+Augur <- Augur %>% 
+  group_by(sondage_N) %>%  #group by Augur
   mutate(depth = ifelse(any(Silt_class == "high"), 
                          min(depth_sup[Silt_class == "high"]), 
                          100) ) %>%
@@ -362,7 +379,7 @@ Auger <- Auger %>%
 Points are grouped by distance from center point (arbre_plus_proche)
 
 ```{r create good buffer dataframe}
-write_csv(Auger, "Em_auger.csv")
+write_csv(Augur, "Em_Augur.csv")
 #import data in Qgis
 
 Buffer_points <- read.csv("Em_bufferpoints.csv")
@@ -379,12 +396,12 @@ AGB_buffer <- Buffer_points %>%
 
 AGB_buffer <- AGB_buffer %>% rename_at('Elevation_Paracou_depth1', ~'elevation')
 
-Final <- Auger %>%
+Final <- Augur %>%
   merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
 
 ```
 
-## data visualisation
+#### data visualisation
 
 ```{r quick plots}
 plot(Final$depth, Final$amount_trees)
@@ -395,7 +412,7 @@ plot(Final$depth, Final$DBH)
 limon and hummus link?
 
 
-## test if there is an effect of the depth of the silt horizon appearance on the number of trees
+#### test if there is an effect of the depth of the silt horizon appearance on the number of trees
 
 it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
 
