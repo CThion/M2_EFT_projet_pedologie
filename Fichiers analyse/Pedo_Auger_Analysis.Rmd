@@ -173,7 +173,7 @@ Contour_90to100 <- read.csv("Clip_90to100.csv")
 Contour_100 <- read.csv("Clip_100.csv")
 
 #assign new column to all conotour line dataframes to be able to class them correctly
-Contour_100$HSD_class <- "100"
+Contour_100$HSD_class <- "No High Silt"
 Contour_40to50$HSD_class <- "40to50"
 Contour_50to60$HSD_class <- "50to60"
 Contour_60to70$HSD_class <- "60to70"
@@ -199,7 +199,7 @@ Area_6 <- read.csv("Em_90to100.csv")
 Area_7 <- read.csv("Em_100.csv")
 
 #assign new column to all area dataframes to be able to class them correctly
-Area_7$HSD_class <- "100"
+Area_7$HSD_class <- "No High Silt"
 Area_1$HSD_class <- "40to50"
 Area_2$HSD_class <- "50to60"
 Area_3$HSD_class <- "60to70"
@@ -251,7 +251,7 @@ Merged_contour <- Merged_contour %>%
     HSD_class == "70to80" ~ 75,
     HSD_class == "80to90" ~ 85,
     HSD_class == "90to100" ~ 95,
-    HSD_class == "100" ~ 105,
+    HSD_class == "No High Silt" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
   ))
@@ -298,6 +298,10 @@ summary(glm_density)
 #plot to show tree density per HSD class
 plot(AGB_contour$HSD_class, AGB_contour$tree_density)
 
+ggplot(AGB_contour, aes(x = HSD_class, y = tree_density)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Tree density", title = "Number of trees in function of different HSD Classes") + 
+  scale_y_continuous(breaks = seq(min(AGB_contour$tree_density), max(AGB_contour$tree_density), by = 0.03), labels = function(x) sprintf("%.3f", x))
 ```
 
 ```{r analysis species richness density}
@@ -307,12 +311,18 @@ summary(glm_richness)
 
 #plot to show species richness per HSD class
 plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
+
+ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_density)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Species richness (proportioned by area)", title = "Species richness in function of different HSD Classes")
 ```
 40to50 HSD has much higher species richness per area, is this linked to a specific topography? why would this be?
 
 ```{r visual mean DBH}
 #DBH in function of different HSD classes
-ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()
+ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
+  geom_boxplot() + 
+  labs(x = "HSD Class", y = "DBH", title = "DBH in function of different HSD Classes")
 
 #mean DBH (one value) per class
 ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point()
@@ -367,7 +377,8 @@ filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 # Plot the filtered data
 ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
-  geom_point()
+  geom_point() +
+  labs(x = "HSD Class", y = "DBH (max 10)", title = "Filtered DBH in function of different HSD Classes")
 
 #still no difference visible in mean, again outliers that play a big role
 
