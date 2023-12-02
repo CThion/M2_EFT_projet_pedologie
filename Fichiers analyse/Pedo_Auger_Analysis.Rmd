@@ -164,16 +164,16 @@ linearity, normality
 #import data in Qgis
 
 #read QGIS used data
-Contour_40to50 <- read.csv("Clip_40to50.csv")
-Contour_50to60 <- read.csv("Clip_50to60.csv")
-Contour_60to70 <- read.csv("Clip_60to70.csv")
-Contour_70to80 <- read.csv("Clip_70to80.csv")
-Contour_80to90 <- read.csv("Clip_80to90.csv")
-Contour_90to100 <- read.csv("Clip_90to100.csv")
-Contour_100 <- read.csv("Clip_100.csv")
+Contour_40to50 <- read.csv("Correct_Clip_40to50.csv")
+Contour_50to60 <- read.csv("Correct_Clip_50to60.csv")
+Contour_60to70 <- read.csv("Correct_Clip_60to70.csv")
+Contour_70to80 <- read.csv("Correct_Clip_70to80.csv")
+Contour_80to90 <- read.csv("Correct_Clip_80to90.csv")
+Contour_90to100 <- read.csv("Correct_Clip_90to100.csv")
+Contour_100 <- read.csv("Correct_Clip_100.csv")
 
 #assign new column to all conotour line dataframes to be able to class them correctly
-Contour_100$HSD_class <- "100"
+Contour_100$HSD_class <- "No High Silt"
 Contour_40to50$HSD_class <- "40to50"
 Contour_50to60$HSD_class <- "50to60"
 Contour_60to70$HSD_class <- "60to70"
@@ -189,17 +189,50 @@ Total_contour <- rbind(Contour_100, Contour_40to50, Contour_50to60, Contour_60to
 
 ```{r combine area data with contour data}
 #import area data
-Area_1 <- read.csv("Em_40to50.csv")
-Area_2 <- read.csv("Em_50to60.csv") %>%
-  na.omit
-Area_3 <- read.csv("Em_60to70.csv")
-Area_4 <- read.csv("Em_70to80.csv")
-Area_5 <- read.csv("Em_80to90.csv")
-Area_6 <- read.csv("Em_90to100.csv")
-Area_7 <- read.csv("Em_100.csv")
+Area_1 <- read.csv("Correct_Poly_40to50.csv")
+Area_1 <- Area_1 %>%
+  select(id, Area_1)
+Area_1$Area <- Area_1$Area_1 
+Area_1 <- Area_1 %>%
+  select(id, Area)
+
+Area_2 <- read.csv("Correct_Em_50to60.csv")
+Area_2$Area <- Area_2$area_1 
+Area_2 <- Area_2 %>%
+  select(id, Area)
+
+Area_3 <- read.csv("Correct_Em_60to70.csv")
+
+Area_4 <- read.csv("Correct_Poly_70to80.csv")
+Area_4 <- Area_4 %>%
+  select(id, Area_1)
+Area_4$Area <- Area_4$Area_1 
+Area_4 <- Area_4 %>%
+  select(id, Area)
+
+Area_5 <- read.csv("Correct_Poly_80to90.csv")
+Area_5 <- Area_5 %>%
+  select(id, Area_1)
+Area_5$Area <- Area_5$Area_1 
+Area_5 <- Area_5 %>%
+  select(id, Area)
+
+Area_6 <- read.csv("Correct_Poly_90to100.csv")
+Area_6 <- Area_6 %>%
+  select(id, Area_1)
+Area_6$Area <- Area_6$Area_1 
+Area_6 <- Area_6 %>%
+  select(id, Area)
+
+Area_7 <- read.csv("Correct_Poly_100.csv")
+Area_7 <- Area_7 %>%
+  select(id, Area_1)
+Area_7$Area <- Area_7$Area_1 
+Area_7 <- Area_7 %>%
+  select(id, Area)
 
 #assign new column to all area dataframes to be able to class them correctly
-Area_7$HSD_class <- "100"
+Area_7$HSD_class <- "No High Silt"
 Area_1$HSD_class <- "40to50"
 Area_2$HSD_class <- "50to60"
 Area_3$HSD_class <- "60to70"
@@ -251,7 +284,7 @@ Merged_contour <- Merged_contour %>%
     HSD_class == "70to80" ~ 75,
     HSD_class == "80to90" ~ 85,
     HSD_class == "90to100" ~ 95,
-    HSD_class == "100" ~ 105,
+    HSD_class == "No High Silt" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
   ))
@@ -285,6 +318,9 @@ AGB_contour <- Merged_contour %>%
 
 #create a continuous variable of HSD
 AGB_contour$HSD_cont = c(105, 45, 55,65, 75, 85, 95)
+AGB_contour <- AGB_contour %>%
+  mutate(sp_richness_ha = sp_richness_density*10000,
+         tree_density_ha = tree_density*10000)
 
 ```
 
@@ -298,6 +334,14 @@ summary(glm_density)
 #plot to show tree density per HSD class
 plot(AGB_contour$HSD_class, AGB_contour$tree_density)
 
+ggplot(AGB_contour, aes(x = HSD_class, y = tree_density)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Tree density", title = "Number of trees in function of different HSD Classes")
+
+#plot with ha instead of square meters
+ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Tree density per hectare", title = "Number of trees in function of different HSD Classes")
 ```
 
 ```{r analysis species richness density}
@@ -307,12 +351,25 @@ summary(glm_richness)
 
 #plot to show species richness per HSD class
 plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
+
+ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_density)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Species richness (proportioned by area)", title = "Species richness in function of different HSD Classes") +
+  scale_y_continuous(breaks = seq(min(AGB_contour$sp_richness_density), max(AGB_contour$sp_richness_density), by = 0.03), labels = function(x) sprintf("%.3f", x))
+
+#sp richness per ha
+ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
+  geom_point() +
+  labs(x = "HSD Class", y = "Species richness in ha", title = "Species richness in function of different HSD Classes") +
+  scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200))
 ```
 40to50 HSD has much higher species richness per area, is this linked to a specific topography? why would this be?
 
 ```{r visual mean DBH}
 #DBH in function of different HSD classes
-ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + geom_boxplot()
+ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
+  geom_boxplot() + 
+  labs(x = "HSD Class", y = "DBH", title = "DBH in function of different HSD Classes")
 
 #mean DBH (one value) per class
 ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point()
@@ -367,7 +424,8 @@ filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 # Plot the filtered data
 ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
-  geom_point()
+  geom_point() +
+  labs(x = "HSD Class", y = "DBH (max 10)", title = "Filtered DBH in function of different HSD Classes")
 
 #still no difference visible in mean, again outliers that play a big role
 

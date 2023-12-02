@@ -21,19 +21,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) #to set working dire
 library(GoodmanKruskal)
 library(readxl)
 library(tidyverse)
-library(ggplot2)
-library(corrplot)
-library(FactoMineR) # Pour l'analyse en composantes principales
-library(factoextra)
-#install.packages("psych")
-library(psych)
-install.packages("hrbrthemes")
-library(hrbrthemes)
-install.packages("gdtools")
-library(gdtools)
-library(viridis)
-library(wesanderson)
-install.packages("viridisLite")
+
 dataPitF1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
 dataPitF2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
 dataPitF3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
@@ -124,6 +112,27 @@ print(chi_sq_test)
 kruskal_result <- kruskal.test(Auger$mica, Auger$Silt_class)
 print(kruskal_result)
 
+# Create a contingency table
+contingency_table <- table(Auger$mica, Auger$Silt_class)
+#print
+print(contingency_table)
+# Obtain Cramér's V and other statistics
+assoc_stats <- assocstats(contingency_table)
+
+#print results
+print(assoc_stats)
+# Kruskal-Wallis test (takes ordinal nature of the variables into account)
+kruskal_result <- kruskal.test(Auger$mica, Auger$Silt_class)
+print(kruskal_result)
+
+install.packages("DescTools")
+library(DescTools)
+
+# Calculation of Kruskal's Gamma
+GoodmanKruskalGamma(contingency_table)
+
+GoodmanKruskal::GKtau(Auger$mica, Auger$Silt_class)
+
 
 ```
 
@@ -134,46 +143,34 @@ mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
            color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
 
 mosaicplot(Auger$Silt_class ~ Auger$mica, data = Auger,
-           color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
+           color = TRUE, main = "Mica Silt relation", xlab="Silt class", ylab="Mica content")
+#ou soit
 
-#not really looking like anything useful...?
+# Define custom grey shades
+custom_grey <- gray.colors(3, start = 0.3, end = 0.8)
 
-## didnt work due to package associationPlot(Auger$mica, Auger$Silt_class, main = "Association Plot")
+# Create a mosaic plot with different grey shades, wider tiles, and modified axis labels
+mosaicplot(Auger$mica ~ Auger$Silt_class, color = custom_grey, main = "Mica Silt relation", 
+           xlab = "Mica content", ylab = "Silt class", spacing = 0.3)
 
+# Create a legend separately
+legend <- legendGrob(labels = levels(Auger$mica), pch = 22, 
+                     gp = gpar(fill = custom_grey))
 
+# Draw the legend outside the plot # doesn't work
+grid.draw(legend)
 
-```
-This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
+# Add legend with the same colors as in the plot
+#legend("topright", legend = levels(Auger$mica), fill = custom_grey, title = "Mica content", xpd= TRUE, inset = c(0, -0.15)
+       
+    
+       
 
 ```{r}
-Greta_pente<-read.csv("Qgis/Greta_including_pente.csv")
-
-#remove NA objects
-Greta_pente_without_na <- Greta_pente %>% 
-  na.omit 
-  
-Greta_pente_without_na$Slope=as_factor(Greta_pente_without_na$Slope)
-Greta_pente_without_na$depth_sup=as.numeric(Greta_pente_without_na$depth_sup)
-str(Greta_pente_without_na$Slope)
-str(Greta_pente_without_na$depth_sup)
-
-ggplot(Greta_pente_without_na, aes(x = Slope, y = depth_sup)) +
-  geom_boxplot(fill = "lightblue", color = "blue") +
-  labs(
-    title = "Soil Depth by Hill Position",
-    x = "Hill Position",
-    y = "HSD"
-  )
-linear_model=lm(Greta_pente_without_na$depth_sup~Greta_pente_without_na$Slope)
-plot(linear_model)
-anova(linear_model)
-
-
-#or: 
-#install.packages("analyzer")
-#library(analyzer)
-#CQassociation(Greta_pente_without_na$depth_sup, Greta_pente_without_na$Slope, method= "non-parametric")
 
 ```
+ 
+This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
 
+ 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
