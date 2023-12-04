@@ -150,7 +150,24 @@ ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point()
 #create graph without Augurs that do not have high silt occurrences (they are all attributed 100 for analyses purposes)
 ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
   geom_point(data = subset(Elevation, final_depth != 100)) +
-  geom_smooth(data = subset(Elevation, final_depth != 100), method = "lm")
+  geom_smooth(data = subset(Elevation, final_depth != 100), method = "lm") +
+  theme_minimal() + 
+  labs(x = "Elevation (m)", y = "HSD (cm)", title = "HSD-Elevation relationship")
+
+#create graph without Augurs (they are all attributed 100 for analyses purposes)
+ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal() + 
+  labs(x = "Elevation (m)", y = "HSD (cm)", title = "HSD-Elevation relationship")
+
+#create graph without Augurs (they are all attributed 100 for analyses purposes)
+ggplot(Elevation, aes(x = final_depth, y = Elevation_Paracou_depth1)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal() + 
+  labs(x = "HSD", y = "Elevation", title = "HSD-Elevation relationship")
+  
 
 ```
 
@@ -390,6 +407,21 @@ augerPlot_DBH <- ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) +
   labs(x = "HSD Class", y = "DBH", title = "(c)") +
   theme_minimal()
 augerPlot_DBH
+
+
+library(ggplot2)
+# Filter the data
+filtered_data <- subset(Merged_contour, DBH > 10)
+
+# Create the plot with the filtered data
+NEWaugerPlot_DBH <- ggplot(filtered_data, aes(x = HSD_class, y = DBH)) + 
+  geom_boxplot() + 
+  labs(x = "HSD Class", y = "DBH", title = "(c)") +
+  theme_minimal()
+
+# Display the plot
+NEWaugerPlot_DBH
+
 
 #mean DBH (one value) per class
 ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point() +
