@@ -140,10 +140,10 @@ To visually show the relation we use a mosaic plot.
 ```{r}
 # Create a mosaic plot
 mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
-           color = TRUE, main = "Mica Silt relation", xlab="Mica content", ylab="Silt class")
+           color = TRUE, main = "Mica-Silt relation", xlab="Mica content", ylab="Silt content")
 
 mosaicplot(Auger$Silt_class ~ Auger$mica, data = Auger,
-           color = TRUE, main = "Mica Silt relation", xlab="Silt class", ylab="Mica content")
+           color = TRUE, main = "Mica Silt relation", xlab="Silt content", ylab="Mica content")
 #ou soit
 
 # Define custom grey shades
@@ -163,13 +163,44 @@ grid.draw(legend)
 # Add legend with the same colors as in the plot
 #legend("topright", legend = levels(Auger$mica), fill = custom_grey, title = "Mica content", xpd= TRUE, inset = c(0, -0.15)
        
-    
-       
 
+```
 ```{r}
+# Your original mosaic plot
+mosaicplot(Auger$mica ~ Auger$Silt_class, data = Auger,
+           color = TRUE, main = "Mica Silt relation", xlab = "Mica content", ylab = "Silt content")
+
+# Define categories and corresponding colors
+categories <- unique(Auger$Silt_class)  # Assuming Silt_class contains categories
+colors <- c("white", "#808080", "#404040")  # Define colors for each category (grey shades)
+
+# Create a legend manually using the legend function, adjust coordinates
+legend("topright", legend = categories, fill = colors, x.intersp = 0.5, y.intersp = 0.5, xjust = 1, yjust = 1)
+
+
+
+
+
+
+library(ggplot2)
+library(dplyr)
+
+# Assuming Auger is your dataset
+# Using dplyr to create a summary of counts
+plot_data <- Auger %>%
+  count(Silt_class, mica) %>%
+  mutate(mica = factor(mica), Silt_class = factor(Silt_class))
+
+# Create the plot with switched axes
+ggplot(plot_data, aes(x = mica, y = Silt_class, fill = n)) +
+  geom_tile() +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(title = "Mica Silt relation", x = "Mica content", y = "Silt content")
+
 
 ```
  
+
 This method is used to test and visualize associations between ordinal variables. They do not measure the strength or direction of a correlation as you would with continuous variables.
 
  

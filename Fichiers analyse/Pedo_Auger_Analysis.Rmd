@@ -278,12 +278,12 @@ Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
 #create a continuous variable of HSD
 Merged_contour <- Merged_contour %>%
   mutate(HSD_cont = case_when(
-    HSD_class == "40to50" ~ 45,
+    HSD_class == "40to50" ~ 44,
     HSD_class == "50to60" ~ 55,
-    HSD_class == "60to70" ~ 65,
+    HSD_class == "60to70" ~ 67,
     HSD_class == "70to80" ~ 75,
     HSD_class == "80to90" ~ 85,
-    HSD_class == "90to100" ~ 95,
+    HSD_class == "90to100" ~ 99,
     HSD_class == "No High Silt" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
@@ -317,7 +317,7 @@ AGB_contour <- Merged_contour %>%
   merge(SumArea, by.x = "HSD_class", by.y = "HSD_class")
 
 #create a continuous variable of HSD
-AGB_contour$HSD_cont = c(105, 45, 55,65, 75, 85, 95)
+AGB_contour$HSD_cont = c(105, 44, 55,67, 75, 85, 99)
 AGB_contour <- AGB_contour %>%
   mutate(sp_richness_ha = sp_richness_density*10000,
          tree_density_ha = tree_density*10000)
@@ -336,12 +336,20 @@ plot(AGB_contour$HSD_class, AGB_contour$tree_density)
 
 ggplot(AGB_contour, aes(x = HSD_class, y = tree_density)) +
   geom_point() +
-  labs(x = "HSD Class", y = "Tree density", title = "Number of trees in function of different HSD Classes")
+  labs(x = "HSD Class", y = "Tree density", title = "Number of trees in function of different HSD Classes") +
+  theme_minimal()
 
 #plot with ha instead of square meters
 ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
   geom_point() +
-  labs(x = "HSD Class", y = "Tree density per hectare", title = "Number of trees in function of different HSD Classes")
+  labs(x = "HSD Class", y = "Tree density (per ha)", title = "(b)") +
+  theme_minimal()
+ 
+#check overdispersion
+#If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
+pp<- sum(resid(glm_density, type = "pearson")^2)
+1 - pchisq(pp, glm_density$df.resid)
+
 ```
 
 ```{r analysis species richness density}
@@ -355,13 +363,20 @@ plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
 ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_density)) +
   geom_point() +
   labs(x = "HSD Class", y = "Species richness (proportioned by area)", title = "Species richness in function of different HSD Classes") +
-  scale_y_continuous(breaks = seq(min(AGB_contour$sp_richness_density), max(AGB_contour$sp_richness_density), by = 0.03), labels = function(x) sprintf("%.3f", x))
+  scale_y_continuous(breaks = seq(min(AGB_contour$sp_richness_density), max(AGB_contour$sp_richness_density), by = 0.03), labels = function(x) sprintf("%.3f", x)) +
+  theme_minimal()
 
 #sp richness per ha
 ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
   geom_point() +
-  labs(x = "HSD Class", y = "Species richness in ha", title = "Species richness in function of different HSD Classes") +
-  scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200))
+  labs(x = "HSD Class", y = "Species richness (per ha)", title = "(a)") +
+  scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200)) +
+  theme_minimal()
+
+#check overdispersion
+#If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
+pp<- sum(resid(glm_richness, type = "pearson")^2)
+1 - pchisq(pp, glm_richness$df.resid)
 ```
 40to50 HSD has much higher species richness per area, is this linked to a specific topography? why would this be?
 
@@ -369,10 +384,12 @@ ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
 #DBH in function of different HSD classes
 ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
-  labs(x = "HSD Class", y = "DBH", title = "DBH in function of different HSD Classes")
+  labs(x = "HSD Class", y = "DBH", title = "(c)") +
+  theme_minimal()
 
 #mean DBH (one value) per class
-ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point()
+ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point() +
+  theme_minimal()
 
 ```
 
@@ -425,7 +442,8 @@ filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
   geom_point() +
-  labs(x = "HSD Class", y = "DBH (max 10)", title = "Filtered DBH in function of different HSD Classes")
+  labs(x = "HSD Class", y = "DBH (max 10)", title = "(d)") +
+  theme_minimal()
 
 #still no difference visible in mean, again outliers that play a big role
 
