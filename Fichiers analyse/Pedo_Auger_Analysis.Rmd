@@ -26,6 +26,7 @@ library(ggfortify)   #for autoplot function
 library(datasets)   #library for KW test
 library(FSA)        #library for dunn test
 
+# save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
 ```
 
 ```{r upload and structure data}
@@ -340,11 +341,12 @@ ggplot(AGB_contour, aes(x = HSD_class, y = tree_density)) +
   theme_minimal()
 
 #plot with ha instead of square meters
-ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
+augerPlot_density <- ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
   geom_point() +
   labs(x = "HSD Class", y = "Tree density (per ha)", title = "(b)") +
   theme_minimal()
- 
+augerPlot_density
+
 #check overdispersion
 #If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
 pp<- sum(resid(glm_density, type = "pearson")^2)
@@ -367,11 +369,12 @@ ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_density)) +
   theme_minimal()
 
 #sp richness per ha
-ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
+augerPlot_richness <- ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
   geom_point() +
   labs(x = "HSD Class", y = "Species richness (per ha)", title = "(a)") +
   scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200)) +
   theme_minimal()
+augerPlot_richness
 
 #check overdispersion
 #If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
@@ -382,10 +385,11 @@ pp<- sum(resid(glm_richness, type = "pearson")^2)
 
 ```{r visual mean DBH}
 #DBH in function of different HSD classes
-ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
+augerPlot_DBH <- ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
   labs(x = "HSD Class", y = "DBH", title = "(c)") +
   theme_minimal()
+augerPlot_DBH
 
 #mean DBH (one value) per class
 ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point() +
@@ -439,11 +443,12 @@ plot(model_DBH_new)
 filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 
 # Plot the filtered data
-ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
+augerPlot_DBH_inf10 <- ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
   geom_point() +
   labs(x = "HSD Class", y = "DBH (max 10)", title = "(d)") +
   theme_minimal()
+augerPlot_DBH_inf10
 
 #still no difference visible in mean, again outliers that play a big role
 
