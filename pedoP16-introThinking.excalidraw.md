@@ -185,7 +185,7 @@ On observe une résultantes de tous les facteurs qui touchent les racines. C'est
 Contrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?
 
 ========MAT&MET========
-- LSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY
+- HSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY
 - micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement parlant ce sont des limons ==> PROXY AUSSI
 
 on a fait des fosses très proches pour fixer l'effet topographique
@@ -223,6 +223,68 @@ REGARDER BIBLIO diversite~topography
 
 retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux (cours de stephan) ^IQfzNk6D
 
+RESULTS: 
+- depth effect & most root on top
+- HSD effect ^P4RWipRH
+
+- Results in contradiction with Humbel (1978)
+- We didn't have enough data to statistically test the effect ^sgSjs05p
+
+- correlation TOPO~HSD :rho = - 0,634 ^05Va4XBp
+
+- negative effect of HSD on species richness ^cJWCqmDI
+
+- no effect of HSD on DBH ^KbiXTodb
+
+coherent with Epron (2006) ^5F37cyjv
+
+Allié et al. (2015): species richness is higher in mid-slope positions and decreases towards the hilltop ^jdyUZEwn
+
+- negative effect of HSD on density
+- Maximum tree count for HSD between 60 and 80 cm ^FVczW7IE
+
+allows ^stVuT2Zc
+
+/!\ only seven classes ^m1lW1R8E
+
+/!\ soil texture variation speed unknow ^5AFvtpkI
+
+maximum DBH value increases with HSD class ^jhiQOq5L
+
+(???urg): DBH increase with elevation ^IrsOusUa
+
+Castillo:  low tree density at higher elevations on the slope?
+
+In a study conducted by de Castilho et al. in 2006, a positive correlation was observed between above-ground living (AGLB) biomass and either altitude or soil texture gradient (% of clay). Notably, 14% of the AGLB in understory and emergent trees were also explained by slope. The analysis revealed that a significant portion of AGLB was accounted for by tree classes characterized by small size, specifically those with a diameter at breast height (dbh) between 1 ≤ dbh < 10 cm.  ^OpRUvKuz
+
+(Allié et al., 2015): topography and drainage type are strongly linked ^keqbkVyk
+
+Sabatier (1997): Forest rerewal might be faster on LSD ^8KYG13va
+
+Sabatier (1997): there is a tendency for LSD soil to tend toward hilltop or downhill hydromophic transformation system  ^m6lNLPG4
+
+enhance HSD proxy by taking into account the water capacity of the above HSD soil texture. ^JmmYQ8if
+
+Coherent with Sabatier (1997) ^hqVkmbcX
+
+In the literature, the relation between forest structuration and topography is well studied.
+
+In our study, we found a strong negative correlation between topography and HSD, as Ferry (2003) also on the Paracou station. 
+
+Then it is interesting to think that the results we have on the effect of HSD on forest community structure indicators might participate into the explanation of the topography effect.
+
+Our results might help in the understanding of forest community structuration over topography variations.
+
+Our study take place into the whole cortage of community structure study over topography gradient. ^caM0Mdw3
+
+Our results indicate that species richness and tree density show a significant but small decrease with HSD (Figure 1a, 1b). Maximum tree count could be observed at a medium HSD between 60 and 80 cm. No linear dependency was found between HSD and DBH measurements. The mean DBH values appear consistent over all HSD classes (Fig. 1c, 1d). A trend can be observed in the outliers per class, where the maximum DBH value increases with HSD class. ^ulAHiGQb
+
+TOPO ^2cJEJDwb
+
+TOPO ^xtdSCVkf
+
+TOPO ^05hd6byE
+
 %%
 # Drawing
 ```json
@@ -233,8 +295,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 	"elements": [
 		{
 			"type": "rectangle",
-			"version": 139,
-			"versionNonce": 1017770062,
+			"version": 141,
+			"versionNonce": 1910748390,
 			"isDeleted": false,
 			"id": "vYm2Cgz4vz5Mj-emTdpuw",
 			"fillStyle": "solid",
@@ -261,14 +323,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "8UMRR3vx"
 				}
 			],
-			"updated": 1701530989325,
+			"updated": 1701641774970,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 372,
-			"versionNonce": 795247506,
+			"version": 374,
+			"versionNonce": 1460335738,
 			"isDeleted": false,
 			"id": "8UMRR3vx",
 			"fillStyle": "solid",
@@ -288,7 +350,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989325,
+			"updated": 1701641774970,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -304,8 +366,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 114,
-			"versionNonce": 1122154126,
+			"version": 116,
+			"versionNonce": 715663398,
 			"isDeleted": false,
 			"id": "2cFmXoT5",
 			"fillStyle": "solid",
@@ -325,7 +387,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989325,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -341,8 +403,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 259,
-			"versionNonce": 1521762642,
+			"version": 261,
+			"versionNonce": 1365923130,
 			"isDeleted": false,
 			"id": "gaw6CpFf-yjxGwEDChQia",
 			"fillStyle": "solid",
@@ -373,14 +435,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989325,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 560,
-			"versionNonce": 178828494,
+			"version": 562,
+			"versionNonce": 284963686,
 			"isDeleted": false,
 			"id": "Lsgf7Lab",
 			"fillStyle": "solid",
@@ -400,7 +462,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989325,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -416,8 +478,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 404,
-			"versionNonce": 1493452562,
+			"version": 406,
+			"versionNonce": 849321466,
 			"isDeleted": false,
 			"id": "utAMvFDRYdeZSrYhRz04e",
 			"fillStyle": "solid",
@@ -452,14 +514,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989325,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 717,
-			"versionNonce": 1570040590,
+			"version": 719,
+			"versionNonce": 2133644966,
 			"isDeleted": false,
 			"id": "DyiiQJBF",
 			"fillStyle": "solid",
@@ -479,7 +541,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989325,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -495,8 +557,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 429,
-			"versionNonce": 583898322,
+			"version": 431,
+			"versionNonce": 2007879354,
 			"isDeleted": false,
 			"id": "CKJd9UwnssoAB44iAQpou",
 			"fillStyle": "solid",
@@ -531,14 +593,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 750,
-			"versionNonce": 1780504910,
+			"version": 752,
+			"versionNonce": 2112295398,
 			"isDeleted": false,
 			"id": "SaXjJolE",
 			"fillStyle": "solid",
@@ -558,7 +620,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -574,8 +636,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 512,
-			"versionNonce": 161950354,
+			"version": 514,
+			"versionNonce": 87549818,
 			"isDeleted": false,
 			"id": "b14lGSNUVC9JqAfjuY1vQ",
 			"fillStyle": "solid",
@@ -610,14 +672,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 840,
-			"versionNonce": 665059214,
+			"version": 842,
+			"versionNonce": 2016929062,
 			"isDeleted": false,
 			"id": "hJ6TfNf7",
 			"fillStyle": "solid",
@@ -637,7 +699,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -653,8 +715,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 499,
-			"versionNonce": 340265042,
+			"version": 501,
+			"versionNonce": 864086074,
 			"isDeleted": false,
 			"id": "J97M6SBnPmwHnN9lVqd06",
 			"fillStyle": "solid",
@@ -693,14 +755,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 850,
-			"versionNonce": 978902478,
+			"version": 852,
+			"versionNonce": 1871466598,
 			"isDeleted": false,
 			"id": "eztWkvbf",
 			"fillStyle": "solid",
@@ -720,7 +782,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774971,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -736,8 +798,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 505,
-			"versionNonce": 342158098,
+			"version": 527,
+			"versionNonce": 1613516838,
 			"isDeleted": false,
 			"id": "fhfjraCKNDbet6Mo9f_66",
 			"fillStyle": "solid",
@@ -759,7 +821,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531331,
+			"updated": 1701641864033,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -788,8 +850,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 470,
-			"versionNonce": 1584779794,
+			"version": 492,
+			"versionNonce": 1449659686,
 			"isDeleted": false,
 			"id": "WKj90IhO27c_CxDU0j5n-",
 			"fillStyle": "solid",
@@ -811,7 +873,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531337,
+			"updated": 1701641864037,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -840,8 +902,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 294,
-			"versionNonce": 828061970,
+			"version": 316,
+			"versionNonce": 912083494,
 			"isDeleted": false,
 			"id": "vhYRK16iFjke48srdggLk",
 			"fillStyle": "solid",
@@ -863,7 +925,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531343,
+			"updated": 1701641864041,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -892,8 +954,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 303,
-			"versionNonce": 1785306258,
+			"version": 325,
+			"versionNonce": 360806566,
 			"isDeleted": false,
 			"id": "_3iE4Tvr6EkIpAg6ORcBa",
 			"fillStyle": "solid",
@@ -915,7 +977,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531344,
+			"updated": 1701641864042,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -944,8 +1006,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 239,
-			"versionNonce": 1475099218,
+			"version": 251,
+			"versionNonce": 1700230118,
 			"isDeleted": false,
 			"id": "-vfkTAN9JEIKpUz0_oOEn",
 			"fillStyle": "solid",
@@ -967,7 +1029,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531345,
+			"updated": 1701641864042,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1000,8 +1062,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 96,
-			"versionNonce": 821610638,
+			"version": 98,
+			"versionNonce": 1702961702,
 			"isDeleted": false,
 			"id": "GBlE05aV",
 			"fillStyle": "solid",
@@ -1021,7 +1083,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1037,8 +1099,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 345,
-			"versionNonce": 239095634,
+			"version": 347,
+			"versionNonce": 137755450,
 			"isDeleted": false,
 			"id": "XhWK9S8PJTHOg6X_vohNw",
 			"fillStyle": "solid",
@@ -1065,14 +1127,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "efwkQ2GS"
 				}
 			],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 798,
-			"versionNonce": 808224462,
+			"version": 800,
+			"versionNonce": 983952742,
 			"isDeleted": false,
 			"id": "efwkQ2GS",
 			"fillStyle": "solid",
@@ -1092,7 +1154,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1108,8 +1170,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 423,
-			"versionNonce": 467571986,
+			"version": 425,
+			"versionNonce": 486966266,
 			"isDeleted": false,
 			"id": "QlvalDDUBlLTUdBTxCMJ5",
 			"fillStyle": "solid",
@@ -1136,14 +1198,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "tMnUwPDz"
 				}
 			],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 636,
-			"versionNonce": 114195726,
+			"version": 638,
+			"versionNonce": 2140098726,
 			"isDeleted": false,
 			"id": "tMnUwPDz",
 			"fillStyle": "solid",
@@ -1163,7 +1225,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1179,8 +1241,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 49,
-			"versionNonce": 1898848978,
+			"version": 51,
+			"versionNonce": 4715706,
 			"isDeleted": false,
 			"id": "n-hFCqDkxoL0uMEuQnWqk",
 			"fillStyle": "solid",
@@ -1202,7 +1264,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989326,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -1223,8 +1285,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 140,
-			"versionNonce": 441953102,
+			"version": 142,
+			"versionNonce": 2146061286,
 			"isDeleted": false,
 			"id": "ZHIp1yC5IPZDrsbsxUnmM",
 			"fillStyle": "solid",
@@ -1251,14 +1313,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "fStH1pjS"
 				}
 			],
-			"updated": 1701530989327,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 319,
-			"versionNonce": 415627410,
+			"version": 321,
+			"versionNonce": 60640634,
 			"isDeleted": false,
 			"id": "fStH1pjS",
 			"fillStyle": "solid",
@@ -1278,7 +1340,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989327,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1294,8 +1356,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 167,
-			"versionNonce": 958468494,
+			"version": 169,
+			"versionNonce": 163831590,
 			"isDeleted": false,
 			"id": "3s7Eijh5",
 			"fillStyle": "solid",
@@ -1315,7 +1377,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989327,
+			"updated": 1701641774972,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1331,8 +1393,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 332,
-			"versionNonce": 844961362,
+			"version": 334,
+			"versionNonce": 1279888954,
 			"isDeleted": false,
 			"id": "E293iwXxPWWrXYruKA_Pi",
 			"fillStyle": "solid",
@@ -1354,7 +1416,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989327,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -1375,8 +1437,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 423,
-			"versionNonce": 2120462286,
+			"version": 425,
+			"versionNonce": 562629222,
 			"isDeleted": false,
 			"id": "6sFBumSK",
 			"fillStyle": "solid",
@@ -1396,7 +1458,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989328,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1412,8 +1474,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 331,
-			"versionNonce": 1321892882,
+			"version": 333,
+			"versionNonce": 1596962554,
 			"isDeleted": false,
 			"id": "J09kmgMAnqxpCUQMl8YyJ",
 			"fillStyle": "solid",
@@ -1435,7 +1497,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989328,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -1456,8 +1518,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 469,
-			"versionNonce": 909673998,
+			"version": 471,
+			"versionNonce": 906415526,
 			"isDeleted": false,
 			"id": "EIVT5WvqJ9u-haM49rIFQ",
 			"fillStyle": "solid",
@@ -1488,14 +1550,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989328,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 544,
-			"versionNonce": 1275406802,
+			"version": 546,
+			"versionNonce": 752011194,
 			"isDeleted": false,
 			"id": "Mv78vAXU",
 			"fillStyle": "solid",
@@ -1515,7 +1577,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989328,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1531,8 +1593,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 507,
-			"versionNonce": 1100518478,
+			"version": 509,
+			"versionNonce": 1416243430,
 			"isDeleted": false,
 			"id": "eE1HlzRpZ2KnYhXA8q8U3",
 			"fillStyle": "solid",
@@ -1563,14 +1625,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989328,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 706,
-			"versionNonce": 824450962,
+			"version": 708,
+			"versionNonce": 492159098,
 			"isDeleted": false,
 			"id": "AH22JfSz",
 			"fillStyle": "solid",
@@ -1590,7 +1652,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989329,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1606,8 +1668,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 79,
-			"versionNonce": 2052905614,
+			"version": 81,
+			"versionNonce": 1547705382,
 			"isDeleted": false,
 			"id": "dkLRvQYLc5FcXV_IUYBpX",
 			"fillStyle": "solid",
@@ -1629,7 +1691,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989329,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -1650,8 +1712,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 459,
-			"versionNonce": 173956434,
+			"version": 461,
+			"versionNonce": 477864250,
 			"isDeleted": false,
 			"id": "kT5Un2jWuuy9JSprE1zSC",
 			"fillStyle": "solid",
@@ -1673,7 +1735,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989329,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -1694,8 +1756,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 516,
-			"versionNonce": 389961934,
+			"version": 518,
+			"versionNonce": 863348582,
 			"isDeleted": false,
 			"id": "wKhxewy8MDZiVHVzDxyiu",
 			"fillStyle": "solid",
@@ -1722,14 +1784,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "c4GB9FyD"
 				}
 			],
-			"updated": 1701530989329,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 915,
-			"versionNonce": 1158341394,
+			"version": 917,
+			"versionNonce": 631728634,
 			"isDeleted": false,
 			"id": "c4GB9FyD",
 			"fillStyle": "solid",
@@ -1749,7 +1811,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989329,
+			"updated": 1701641774973,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1765,8 +1827,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 159,
-			"versionNonce": 265686798,
+			"version": 161,
+			"versionNonce": 2052573862,
 			"isDeleted": false,
 			"id": "oINx9FNZAi3-Yi6qPR8c-",
 			"fillStyle": "solid",
@@ -1793,14 +1855,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "7Jd8ofpj"
 				}
 			],
-			"updated": 1701530989330,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 144,
-			"versionNonce": 195080402,
+			"version": 146,
+			"versionNonce": 1339824826,
 			"isDeleted": false,
 			"id": "7Jd8ofpj",
 			"fillStyle": "solid",
@@ -1820,7 +1882,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989330,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1836,8 +1898,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 47,
-			"versionNonce": 10288462,
+			"version": 49,
+			"versionNonce": 1066632678,
 			"isDeleted": false,
 			"id": "uldo7E1O",
 			"fillStyle": "solid",
@@ -1866,7 +1928,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989330,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 91.46911671593998,
@@ -1882,8 +1944,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 236,
-			"versionNonce": 565626514,
+			"version": 238,
+			"versionNonce": 1505538938,
 			"isDeleted": false,
 			"id": "ci0L8v1N",
 			"fillStyle": "solid",
@@ -1916,7 +1978,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989331,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1932,8 +1994,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 393,
-			"versionNonce": 250356622,
+			"version": 395,
+			"versionNonce": 875944230,
 			"isDeleted": false,
 			"id": "Rdl1mAG8jYKT7VemD0YwH",
 			"fillStyle": "solid",
@@ -1955,7 +2017,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989331,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1984,8 +2046,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 628,
-			"versionNonce": 1074013266,
+			"version": 630,
+			"versionNonce": 898380858,
 			"isDeleted": false,
 			"id": "Pmpm00iy3SBPxnKx5Fpqx",
 			"fillStyle": "solid",
@@ -2012,14 +2074,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "rg6WCb70"
 				}
 			],
-			"updated": 1701530989331,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1014,
-			"versionNonce": 1291616718,
+			"version": 1016,
+			"versionNonce": 1605092454,
 			"isDeleted": false,
 			"id": "rg6WCb70",
 			"fillStyle": "solid",
@@ -2039,7 +2101,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989331,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2055,8 +2117,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 557,
-			"versionNonce": 1885325842,
+			"version": 559,
+			"versionNonce": 355310842,
 			"isDeleted": false,
 			"id": "ZhNzSQczQN8PnNy5jVGmA",
 			"fillStyle": "solid",
@@ -2091,14 +2153,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989332,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 639,
-			"versionNonce": 501684238,
+			"version": 641,
+			"versionNonce": 1405241254,
 			"isDeleted": false,
 			"id": "EtWc5aP6",
 			"fillStyle": "solid",
@@ -2118,7 +2180,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989332,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2134,8 +2196,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 657,
-			"versionNonce": 1774237650,
+			"version": 659,
+			"versionNonce": 1982066106,
 			"isDeleted": false,
 			"id": "ODIC8HHevyj2-u37vlX3n",
 			"fillStyle": "solid",
@@ -2166,14 +2228,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989332,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 819,
-			"versionNonce": 430237262,
+			"version": 821,
+			"versionNonce": 1621517030,
 			"isDeleted": false,
 			"id": "pEjBUOrf",
 			"fillStyle": "solid",
@@ -2193,7 +2255,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989332,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2209,8 +2271,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 632,
-			"versionNonce": 1815997842,
+			"version": 634,
+			"versionNonce": 764552826,
 			"isDeleted": false,
 			"id": "KEpIRcc_be4a_5rqqY5gi",
 			"fillStyle": "solid",
@@ -2241,14 +2303,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989332,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 810,
-			"versionNonce": 1896803470,
+			"version": 812,
+			"versionNonce": 1222972966,
 			"isDeleted": false,
 			"id": "akoUUouJ",
 			"fillStyle": "solid",
@@ -2268,7 +2330,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989333,
+			"updated": 1701641774974,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2284,8 +2346,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 774,
-			"versionNonce": 1887858194,
+			"version": 796,
+			"versionNonce": 420872486,
 			"isDeleted": false,
 			"id": "q25rBUccl3iI3uDEHfKN7",
 			"fillStyle": "solid",
@@ -2307,7 +2369,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531376,
+			"updated": 1701641864073,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2336,8 +2398,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 695,
-			"versionNonce": 1373514446,
+			"version": 697,
+			"versionNonce": 1969971558,
 			"isDeleted": false,
 			"id": "0vjBH7GyEIhc3knpALaGk",
 			"fillStyle": "solid",
@@ -2364,14 +2426,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "IOpP2MMJ"
 				}
 			],
-			"updated": 1701530989333,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 816,
-			"versionNonce": 1653158162,
+			"version": 818,
+			"versionNonce": 1921142778,
 			"isDeleted": false,
 			"id": "IOpP2MMJ",
 			"fillStyle": "solid",
@@ -2391,7 +2453,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989333,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2407,8 +2469,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 151,
-			"versionNonce": 1252761870,
+			"version": 153,
+			"versionNonce": 696665254,
 			"isDeleted": false,
 			"id": "wIisjQ7M",
 			"fillStyle": "solid",
@@ -2437,7 +2499,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989334,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2453,8 +2515,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 120,
-			"versionNonce": 1076182738,
+			"version": 122,
+			"versionNonce": 1282031802,
 			"isDeleted": false,
 			"id": "OM1Ps6q85C-U61k7Fq1MG",
 			"fillStyle": "solid",
@@ -2476,7 +2538,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989334,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2505,8 +2567,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 156,
-			"versionNonce": 787500878,
+			"version": 158,
+			"versionNonce": 920829926,
 			"isDeleted": false,
 			"id": "rkpvMXYqg5lYyvYKLzQjH",
 			"fillStyle": "solid",
@@ -2528,7 +2590,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989334,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2557,8 +2619,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 66,
-			"versionNonce": 846828690,
+			"version": 68,
+			"versionNonce": 764811642,
 			"isDeleted": false,
 			"id": "vueJ3wsomYlPwTK-NSeAm",
 			"fillStyle": "solid",
@@ -2580,7 +2642,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989334,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2609,8 +2671,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 36,
-			"versionNonce": 2063938958,
+			"version": 38,
+			"versionNonce": 831378214,
 			"isDeleted": false,
 			"id": "JjWssO39",
 			"fillStyle": "solid",
@@ -2635,7 +2697,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989335,
+			"updated": 1701641774975,
 			"link": "https://coursgeologie.com/les-alterites-61/",
 			"locked": false,
 			"fontSize": 20,
@@ -2651,8 +2713,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 309,
-			"versionNonce": 188559954,
+			"version": 311,
+			"versionNonce": 1430837818,
 			"isDeleted": false,
 			"id": "Xq7T7p9CoQ5rLAwhMwG6j",
 			"fillStyle": "solid",
@@ -2687,14 +2749,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989335,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 651,
-			"versionNonce": 941839310,
+			"version": 653,
+			"versionNonce": 603225702,
 			"isDeleted": false,
 			"id": "1KfWjfZH",
 			"fillStyle": "solid",
@@ -2714,7 +2776,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989335,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2730,8 +2792,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "ellipse",
-			"version": 556,
-			"versionNonce": 1296504850,
+			"version": 558,
+			"versionNonce": 577078010,
 			"isDeleted": false,
 			"id": "6HekLxlt6vLdODPXcptip",
 			"fillStyle": "solid",
@@ -2755,14 +2817,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989335,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "freedraw",
-			"version": 762,
-			"versionNonce": 1617144334,
+			"version": 764,
+			"versionNonce": 1122222502,
 			"isDeleted": false,
 			"id": "WgSRP5CqJ4gDDuVbPwmHM",
 			"fillStyle": "solid",
@@ -2786,7 +2848,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989335,
+			"updated": 1701641774975,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3229,8 +3291,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 707,
-			"versionNonce": 143541714,
+			"version": 709,
+			"versionNonce": 527373242,
 			"isDeleted": false,
 			"id": "6ojgpKDVVvXenE2lrsRBU",
 			"fillStyle": "solid",
@@ -3254,7 +3316,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989336,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3509,8 +3571,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 551,
-			"versionNonce": 1119828046,
+			"version": 553,
+			"versionNonce": 562601190,
 			"isDeleted": false,
 			"id": "YR3SMTh2P7qv-wcvFYi4P",
 			"fillStyle": "solid",
@@ -3533,7 +3595,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989336,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3560,8 +3622,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 580,
-			"versionNonce": 908704658,
+			"version": 582,
+			"versionNonce": 243829882,
 			"isDeleted": false,
 			"id": "kBnZRRReLbuOkzzJQtXVm",
 			"fillStyle": "solid",
@@ -3584,7 +3646,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989336,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3727,8 +3789,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 556,
-			"versionNonce": 1729035918,
+			"version": 558,
+			"versionNonce": 1701842982,
 			"isDeleted": false,
 			"id": "3r8UKq33BiKsc_3WSRbjX",
 			"fillStyle": "solid",
@@ -3751,7 +3813,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989336,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3798,8 +3860,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 564,
-			"versionNonce": 340818258,
+			"version": 566,
+			"versionNonce": 1970597178,
 			"isDeleted": false,
 			"id": "nQVNR9Yfktj01e6EyMEG1",
 			"fillStyle": "solid",
@@ -3822,7 +3884,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989336,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -3901,8 +3963,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 540,
-			"versionNonce": 156185358,
+			"version": 542,
+			"versionNonce": 2055674726,
 			"isDeleted": false,
 			"id": "E620aAd99cu6mFtD63eNv",
 			"fillStyle": "solid",
@@ -3929,14 +3991,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "CtcnYorg"
 				}
 			],
-			"updated": 1701530989337,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 735,
-			"versionNonce": 1555811538,
+			"version": 737,
+			"versionNonce": 697775610,
 			"isDeleted": false,
 			"id": "CtcnYorg",
 			"fillStyle": "solid",
@@ -3956,7 +4018,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989337,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -3972,8 +4034,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 576,
-			"versionNonce": 928096590,
+			"version": 578,
+			"versionNonce": 1192935078,
 			"isDeleted": false,
 			"id": "WOvJaM9gjhjWtacSygMQL",
 			"fillStyle": "solid",
@@ -4002,14 +4064,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "UUgXQJIy"
 				}
 			],
-			"updated": 1701530989338,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 664,
-			"versionNonce": 1494114962,
+			"version": 666,
+			"versionNonce": 1542612666,
 			"isDeleted": false,
 			"id": "UUgXQJIy",
 			"fillStyle": "solid",
@@ -4031,7 +4093,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989338,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -4047,8 +4109,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "diamond",
-			"version": 656,
-			"versionNonce": 1332496270,
+			"version": 658,
+			"versionNonce": 1607989734,
 			"isDeleted": false,
 			"id": "FrQNOf0PMkDRikrRPGH5-",
 			"fillStyle": "solid",
@@ -4077,14 +4139,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "301lzo3f"
 				}
 			],
-			"updated": 1701530989338,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 538,
-			"versionNonce": 1644707922,
+			"version": 540,
+			"versionNonce": 623476602,
 			"isDeleted": false,
 			"id": "301lzo3f",
 			"fillStyle": "solid",
@@ -4106,7 +4168,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989338,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -4122,8 +4184,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 845,
-			"versionNonce": 101421458,
+			"version": 867,
+			"versionNonce": 1287155622,
 			"isDeleted": false,
 			"id": "aik2n7EL1__oSXb1AALkm",
 			"fillStyle": "solid",
@@ -4145,7 +4207,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531382,
+			"updated": 1701641864077,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -4174,8 +4236,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 261,
-			"versionNonce": 1937794578,
+			"version": 263,
+			"versionNonce": 293568570,
 			"isDeleted": false,
 			"id": "gag7vUxVIfi_se6rs85Qj",
 			"fillStyle": "solid",
@@ -4206,14 +4268,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989339,
+			"updated": 1701641774976,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 349,
-			"versionNonce": 1336818702,
+			"version": 351,
+			"versionNonce": 1751332966,
 			"isDeleted": false,
 			"id": "P7nmnvL0",
 			"fillStyle": "solid",
@@ -4233,7 +4295,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989339,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -4249,8 +4311,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 504,
-			"versionNonce": 530932434,
+			"version": 526,
+			"versionNonce": 20089190,
 			"isDeleted": false,
 			"id": "jDsuiJAgbQtHtrA0Slbs3",
 			"fillStyle": "solid",
@@ -4272,7 +4334,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531395,
+			"updated": 1701641864083,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -4301,8 +4363,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 136,
-			"versionNonce": 1985296530,
+			"version": 143,
+			"versionNonce": 36203686,
 			"isDeleted": false,
 			"id": "5x4F83N3ogvdp9bWlggVm",
 			"fillStyle": "solid",
@@ -4312,7 +4374,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"opacity": 100,
 			"angle": 0,
 			"x": 2068.8071162057868,
-			"y": 980.9908842235918,
+			"y": 980.9908842235919,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#d0bfff",
 			"width": 609.5089124908541,
@@ -4329,14 +4391,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "Io4DxAoi"
 				}
 			],
-			"updated": 1701546531400,
+			"updated": 1701641864084,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 86,
-			"versionNonce": 470046290,
+			"version": 93,
+			"versionNonce": 150988774,
 			"isDeleted": false,
 			"id": "Io4DxAoi",
 			"fillStyle": "solid",
@@ -4346,7 +4408,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"opacity": 100,
 			"angle": 0,
 			"x": 2084.185717959026,
-			"y": 992.236915704213,
+			"y": 992.2369157042131,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ebfbee",
 			"width": 578.751708984375,
@@ -4356,7 +4418,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701546531405,
+			"updated": 1701641864085,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -4372,8 +4434,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 106,
-			"versionNonce": 777851022,
+			"version": 108,
+			"versionNonce": 286316262,
 			"isDeleted": false,
 			"id": "S7YEKS7B",
 			"fillStyle": "solid",
@@ -4393,7 +4455,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989340,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"fontSize": 91.46911671593998,
@@ -4409,8 +4471,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 40,
-			"versionNonce": 1042581330,
+			"version": 42,
+			"versionNonce": 1715008122,
 			"isDeleted": false,
 			"id": "XipD0Twu",
 			"fillStyle": "solid",
@@ -4430,7 +4492,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989340,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -4446,8 +4508,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 31,
-			"versionNonce": 164089550,
+			"version": 33,
+			"versionNonce": 1809910310,
 			"isDeleted": false,
 			"id": "tGUp0HfX",
 			"fillStyle": "solid",
@@ -4467,7 +4529,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989340,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -4483,8 +4545,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 327,
-			"versionNonce": 846974226,
+			"version": 329,
+			"versionNonce": 103322426,
 			"isDeleted": false,
 			"id": "SE_M6oPGoHPorZqNcJ2-H",
 			"fillStyle": "solid",
@@ -4515,14 +4577,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701530989341,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 427,
-			"versionNonce": 499172622,
+			"version": 429,
+			"versionNonce": 1019794790,
 			"isDeleted": false,
 			"id": "u853gA4J",
 			"fillStyle": "solid",
@@ -4542,7 +4604,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989341,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -4558,8 +4620,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 316,
-			"versionNonce": 795106002,
+			"version": 318,
+			"versionNonce": 1894128634,
 			"isDeleted": false,
 			"id": "GyvW6tXjkJUkIr736q7xs",
 			"fillStyle": "solid",
@@ -4579,7 +4641,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989341,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -5022,8 +5084,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 259,
-			"versionNonce": 1971818322,
+			"version": 266,
+			"versionNonce": 681020134,
 			"isDeleted": false,
 			"id": "gZ6GJUeEB1psnTxf7GTB6",
 			"fillStyle": "solid",
@@ -5045,7 +5107,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531383,
+			"updated": 1701641864078,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -5074,8 +5136,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 235,
-			"versionNonce": 594882706,
+			"version": 237,
+			"versionNonce": 1685359802,
 			"isDeleted": false,
 			"id": "UuTteZFe4SBAmTofcXLrQ",
 			"fillStyle": "solid",
@@ -5102,14 +5164,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "vHGLpfUv"
 				}
 			],
-			"updated": 1701530989341,
+			"updated": 1701641774977,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 178,
-			"versionNonce": 1579243918,
+			"version": 180,
+			"versionNonce": 879965158,
 			"isDeleted": false,
 			"id": "vHGLpfUv",
 			"fillStyle": "solid",
@@ -5129,7 +5191,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989342,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -5145,8 +5207,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 144,
-			"versionNonce": 308629074,
+			"version": 146,
+			"versionNonce": 1719068026,
 			"isDeleted": false,
 			"id": "qr8WDzPXAesVi6alV7bLW",
 			"fillStyle": "solid",
@@ -5173,14 +5235,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "zRhGiDq7"
 				}
 			],
-			"updated": 1701530989342,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 59,
-			"versionNonce": 739964878,
+			"version": 61,
+			"versionNonce": 217040678,
 			"isDeleted": false,
 			"id": "zRhGiDq7",
 			"fillStyle": "solid",
@@ -5200,7 +5262,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989342,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -5216,8 +5278,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "line",
-			"version": 85,
-			"versionNonce": 1896592402,
+			"version": 87,
+			"versionNonce": 1345332794,
 			"isDeleted": false,
 			"id": "p2aptj_cgG58vRs_rE06a",
 			"fillStyle": "solid",
@@ -5239,7 +5301,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701530989342,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -5260,8 +5322,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 100,
-			"versionNonce": 1058216466,
+			"version": 102,
+			"versionNonce": 653783654,
 			"isDeleted": false,
 			"id": "siejbUa1",
 			"fillStyle": "solid",
@@ -5281,7 +5343,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531593551,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 69.86756239038296,
@@ -5297,8 +5359,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 120,
-			"versionNonce": 23028178,
+			"version": 164,
+			"versionNonce": 1518554874,
 			"isDeleted": false,
 			"id": "ndiSKDyDUNF9eqtJxEgfA",
 			"fillStyle": "solid",
@@ -5307,8 +5369,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1330.0796585249423,
-			"y": 3650.6862879512814,
+			"x": 3654.659331459825,
+			"y": 3538.0143306575924,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 772.2375687642277,
@@ -5325,14 +5387,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "3prsztx3"
 				}
 			],
-			"updated": 1701530989343,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 149,
-			"versionNonce": 1344134222,
+			"version": 193,
+			"versionNonce": 2102965670,
 			"isDeleted": false,
 			"id": "3prsztx3",
 			"fillStyle": "solid",
@@ -5341,8 +5403,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1339.4765190789312,
-			"y": 3748.1655522032092,
+			"x": 3664.056192013814,
+			"y": 3635.49359490952,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 753.44384765625,
@@ -5352,7 +5414,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989343,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -5368,8 +5430,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 219,
-			"versionNonce": 756244370,
+			"version": 226,
+			"versionNonce": 1160898982,
 			"isDeleted": false,
 			"id": "vNMJTnWbjtVDWzv7I_64i",
 			"fillStyle": "solid",
@@ -5379,7 +5441,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"opacity": 100,
 			"angle": 0,
 			"x": 4527.657367711363,
-			"y": 443.0954565144223,
+			"y": 443.09545651442227,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 474.73797454465875,
@@ -5400,14 +5462,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701546531419,
+			"updated": 1701641864094,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 285,
-			"versionNonce": 418980494,
+			"version": 287,
+			"versionNonce": 691998950,
 			"isDeleted": false,
 			"id": "hkeVnzJs",
 			"fillStyle": "solid",
@@ -5427,7 +5489,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989348,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -5443,8 +5505,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 255,
-			"versionNonce": 1181064530,
+			"version": 267,
+			"versionNonce": 131187942,
 			"isDeleted": false,
 			"id": "pot5YDO6y_aEa_PUAmoYY",
 			"fillStyle": "solid",
@@ -5466,7 +5528,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531421,
+			"updated": 1701641864094,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -5499,8 +5561,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 274,
-			"versionNonce": 722575566,
+			"version": 276,
+			"versionNonce": 372769830,
 			"isDeleted": false,
 			"id": "iV8s1PUTI1afHtkvbBFb5",
 			"fillStyle": "solid",
@@ -5527,14 +5589,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "gp5yo0bc"
 				}
 			],
-			"updated": 1701530989349,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 251,
-			"versionNonce": 15735570,
+			"version": 253,
+			"versionNonce": 206977338,
 			"isDeleted": false,
 			"id": "gp5yo0bc",
 			"fillStyle": "solid",
@@ -5554,7 +5616,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989349,
+			"updated": 1701641774978,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -5570,8 +5632,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 945,
-			"versionNonce": 1591210194,
+			"version": 957,
+			"versionNonce": 1856389990,
 			"isDeleted": false,
 			"id": "VhMWFJHKlEv3ICkmnHJiw",
 			"fillStyle": "solid",
@@ -5593,7 +5655,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531427,
+			"updated": 1701641864098,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -5622,8 +5684,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 402,
-			"versionNonce": 1501105358,
+			"version": 404,
+			"versionNonce": 1852768762,
 			"isDeleted": false,
 			"id": "c00XRqe0nplDJn-CfpKRf",
 			"fillStyle": "solid",
@@ -5658,14 +5720,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701531260271,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 456,
-			"versionNonce": 552684558,
+			"version": 458,
+			"versionNonce": 896905894,
 			"isDeleted": false,
 			"id": "kXf3MTA1",
 			"fillStyle": "solid",
@@ -5685,7 +5747,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531260273,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -5701,8 +5763,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 640,
-			"versionNonce": 1783913554,
+			"version": 642,
+			"versionNonce": 1274065594,
 			"isDeleted": false,
 			"id": "yLTtYVLRa7BT1Gdy1bklF",
 			"fillStyle": "solid",
@@ -5731,14 +5793,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "mlE91io3"
 				}
 			],
-			"updated": 1701530989350,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 756,
-			"versionNonce": 1491847630,
+			"version": 758,
+			"versionNonce": 783576550,
 			"isDeleted": false,
 			"id": "mlE91io3",
 			"fillStyle": "solid",
@@ -5760,7 +5822,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989351,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -5776,406 +5838,406 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 98,
-			"versionNonce": 1407779346,
+			"version": 170,
+			"versionNonce": 341115386,
 			"isDeleted": false,
 			"id": "YigXb7WZcaNKYtQBkC9v0",
 			"fillStyle": "solid",
-			"strokeWidth": 2,
+			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
 			"x": 1841.3695885335856,
-			"y": 1009.660486190209,
+			"y": 1075.4868558295698,
 			"strokeColor": "#e03131",
 			"backgroundColor": "#d0bfff",
-			"width": 76.81041967386545,
-			"height": 113.49606243838218,
+			"width": 43.131852693594745,
+			"height": 47.66969279902126,
 			"seed": 975100690,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989351,
+			"updated": 1701641913777,
 			"link": null,
 			"locked": false,
 			"points": [
 				[
-					0,
-					0
+					-17.09063153414978,
+					-55.85267880699756
 				],
 				[
-					-5.732123482087218,
-					-2.292858139361215
+					-20.309427977401125,
+					-56.8157064291622
 				],
 				[
-					-9.17143255744486,
-					-5.732123482087218
+					-22.24072548932636,
+					-58.26023867829708
 				],
 				[
-					-12.610654167539451,
-					-6.878530685452233
+					-24.17197388631565,
+					-58.74174330526742
 				],
 				[
-					-16.049963242897093,
-					-9.171388824813448
+					-26.103271398240885,
+					-59.70477092743206
 				],
 				[
-					-21.78208672498431,
-					-13.757105103535878
+					-29.322067841492228,
+					-61.630826171761335
 				],
 				[
-					-24.074901131714114,
-					-16.049963242897093
+					-30.609566772818468,
+					-62.59385379392597
 				],
 				[
-					-27.514210207071756,
-					-20.63563578898811
+					-32.540864284743705,
+					-64.51989067003119
 				],
 				[
-					-29.80702461380133,
-					-25.22135206771054
+					-33.82836321606982,
+					-66.44594591436046
 				],
 				[
-					-32.099926485794185,
-					-29.80702461380156
+					-35.11591126233199,
+					-68.3719827904657
 				],
 				[
-					-34.39274089252399,
-					-33.2463336891592
+					-36.40341019365823,
+					-69.81653340782472
 				],
 				[
-					-35.53914809588878,
-					-37.83200623525022
-				],
-				[
-					-38.978457171246646,
-					-44.710580653333864
+					-37.04715965932128,
+					-71.74257028392995
 				],
 				[
 					-38.978457171246646,
-					-49.29625319942488
+					-74.63165315042386
 				],
 				[
 					-38.978457171246646,
-					-51.5891113387861
+					-76.55769002652909
 				],
 				[
 					-38.978457171246646,
-					-56.17482761750853
+					-77.52071764869372
 				],
 				[
 					-38.978457171246646,
-					-57.32123482087343
+					-79.446772893023
 				],
 				[
 					-38.978457171246646,
-					-61.90695109959597
+					-79.92827751999329
 				],
 				[
 					-38.978457171246646,
-					-64.19976550632566
+					-81.8543327643226
 				],
 				[
 					-38.978457171246646,
-					-66.49262364568699
+					-82.81734201826315
 				],
 				[
-					-37.83204996788163,
-					-68.7854817850482
+					-38.978457171246646,
+					-83.78036964042784
 				],
 				[
-					-36.685642764516615,
-					-71.07833992440942
+					-38.33470770558346,
+					-84.74339726259248
 				],
 				[
-					-34.39274089252399,
-					-72.22474712777421
+					-37.69095823992028,
+					-85.70642488475711
 				],
 				[
-					-32.099926485794185,
-					-73.37119806377063
+					-36.40341019365823,
+					-86.18792951172736
 				],
 				[
-					-29.80702461380133,
-					-74.51760526713554
+					-35.11591126233199,
+					-86.66945250692174
 				],
 				[
-					-27.514210207071756,
-					-75.66401247050044
+					-33.82836321606982,
+					-87.15095713389204
 				],
 				[
-					-25.22139580034218,
-					-75.66401247050044
+					-32.540864284743705,
+					-87.63246176086233
 				],
 				[
-					-21.78208672498431,
-					-75.66401247050044
+					-31.253365353417593,
+					-87.63246176086233
 				],
 				[
-					-19.489272318254734,
-					-75.66401247050044
+					-29.322067841492228,
+					-87.63246176086233
 				],
 				[
-					-13.75714883616729,
-					-74.51760526713554
+					-28.03456891016612,
+					-87.63246176086233
 				],
 				[
-					-12.610654167539451,
-					-73.37119806377063
+					-24.815772466914645,
+					-87.15095713389204
 				],
 				[
-					-10.317839760809875,
-					-72.22474712777421
+					-24.17197388631565,
+					-86.66945250692174
 				],
 				[
-					-8.025025354079844,
-					-68.7854817850482
+					-22.88447495498954,
+					-86.18792951172736
 				],
 				[
-					-5.732123482087218,
-					-66.49262364568699
+					-21.596976023663174,
+					-84.74339726259248
 				],
 				[
-					-4.58571627872243,
-					-65.34621644232197
+					-20.309427977401125,
+					-83.78036964042784
 				],
 				[
-					-3.4393090753574143,
-					-61.90695109959597
+					-19.66567851173807,
+					-83.2988650134575
 				],
 				[
-					-2.292901871992626,
-					-60.760500163599545
+					-19.021929046074884,
+					-81.8543327643226
 				],
 				[
-					-2.292901871992626,
-					-57.32123482087343
+					-18.378179580411828,
+					-81.37280976912822
 				],
 				[
-					-2.292901871992626,
-					-56.17482761750853
+					-18.378179580411828,
+					-79.92827751999329
 				],
 				[
-					-2.292901871992626,
-					-55.02837668151221
+					-18.378179580411828,
+					-79.446772893023
 				],
 				[
-					-2.292901871992626,
-					-53.88196947814731
+					-18.378179580411828,
+					-78.96524989782864
 				],
 				[
-					-2.292901871992626,
-					-52.735518542150885
+					-18.378179580411828,
+					-78.48374527085836
 				],
 				[
-					-2.292901871992626,
-					-51.5891113387861
+					-18.378179580411828,
+					-78.00222227566397
 				],
 				[
-					-2.292901871992626,
-					-50.44270413542131
+					-18.378179580411828,
+					-77.52071764869372
 				],
 				[
-					-2.292901871992626,
-					-51.5891113387861
+					-18.378179580411828,
+					-77.03921302172348
 				],
 				[
-					-2.292901871992626,
-					-57.32123482087343
+					-18.378179580411828,
+					-77.52071764869372
 				],
 				[
-					-2.292901871992626,
-					-61.90695109959597
+					-18.378179580411828,
+					-79.92827751999329
 				],
 				[
-					-1.1464072033645607,
-					-71.07833992440942
+					-18.378179580411828,
+					-81.8543327643226
 				],
 				[
-					0,
-					-73.37119806377063
+					-17.734380999812707,
+					-85.70642488475711
 				],
 				[
-					1.1464072033650154,
-					-79.10332154585808
+					-17.09063153414978,
+					-86.66945250692174
 				],
 				[
-					2.2928144067298035,
-					-81.39613595258766
+					-16.446882068486595,
+					-89.07701237822137
 				],
 				[
-					3.4392216100945916,
-					-84.8354450279453
+					-15.80313260282354,
+					-90.04002163216185
 				],
 				[
-					6.878530685452461,
-					-88.27471037067153
+					-15.159383137160484,
+					-91.48457224952088
 				],
 				[
-					8.024937888817021,
-					-90.56756851003274
+					-13.228085625235122,
+					-92.92910449865587
 				],
 				[
-					11.46424696417489,
-					-92.86038291676243
+					-12.584336159572196,
+					-93.8921321208205
 				],
 				[
-					13.757061370904466,
-					-94.00683385275875
+					-10.653038647646834,
+					-94.85514137476103
 				],
 				[
-					16.04996324289732,
-					-95.15324105612365
+					-9.365539716320722,
+					-95.33666436995539
 				],
 				[
-					18.342777649626896,
+					-8.077991670058545,
+					-95.81816899692568
+				],
+				[
+					-6.790492738732434,
 					-96.29969199212007
 				],
 				[
-					20.6355920563567,
+					-5.502993807406195,
 					-96.29969199212007
 				],
 				[
-					22.928493928349553,
+					-4.215445761144016,
 					-96.29969199212007
 				],
 				[
-					25.221308335079357,
+					-2.9279468298177775,
 					-96.29969199212007
 				],
 				[
-					28.66061741043677,
+					-0.9966493178926719,
 					-96.29969199212007
 				],
 				[
-					29.807024613801786,
-					-95.15324105612365
+					-0.3528998522294877,
+					-95.81816899692568
 				],
 				[
-					30.953431817166575,
-					-94.00683385275875
+					0.2908496134335685,
+					-95.33666436995539
 				],
 				[
-					32.09983902053136,
-					-91.71397571339753
+					0.9345990790966212,
+					-94.37363674779075
 				],
 				[
-					33.24633368915943,
-					-90.56756851003274
+					1.5783976596957459,
+					-93.8921321208205
 				],
 				[
-					34.392740892524216,
-					-88.27471037067153
+					2.2221471253587985,
+					-92.92910449865587
 				],
 				[
-					35.53914809588923,
-					-83.68899409194898
+					2.8658965910219827,
+					-91.00304925432654
 				],
 				[
-					36.68555529925402,
-					-81.39613595258766
+					3.509646056685039,
+					-90.04002163216185
 				],
 				[
-					37.83196250261881,
-					-75.66401247050044
+					4.153395522348095,
+					-87.63246176086233
 				],
 				[
-					37.83196250261881,
-					-72.22474712777421
+					4.153395522348095,
+					-86.18792951172736
 				],
 				[
-					37.83196250261881,
-					-69.931888988413
+					4.153395522348095,
+					-85.22490188956272
 				],
 				[
-					37.83196250261881,
-					-65.34621644232197
+					4.153395522348095,
+					-83.2988650134575
 				],
 				[
-					37.83196250261881,
-					-63.05335830296076
+					4.153395522348095,
+					-82.33583739129286
 				],
 				[
-					37.83196250261881,
-					-58.46764202423833
+					4.153395522348095,
+					-80.40978214696358
 				],
 				[
-					37.83196250261881,
-					-55.02837668151221
+					4.153395522348095,
+					-78.96524989782864
 				],
 				[
-					37.83196250261881,
-					-50.44270413542131
+					4.153395522348095,
+					-77.03921302172348
 				],
 				[
-					37.83196250261881,
-					-48.14984599605998
+					4.153395522348095,
+					-76.0761853995588
 				],
 				[
-					36.68555529925402,
-					-44.710580653333864
+					3.509646056685039,
+					-74.63165315042386
 				],
 				[
-					35.53914809588923,
-					-40.124864374611434
+					2.8658965910219827,
+					-72.70559790609458
 				],
 				[
-					34.392740892524216,
-					-37.83200623525022
+					2.2221471253587985,
+					-71.74257028392995
 				],
 				[
-					33.24633368915943,
-					-33.2463336891592
+					1.5783976596957459,
+					-69.81653340782472
 				],
 				[
-					32.09983902053136,
-					-28.66061741043677
+					0.9345990790966212,
+					-67.89047816349544
 				],
 				[
-					29.807024613801786,
-					-21.782086724984538
+					-0.3528998522294877,
+					-65.00141366522558
 				],
 				[
-					25.221308335079357,
-					-13.757105103535878
+					-2.9279468298177775,
+					-61.630826171761335
 				],
 				[
-					20.6355920563567,
-					-8.024981621448433
+					-5.502993807406195,
+					-59.22326630046172
 				],
 				[
-					16.04996324289732,
-					-4.58571627872243
+					-8.077991670058545,
+					-57.778734051326836
 				],
 				[
-					11.46424696417489,
-					0
+					-10.653038647646834,
+					-55.85267880699756
 				],
 				[
-					9.171345092182037,
-					2.292858139361215
+					-11.940586693909012,
+					-54.88965118483292
 				],
 				[
-					4.585716278722657,
-					6.878530685452233
+					-14.515584556561361,
+					-52.9636143087277
 				],
 				[
-					1.1464072033650154,
-					9.171388824813448
+					-16.446882068486595,
+					-52.00058668656306
 				],
 				[
-					-2.292901871992626,
-					12.610654167539678
+					-18.378179580411828,
+					-50.55605443742809
 				],
 				[
-					-5.732123482087218,
-					17.196370446262108
+					-20.309427977401125,
+					-48.629999193098804
 				],
 				[
-					-5.732123482087218,
-					17.196370446262108
+					-20.309427977401125,
+					-48.629999193098804
 				]
 			],
 			"lastCommittedPoint": null,
@@ -6184,8 +6246,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 3173,
-			"versionNonce": 1777303634,
+			"version": 3195,
+			"versionNonce": 1929361254,
 			"isDeleted": false,
 			"id": "g2jpjR63I7MZyA7IRXVED",
 			"fillStyle": "solid",
@@ -6194,12 +6256,12 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 3482.5759666800272,
-			"y": -1984.2472504541563,
+			"x": 3482.575966680027,
+			"y": -1984.262320039164,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#d0bfff",
-			"width": 150.16251123672419,
-			"height": 155.03586149162425,
+			"width": 150.16251123672464,
+			"height": 155.02667106378385,
 			"seed": 2006180690,
 			"groupIds": [],
 			"frameId": null,
@@ -6207,7 +6269,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531474,
+			"updated": 1701641864132,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -6229,15 +6291,15 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					0
 				],
 				[
-					150.16251123672419,
-					-155.03586149162425
+					150.16251123672464,
+					-155.02667106378385
 				]
 			]
 		},
 		{
 			"type": "rectangle",
-			"version": 156,
-			"versionNonce": 2145323538,
+			"version": 176,
+			"versionNonce": 2002439226,
 			"isDeleted": false,
 			"id": "I-y8BxQ6Ur7ZH9aAXF9rt",
 			"fillStyle": "solid",
@@ -6246,8 +6308,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 2541.5846853822113,
-			"y": 2681.881498972495,
+			"x": 3893.584807452524,
+			"y": 2689.8813769021826,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffec99",
 			"width": 576.1578718129274,
@@ -6264,14 +6326,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "k29WdMnL"
 				}
 			],
-			"updated": 1701546531434,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 277,
-			"versionNonce": 1196947410,
+			"version": 297,
+			"versionNonce": 1504881766,
 			"isDeleted": false,
 			"id": "k29WdMnL",
 			"fillStyle": "solid",
@@ -6280,8 +6342,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 2555.3617108882845,
-			"y": 2695.124398583636,
+			"x": 3907.361832958597,
+			"y": 2703.1242765133234,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 548.6038208007812,
@@ -6291,7 +6353,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701546531436,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -6307,8 +6369,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 368,
-			"versionNonce": 1973641678,
+			"version": 527,
+			"versionNonce": 1365849338,
 			"isDeleted": false,
 			"id": "z7R5fAyaFi8SmR8L_gGab",
 			"fillStyle": "solid",
@@ -6317,8 +6379,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1750.9835614818498,
-			"y": 2694.1715041023663,
+			"x": 3568.0666607112526,
+			"y": 3220.057173172789,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#a5d8ff",
 			"width": 547.9146255162178,
@@ -6335,14 +6397,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "67oUjhCh"
 				}
 			],
-			"updated": 1701531536892,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 390,
-			"versionNonce": 11921042,
+			"version": 549,
+			"versionNonce": 1017917350,
 			"isDeleted": false,
 			"id": "67oUjhCh",
 			"fillStyle": "solid",
@@ -6351,8 +6413,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1887.4749165983571,
-			"y": 2767.3054236061516,
+			"x": 3704.55801582776,
+			"y": 3293.1910926765745,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 274.9319152832031,
@@ -6362,7 +6424,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531532215,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -6378,8 +6440,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 199,
-			"versionNonce": 1730469582,
+			"version": 201,
+			"versionNonce": 1462535610,
 			"isDeleted": false,
 			"id": "__Lfx0gss0S1GOoSI1JEc",
 			"fillStyle": "solid",
@@ -6410,14 +6472,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701531260276,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 267,
-			"versionNonce": 1171810702,
+			"version": 269,
+			"versionNonce": 1678985958,
 			"isDeleted": false,
 			"id": "wQIRL4sY",
 			"fillStyle": "solid",
@@ -6437,7 +6499,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531260278,
+			"updated": 1701641774979,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -6453,8 +6515,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 67,
-			"versionNonce": 1538837650,
+			"version": 69,
+			"versionNonce": 298303098,
 			"isDeleted": false,
 			"id": "fNFP_P40p8UoGke_LO2Yi",
 			"fillStyle": "solid",
@@ -6481,14 +6543,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "qseC0vDN"
 				}
 			],
-			"updated": 1701530989354,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 18,
-			"versionNonce": 1920302478,
+			"version": 20,
+			"versionNonce": 510983718,
 			"isDeleted": false,
 			"id": "qseC0vDN",
 			"fillStyle": "solid",
@@ -6508,7 +6570,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989354,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -6524,8 +6586,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 111,
-			"versionNonce": 936733266,
+			"version": 113,
+			"versionNonce": 1845354298,
 			"isDeleted": false,
 			"id": "yTnD0kH1hSE7hGBVsJkWp",
 			"fillStyle": "solid",
@@ -6545,7 +6607,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989354,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -6676,8 +6738,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 111,
-			"versionNonce": 1783274446,
+			"version": 113,
+			"versionNonce": 1623083366,
 			"isDeleted": false,
 			"id": "mPal6YEJYZNchiLnNVOTX",
 			"fillStyle": "solid",
@@ -6697,7 +6759,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989354,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -6828,8 +6890,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 99,
-			"versionNonce": 706236434,
+			"version": 101,
+			"versionNonce": 1211230202,
 			"isDeleted": false,
 			"id": "dydGtUSSoPJ0jxhtkZamp",
 			"fillStyle": "solid",
@@ -6849,7 +6911,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989354,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -6932,8 +6994,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 148,
-			"versionNonce": 1583477262,
+			"version": 150,
+			"versionNonce": 2050763942,
 			"isDeleted": false,
 			"id": "PIFrF1Da1IFXAlS3BCg8o",
 			"fillStyle": "solid",
@@ -6953,7 +7015,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989355,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -7232,8 +7294,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 156,
-			"versionNonce": 645430738,
+			"version": 158,
+			"versionNonce": 2020006074,
 			"isDeleted": false,
 			"id": "SipMcE_-u3JElt2MEjFtI",
 			"fillStyle": "solid",
@@ -7253,7 +7315,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701530989355,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -7564,8 +7626,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 207,
-			"versionNonce": 446030222,
+			"version": 209,
+			"versionNonce": 1218160614,
 			"isDeleted": false,
 			"id": "i0sepG0IYptbddQ05-4dN",
 			"fillStyle": "solid",
@@ -7585,7 +7647,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -7916,8 +7978,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 163,
-			"versionNonce": 2025750478,
+			"version": 165,
+			"versionNonce": 1581232506,
 			"isDeleted": false,
 			"id": "jEfr5aX4A3CTTJjWrJYDB",
 			"fillStyle": "solid",
@@ -7937,7 +7999,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -8092,8 +8154,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 160,
-			"versionNonce": 1018779150,
+			"version": 162,
+			"versionNonce": 1810479910,
 			"isDeleted": false,
 			"id": "1-XRV9_r4C82wnExtWTn7",
 			"fillStyle": "solid",
@@ -8113,7 +8175,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -8252,8 +8314,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 152,
-			"versionNonce": 1602184270,
+			"version": 154,
+			"versionNonce": 1828680250,
 			"isDeleted": false,
 			"id": "8jD0haXAE5_j8no0ac-qb",
 			"fillStyle": "solid",
@@ -8273,7 +8335,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -8384,8 +8446,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 134,
-			"versionNonce": 1391045262,
+			"version": 136,
+			"versionNonce": 2056480358,
 			"isDeleted": false,
 			"id": "o1KJfPoqWGh-irZQtFBnW",
 			"fillStyle": "solid",
@@ -8405,7 +8467,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -8444,8 +8506,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 208,
-			"versionNonce": 1706109134,
+			"version": 210,
+			"versionNonce": 931732218,
 			"isDeleted": false,
 			"id": "m2XDGuW0lbN2LWw_87q1W",
 			"fillStyle": "solid",
@@ -8465,7 +8527,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774980,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -8800,8 +8862,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "ellipse",
-			"version": 577,
-			"versionNonce": 661577486,
+			"version": 579,
+			"versionNonce": 895855014,
 			"isDeleted": false,
 			"id": "0tR1TC2XWEMljlUNTrxM5",
 			"fillStyle": "solid",
@@ -8825,14 +8887,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "freedraw",
-			"version": 783,
-			"versionNonce": 1285279054,
+			"version": 785,
+			"versionNonce": 2086644666,
 			"isDeleted": false,
 			"id": "VRU94KeeYQC9kvparM4Xt",
 			"fillStyle": "solid",
@@ -8856,7 +8918,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9299,8 +9361,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 728,
-			"versionNonce": 311489422,
+			"version": 730,
+			"versionNonce": 999130342,
 			"isDeleted": false,
 			"id": "KkF0jN617f_o4S9BeFQjr",
 			"fillStyle": "solid",
@@ -9324,7 +9386,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9579,8 +9641,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 572,
-			"versionNonce": 596070862,
+			"version": 574,
+			"versionNonce": 832971898,
 			"isDeleted": false,
 			"id": "jTJ9qDR_M3fUJEBFNj0_-",
 			"fillStyle": "solid",
@@ -9603,7 +9665,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9630,8 +9692,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 601,
-			"versionNonce": 2056775694,
+			"version": 603,
+			"versionNonce": 1050146854,
 			"isDeleted": false,
 			"id": "kTD8DcymS2xmGhFFmrnYZ",
 			"fillStyle": "solid",
@@ -9654,7 +9716,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9797,8 +9859,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 577,
-			"versionNonce": 1203484238,
+			"version": 579,
+			"versionNonce": 287278394,
 			"isDeleted": false,
 			"id": "qDXCNUJSuiAFib4fwyMEh",
 			"fillStyle": "solid",
@@ -9821,7 +9883,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9868,8 +9930,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 585,
-			"versionNonce": 1405861006,
+			"version": 587,
+			"versionNonce": 913441638,
 			"isDeleted": false,
 			"id": "dOsjfRsVqwg9h0vGlZimU",
 			"fillStyle": "solid",
@@ -9892,7 +9954,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531218689,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -9971,8 +10033,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 2357,
-			"versionNonce": 495260626,
+			"version": 2379,
+			"versionNonce": 265917926,
 			"isDeleted": false,
 			"id": "O6R6HuoHHK1Vt0XHHAiUb",
 			"fillStyle": "solid",
@@ -9981,12 +10043,12 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 3478.841387996796,
-			"y": -1601.9476156627338,
+			"x": 3478.8405373776523,
+			"y": -1601.9189673041187,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 154.89133658730543,
-			"height": 134.61619992134115,
+			"width": 154.8921872064484,
+			"height": 134.59960110321845,
 			"seed": 662323666,
 			"groupIds": [],
 			"frameId": null,
@@ -9994,7 +10056,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531475,
+			"updated": 1701641864132,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -10016,15 +10078,15 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					0
 				],
 				[
-					154.89133658730543,
-					134.61619992134115
+					154.8921872064484,
+					134.59960110321845
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 73,
-			"versionNonce": 510354514,
+			"version": 95,
+			"versionNonce": 1682776550,
 			"isDeleted": false,
 			"id": "L54p34XRKmI-3Evf0qRon",
 			"fillStyle": "solid",
@@ -10034,11 +10096,11 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"opacity": 100,
 			"angle": 0,
 			"x": 3362.4757099007866,
-			"y": -2712.468665046843,
+			"y": -2712.4664644631216,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 283.42860630580344,
-			"height": 5.871879831267506,
+			"width": 283.4286063058039,
+			"height": 5.870682081002087,
 			"seed": 1133515474,
 			"groupIds": [],
 			"frameId": null,
@@ -10046,7 +10108,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531428,
+			"updated": 1701641864098,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -10068,15 +10130,15 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					0
 				],
 				[
-					283.42860630580344,
-					5.871879831267506
+					283.4286063058039,
+					5.870682081002087
 				]
 			]
 		},
 		{
 			"type": "rectangle",
-			"version": 459,
-			"versionNonce": 1691762194,
+			"version": 461,
+			"versionNonce": 1339489978,
 			"isDeleted": false,
 			"id": "Wg88JqblZe2hyv1K3Gfpb",
 			"fillStyle": "solid",
@@ -10113,14 +10175,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701531225833,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1329,
-			"versionNonce": 757160590,
+			"version": 1331,
+			"versionNonce": 2083054054,
 			"isDeleted": false,
 			"id": "VexbbVcI",
 			"fillStyle": "solid",
@@ -10142,7 +10204,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531039030,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -10158,8 +10220,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 447,
-			"versionNonce": 874634578,
+			"version": 449,
+			"versionNonce": 1622873978,
 			"isDeleted": false,
 			"id": "_H5GfuK2umxu3-1EBAQ3J",
 			"fillStyle": "solid",
@@ -10181,7 +10243,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531039030,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -10968,8 +11030,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 516,
-			"versionNonce": 615002766,
+			"version": 518,
+			"versionNonce": 1841280294,
 			"isDeleted": false,
 			"id": "sN2oz1P1I1f4yWh_FE5VI",
 			"fillStyle": "solid",
@@ -11002,14 +11064,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701531260282,
+			"updated": 1701641774981,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1060,
-			"versionNonce": 1898669838,
+			"version": 1062,
+			"versionNonce": 387848250,
 			"isDeleted": false,
 			"id": "xcB23gkB",
 			"fillStyle": "solid",
@@ -11031,7 +11093,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531260283,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -11047,8 +11109,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 293,
-			"versionNonce": 980810450,
+			"version": 295,
+			"versionNonce": 60432486,
 			"isDeleted": false,
 			"id": "yNzn7IdgmTnSQhYa0ORTg",
 			"fillStyle": "solid",
@@ -11071,7 +11133,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531169477,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -11606,8 +11668,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 312,
-			"versionNonce": 458412178,
+			"version": 314,
+			"versionNonce": 853737722,
 			"isDeleted": false,
 			"id": "r8SFxJl8GpRAytVvOWVfz",
 			"fillStyle": "solid",
@@ -11630,7 +11692,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531169477,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -12269,8 +12331,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 107,
-			"versionNonce": 1306012686,
+			"version": 109,
+			"versionNonce": 562373542,
 			"isDeleted": false,
 			"id": "UkNTa8i7qxh-yhKFcBiOo",
 			"fillStyle": "solid",
@@ -12305,14 +12367,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701531227633,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 176,
-			"versionNonce": 724856018,
+			"version": 178,
+			"versionNonce": 2139935162,
 			"isDeleted": false,
 			"id": "2r1LnSDQ",
 			"fillStyle": "solid",
@@ -12332,7 +12394,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531223166,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -12348,8 +12410,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 43,
-			"versionNonce": 970438994,
+			"version": 65,
+			"versionNonce": 1117461094,
 			"isDeleted": false,
 			"id": "KTseiHrOuuBbpNq3oYaQg",
 			"fillStyle": "solid",
@@ -12371,7 +12433,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531457,
+			"updated": 1701641864127,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -12400,8 +12462,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "arrow",
-			"version": 69,
-			"versionNonce": 963841234,
+			"version": 91,
+			"versionNonce": 1144535270,
 			"isDeleted": false,
 			"id": "OcXVy-tNIlnccv5b7FA1j",
 			"fillStyle": "solid",
@@ -12411,11 +12473,11 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"opacity": 100,
 			"angle": 0,
 			"x": 4927.785204645949,
-			"y": -2040.2060141767356,
+			"y": -2040.2060141932857,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 453.33292643229015,
-			"height": 573.5897393150826,
+			"height": 573.5897393017844,
 			"seed": 808017746,
 			"groupIds": [],
 			"frameId": null,
@@ -12423,7 +12485,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1701546531458,
+			"updated": 1701641864127,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -12446,14 +12508,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 				],
 				[
 					453.33292643229015,
-					-573.5897393150826
+					-573.5897393017844
 				]
 			]
 		},
 		{
 			"type": "rectangle",
-			"version": 536,
-			"versionNonce": 590414610,
+			"version": 538,
+			"versionNonce": 815854118,
 			"isDeleted": false,
 			"id": "fytnazM2Y32wdekK-UY0E",
 			"fillStyle": "solid",
@@ -12480,14 +12542,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "1jdevb4E"
 				}
 			],
-			"updated": 1701542455127,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 575,
-			"versionNonce": 184530,
+			"version": 577,
+			"versionNonce": 1538992954,
 			"isDeleted": false,
 			"id": "1jdevb4E",
 			"fillStyle": "solid",
@@ -12507,7 +12569,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701542455127,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -12523,8 +12585,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 1098,
-			"versionNonce": 972227986,
+			"version": 1100,
+			"versionNonce": 827047270,
 			"isDeleted": false,
 			"id": "SwNCZn0n7v21U2bpy84Qo",
 			"fillStyle": "solid",
@@ -12559,14 +12621,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"type": "arrow"
 				}
 			],
-			"updated": 1701539231557,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1100,
-			"versionNonce": 610304850,
+			"version": 1102,
+			"versionNonce": 677753850,
 			"isDeleted": false,
 			"id": "glOwZGuv",
 			"fillStyle": "solid",
@@ -12586,7 +12648,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701539231557,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -12602,8 +12664,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 92,
-			"versionNonce": 1297791250,
+			"version": 94,
+			"versionNonce": 1090199718,
 			"isDeleted": false,
 			"id": "eUXkFK6IV72yFuY6z6Dsg",
 			"fillStyle": "solid",
@@ -12630,14 +12692,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "n1rU6MgX"
 				}
 			],
-			"updated": 1701531434462,
+			"updated": 1701641774982,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 235,
-			"versionNonce": 1736820434,
+			"version": 237,
+			"versionNonce": 943793338,
 			"isDeleted": false,
 			"id": "n1rU6MgX",
 			"fillStyle": "solid",
@@ -12657,7 +12719,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701531434462,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -12673,8 +12735,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 54,
-			"versionNonce": 1595328914,
+			"version": 120,
+			"versionNonce": 1130109926,
 			"isDeleted": false,
 			"id": "0v8mrBXDTulkRYICqqVz3",
 			"fillStyle": "solid",
@@ -12683,8 +12745,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 921.4280908531664,
-			"y": 2804.314375361926,
+			"x": 3615.689296734585,
+			"y": 2950.3515196179533,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 432.0000348772321,
@@ -12701,14 +12763,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "ZJiYUNp5"
 				}
 			],
-			"updated": 1701546531490,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 90,
-			"versionNonce": 2020329298,
+			"version": 156,
+			"versionNonce": 1156611450,
 			"isDeleted": false,
 			"id": "ZJiYUNp5",
 			"fillStyle": "solid",
@@ -12717,8 +12779,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 934.6382218171731,
-			"y": 2809.314375361926,
+			"x": 3628.8994276985914,
+			"y": 2955.3515196179533,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffec99",
 			"width": 405.57977294921875,
@@ -12728,7 +12790,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701546531492,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -12744,8 +12806,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 44,
-			"versionNonce": 473737102,
+			"version": 104,
+			"versionNonce": 511422246,
 			"isDeleted": false,
 			"id": "Y8RbXUu0",
 			"fillStyle": "solid",
@@ -12754,8 +12816,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 955.1423416902196,
-			"y": 2619.1714659032214,
+			"x": 842.7559223211974,
+			"y": 2850.534666048502,
 			"strokeColor": "#2f9e44",
 			"backgroundColor": "transparent",
 			"width": 355.74749755859375,
@@ -12765,7 +12827,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701538442436,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 121.2571149553573,
@@ -12781,8 +12843,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 249,
-			"versionNonce": 568003858,
+			"version": 256,
+			"versionNonce": 825878822,
 			"isDeleted": false,
 			"id": "_8g-292wk1UbmRej3wHu6",
 			"fillStyle": "solid",
@@ -12791,7 +12853,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1730.5712444524988,
+			"x": 1730.571244452499,
 			"y": -4249.542959319992,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#b2f2bb",
@@ -12809,14 +12871,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "FI2o4Wgg"
 				}
 			],
-			"updated": 1701546531498,
+			"updated": 1701641864135,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 404,
-			"versionNonce": 1893440210,
+			"version": 411,
+			"versionNonce": 1101911142,
 			"isDeleted": false,
 			"id": "FI2o4Wgg",
 			"fillStyle": "solid",
@@ -12825,7 +12887,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 1735.5712444524988,
+			"x": 1735.571244452499,
 			"y": -4244.242959319992,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
@@ -12836,7 +12898,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701546531510,
+			"updated": 1701641864137,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -12852,8 +12914,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 226,
-			"versionNonce": 1729060494,
+			"version": 228,
+			"versionNonce": 1769400058,
 			"isDeleted": false,
 			"id": "RtcPhUPvuB59zwinB-QHl",
 			"fillStyle": "solid",
@@ -12880,14 +12942,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "nOhMcwec"
 				}
 			],
-			"updated": 1701533603643,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 324,
-			"versionNonce": 1392532686,
+			"version": 326,
+			"versionNonce": 990551462,
 			"isDeleted": false,
 			"id": "nOhMcwec",
 			"fillStyle": "solid",
@@ -12907,7 +12969,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701533603643,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -12923,8 +12985,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 32,
-			"versionNonce": 1048606606,
+			"version": 34,
+			"versionNonce": 1186199482,
 			"isDeleted": false,
 			"id": "WqtcKnhpKwzxbelbLUuhH",
 			"fillStyle": "solid",
@@ -12951,14 +13013,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "g2TX5iGR"
 				}
 			],
-			"updated": 1701546489095,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1872,
-			"versionNonce": 1266052110,
+			"version": 1877,
+			"versionNonce": 678688998,
 			"isDeleted": false,
 			"id": "g2TX5iGR",
 			"fillStyle": "solid",
@@ -12978,24 +13040,24 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701546501866,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
 			"fontFamily": 2,
-			"text": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux\ncontraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- LSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement\nparlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
-			"rawText": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux contraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- LSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement parlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
+			"text": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux\ncontraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- HSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement\nparlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
+			"rawText": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux contraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- HSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement parlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": "WqtcKnhpKwzxbelbLUuhH",
-			"originalText": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux contraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- LSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement parlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
+			"originalText": "=========POUR INTRO========\n\nATTENTION de ne pas mélanger les classification du système américain et du système de la FAO (system WRB)\n\nAmazonian landscape in transition ==> important de voir les dynamiques des espèces\n\nOn observe une résultantes de tous les facteurs qui touchent les racines. C'est l'intégrale de tous ces facteurs. On ne peut pas séparer les deux contraintes. Cependant on peut supposer que ces 20 centimètres\n\nContrainte de perméabilité pour l'eau bien décrite par les pédologues ==> est-ce que c'est pareil pour les racines ?\n\n========MAT&MET========\n- HSD: aloterite riche limon ==> un des paramètres permettant de caracteriser cette drainage barrier. ==> PROXY\n- micas content: les micas blanc quand il s'alter donnent des kaolinite (une forme d'argile minéralogiquement parlant), mais granulométriquement parlant ce sont des limons ==> PROXY AUSSI\n\non a fait des fosses très proches pour fixer l'effet topographique\n\nroot biomass ==> root index: proxy de la biomass\n\n========POUR RESULTATS========\nrésultats intéressant: la plus forte densité reste dans les sables argileux (au dessus): on a quelques racines qui passe la barrière des limons\nFaire de la biblio sur les racines profondes qui passent la barrière des limons\n\nQuand même dire qu'on voit bien l'effet profondeur.\n\nAjouter les données brutes (en annex)\n\n",
 			"lineHeight": 1.15,
 			"baseline": 927
 		},
 		{
 			"type": "rectangle",
-			"version": 526,
-			"versionNonce": 544142098,
+			"version": 528,
+			"versionNonce": 1133572218,
 			"isDeleted": false,
 			"id": "l4RZDZyOsHbO8nMUF-S_K",
 			"fillStyle": "solid",
@@ -13024,14 +13086,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "XJjEgqrX"
 				}
 			],
-			"updated": 1701542582897,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 578,
-			"versionNonce": 180434,
+			"version": 580,
+			"versionNonce": 781184038,
 			"isDeleted": false,
 			"id": "XJjEgqrX",
 			"fillStyle": "solid",
@@ -13053,7 +13115,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701542582897,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -13069,8 +13131,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 381,
-			"versionNonce": 1599526546,
+			"version": 383,
+			"versionNonce": 869323066,
 			"isDeleted": false,
 			"id": "jE0ezvUEVZNbckEIpKTKX",
 			"fillStyle": "solid",
@@ -13094,7 +13156,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701542582897,
+			"updated": 1701641774983,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -13629,8 +13691,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "freedraw",
-			"version": 400,
-			"versionNonce": 1864512594,
+			"version": 402,
+			"versionNonce": 1263236966,
 			"isDeleted": false,
 			"id": "XTajEQvZaZdqn-FAZH3uD",
 			"fillStyle": "solid",
@@ -13654,7 +13716,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701542582897,
+			"updated": 1701641774984,
 			"link": null,
 			"locked": false,
 			"points": [
@@ -14293,8 +14355,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "text",
-			"version": 215,
-			"versionNonce": 826006034,
+			"version": 217,
+			"versionNonce": 2060884474,
 			"isDeleted": false,
 			"id": "Kssnnqcl",
 			"fillStyle": "solid",
@@ -14316,7 +14378,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701542582897,
+			"updated": 1701641774984,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -14332,8 +14394,8 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 		},
 		{
 			"type": "rectangle",
-			"version": 32,
-			"versionNonce": 1345575374,
+			"version": 34,
+			"versionNonce": 921934502,
 			"isDeleted": false,
 			"id": "4HD2FBxvv_rUE83rV8xHJ",
 			"fillStyle": "solid",
@@ -14360,14 +14422,14 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 					"id": "IQfzNk6D"
 				}
 			],
-			"updated": 1701543267316,
+			"updated": 1701641774984,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 862,
-			"versionNonce": 412666770,
+			"version": 864,
+			"versionNonce": 396708538,
 			"isDeleted": false,
 			"id": "IQfzNk6D",
 			"fillStyle": "solid",
@@ -14387,7 +14449,7 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1701543723900,
+			"updated": 1701641774984,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -14400,27 +14462,11686 @@ retrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux 
 			"originalText": "Si on augmente une contrainte,\n\nIl y a une multitude d'espèces\n\nAttention on n'a pas une relation de cause à effet\n\n\n\nQuand il y a une contrainte plus forte, pourquoi ça n'augmenterait\n\n(Gislain VieilleDent 2022 2023): comment expliquer au sein d'une même petite zone, une grande diversité (cohabitation/competition): comment ça se fait qu'au même endroit les espèces soient en compétition\n\ntellement de différente adaptation, quand il y a une petite variation ça peut donner de la place aux espèces rares qui sont mieux adaptées à ces contreaintes\n\nREGARDER BIBLIO diversite~topography\n\nretrouver la ref qui dit que c'est ne bas de pente que les arbres sont le mieux (cours de stephan)",
 			"lineHeight": 1.15,
 			"baseline": 605
+		},
+		{
+			"type": "rectangle",
+			"version": 88,
+			"versionNonce": 406148582,
+			"isDeleted": false,
+			"id": "LSnTL705rv3JRRRfRpjzz",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1248.1186737395574,
+			"y": 2812.6072394398698,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 772.6604766924106,
+			"height": 107,
+			"seed": 774832998,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "P4RWipRH"
+				}
+			],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 106,
+			"versionNonce": 819979130,
+			"isDeleted": false,
+			"id": "P4RWipRH",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1253.1186737395574,
+			"y": 2817.8072394398696,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 399.4921875,
+			"height": 96.6,
+			"seed": 1636802554,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "RESULTS: \n- depth effect & most root on top\n- HSD effect",
+			"rawText": "RESULTS: \n- depth effect & most root on top\n- HSD effect",
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"containerId": "LSnTL705rv3JRRRfRpjzz",
+			"originalText": "RESULTS: \n- depth effect & most root on top\n- HSD effect",
+			"lineHeight": 1.15,
+			"baseline": 90
+		},
+		{
+			"type": "rectangle",
+			"version": 114,
+			"versionNonce": 941467942,
+			"isDeleted": false,
+			"id": "WxLKZqEIakjwxIlljYsTt",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1243.851704797859,
+			"y": 2946.6430048228385,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 772.6604766924106,
+			"height": 93.6558091107031,
+			"seed": 825824934,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "sgSjs05p"
+				}
+			],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 216,
+			"versionNonce": 550069306,
+			"isDeleted": false,
+			"id": "sgSjs05p",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1248.851704797859,
+			"y": 2961.27090937819,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 714.068359375,
+			"height": 64.39999999999999,
+			"seed": 2066847654,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "- Results in contradiction with Humbel (1978)\n- We didn't have enough data to statistically test the effect",
+			"rawText": "- Results in contradiction with Humbel (1978)\n- We didn't have enough data to statistically test the effect",
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"containerId": "WxLKZqEIakjwxIlljYsTt",
+			"originalText": "- Results in contradiction with Humbel (1978)\n- We didn't have enough data to statistically test the effect",
+			"lineHeight": 1.15,
+			"baseline": 58
+		},
+		{
+			"type": "rectangle",
+			"version": 904,
+			"versionNonce": 907646054,
+			"isDeleted": false,
+			"id": "3hucu0aSHkEV1mCgZ6MAT",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1524.2049222115425,
+			"y": 3411.9255724668055,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 772.6604766924106,
+			"height": 49.973501585771125,
+			"seed": 1684580410,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "05Va4XBp"
+				},
+				{
+					"id": "nmLLHECYg7rS9pHRld9Vm",
+					"type": "arrow"
+				},
+				{
+					"id": "nZU7thcYbpIfGzB1ZLiEA",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 750,
+			"versionNonce": 21286138,
+			"isDeleted": false,
+			"id": "05Va4XBp",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1529.2049222115425,
+			"y": 3420.8123232596913,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 485.0234375,
+			"height": 32.199999999999996,
+			"seed": 1347318778,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "- correlation TOPO~HSD :rho = - 0,634",
+			"rawText": "- correlation TOPO~HSD :rho = - 0,634",
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"containerId": "3hucu0aSHkEV1mCgZ6MAT",
+			"originalText": "- correlation TOPO~HSD :rho = - 0,634",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "rectangle",
+			"version": 598,
+			"versionNonce": 1005983654,
+			"isDeleted": false,
+			"id": "tvCrzhXvin3karX8TD7hG",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2458.0365229367576,
+			"y": 4567.670437711561,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 582.1484097945931,
+			"height": 54.00957410185038,
+			"seed": 624439014,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "cJWCqmDI"
+				},
+				{
+					"id": "Uo7dI9vfb4AZ7AmIiFqM0",
+					"type": "arrow"
+				},
+				{
+					"id": "6sjJ3c3xOUMH_9wLcfP5u",
+					"type": "arrow"
+				},
+				{
+					"id": "r4tmvv_10jbTP9JRRw7GL",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 551,
+			"versionNonce": 936713658,
+			"isDeleted": false,
+			"id": "cJWCqmDI",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2463.0365229367576,
+			"y": 4578.575224762486,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 550.4296875,
+			"height": 32.199999999999996,
+			"seed": 941488998,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774984,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "- negative effect of HSD on species richness",
+			"rawText": "- negative effect of HSD on species richness",
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"containerId": "tvCrzhXvin3karX8TD7hG",
+			"originalText": "- negative effect of HSD on species richness",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "rectangle",
+			"version": 719,
+			"versionNonce": 1681326822,
+			"isDeleted": false,
+			"id": "9FXr0fpi4T3BJQ8MAhKc2",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1531.16605062007,
+			"y": 3843.9120808180023,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 385.35537422234324,
+			"height": 62.766469021503326,
+			"seed": 85345274,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "KbiXTodb"
+				},
+				{
+					"id": "7SFfR2lbCr0JQS3YpDlV_",
+					"type": "arrow"
+				},
+				{
+					"id": "iJ82CcvWxBQg9m1vPhvmq",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641847157,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 607,
+			"versionNonce": 1186624294,
+			"isDeleted": false,
+			"id": "KbiXTodb",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1559.9179564812416,
+			"y": 3859.195315328754,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 327.8515625,
+			"height": 32.199999999999996,
+			"seed": 1466696698,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641847158,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "- no effect of HSD on DBH",
+			"rawText": "- no effect of HSD on DBH",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "9FXr0fpi4T3BJQ8MAhKc2",
+			"originalText": "- no effect of HSD on DBH",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "freedraw",
+			"version": 279,
+			"versionNonce": 1919215142,
+			"isDeleted": false,
+			"id": "pdsfQ40gyvCJ-Xn8k2wIH",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 702.248458976473,
+			"y": 3445.6023542669454,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 26.97787923157879,
+			"height": 65.94597783150655,
+			"seed": 2005896762,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-5.24573526705347,
+					4.496332263130863
+				],
+				[
+					-8.243232935537518,
+					7.493858518416508
+				],
+				[
+					-9.742038943382735,
+					8.992635939460131
+				],
+				[
+					-12.739593785469978,
+					11.990190781547373
+				],
+				[
+					-14.987717036833013,
+					14.987717036833017
+				],
+				[
+					-15.737091453954026,
+					16.48649445787664
+				],
+				[
+					-17.235897461799244,
+					17.985271878920262
+				],
+				[
+					-17.985271878920255,
+					20.233423717084893
+				],
+				[
+					-17.985271878920255,
+					21.732201138128513
+				],
+				[
+					-17.985271878920255,
+					23.230978559172136
+				],
+				[
+					-17.985271878920255,
+					26.22850481445778
+				],
+				[
+					-17.985271878920255,
+					26.97790781838039
+				],
+				[
+					-17.985271878920255,
+					28.476656652622417
+				],
+				[
+					-17.235897461799244,
+					28.476656652622417
+				],
+				[
+					-16.48652304467823,
+					28.476656652622417
+				],
+				[
+					-14.238342619712,
+					28.476656652622417
+				],
+				[
+					-13.48896820259099,
+					28.476656652622417
+				],
+				[
+					-11.24078777762476,
+					28.476656652622417
+				],
+				[
+					-9.742038943382735,
+					28.476656652622417
+				],
+				[
+					-7.4938585184165065,
+					28.476656652622417
+				],
+				[
+					-2.9975548420872413,
+					29.226059656545022
+				],
+				[
+					-1.4988060078452163,
+					29.975434073666033
+				],
+				[
+					1.4987488342420248,
+					30.724837077588646
+				],
+				[
+					3.7469292592082533,
+					31.47421149470966
+				],
+				[
+					5.2456780934502785,
+					32.223585911830675
+				],
+				[
+					6.744484101295495,
+					33.72236333287429
+				],
+				[
+					8.243232935537518,
+					35.22114075391791
+				],
+				[
+					8.992607352658531,
+					39.71744443024718
+				],
+				[
+					8.992607352658531,
+					41.216221851290804
+				],
+				[
+					8.992607352658531,
+					43.464373689455435
+				],
+				[
+					8.992607352658531,
+					46.461928531542675
+				],
+				[
+					8.992607352658531,
+					47.960705952586295
+				],
+				[
+					5.99505251057129,
+					52.45700962891556
+				],
+				[
+					3.7469292592082533,
+					54.7051614670802
+				],
+				[
+					0.7493744171210124,
+					56.95334189204643
+				],
+				[
+					-3.7469292592082533,
+					60.700242564453085
+				],
+				[
+					-5.995109684174483,
+					62.1990485722983
+				],
+				[
+					-9.742038943382735,
+					63.697797406540325
+				],
+				[
+					-11.24078777762476,
+					64.44717182366135
+				],
+				[
+					-11.990162194745773,
+					65.19660341438554
+				],
+				[
+					-13.48896820259099,
+					65.94597783150655
+				],
+				[
+					-14.238342619712,
+					65.94597783150655
+				],
+				[
+					-13.48896820259099,
+					65.94597783150655
+				],
+				[
+					-13.48896820259099,
+					65.94597783150655
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 255,
+			"versionNonce": 2137028410,
+			"isDeleted": false,
+			"id": "Xmz2z-9yJEDq9fhnwfp2U",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 732.6892784849543,
+			"y": 3465.610269655008,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 85.42999854466883,
+			"height": 39.71744443024718,
+			"seed": 959240378,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					28.476685239424004,
+					-17.985271878920262
+				],
+				[
+					41.965653442015,
+					-25.479130397336768
+				],
+				[
+					50.20888637755252,
+					-28.476656652622417
+				],
+				[
+					59.201493730211055,
+					-32.223585911830675
+				],
+				[
+					63.69779740654032,
+					-33.72236333287429
+				],
+				[
+					71.19165592495682,
+					-35.97051517103892
+				],
+				[
+					74.93858518416508,
+					-37.469292592082546
+				],
+				[
+					77.93614002625232,
+					-37.469292592082546
+				],
+				[
+					80.93369486833957,
+					-38.968070013126166
+				],
+				[
+					82.4324437025816,
+					-39.71744443024718
+				],
+				[
+					84.68062412754782,
+					-39.71744443024718
+				],
+				[
+					85.42999854466883,
+					-39.71744443024718
+				],
+				[
+					85.42999854466883,
+					-39.71744443024718
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 240,
+			"versionNonce": 2121347430,
+			"isDeleted": false,
+			"id": "EQzn0cqS9UnMWhnxuqTnr",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 754.856712429241,
+			"y": 3438.3191564643225,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 15.73709145395403,
+			"height": 96.6708149090952,
+			"seed": 1038857210,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					9.742038943382738
+				],
+				[
+					2.2481804249662294,
+					19.484049299963882
+				],
+				[
+					4.4963036763292665,
+					38.218695596005155
+				],
+				[
+					8.243232935537522,
+					57.702716309167435
+				],
+				[
+					13.488968202590993,
+					83.1818467065042
+				],
+				[
+					14.238342619712004,
+					90.67570522492072
+				],
+				[
+					15.73709145395403,
+					93.67326006700796
+				],
+				[
+					15.73709145395403,
+					95.92138331837099
+				],
+				[
+					15.73709145395403,
+					96.6708149090952
+				],
+				[
+					15.73709145395403,
+					96.6708149090952
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 245,
+			"versionNonce": 1099005946,
+			"isDeleted": false,
+			"id": "-uyz5AuQNCiRyLwlKVM_b",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 839.2660213263621,
+			"y": 3464.681678541479,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 47.211331535465284,
+			"height": 53.95575846315758,
+			"seed": 1036700922,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					1.498748834242025
+				],
+				[
+					4.4963036763292665,
+					11.240787777624764
+				],
+				[
+					6.744484101295496,
+					16.486465871075044
+				],
+				[
+					8.243232935537522,
+					21.73217255132692
+				],
+				[
+					8.992664526261725,
+					23.98032438949155
+				],
+				[
+					8.992664526261725,
+					26.22850481445778
+				],
+				[
+					10.491413360503751,
+					28.476656652622417
+				],
+				[
+					11.240787777624764,
+					28.476656652622417
+				],
+				[
+					11.240787777624764,
+					29.226031069743428
+				],
+				[
+					12.739593785469982,
+					29.975434073666033
+				],
+				[
+					13.488968202590993,
+					30.724808490787048
+				],
+				[
+					14.987717036833017,
+					31.47418290790806
+				],
+				[
+					16.486523044678236,
+					31.47418290790806
+				],
+				[
+					17.985271878920262,
+					31.47418290790806
+				],
+				[
+					19.484020713162284,
+					31.47418290790806
+				],
+				[
+					20.982826721007502,
+					31.47418290790806
+				],
+				[
+					23.23094997237054,
+					31.47418290790806
+				],
+				[
+					24.729755980215756,
+					30.724808490787048
+				],
+				[
+					26.22850481445778,
+					30.724808490787048
+				],
+				[
+					28.476685239424008,
+					29.226031069743428
+				],
+				[
+					29.226059656545022,
+					28.476656652622417
+				],
+				[
+					31.47424008151125,
+					26.22850481445778
+				],
+				[
+					34.471737749995306,
+					22.481575555249528
+				],
+				[
+					38.21866700920356,
+					17.985243292118664
+				],
+				[
+					41.965596268411815,
+					11.240787777624764
+				],
+				[
+					43.464402276257026,
+					6.744455514493901
+				],
+				[
+					44.21377669337804,
+					1.498748834242025
+				],
+				[
+					44.963151110499055,
+					0
+				],
+				[
+					46.46195711834427,
+					-3.746929259208254
+				],
+				[
+					47.211331535465284,
+					-7.493858518416508
+				],
+				[
+					47.211331535465284,
+					-10.491413360503751
+				],
+				[
+					47.211331535465284,
+					-14.238342619712004
+				],
+				[
+					47.211331535465284,
+					-16.48649445787664
+				],
+				[
+					47.211331535465284,
+					-18.734646296041273
+				],
+				[
+					47.211331535465284,
+					-20.982826721007502
+				],
+				[
+					47.211331535465284,
+					-21.732201138128513
+				],
+				[
+					47.211331535465284,
+					-22.481575555249528
+				],
+				[
+					47.211331535465284,
+					-22.481575555249528
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 237,
+			"versionNonce": 827462822,
+			"isDeleted": false,
+			"id": "UgppNu9p6ASQ432coqwgj",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 903.4779274841535,
+			"y": 3458.3316081522116,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 44.963151110499055,
+			"height": 44.213748106576446,
+			"seed": 456542970,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					0.7493744171210125
+				],
+				[
+					-5.24567809345028,
+					11.240787777624764
+				],
+				[
+					-6.744426927692306,
+					18.734646296041273
+				],
+				[
+					-9.741981769779548,
+					26.22850481445778
+				],
+				[
+					-10.49135618690056,
+					29.975434073666033
+				],
+				[
+					-11.240787777624764,
+					32.972960328951686
+				],
+				[
+					-11.240787777624764,
+					35.22114075391791
+				],
+				[
+					-11.240787777624764,
+					36.71988958815994
+				],
+				[
+					-11.240787777624764,
+					39.71744443024718
+				],
+				[
+					-11.240787777624764,
+					40.46681884736819
+				],
+				[
+					-11.240787777624764,
+					41.965596268411815
+				],
+				[
+					-11.240787777624764,
+					42.71499927233442
+				],
+				[
+					-11.240787777624764,
+					43.464373689455435
+				],
+				[
+					-9.741981769779548,
+					44.213748106576446
+				],
+				[
+					-8.992607352658535,
+					44.213748106576446
+				],
+				[
+					-7.49385851841651,
+					44.213748106576446
+				],
+				[
+					-5.995052510571293,
+					44.213748106576446
+				],
+				[
+					-3.746929259208255,
+					44.213748106576446
+				],
+				[
+					-2.248123251363038,
+					43.464373689455435
+				],
+				[
+					0,
+					41.965596268411815
+				],
+				[
+					6.744484101295497,
+					38.21866700920356
+				],
+				[
+					11.240787777624764,
+					36.71988958815994
+				],
+				[
+					16.486523044678236,
+					32.972960328951686
+				],
+				[
+					20.23345230388649,
+					29.975434073666033
+				],
+				[
+					24.72975598021576,
+					28.476656652622417
+				],
+				[
+					27.727310822303,
+					26.97787923157879
+				],
+				[
+					30.724865664390244,
+					26.22850481445778
+				],
+				[
+					32.972988915753284,
+					25.479101810535173
+				],
+				[
+					33.722363332874295,
+					25.479101810535173
+				],
+				[
+					33.722363332874295,
+					25.479101810535173
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 218,
+			"versionNonce": 1409511610,
+			"isDeleted": false,
+			"id": "LGRLWd9FgfDqKv1_kwD6a",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 957.3159977923176,
+			"y": 3460.9770388814936,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 29.975434073666033,
+			"height": 12.739565198668384,
+			"seed": 322560762,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					3.746929259208254,
+					-0.7493744171210125
+				],
+				[
+					7.493858518416508,
+					-3.746929259208254
+				],
+				[
+					14.238342619712004,
+					-6.744455514493901
+				],
+				[
+					18.734646296041273,
+					-8.243232935537522
+				],
+				[
+					20.98276954740431,
+					-10.491384773702155
+				],
+				[
+					24.729698806612564,
+					-11.240787777624764
+				],
+				[
+					26.22850481445778,
+					-11.990162194745775
+				],
+				[
+					28.476628065820815,
+					-12.739565198668384
+				],
+				[
+					29.226059656545022,
+					-12.739565198668384
+				],
+				[
+					29.975434073666033,
+					-12.739565198668384
+				],
+				[
+					29.975434073666033,
+					-12.739565198668384
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 220,
+			"versionNonce": 1957990374,
+			"isDeleted": false,
+			"id": "HffXoW3oBH2SS7_8SJnz7",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 964.8318287963716,
+			"y": 3454.588013971154,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 16.486465871075044,
+			"height": 38.21866700920356,
+			"seed": 2116873402,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					1.4987488342420252,
+					3.746929259208254
+				],
+				[
+					4.496303676329267,
+					8.992635939460131
+				],
+				[
+					7.49385851841651,
+					14.238314032910408
+				],
+				[
+					9.741981769779548,
+					21.73217255132692
+				],
+				[
+					11.990162194745777,
+					25.479101810535173
+				],
+				[
+					13.488911028987804,
+					28.476656652622417
+				],
+				[
+					14.238342619712007,
+					32.223585911830675
+				],
+				[
+					14.98771703683302,
+					34.471737749995306
+				],
+				[
+					15.737091453954031,
+					35.97051517103892
+				],
+				[
+					16.486465871075044,
+					36.71988958815994
+				],
+				[
+					16.486465871075044,
+					37.469292592082546
+				],
+				[
+					16.486465871075044,
+					38.21866700920356
+				],
+				[
+					16.486465871075044,
+					38.21866700920356
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 249,
+			"versionNonce": 1250511226,
+			"isDeleted": false,
+			"id": "0ipM-xZtsQEXydAyn2vkv",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 1000.9609471978722,
+			"y": 3460.6649562538887,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 32.97298891575328,
+			"height": 45.712525527620066,
+			"seed": 79054842,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					1.498777421043621
+				],
+				[
+					1.4988060078452168,
+					8.992635939460131
+				],
+				[
+					5.245735267053472,
+					18.734646296041273
+				],
+				[
+					8.243232935537522,
+					29.975434073666033
+				],
+				[
+					9.742038943382738,
+					34.4717663367969
+				],
+				[
+					10.491413360503751,
+					37.469292592082546
+				],
+				[
+					11.990162194745775,
+					39.717473017048775
+				],
+				[
+					12.739593785469982,
+					41.216221851290804
+				],
+				[
+					13.488968202590993,
+					41.965624855213406
+				],
+				[
+					14.238342619712004,
+					42.71499927233442
+				],
+				[
+					15.73709145395403,
+					42.71499927233442
+				],
+				[
+					17.235897461799247,
+					42.71499927233442
+				],
+				[
+					17.985271878920262,
+					42.71499927233442
+				],
+				[
+					18.734646296041273,
+					41.965624855213406
+				],
+				[
+					20.233452303886487,
+					40.466847434169786
+				],
+				[
+					21.732201138128513,
+					38.968070013126166
+				],
+				[
+					22.481575555249528,
+					37.469292592082546
+				],
+				[
+					23.23094997237054,
+					35.970543757840524
+				],
+				[
+					25.479130397336768,
+					32.97298891575328
+				],
+				[
+					26.22850481445778,
+					29.975434073666033
+				],
+				[
+					27.727310822302996,
+					26.97790781838039
+				],
+				[
+					29.226059656545022,
+					23.980352976293148
+				],
+				[
+					30.724808490787048,
+					19.484049299963882
+				],
+				[
+					31.47424008151125,
+					17.235897461799247
+				],
+				[
+					32.223614498632266,
+					14.987717036833017
+				],
+				[
+					32.97298891575328,
+					11.990190781547373
+				],
+				[
+					32.97298891575328,
+					11.240787777624764
+				],
+				[
+					32.97298891575328,
+					8.992635939460131
+				],
+				[
+					32.97298891575328,
+					8.243261522339118
+				],
+				[
+					32.97298891575328,
+					7.493858518416508
+				],
+				[
+					32.97298891575328,
+					6.744484101295496
+				],
+				[
+					32.223614498632266,
+					5.995109684174484
+				],
+				[
+					30.724808490787048,
+					4.496332263130863
+				],
+				[
+					29.975434073666033,
+					2.997554842087242
+				],
+				[
+					29.226059656545022,
+					2.2481804249662294
+				],
+				[
+					28.476685239424008,
+					1.498777421043621
+				],
+				[
+					27.727310822302996,
+					0.7494030039226084
+				],
+				[
+					26.97787923157879,
+					0
+				],
+				[
+					26.22850481445778,
+					-1.498748834242025
+				],
+				[
+					25.479130397336768,
+					-2.2481518381646333
+				],
+				[
+					25.479130397336768,
+					-2.997526255285646
+				],
+				[
+					25.479130397336768,
+					-2.997526255285646
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 267,
+			"versionNonce": 1957012262,
+			"isDeleted": false,
+			"id": "a-caofLXsRLduN1W1VlCd",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 1072.5272321732973,
+			"y": 3513.8599322023074,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 40.466847434169786,
+			"height": 55.454564471002804,
+			"seed": 1745025274,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-2.997554842087242,
+					-5.995081097372887
+				],
+				[
+					-5.245735267053472,
+					-9.742010356581142
+				],
+				[
+					-8.992664526261725,
+					-14.987717036833017
+				],
+				[
+					-11.240787777624764,
+					-18.734646296041273
+				],
+				[
+					-13.488968202590993,
+					-23.980352976293148
+				],
+				[
+					-14.238342619712004,
+					-26.97787923157879
+				],
+				[
+					-14.987717036833017,
+					-29.226059656545022
+				],
+				[
+					-15.737148627557222,
+					-32.97298891575328
+				],
+				[
+					-15.737148627557222,
+					-36.719918174961535
+				],
+				[
+					-15.737148627557222,
+					-40.466847434169786
+				],
+				[
+					-14.987717036833017,
+					-42.71499927233442
+				],
+				[
+					-14.238342619712004,
+					-46.461928531542675
+				],
+				[
+					-13.488968202590993,
+					-48.710080369707306
+				],
+				[
+					-12.739593785469982,
+					-50.208857790750926
+				],
+				[
+					-11.990219368348969,
+					-51.70763521179455
+				],
+				[
+					-10.491413360503751,
+					-53.206384046036575
+				],
+				[
+					-8.243290109140714,
+					-53.955787049959184
+				],
+				[
+					-7.493858518416508,
+					-54.7051614670802
+				],
+				[
+					-5.995109684174484,
+					-55.454564471002804
+				],
+				[
+					-3.746929259208254,
+					-55.454564471002804
+				],
+				[
+					-2.2481804249662294,
+					-55.454564471002804
+				],
+				[
+					-0.7494315907242043,
+					-55.454564471002804
+				],
+				[
+					2.2481232513630376,
+					-54.7051614670802
+				],
+				[
+					3.746929259208254,
+					-53.955787049959184
+				],
+				[
+					5.245678093450279,
+					-50.208857790750926
+				],
+				[
+					5.245678093450279,
+					-47.211302948663686
+				],
+				[
+					5.245678093450279,
+					-39.71744443024718
+				],
+				[
+					5.245678093450279,
+					-36.719918174961535
+				],
+				[
+					4.4963036763292665,
+					-34.471737749995306
+				],
+				[
+					3.746929259208254,
+					-30.724808490787048
+				],
+				[
+					2.2481232513630376,
+					-29.226059656545022
+				],
+				[
+					0,
+					-26.97787923157879
+				],
+				[
+					-1.4988060078452168,
+					-25.479130397336768
+				],
+				[
+					-1.4988060078452168,
+					-24.72972739341416
+				],
+				[
+					-3.746929259208254,
+					-23.980352976293148
+				],
+				[
+					-5.245735267053472,
+					-23.23094997237054
+				],
+				[
+					-5.995109684174484,
+					-22.481575555249528
+				],
+				[
+					-6.744484101295496,
+					-22.481575555249528
+				],
+				[
+					-5.245735267053472,
+					-22.481575555249528
+				],
+				[
+					-3.746929259208254,
+					-22.481575555249528
+				],
+				[
+					-2.2481804249662294,
+					-22.481575555249528
+				],
+				[
+					-1.4988060078452168,
+					-22.481575555249528
+				],
+				[
+					0,
+					-22.481575555249528
+				],
+				[
+					2.99749766848405,
+					-22.481575555249528
+				],
+				[
+					5.245678093450279,
+					-21.732201138128513
+				],
+				[
+					7.493858518416508,
+					-21.732201138128513
+				],
+				[
+					9.741981769779546,
+					-20.982798134205908
+				],
+				[
+					11.990162194745775,
+					-20.233423717084893
+				],
+				[
+					14.238285446108815,
+					-19.484020713162284
+				],
+				[
+					14.987717036833017,
+					-19.484020713162284
+				],
+				[
+					16.486465871075044,
+					-19.484020713162284
+				],
+				[
+					17.235840288196055,
+					-19.484020713162284
+				],
+				[
+					17.985214705317066,
+					-19.484020713162284
+				],
+				[
+					19.484020713162284,
+					-18.734646296041273
+				],
+				[
+					20.98276954740431,
+					-17.985271878920262
+				],
+				[
+					22.481575555249528,
+					-17.235868874997653
+				],
+				[
+					23.98032438949155,
+					-16.48649445787664
+				],
+				[
+					24.729698806612564,
+					-16.48649445787664
+				],
+				[
+					24.729698806612564,
+					-16.48649445787664
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 247,
+			"versionNonce": 1280707130,
+			"isDeleted": false,
+			"id": "PcQgpO19Yfq0h-XnnuuKu",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 1092.967006491797,
+			"y": 3468.307972344956,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 44.96315111049895,
+			"height": 35.22111216711632,
+			"seed": 593307322,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					2.2481518381646333
+				],
+				[
+					2.2481804249662294,
+					7.493858518416508
+				],
+				[
+					3.746929259208254,
+					10.491384773702155
+				],
+				[
+					5.245735267053472,
+					14.987717036833017
+				],
+				[
+					7.493858518416508,
+					17.235868874997653
+				],
+				[
+					8.243232935537522,
+					20.982798134205908
+				],
+				[
+					8.992664526261725,
+					23.98032438949155
+				],
+				[
+					9.742038943382738,
+					25.479101810535173
+				],
+				[
+					10.491413360503751,
+					26.97787923157879
+				],
+				[
+					11.240787777624764,
+					29.226031069743428
+				],
+				[
+					11.990162194745775,
+					29.975434073666033
+				],
+				[
+					12.739593785469982,
+					29.975434073666033
+				],
+				[
+					13.488968202590993,
+					31.47418290790806
+				],
+				[
+					14.238342619712004,
+					31.47418290790806
+				],
+				[
+					14.238342619712004,
+					32.972960328951686
+				],
+				[
+					14.238342619712004,
+					33.72236333287429
+				],
+				[
+					14.238342619712004,
+					34.471737749995306
+				],
+				[
+					14.987717036833017,
+					34.471737749995306
+				],
+				[
+					14.987717036833017,
+					35.22111216711632
+				],
+				[
+					15.73709145395403,
+					35.22111216711632
+				],
+				[
+					17.235897461799247,
+					35.22111216711632
+				],
+				[
+					18.734646296041273,
+					35.22111216711632
+				],
+				[
+					20.233452303886487,
+					35.22111216711632
+				],
+				[
+					22.481575555249528,
+					34.471737749995306
+				],
+				[
+					23.230949972370432,
+					34.471737749995306
+				],
+				[
+					26.22850481445778,
+					32.223585911830675
+				],
+				[
+					28.476685239424008,
+					31.47418290790806
+				],
+				[
+					31.47424008151125,
+					29.226031069743428
+				],
+				[
+					33.72236333287418,
+					28.476656652622417
+				],
+				[
+					35.221169340719506,
+					27.727253648699804
+				],
+				[
+					38.21866700920345,
+					26.97787923157879
+				],
+				[
+					39.717473017048775,
+					26.22850481445778
+				],
+				[
+					41.96559626841171,
+					25.479101810535173
+				],
+				[
+					41.96559626841171,
+					24.72972739341416
+				],
+				[
+					42.715027859136015,
+					23.98032438949155
+				],
+				[
+					44.21377669337794,
+					23.98032438949155
+				],
+				[
+					44.96315111049895,
+					23.98032438949155
+				],
+				[
+					44.96315111049895,
+					23.23094997237054
+				],
+				[
+					44.96315111049895,
+					22.481575555249528
+				],
+				[
+					44.96315111049895,
+					22.481575555249528
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 226,
+			"versionNonce": 1402097254,
+			"isDeleted": false,
+			"id": "ns9IrabIWxCVlMarwdIET",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 1103.519787095461,
+			"y": 3467.108775716451,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 31.47424008151125,
+			"height": 10.491384773702155,
+			"seed": 95518266,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774985,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0.7494315907242043,
+					0
+				],
+				[
+					4.496360849932459,
+					-1.498777421043621
+				],
+				[
+					6.744484101295496,
+					-2.2481518381646333
+				],
+				[
+					9.742038943382738,
+					-2.2481518381646333
+				],
+				[
+					11.990219368348969,
+					-3.746929259208254
+				],
+				[
+					13.488968202590993,
+					-4.4963036763292665
+				],
+				[
+					16.486523044678236,
+					-5.2457066802518755
+				],
+				[
+					17.985271878920262,
+					-5.995081097372887
+				],
+				[
+					20.233452303886487,
+					-5.995081097372887
+				],
+				[
+					22.48157555524942,
+					-7.493858518416508
+				],
+				[
+					23.980381563094745,
+					-8.243232935537522
+				],
+				[
+					26.228504814457676,
+					-8.992635939460131
+				],
+				[
+					27.727310822302996,
+					-9.742010356581142
+				],
+				[
+					28.476685239424008,
+					-10.491384773702155
+				],
+				[
+					29.22605965654492,
+					-10.491384773702155
+				],
+				[
+					29.97543407366593,
+					-10.491384773702155
+				],
+				[
+					30.72486566439024,
+					-10.491384773702155
+				],
+				[
+					31.47424008151125,
+					-10.491384773702155
+				],
+				[
+					31.47424008151125,
+					-10.491384773702155
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 222,
+			"versionNonce": 541897466,
+			"isDeleted": false,
+			"id": "ajHwrNHAdLuLFWFs2_UVM",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0.40572116630650523,
+			"x": 1105.4302648621488,
+			"y": 3479.91168655062,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 17.985214705316963,
+			"height": 5.995081097372887,
+			"seed": 975775226,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0.7493744171210125,
+					0
+				],
+				[
+					2.2481232513630376,
+					-0.7493744171210125
+				],
+				[
+					4.4963036763292665,
+					-1.498748834242025
+				],
+				[
+					5.245678093450279,
+					-2.2481518381646333
+				],
+				[
+					7.493858518416508,
+					-2.997526255285646
+				],
+				[
+					9.741981769779546,
+					-3.746929259208254
+				],
+				[
+					11.990162194745775,
+					-4.4963036763292665
+				],
+				[
+					13.488911028987802,
+					-4.4963036763292665
+				],
+				[
+					14.238285446108707,
+					-5.245678093450279
+				],
+				[
+					15.73709145395403,
+					-5.245678093450279
+				],
+				[
+					16.486465871075044,
+					-5.245678093450279
+				],
+				[
+					17.235840288196055,
+					-5.245678093450279
+				],
+				[
+					17.985214705316963,
+					-5.245678093450279
+				],
+				[
+					17.985214705316963,
+					-5.995081097372887
+				],
+				[
+					17.985214705316963,
+					-5.995081097372887
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 122,
+			"versionNonce": 1581748646,
+			"isDeleted": false,
+			"id": "OJZwxgYg5wiM1KiDzzyKc",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 781.6673484150388,
+			"y": 3497.5877713355053,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 47.4803488502281,
+			"height": 54.462803230784175,
+			"seed": 1178391782,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					-2.7929178264312213
+				],
+				[
+					0,
+					-8.378860022279241
+				],
+				[
+					1.3964589132156107,
+					-11.17188439169604
+				],
+				[
+					1.3964589132156107,
+					-15.361261131342417
+				],
+				[
+					2.7930243694167984,
+					-18.154285500759215
+				],
+				[
+					2.7930243694167984,
+					-19.550744413974826
+				],
+				[
+					4.189483282632295,
+					-22.343662240406047
+				],
+				[
+					5.585942195847906,
+					-22.343662240406047
+				],
+				[
+					5.585942195847906,
+					-25.136686609822846
+				],
+				[
+					6.982401109063403,
+					-27.929604436253612
+				],
+				[
+					8.378860022279014,
+					-29.326063349469223
+				],
+				[
+					8.378860022279014,
+					-30.722522262684834
+				],
+				[
+					9.775425478480201,
+					-32.11908771888602
+				],
+				[
+					9.775425478480201,
+					-33.51554663210163
+				],
+				[
+					11.171884391695698,
+					-34.91200554531724
+				],
+				[
+					11.171884391695698,
+					-36.30846445853285
+				],
+				[
+					12.56834330491131,
+					-39.10148882794965
+				],
+				[
+					12.56834330491131,
+					-40.49794774116526
+				],
+				[
+					12.56834330491131,
+					-41.89440665438042
+				],
+				[
+					13.964802218126806,
+					-43.29086556759603
+				],
+				[
+					15.361261131342303,
+					-44.68732448081164
+				],
+				[
+					16.757826587543605,
+					-46.08388993701283
+				],
+				[
+					16.757826587543605,
+					-47.48034885022844
+				],
+				[
+					18.1542855007591,
+					-48.87680776344405
+				],
+				[
+					19.5507444139746,
+					-50.27331994815222
+				],
+				[
+					20.94720332719021,
+					-50.27331994815222
+				],
+				[
+					22.343662240405706,
+					-50.27331994815222
+				],
+				[
+					23.740227696606894,
+					-50.27331994815222
+				],
+				[
+					23.740227696606894,
+					-48.87680776344405
+				],
+				[
+					23.740227696606894,
+					-47.48034885022844
+				],
+				[
+					23.740227696606894,
+					-46.08388993701283
+				],
+				[
+					23.740227696606894,
+					-44.68732448081164
+				],
+				[
+					23.740227696606894,
+					-43.29086556759603
+				],
+				[
+					23.740227696606894,
+					-41.89440665438042
+				],
+				[
+					23.740227696606894,
+					-40.49794774116526
+				],
+				[
+					23.740227696606894,
+					-39.10148882794965
+				],
+				[
+					23.740227696606894,
+					-37.70492337174801
+				],
+				[
+					22.343662240405706,
+					-36.30846445853285
+				],
+				[
+					22.343662240405706,
+					-34.91200554531724
+				],
+				[
+					22.343662240405706,
+					-33.51554663210163
+				],
+				[
+					22.343662240405706,
+					-32.11908771888602
+				],
+				[
+					20.94720332719021,
+					-30.722522262684834
+				],
+				[
+					20.94720332719021,
+					-29.326063349469223
+				],
+				[
+					19.5507444139746,
+					-27.929604436253612
+				],
+				[
+					18.1542855007591,
+					-26.533145523038
+				],
+				[
+					18.1542855007591,
+					-23.740121153621658
+				],
+				[
+					16.757826587543605,
+					-22.343662240406047
+				],
+				[
+					15.361261131342303,
+					-20.947203327190437
+				],
+				[
+					13.964802218126806,
+					-19.550744413974826
+				],
+				[
+					12.56834330491131,
+					-16.757720044558027
+				],
+				[
+					11.171884391695698,
+					-16.757720044558027
+				],
+				[
+					9.775425478480201,
+					-16.757720044558027
+				],
+				[
+					11.171884391695698,
+					-16.757720044558027
+				],
+				[
+					12.56834330491131,
+					-16.757720044558027
+				],
+				[
+					13.964802218126806,
+					-16.757720044558027
+				],
+				[
+					15.361261131342303,
+					-16.757720044558027
+				],
+				[
+					16.757826587543605,
+					-16.757720044558027
+				],
+				[
+					18.1542855007591,
+					-15.361261131342417
+				],
+				[
+					20.94720332719021,
+					-13.96480221812726
+				],
+				[
+					23.740227696606894,
+					-9.775318935494852
+				],
+				[
+					26.533145523038,
+					-8.378860022279241
+				],
+				[
+					29.32606334946911,
+					-4.189483282632409
+				],
+				[
+					32.119087718885794,
+					-1.3964589132156107
+				],
+				[
+					34.9120055453169,
+					-1.3964589132156107
+				],
+				[
+					36.30846445853251,
+					0
+				],
+				[
+					37.7050299147337,
+					1.396458913215156
+				],
+				[
+					39.10148882794931,
+					1.396458913215156
+				],
+				[
+					40.497947741164694,
+					2.7929178264307666
+				],
+				[
+					41.894406654380305,
+					2.7929178264307666
+				],
+				[
+					43.290865567595915,
+					4.189483282631954
+				],
+				[
+					44.6874310237971,
+					4.189483282631954
+				],
+				[
+					46.083889937012486,
+					4.189483282631954
+				],
+				[
+					47.4803488502281,
+					4.189483282631954
+				],
+				[
+					47.4803488502281,
+					4.189483282631954
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 59,
+			"versionNonce": 955270074,
+			"isDeleted": false,
+			"id": "5Ew-6N9m4fVrzm0v8tgIz",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 931.0907960747863,
+			"y": 3450.107422485277,
+			"strokeColor": "#1971c2",
+			"backgroundColor": "transparent",
+			"width": 13.964802218126806,
+			"height": 4.189483282632409,
+			"seed": 1174748134,
+			"groupIds": [
+				"_-BOPaM39D_iu7xjAX-yh"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-1.3965654562011878,
+					0
+				],
+				[
+					-4.189483282632409,
+					0
+				],
+				[
+					-5.585942195847792,
+					1.3964589132156107
+				],
+				[
+					-6.982401109063403,
+					1.3964589132156107
+				],
+				[
+					-8.37896656526459,
+					1.3964589132156107
+				],
+				[
+					-11.171884391695812,
+					1.3964589132156107
+				],
+				[
+					-12.568343304911195,
+					1.3964589132156107
+				],
+				[
+					-13.964802218126806,
+					1.3964589132156107
+				],
+				[
+					-13.964802218126806,
+					2.7930243694167984
+				],
+				[
+					-13.964802218126806,
+					4.189483282632409
+				],
+				[
+					-13.964802218126806,
+					4.189483282632409
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "rectangle",
+			"version": 638,
+			"versionNonce": 1577650618,
+			"isDeleted": false,
+			"id": "tUwBnDFcJLxTYXPRnlgOR",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1379.372844543017,
+			"y": 3556.6986323998713,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"width": 361.1678081832498,
+			"height": 48.862796354375156,
+			"seed": 1051127866,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "5F37cyjv"
+				},
+				{
+					"id": "nmLLHECYg7rS9pHRld9Vm",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641900691,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 595,
+			"versionNonce": 309576314,
+			"isDeleted": false,
+			"id": "5F37cyjv",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1391.0817486346418,
+			"y": 3565.030030577059,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 337.75,
+			"height": 32.199999999999996,
+			"seed": 230825850,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641900692,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "coherent with Epron (2006)",
+			"rawText": "coherent with Epron (2006)",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "tUwBnDFcJLxTYXPRnlgOR",
+			"originalText": "coherent with Epron (2006)",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "arrow",
+			"version": 2032,
+			"versionNonce": 1219292154,
+			"isDeleted": false,
+			"id": "nmLLHECYg7rS9pHRld9Vm",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1673.516912422342,
+			"y": 3475.9192536463693,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 35.75883807014179,
+			"height": 68.89867507979488,
+			"seed": 1985850,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
+			"updated": 1701641900692,
+			"link": null,
+			"locked": false,
+			"startBinding": {
+				"elementId": "3hucu0aSHkEV1mCgZ6MAT",
+				"gap": 14.02017959379259,
+				"focus": 0.5418627340739948
+			},
+			"endBinding": {
+				"elementId": "tUwBnDFcJLxTYXPRnlgOR",
+				"gap": 11.880703673707103,
+				"focus": 0.30504975336680196
+			},
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-35.75883807014179,
+					68.89867507979488
+				]
+			]
+		},
+		{
+			"type": "rectangle",
+			"version": 681,
+			"versionNonce": 610934074,
+			"isDeleted": false,
+			"id": "FJhnFK-5VvV4DL0r_bQCZ",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2907.227778311676,
+			"y": 4796.628720456918,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"width": 442.811710397521,
+			"height": 139,
+			"seed": 742545594,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "jdyUZEwn"
+				},
+				{
+					"id": "r4tmvv_10jbTP9JRRw7GL",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 623,
+			"versionNonce": 533707622,
+			"isDeleted": false,
+			"id": "jdyUZEwn",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2912.3103913229365,
+			"y": 4817.828720456918,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 432.646484375,
+			"height": 96.6,
+			"seed": 431568314,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641847162,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "Allié et al. (2015): species richness\nis higher in mid-slope positions\nand decreases towards the hilltop",
+			"rawText": "Allié et al. (2015): species richness is higher in mid-slope positions and decreases towards the hilltop",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "FJhnFK-5VvV4DL0r_bQCZ",
+			"originalText": "Allié et al. (2015): species richness is higher in mid-slope positions and decreases towards the hilltop",
+			"lineHeight": 1.15,
+			"baseline": 90
+		},
+		{
+			"type": "rectangle",
+			"version": 693,
+			"versionNonce": 829914214,
+			"isDeleted": false,
+			"id": "wP4qH-6uSn5l5f1drEjrG",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1638.6687492225715,
+			"y": 4252.318154833053,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 579.2594452128745,
+			"height": 107,
+			"seed": 1160113958,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "FVczW7IE"
+				},
+				{
+					"id": "7SFfR2lbCr0JQS3YpDlV_",
+					"type": "arrow"
+				},
+				{
+					"id": "YhOgfCRZYe7_9ZUD2KLxp",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701643104737,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 726,
+			"versionNonce": 1779863206,
+			"isDeleted": false,
+			"id": "FVczW7IE",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1643.6687492225715,
+			"y": 4257.518154833053,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 530.66015625,
+			"height": 96.6,
+			"seed": 263308582,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "- negative effect of HSD on density\n- Maximum tree count for HSD between 60\nand 80 cm",
+			"rawText": "- negative effect of HSD on density\n- Maximum tree count for HSD between 60 and 80 cm",
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"containerId": "wP4qH-6uSn5l5f1drEjrG",
+			"originalText": "- negative effect of HSD on density\n- Maximum tree count for HSD between 60 and 80 cm",
+			"lineHeight": 1.15,
+			"baseline": 90
+		},
+		{
+			"type": "arrow",
+			"version": 1260,
+			"versionNonce": 119727462,
+			"isDeleted": false,
+			"id": "7SFfR2lbCr0JQS3YpDlV_",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1675.1281508201305,
+			"y": 3909.074947038073,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 212.6875324069631,
+			"height": 337.852915216135,
+			"seed": 1365541094,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "stVuT2Zc"
+				}
+			],
+			"updated": 1701641864166,
+			"link": null,
+			"locked": false,
+			"startBinding": {
+				"elementId": "9FXr0fpi4T3BJQ8MAhKc2",
+				"gap": 2.3963971985666603,
+				"focus": 0.32942318419027555
+			},
+			"endBinding": {
+				"elementId": "wP4qH-6uSn5l5f1drEjrG",
+				"gap": 5.390292578844992,
+				"focus": -0.010546427543647445
+			},
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					212.6875324069631,
+					337.852915216135
+				]
+			]
+		},
+		{
+			"type": "text",
+			"version": 13,
+			"versionNonce": 1390004710,
+			"isDeleted": false,
+			"id": "stVuT2Zc",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2274.140569169016,
+			"y": 3474.3810772324327,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 77.806640625,
+			"height": 32.199999999999996,
+			"seed": 446851130,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774986,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "allows",
+			"rawText": "allows",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "7SFfR2lbCr0JQS3YpDlV_",
+			"originalText": "allows",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "rectangle",
+			"version": 179,
+			"versionNonce": 938258298,
+			"isDeleted": false,
+			"id": "uTNQEnIra0wmDvY5Cb7G-",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1697.0539726686466,
+			"y": 5038.175606459019,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"width": 393.8964698850166,
+			"height": 77.23460578956747,
+			"seed": 1602112166,
+			"groupIds": [
+				"X6EgF4bzYE4PCFEFLNvvk"
+			],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "m1lW1R8E"
+				}
+			],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 141,
+			"versionNonce": 236166438,
+			"isDeleted": false,
+			"id": "m1lW1R8E",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1760.940684173655,
+			"y": 5060.692909353803,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"width": 266.123046875,
+			"height": 32.199999999999996,
+			"seed": 2060457062,
+			"groupIds": [
+				"X6EgF4bzYE4PCFEFLNvvk"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "/!\\ only seven classes",
+			"rawText": "/!\\ only seven classes",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "uTNQEnIra0wmDvY5Cb7G-",
+			"originalText": "/!\\ only seven classes",
+			"lineHeight": 1.15,
+			"baseline": 26
+		},
+		{
+			"type": "rectangle",
+			"version": 234,
+			"versionNonce": 1146925114,
+			"isDeleted": false,
+			"id": "HbxdnDrNn6z_Q7Zhp_ZQK",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1743.3947656050514,
+			"y": 5109.61765609792,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"width": 393.8964698850166,
+			"height": 77.23460578956747,
+			"seed": 217796134,
+			"groupIds": [
+				"X6EgF4bzYE4PCFEFLNvvk"
+			],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "5AFvtpkI"
+				}
+			],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 254,
+			"versionNonce": 1093732454,
+			"isDeleted": false,
+			"id": "5AFvtpkI",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1758.2472974225598,
+			"y": 5116.034958992704,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"width": 364.19140625,
+			"height": 64.39999999999999,
+			"seed": 1241160038,
+			"groupIds": [
+				"X6EgF4bzYE4PCFEFLNvvk"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "/!\\ soil texture variation speed\nunknow",
+			"rawText": "/!\\ soil texture variation speed unknow",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "HbxdnDrNn6z_Q7Zhp_ZQK",
+			"originalText": "/!\\ soil texture variation speed unknow",
+			"lineHeight": 1.15,
+			"baseline": 58
+		},
+		{
+			"type": "rectangle",
+			"version": 676,
+			"versionNonce": 1415305318,
+			"isDeleted": false,
+			"id": "I2XAH1Zs0Qqwq_WRFzj8P",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1991.2200453843834,
+			"y": 3846.5205685933543,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 411.9178975443583,
+			"height": 77.23460578956701,
+			"seed": 1283357414,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "jhiQOq5L"
+				},
+				{
+					"id": "tuNXSb27WiaS2Df8nPRrE",
+					"type": "arrow"
+				},
+				{
+					"id": "iJ82CcvWxBQg9m1vPhvmq",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641847171,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 633,
+			"versionNonce": 1235867814,
+			"isDeleted": false,
+			"id": "jhiQOq5L",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2001.8967675940626,
+			"y": 3852.9378714881377,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 390.564453125,
+			"height": 64.39999999999999,
+			"seed": 557644262,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641847172,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "maximum DBH value increases\nwith HSD class",
+			"rawText": "maximum DBH value increases with HSD class",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "I2XAH1Zs0Qqwq_WRFzj8P",
+			"originalText": "maximum DBH value increases with HSD class",
+			"lineHeight": 1.15,
+			"baseline": 58
+		},
+		{
+			"type": "arrow",
+			"version": 2151,
+			"versionNonce": 2105807910,
+			"isDeleted": false,
+			"id": "tuNXSb27WiaS2Df8nPRrE",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2264.913483621619,
+			"y": 3934.0530628962015,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 29.233589499430764,
+			"height": 48.78993047984841,
+			"seed": 591164346,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
+			"updated": 1701641864174,
+			"link": null,
+			"locked": false,
+			"startBinding": {
+				"elementId": "I2XAH1Zs0Qqwq_WRFzj8P",
+				"gap": 10.297888513280668,
+				"focus": -0.16774117363330884
+			},
+			"endBinding": {
+				"elementId": "ofCwhOBNUYTSfSIhze537",
+				"gap": 14.159756295190164,
+				"focus": -0.15066670985534458
+			},
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					29.233589499430764,
+					48.78993047984841
+				]
+			]
+		},
+		{
+			"type": "rectangle",
+			"version": 804,
+			"versionNonce": 1286252262,
+			"isDeleted": false,
+			"id": "ofCwhOBNUYTSfSIhze537",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2187.9966438335628,
+			"y": 3997.0027496712396,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"width": 330.8215221817609,
+			"height": 75,
+			"seed": 962459110,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "IrsOusUa"
+				},
+				{
+					"id": "tuNXSb27WiaS2Df8nPRrE",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 807,
+			"versionNonce": 635708026,
+			"isDeleted": false,
+			"id": "IrsOusUa",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2206.345881486943,
+			"y": 4002.30274967124,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 294.123046875,
+			"height": 64.39999999999999,
+			"seed": 1913518886,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "(???urg): DBH increase\nwith elevation",
+			"rawText": "(???urg): DBH increase with elevation",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "ofCwhOBNUYTSfSIhze537",
+			"originalText": "(???urg): DBH increase with elevation",
+			"lineHeight": 1.15,
+			"baseline": 58
+		},
+		{
+			"type": "rectangle",
+			"version": 223,
+			"versionNonce": 2038079334,
+			"isDeleted": false,
+			"id": "0S9jy4dZVWxZlR_ahM_9B",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 3215.294587454564,
+			"y": 3917.6042871877053,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"width": 469.8440483042933,
+			"height": 646.4657016062888,
+			"seed": 2022251366,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "OpRUvKuz"
+				}
+			],
+			"updated": 1701641864176,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 207,
+			"versionNonce": 620610214,
+			"isDeleted": false,
+			"id": "OpRUvKuz",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 3223.7556741067106,
+			"y": 3951.0371379908497,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"width": 452.921875,
+			"height": 579.5999999999999,
+			"seed": 2053255910,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641864177,
+			"link": null,
+			"locked": false,
+			"fontSize": 28,
+			"fontFamily": 2,
+			"text": "Castillo:  low tree density at higher\nelevations on the slope?\n\nIn a study conducted by de Castilho\net al. in 2006, a positive correlation\nwas observed between above-\nground living (AGLB) biomass and\neither altitude or soil texture gradient\n(% of clay). Notably, 14% of the\nAGLB in understory and emergent\ntrees were also explained by slope.\nThe analysis revealed that a\nsignificant portion of AGLB was\naccounted for by tree classes\ncharacterized by small size,\nspecifically those with a diameter at\nbreast height (dbh) between 1 ≤ dbh\n< 10 cm.",
+			"rawText": "Castillo:  low tree density at higher elevations on the slope?\n\nIn a study conducted by de Castilho et al. in 2006, a positive correlation was observed between above-ground living (AGLB) biomass and either altitude or soil texture gradient (% of clay). Notably, 14% of the AGLB in understory and emergent trees were also explained by slope. The analysis revealed that a significant portion of AGLB was accounted for by tree classes characterized by small size, specifically those with a diameter at breast height (dbh) between 1 ≤ dbh < 10 cm. ",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "0S9jy4dZVWxZlR_ahM_9B",
+			"originalText": "Castillo:  low tree density at higher elevations on the slope?\n\nIn a study conducted by de Castilho et al. in 2006, a positive correlation was observed between above-ground living (AGLB) biomass and either altitude or soil texture gradient (% of clay). Notably, 14% of the AGLB in understory and emergent trees were also explained by slope. The analysis revealed that a significant portion of AGLB was accounted for by tree classes characterized by small size, specifically those with a diameter at breast height (dbh) between 1 ≤ dbh < 10 cm. ",
+			"lineHeight": 1.15,
+			"baseline": 573
+		},
+		{
+			"id": "qjPSdVydMl0FYISwfYfSB",
+			"type": "rectangle",
+			"x": 2096.8672908149097,
+			"y": 3549.3422227848628,
+			"width": 412.1120437455929,
+			"height": 107,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 1946984506,
+			"version": 496,
+			"versionNonce": 405710182,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "keqbkVyk"
+				},
+				{
+					"id": "nZU7thcYbpIfGzB1ZLiEA",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "keqbkVyk",
+			"type": "text",
+			"x": 2113.800265812706,
+			"y": 3554.5422227848626,
+			"width": 378.24609375,
+			"height": 96.6,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1572865786,
+			"version": 458,
+			"versionNonce": 1132809210,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641774987,
+			"link": null,
+			"locked": false,
+			"text": "(Allié et al., 2015): topography\nand drainage type are strongly\nlinked",
+			"rawText": "(Allié et al., 2015): topography and drainage type are strongly linked",
+			"fontSize": 28,
+			"fontFamily": 2,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 90,
+			"containerId": "qjPSdVydMl0FYISwfYfSB",
+			"originalText": "(Allié et al., 2015): topography and drainage type are strongly linked",
+			"lineHeight": 1.15
+		},
+		{
+			"id": "nZU7thcYbpIfGzB1ZLiEA",
+			"type": "arrow",
+			"x": 2069.501660007566,
+			"y": 3474.636227758876,
+			"width": 63.195698028587685,
+			"height": 64.82182569060569,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 273410170,
+			"version": 995,
+			"versionNonce": 2008928550,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641864178,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					63.195698028587685,
+					64.82182569060569
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "3hucu0aSHkEV1mCgZ6MAT",
+				"gap": 12.737153706299296,
+				"focus": -0.2975258211040784
+			},
+			"endBinding": {
+				"elementId": "qjPSdVydMl0FYISwfYfSB",
+				"gap": 9.884169335381102,
+				"focus": -0.41993030409197524
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "YJRmI2FY_pUZ-tK_rbV2x",
+			"type": "rectangle",
+			"x": 1755.2494485853351,
+			"y": 4499.45069372693,
+			"width": 378.9261681667808,
+			"height": 107,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 214690554,
+			"version": 516,
+			"versionNonce": 216275686,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "8KYG13va"
+				},
+				{
+					"id": "6sjJ3c3xOUMH_9wLcfP5u",
+					"type": "arrow"
+				},
+				{
+					"id": "YhOgfCRZYe7_9ZUD2KLxp",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701643104737,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "8KYG13va",
+			"type": "text",
+			"x": 1782.8580404812258,
+			"y": 4504.65069372693,
+			"width": 323.708984375,
+			"height": 96.6,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1477269626,
+			"version": 524,
+			"versionNonce": 2088047270,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701643091122,
+			"link": null,
+			"locked": false,
+			"text": "Sabatier (1997): Forest\nrerewal might be faster on\nLSD",
+			"rawText": "Sabatier (1997): Forest rerewal might be faster on LSD",
+			"fontSize": 28,
+			"fontFamily": 2,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 90,
+			"containerId": "YJRmI2FY_pUZ-tK_rbV2x",
+			"originalText": "Sabatier (1997): Forest rerewal might be faster on LSD",
+			"lineHeight": 1.15
+		},
+		{
+			"id": "yceZ_ZYc935HcTi7lDk7h",
+			"type": "rectangle",
+			"x": 2881.621598526035,
+			"y": 5213.24393845393,
+			"width": 373.3536682482536,
+			"height": 171,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 2012879206,
+			"version": 514,
+			"versionNonce": 1338613114,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "m6lNLPG4"
+				}
+			],
+			"updated": 1701642024547,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "m6lNLPG4",
+			"type": "text",
+			"x": 2888.526948275162,
+			"y": 5218.24393845393,
+			"width": 359.54296875,
+			"height": 160.99999999999997,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1407761254,
+			"version": 613,
+			"versionNonce": 1852563002,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701642024547,
+			"link": null,
+			"locked": false,
+			"text": "Sabatier (1997): there is a\ntendency for LSD soil to tend\ntoward hilltop or downhill\nhydromophic transformation\nsystem",
+			"rawText": "Sabatier (1997): there is a tendency for LSD soil to tend toward hilltop or downhill hydromophic transformation system ",
+			"fontSize": 28,
+			"fontFamily": 2,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 154,
+			"containerId": "yceZ_ZYc935HcTi7lDk7h",
+			"originalText": "Sabatier (1997): there is a tendency for LSD soil to tend toward hilltop or downhill hydromophic transformation system ",
+			"lineHeight": 1.15
+		},
+		{
+			"id": "Mg6XiLFNXmmA7QjmsVFlM",
+			"type": "rectangle",
+			"x": 6367.793391249796,
+			"y": -2782.4221399944454,
+			"width": 682.5617689945175,
+			"height": 367.1711674721073,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 551667110,
+			"version": 50,
+			"versionNonce": 1859999290,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "JmmYQ8if"
+				}
+			],
+			"updated": 1701641774988,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "JmmYQ8if",
+			"type": "text",
+			"x": 6372.793391249796,
+			"y": -2631.0365562583916,
+			"width": 652.1484375,
+			"height": 64.39999999999999,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 71540710,
+			"version": 130,
+			"versionNonce": 2029372006,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641774988,
+			"link": null,
+			"locked": false,
+			"text": "enhance HSD proxy by taking into account the water\ncapacity of the above HSD soil texture.",
+			"rawText": "enhance HSD proxy by taking into account the water capacity of the above HSD soil texture.",
+			"fontSize": 28,
+			"fontFamily": 2,
+			"textAlign": "left",
+			"verticalAlign": "middle",
+			"baseline": 58,
+			"containerId": "Mg6XiLFNXmmA7QjmsVFlM",
+			"originalText": "enhance HSD proxy by taking into account the water capacity of the above HSD soil texture.",
+			"lineHeight": 1.15
+		},
+		{
+			"id": "kWrTMqXNQ0ZCqIjiMKOjS",
+			"type": "rectangle",
+			"x": 2337.9209851032065,
+			"y": 4802.447369793067,
+			"width": 287.6715655025846,
+			"height": 75,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 1070406886,
+			"version": 405,
+			"versionNonce": 202014458,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "hqVkmbcX"
+				},
+				{
+					"id": "Uo7dI9vfb4AZ7AmIiFqM0",
+					"type": "arrow"
+				}
+			],
+			"updated": 1701641774988,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "hqVkmbcX",
+			"type": "text",
+			"x": 2385.253838166999,
+			"y": 4807.747369793067,
+			"width": 193.005859375,
+			"height": 64.39999999999999,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1717460454,
+			"version": 302,
+			"versionNonce": 860934054,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641847187,
+			"link": null,
+			"locked": false,
+			"text": "Coherent with\nSabatier (1997)",
+			"rawText": "Coherent with Sabatier (1997)",
+			"fontSize": 28,
+			"fontFamily": 2,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 58,
+			"containerId": "kWrTMqXNQ0ZCqIjiMKOjS",
+			"originalText": "Coherent with Sabatier (1997)",
+			"lineHeight": 1.15
+		},
+		{
+			"id": "Uo7dI9vfb4AZ7AmIiFqM0",
+			"type": "arrow",
+			"x": 2714.066246867937,
+			"y": 4634.5799046512775,
+			"width": 227.9173631097069,
+			"height": 160.09746435537818,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 1421169766,
+			"version": 924,
+			"versionNonce": 754473318,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641864186,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-227.9173631097069,
+					160.09746435537818
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "tvCrzhXvin3karX8TD7hG",
+				"gap": 12.899892837865991,
+				"focus": -0.06604928701892814
+			},
+			"endBinding": {
+				"elementId": "kWrTMqXNQ0ZCqIjiMKOjS",
+				"gap": 7.770000786411401,
+				"focus": -0.3045054828418706
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "iJ82CcvWxBQg9m1vPhvmq",
+			"type": "arrow",
+			"x": 1927.6973882146124,
+			"y": 3879.881887140564,
+			"width": 53.41545781664422,
+			"height": 3.6868048441888277,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffec99",
+			"fillStyle": "hachure",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 114095718,
+			"version": 965,
+			"versionNonce": 1030276518,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641864172,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					53.41545781664422,
+					3.6868048441888277
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "9FXr0fpi4T3BJQ8MAhKc2",
+				"gap": 11.175963372199021,
+				"focus": -0.21160589500174418
+			},
+			"endBinding": {
+				"elementId": "I2XAH1Zs0Qqwq_WRFzj8P",
+				"gap": 10.107199353126816,
+				"focus": -0.25256988102698147
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "OxuXfd49_tU770yKNOebc",
+			"type": "rectangle",
+			"x": 329.7570416786665,
+			"y": 4164.770374761627,
+			"width": 656.2944748536759,
+			"height": 710,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#d0bfff",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 1755404774,
+			"version": 201,
+			"versionNonce": 317417786,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "caM0Mdw3"
+				}
+			],
+			"updated": 1701641774989,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "caM0Mdw3",
+			"type": "text",
+			"x": 334.7570416786665,
+			"y": 4169.770374761627,
+			"width": 641.4517211914062,
+			"height": 700,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#d0bfff",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 56511334,
+			"version": 1174,
+			"versionNonce": 1925603174,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641774989,
+			"link": null,
+			"locked": false,
+			"text": "In the literature, the relation between forest\nstructuration and topography is well studied.\n\nIn our study, we found a strong negative\ncorrelation between topography and HSD, as\nFerry (2003) also on the Paracou station.\n\nThen it is interesting to think that the\nresults we have on the effect of HSD on\nforest community structure indicators might\nparticipate into the explanation of the\ntopography effect.\n\nOur results might help in the understanding of\nforest community structuration over\ntopography variations.\n\nOur study take place into the whole cortage\nof community structure study over topography\ngradient.",
+			"rawText": "In the literature, the relation between forest structuration and topography is well studied.\n\nIn our study, we found a strong negative correlation between topography and HSD, as Ferry (2003) also on the Paracou station. \n\nThen it is interesting to think that the results we have on the effect of HSD on forest community structure indicators might participate into the explanation of the topography effect.\n\nOur results might help in the understanding of forest community structuration over topography variations.\n\nOur study take place into the whole cortage of community structure study over topography gradient.",
+			"fontSize": 28,
+			"fontFamily": 1,
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"baseline": 689,
+			"containerId": "OxuXfd49_tU770yKNOebc",
+			"originalText": "In the literature, the relation between forest structuration and topography is well studied.\n\nIn our study, we found a strong negative correlation between topography and HSD, as Ferry (2003) also on the Paracou station. \n\nThen it is interesting to think that the results we have on the effect of HSD on forest community structure indicators might participate into the explanation of the topography effect.\n\nOur results might help in the understanding of forest community structuration over topography variations.\n\nOur study take place into the whole cortage of community structure study over topography gradient.",
+			"lineHeight": 1.25
+		},
+		{
+			"id": "6sjJ3c3xOUMH_9wLcfP5u",
+			"type": "arrow",
+			"x": 2445.345230771735,
+			"y": 4591.16162299105,
+			"width": 296.5330060173542,
+			"height": 6.671534634345335,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 379705318,
+			"version": 872,
+			"versionNonce": 899752230,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701643091122,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-296.5330060173542,
+					-6.671534634345335
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "tvCrzhXvin3karX8TD7hG",
+				"gap": 12.691292165022787,
+				"focus": -0.13567311053809902
+			},
+			"endBinding": {
+				"elementId": "YJRmI2FY_pUZ-tK_rbV2x",
+				"gap": 14.636608002264438,
+				"focus": 0.46652079907410055
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "r4tmvv_10jbTP9JRRw7GL",
+			"type": "arrow",
+			"x": 2957.7514971466203,
+			"y": 4634.371303978436,
+			"width": 287.84389486334976,
+			"height": 146.28034252302677,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 565790566,
+			"version": 889,
+			"versionNonce": 2142168806,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641864164,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					287.84389486334976,
+					146.28034252302677
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "tvCrzhXvin3karX8TD7hG",
+				"gap": 12.691292165024606,
+				"focus": -0.3792088142314643
+			},
+			"endBinding": {
+				"elementId": "FJhnFK-5VvV4DL0r_bQCZ",
+				"gap": 15.977073955455126,
+				"focus": 0.7961689147518007
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "-BYmIQl1lQMO4Ne5BklFJ",
+			"type": "rectangle",
+			"x": 331.61293807751736,
+			"y": 3567.8635502581024,
+			"width": 661.414416799614,
+			"height": 403.903588453014,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 267937510,
+			"version": 107,
+			"versionNonce": 2081832422,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "ulAHiGQb"
+				}
+			],
+			"updated": 1701641774989,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "ulAHiGQb",
+			"type": "text",
+			"x": 336.61293807751736,
+			"y": 3572.8635502581024,
+			"width": 645.9876708984375,
+			"height": 385,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 143362278,
+			"version": 72,
+			"versionNonce": 635534202,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641774989,
+			"link": null,
+			"locked": false,
+			"text": "Our results indicate that species richness and\ntree density show a significant but small\ndecrease with HSD (Figure 1a, 1b). Maximum\ntree count could be observed at a medium\nHSD between 60 and 80 cm. No linear\ndependency was found between HSD and DBH\nmeasurements. The mean DBH values appear\nconsistent over all HSD classes (Fig. 1c, 1d). A\ntrend can be observed in the outliers per\nclass, where the maximum DBH value increases\nwith HSD class.",
+			"rawText": "Our results indicate that species richness and tree density show a significant but small decrease with HSD (Figure 1a, 1b). Maximum tree count could be observed at a medium HSD between 60 and 80 cm. No linear dependency was found between HSD and DBH measurements. The mean DBH values appear consistent over all HSD classes (Fig. 1c, 1d). A trend can be observed in the outliers per class, where the maximum DBH value increases with HSD class.",
+			"fontSize": 28,
+			"fontFamily": 1,
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"baseline": 374,
+			"containerId": "-BYmIQl1lQMO4Ne5BklFJ",
+			"originalText": "Our results indicate that species richness and tree density show a significant but small decrease with HSD (Figure 1a, 1b). Maximum tree count could be observed at a medium HSD between 60 and 80 cm. No linear dependency was found between HSD and DBH measurements. The mean DBH values appear consistent over all HSD classes (Fig. 1c, 1d). A trend can be observed in the outliers per class, where the maximum DBH value increases with HSD class.",
+			"lineHeight": 1.25
+		},
+		{
+			"id": "_Wws0FCYA_9epZaWPvZRv",
+			"type": "diamond",
+			"x": 3335.1843132780496,
+			"y": 4710.038661079764,
+			"width": 28.630014712986593,
+			"height": 142,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#a18072",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [
+				"nMMjxXtEkgJLMi5dk5JZX"
+			],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 104755110,
+			"version": 368,
+			"versionNonce": 1562634982,
+			"isDeleted": false,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "2cJEJDwb"
+				}
+			],
+			"updated": 1701641847190,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "2cJEJDwb",
+			"type": "text",
+			"x": 3344.5057573859835,
+			"y": 4750.949062302361,
+			"width": 9.672119140625,
+			"height": 60.179197554805796,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [
+				"nMMjxXtEkgJLMi5dk5JZX"
+			],
+			"frameId": null,
+			"roundness": null,
+			"seed": 70469798,
+			"version": 391,
+			"versionNonce": 1819385382,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641847191,
+			"link": null,
+			"locked": false,
+			"text": "T\nO\nP\nO",
+			"rawText": "TOPO",
+			"fontSize": 12.035839510961159,
+			"fontFamily": 1,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 55,
+			"containerId": "_Wws0FCYA_9epZaWPvZRv",
+			"originalText": "TOPO",
+			"lineHeight": 1.25
+		},
+		{
+			"id": "glK5bnuE0V5WxVKWOPGL_",
+			"type": "freedraw",
+			"x": 3350.2392585875104,
+			"y": 4714.406129664328,
+			"width": 50.28356801252971,
+			"height": 70.47616861905554,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#b2f2bb",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [
+				"nMMjxXtEkgJLMi5dk5JZX"
+			],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1242372838,
+			"version": 524,
+			"versionNonce": 82909242,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701641829258,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					1.5837398962094413,
+					0
+				],
+				[
+					1.979667318430444,
+					0
+				],
+				[
+					2.771552370198271,
+					0
+				],
+				[
+					3.167479792419078,
+					0
+				],
+				[
+					3.563407214640081,
+					0
+				],
+				[
+					3.959334636860888,
+					0
+				],
+				[
+					4.355262059081696,
+					0
+				],
+				[
+					4.751219688628715,
+					0
+				],
+				[
+					5.147147110849522,
+					0
+				],
+				[
+					5.543074533070525,
+					-0.3959274222206117
+				],
+				[
+					5.9390019552913325,
+					-0.3959274222206117
+				],
+				[
+					6.334929377512335,
+					-0.7918850517676315
+				],
+				[
+					6.7308870070591595,
+					-1.1878124739886342
+				],
+				[
+					7.126814429279967,
+					-1.583739896209637
+				],
+				[
+					7.522741851500969,
+					-1.9796673184302487
+				],
+				[
+					7.918669273721776,
+					-1.9796673184302487
+				],
+				[
+					8.314596695942779,
+					-2.3755947406512514
+				],
+				[
+					8.710554325489603,
+					-2.3755947406512514
+				],
+				[
+					9.106481747710607,
+					-2.3755947406512514
+				],
+				[
+					9.502409169931413,
+					-2.771552370198271
+				],
+				[
+					9.898336592152221,
+					-2.771552370198271
+				],
+				[
+					10.294264014373223,
+					-2.771552370198271
+				],
+				[
+					10.690221643920243,
+					-2.771552370198271
+				],
+				[
+					11.08614906614105,
+					-2.771552370198271
+				],
+				[
+					11.482076488361857,
+					-2.771552370198271
+				],
+				[
+					12.669888962350491,
+					-2.771552370198271
+				],
+				[
+					13.461743806792496,
+					-2.771552370198271
+				],
+				[
+					14.25359865123411,
+					-2.771552370198271
+				],
+				[
+					15.045483703001938,
+					-2.771552370198271
+				],
+				[
+					15.441411125222745,
+					-2.3755947406512514
+				],
+				[
+					15.837338547443748,
+					-1.9796673184302487
+				],
+				[
+					16.629223599211574,
+					-1.583739896209637
+				],
+				[
+					17.421078443653386,
+					-1.1878124739886342
+				],
+				[
+					17.817005865874194,
+					-0.7918850517676315
+				],
+				[
+					18.212933288095194,
+					-0.3959274222206117
+				],
+				[
+					18.608890917642018,
+					0
+				],
+				[
+					19.00481833986302,
+					0
+				],
+				[
+					19.40074576208383,
+					0.3959274222210027
+				],
+				[
+					20.192600606525637,
+					0.7918548444420054
+				],
+				[
+					20.588558236072462,
+					1.1877822666626172
+				],
+				[
+					20.984485658293465,
+					1.583739896209637
+				],
+				[
+					20.984485658293465,
+					1.9796673184306395
+				],
+				[
+					21.776340502735277,
+					2.3755947406516422
+				],
+				[
+					22.17226792495608,
+					2.771522162872254
+				],
+				[
+					22.568225554502906,
+					3.1674495850932565
+				],
+				[
+					22.96415297672391,
+					3.5634072146402764
+				],
+				[
+					23.360080398944717,
+					3.959334636861279
+				],
+				[
+					23.75600782116572,
+					4.355262059081891
+				],
+				[
+					23.75600782116572,
+					4.751189481302894
+				],
+				[
+					23.75600782116572,
+					5.147116903523896
+				],
+				[
+					23.75600782116572,
+					5.543074533070525
+				],
+				[
+					23.75600782116572,
+					5.939001955291528
+				],
+				[
+					23.75600782116572,
+					6.33492937751253
+				],
+				[
+					23.75600782116572,
+					6.730856799733142
+				],
+				[
+					23.75600782116572,
+					7.126784221954145
+				],
+				[
+					23.75600782116572,
+					7.522741851501165
+				],
+				[
+					23.75600782116572,
+					7.918669273722167
+				],
+				[
+					23.75600782116572,
+					8.710524118163782
+				],
+				[
+					23.75600782116572,
+					9.502409169931413
+				],
+				[
+					23.75600782116572,
+					9.898336592152416
+				],
+				[
+					22.96415297672391,
+					10.690191436594422
+				],
+				[
+					22.568225554502906,
+					11.482076488362052
+				],
+				[
+					22.568225554502906,
+					11.878003910583056
+				],
+				[
+					22.17226792495608,
+					12.273931332804057
+				],
+				[
+					21.776340502735277,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					13.461743806792692
+				],
+				[
+					20.984485658293465,
+					13.857671229013304
+				],
+				[
+					20.588558236072462,
+					14.253598651234306
+				],
+				[
+					20.192600606525637,
+					14.64952607345531
+				],
+				[
+					19.796673184304638,
+					15.045453495675922
+				],
+				[
+					19.40074576208383,
+					15.44141112522294
+				],
+				[
+					19.00481833986302,
+					15.837338547443943
+				],
+				[
+					18.608890917642018,
+					16.233265969664945
+				],
+				[
+					18.212933288095194,
+					16.629193391885558
+				],
+				[
+					17.817005865874194,
+					17.02512081410656
+				],
+				[
+					17.421078443653386,
+					17.42107844365358
+				],
+				[
+					17.025151021432382,
+					17.817005865874194
+				],
+				[
+					16.629223599211574,
+					18.212933288095194
+				],
+				[
+					16.23326596966475,
+					18.608860710316197
+				],
+				[
+					15.837338547443748,
+					19.0047881325372
+				],
+				[
+					15.441411125222745,
+					19.40074576208383
+				],
+				[
+					15.441411125222745,
+					19.796673184304833
+				],
+				[
+					15.441411125222745,
+					20.192600606525833
+				],
+				[
+					15.441411125222745,
+					20.588528028746836
+				],
+				[
+					15.441411125222745,
+					20.98445545096745
+				],
+				[
+					15.441411125222745,
+					21.38041308051447
+				],
+				[
+					15.441411125222745,
+					21.776340502735472
+				],
+				[
+					15.441411125222745,
+					22.568195347177085
+				],
+				[
+					15.837338547443748,
+					23.75600782116572
+				],
+				[
+					16.23326596966475,
+					24.151935243386724
+				],
+				[
+					16.629223599211574,
+					24.547862665607724
+				],
+				[
+					17.025151021432382,
+					24.943790087828337
+				],
+				[
+					17.025151021432382,
+					25.339747717375356
+				],
+				[
+					17.025151021432382,
+					26.131602561817363
+				],
+				[
+					17.421078443653386,
+					26.131602561817363
+				],
+				[
+					17.817005865874194,
+					26.131602561817363
+				],
+				[
+					18.212933288095194,
+					26.131602561817363
+				],
+				[
+					18.608890917642018,
+					26.131602561817363
+				],
+				[
+					19.00481833986302,
+					26.131602561817363
+				],
+				[
+					19.796673184304638,
+					26.131602561817363
+				],
+				[
+					20.192600606525637,
+					26.131602561817363
+				],
+				[
+					21.380413080514273,
+					26.131602561817363
+				],
+				[
+					22.568225554502906,
+					26.131602561817363
+				],
+				[
+					24.15193524338653,
+					26.131602561817363
+				],
+				[
+					25.33974771737516,
+					26.131602561817363
+				],
+				[
+					27.3194150358058,
+					26.131602561817363
+				],
+				[
+					30.090937198678056,
+					26.131602561817363
+				],
+				[
+					32.46656214665532,
+					25.73567513959636
+				],
+				[
+					34.84215688730677,
+					25.73567513959636
+				],
+				[
+					36.821824205737215,
+					24.943790087828337
+				],
+				[
+					38.80149152416766,
+					24.943790087828337
+				],
+				[
+					40.385231420377295,
+					24.943790087828337
+				],
+				[
+					41.96894110926092,
+					24.943790087828337
+				],
+				[
+					43.94860842769136,
+					24.943790087828337
+				],
+				[
+					45.13642090167999,
+					24.943790087828337
+				],
+				[
+					46.324233375668626,
+					24.943790087828337
+				],
+				[
+					47.51201564233144,
+					24.943790087828337
+				],
+				[
+					48.30390069409927,
+					25.339747717375356
+				],
+				[
+					49.09575553854088,
+					25.73567513959636
+				],
+				[
+					49.491682960761885,
+					25.73567513959636
+				],
+				[
+					49.887610382982885,
+					25.73567513959636
+				],
+				[
+					50.28356801252971,
+					26.131602561817363
+				],
+				[
+					50.28356801252971,
+					26.527529984037972
+				],
+				[
+					50.28356801252971,
+					26.923457406258976
+				],
+				[
+					50.28356801252971,
+					27.319415035805996
+				],
+				[
+					50.28356801252971,
+					27.71534245802661
+				],
+				[
+					49.887610382982885,
+					28.903124724689615
+				],
+				[
+					49.09575553854088,
+					29.695009776457248
+				],
+				[
+					47.90794306455225,
+					30.486864620899254
+				],
+				[
+					46.324233375668626,
+					31.278749672666883
+				],
+				[
+					44.74049347945918,
+					32.0706045171085
+				],
+				[
+					43.94860842769136,
+					32.862459361550506
+				],
+				[
+					42.76082616102874,
+					33.654344413318135
+				],
+				[
+					41.1770862648191,
+					34.44619925776014
+				],
+				[
+					40.385231420377295,
+					35.23808430952777
+				],
+				[
+					38.80149152416766,
+					36.42586657619039
+				],
+				[
+					37.61367905017902,
+					36.821793998411394
+				],
+				[
+					36.821824205737215,
+					37.61367905017902
+				],
+				[
+					35.23808430952758,
+					38.40553389462103
+				],
+				[
+					34.44622946508596,
+					38.80146131684203
+				],
+				[
+					32.86248956887633,
+					39.19741894638866
+				],
+				[
+					31.278749672666688,
+					39.593346368609666
+				],
+				[
+					30.48689482822488,
+					39.989273790830666
+				],
+				[
+					28.903154932015436,
+					40.385201213051275
+				],
+				[
+					28.507227509794436,
+					40.78112863527228
+				],
+				[
+					27.3194150358058,
+					41.1770862648193
+				],
+				[
+					26.527560191363992,
+					41.5730136870403
+				],
+				[
+					26.131602561816972,
+					42.36486853148192
+				],
+				[
+					25.735675139596164,
+					42.36486853148192
+				],
+				[
+					25.33974771737516,
+					42.76079595370292
+				],
+				[
+					24.943820295154353,
+					43.15675358324994
+				],
+				[
+					24.547892872933545,
+					43.55268100547055
+				],
+				[
+					24.15193524338653,
+					43.94860842769155
+				],
+				[
+					23.360080398944717,
+					44.34453584991256
+				],
+				[
+					22.96415297672391,
+					44.34453584991256
+				],
+				[
+					22.568225554502906,
+					44.34453584991256
+				],
+				[
+					22.17226792495608,
+					44.34453584991256
+				],
+				[
+					21.776340502735277,
+					44.74046327213317
+				],
+				[
+					21.380413080514273,
+					45.13642090168019
+				],
+				[
+					20.984485658293465,
+					45.928275746121805
+				],
+				[
+					20.588558236072462,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					47.116088220110825
+				],
+				[
+					20.192600606525637,
+					47.51201564233144
+				],
+				[
+					19.796673184304638,
+					47.90794306455244
+				],
+				[
+					19.796673184304638,
+					48.30387048677345
+				],
+				[
+					19.40074576208383,
+					48.69979790899445
+				],
+				[
+					19.00481833986302,
+					49.49168296076208
+				],
+				[
+					18.608890917642018,
+					49.887610382983084
+				],
+				[
+					18.212933288095194,
+					51.07542285697171
+				],
+				[
+					17.817005865874194,
+					51.86727770141333
+				],
+				[
+					17.817005865874194,
+					52.263205123634336
+				],
+				[
+					17.817005865874194,
+					53.451017597622965
+				],
+				[
+					17.421078443653386,
+					54.24287244206458
+				],
+				[
+					17.421078443653386,
+					54.63879986428559
+				],
+				[
+					17.421078443653386,
+					55.43068491605361
+				],
+				[
+					17.421078443653386,
+					56.22253976049522
+				],
+				[
+					17.421078443653386,
+					56.61846718271622
+				],
+				[
+					17.421078443653386,
+					57.01442481226324
+				],
+				[
+					17.421078443653386,
+					57.80627965670486
+				],
+				[
+					17.421078443653386,
+					58.20220707892586
+				],
+				[
+					17.421078443653386,
+					59.390019552914495
+				],
+				[
+					17.421078443653386,
+					59.785946975135495
+				],
+				[
+					17.421078443653386,
+					60.57780181957711
+				],
+				[
+					17.421078443653386,
+					61.36968687134514
+				],
+				[
+					17.421078443653386,
+					61.76561429356575
+				],
+				[
+					17.421078443653386,
+					62.16154171578675
+				],
+				[
+					17.421078443653386,
+					62.557469138007754
+				],
+				[
+					17.421078443653386,
+					62.95342676755438
+				],
+				[
+					17.421078443653386,
+					63.34935418977538
+				],
+				[
+					17.025151021432382,
+					63.34935418977538
+				],
+				[
+					16.629223599211574,
+					63.34935418977538
+				],
+				[
+					16.23326596966475,
+					63.34935418977538
+				],
+				[
+					15.837338547443748,
+					63.34935418977538
+				],
+				[
+					15.441411125222745,
+					63.34935418977538
+				],
+				[
+					15.045483703001938,
+					63.74528161199638
+				],
+				[
+					14.64955628078113,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					64.141209034217
+				],
+				[
+					13.857671229013304,
+					64.537136456438
+				],
+				[
+					13.857671229013304,
+					64.93309408598502
+				],
+				[
+					13.857671229013304,
+					65.32902150820603
+				],
+				[
+					13.857671229013304,
+					65.72494893042663
+				],
+				[
+					13.857671229013304,
+					66.12087635264764
+				],
+				[
+					13.857671229013304,
+					66.51680377486863
+				],
+				[
+					13.461743806792496,
+					66.91276140441526
+				],
+				[
+					13.461743806792496,
+					67.30868882663627
+				],
+				[
+					13.065816384571495,
+					67.30868882663627
+				],
+				[
+					12.669888962350491,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					67.70461624885728
+				],
+				[
+					12.273931332803667,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					66.91276140441526
+				],
+				[
+					12.273931332803667,
+					66.51680377486863
+				],
+				[
+					12.669888962350491,
+					66.12087635264764
+				],
+				[
+					12.669888962350491,
+					65.72494893042663
+				],
+				[
+					13.065816384571495,
+					65.32902150820603
+				],
+				[
+					13.065816384571495,
+					64.93309408598502
+				],
+				[
+					13.461743806792496,
+					64.537136456438
+				],
+				[
+					13.461743806792496,
+					64.141209034217
+				],
+				[
+					13.461743806792496,
+					63.74528161199638
+				],
+				[
+					13.461743806792496,
+					63.34935418977538
+				],
+				[
+					13.857671229013304,
+					62.95342676755438
+				],
+				[
+					13.857671229013304,
+					62.557469138007754
+				],
+				[
+					13.857671229013304,
+					62.16154171578675
+				],
+				[
+					13.857671229013304,
+					61.76561429356575
+				],
+				[
+					13.857671229013304,
+					61.36968687134514
+				],
+				[
+					13.857671229013304,
+					60.97375944912413
+				],
+				[
+					13.857671229013304,
+					60.57780181957711
+				],
+				[
+					13.857671229013304,
+					60.18187439735611
+				],
+				[
+					13.857671229013304,
+					59.785946975135495
+				],
+				[
+					13.857671229013304,
+					59.390019552914495
+				],
+				[
+					13.857671229013304,
+					58.20220707892586
+				],
+				[
+					13.461743806792496,
+					57.80627965670486
+				],
+				[
+					13.461743806792496,
+					57.01442481226324
+				],
+				[
+					13.065816384571495,
+					56.22253976049522
+				],
+				[
+					13.065816384571495,
+					55.43068491605361
+				],
+				[
+					12.669888962350491,
+					54.63879986428559
+				],
+				[
+					12.669888962350491,
+					54.24287244206458
+				],
+				[
+					12.273931332803667,
+					53.84694501984397
+				],
+				[
+					12.273931332803667,
+					53.451017597622965
+				],
+				[
+					12.273931332803667,
+					53.055090175401965
+				],
+				[
+					12.273931332803667,
+					52.659132545855336
+				],
+				[
+					12.273931332803667,
+					52.263205123634336
+				],
+				[
+					12.273931332803667,
+					51.47135027919272
+				],
+				[
+					12.273931332803667,
+					51.07542285697171
+				],
+				[
+					11.87800391058286,
+					50.67946522742469
+				],
+				[
+					11.87800391058286,
+					50.28353780520369
+				],
+				[
+					11.482076488361857,
+					49.887610382983084
+				],
+				[
+					11.08614906614105,
+					49.49168296076208
+				],
+				[
+					11.08614906614105,
+					48.30387048677345
+				],
+				[
+					10.690221643920243,
+					47.51201564233144
+				],
+				[
+					10.690221643920243,
+					47.116088220110825
+				],
+				[
+					10.294264014373223,
+					45.928275746121805
+				],
+				[
+					10.294264014373223,
+					45.13642090168019
+				],
+				[
+					10.294264014373223,
+					44.74046327213317
+				],
+				[
+					10.294264014373223,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.55268100547055
+				],
+				[
+					9.898336592152221,
+					42.76079595370292
+				],
+				[
+					9.898336592152221,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.5730136870403
+				],
+				[
+					9.106481747710607,
+					40.78112863527228
+				],
+				[
+					9.106481747710607,
+					39.989273790830666
+				],
+				[
+					8.710554325489603,
+					39.19741894638866
+				],
+				[
+					8.314596695942779,
+					38.80146131684203
+				],
+				[
+					7.918669273721776,
+					38.40553389462103
+				],
+				[
+					7.918669273721776,
+					37.61367905017902
+				],
+				[
+					7.918669273721776,
+					37.217751627958414
+				],
+				[
+					7.918669273721776,
+					36.821793998411394
+				],
+				[
+					7.522741851500969,
+					36.42586657619039
+				],
+				[
+					7.126814429279967,
+					35.63401173174878
+				],
+				[
+					7.126814429279967,
+					34.84212667998075
+				],
+				[
+					7.126814429279967,
+					34.050271835539135
+				],
+				[
+					6.7308870070591595,
+					33.258416991097526
+				],
+				[
+					6.7308870070591595,
+					32.862459361550506
+				],
+				[
+					6.334929377512335,
+					32.0706045171085
+				],
+				[
+					5.9390019552913325,
+					31.278749672666883
+				],
+				[
+					5.9390019552913325,
+					30.882792043119863
+				],
+				[
+					5.9390019552913325,
+					30.486864620899254
+				],
+				[
+					5.543074533070525,
+					29.695009776457248
+				],
+				[
+					5.543074533070525,
+					28.903124724689615
+				],
+				[
+					5.543074533070525,
+					28.50719730246861
+				],
+				[
+					5.147147110849522,
+					27.71534245802661
+				],
+				[
+					5.147147110849522,
+					27.319415035805996
+				],
+				[
+					4.751219688628715,
+					26.527529984037972
+				],
+				[
+					4.751219688628715,
+					25.73567513959636
+				],
+				[
+					4.751219688628715,
+					25.339747717375356
+				],
+				[
+					4.751219688628715,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					23.75600782116572
+				],
+				[
+					4.355262059081696,
+					23.360080398945108
+				],
+				[
+					4.355262059081696,
+					22.964122769398088
+				],
+				[
+					4.355262059081696,
+					22.568195347177085
+				],
+				[
+					3.959334636860888,
+					22.172267924956476
+				],
+				[
+					3.959334636860888,
+					21.776340502735472
+				],
+				[
+					3.959334636860888,
+					21.38041308051447
+				],
+				[
+					3.959334636860888,
+					20.98445545096745
+				],
+				[
+					3.959334636860888,
+					20.588528028746836
+				],
+				[
+					3.959334636860888,
+					20.192600606525833
+				],
+				[
+					3.563407214640081,
+					19.796673184304833
+				],
+				[
+					3.167479792419078,
+					19.40074576208383
+				],
+				[
+					3.167479792419078,
+					19.0047881325372
+				],
+				[
+					3.167479792419078,
+					18.212933288095194
+				],
+				[
+					2.771552370198271,
+					17.02512081410656
+				],
+				[
+					2.771552370198271,
+					16.629193391885558
+				],
+				[
+					2.771552370198271,
+					15.44141112522294
+				],
+				[
+					2.771552370198271,
+					15.045453495675922
+				],
+				[
+					2.771552370198271,
+					14.64952607345531
+				],
+				[
+					2.3755947406512514,
+					14.253598651234306
+				],
+				[
+					2.3755947406512514,
+					13.857671229013304
+				],
+				[
+					2.3755947406512514,
+					13.461743806792692
+				],
+				[
+					2.3755947406512514,
+					13.065786177245672
+				],
+				[
+					2.3755947406512514,
+					12.66985875502467
+				],
+				[
+					2.3755947406512514,
+					12.273931332804057
+				],
+				[
+					2.3755947406512514,
+					11.878003910583056
+				],
+				[
+					2.3755947406512514,
+					11.482076488362052
+				],
+				[
+					2.3755947406512514,
+					11.086118858815032
+				],
+				[
+					2.3755947406512514,
+					10.690191436594422
+				],
+				[
+					2.3755947406512514,
+					10.294264014373418
+				],
+				[
+					2.3755947406512514,
+					9.898336592152416
+				],
+				[
+					2.3755947406512514,
+					9.502409169931413
+				],
+				[
+					2.3755947406512514,
+					9.106451540384784
+				],
+				[
+					2.3755947406512514,
+					8.710524118163782
+				],
+				[
+					2.3755947406512514,
+					8.314596695942779
+				],
+				[
+					2.3755947406512514,
+					7.918669273722167
+				],
+				[
+					2.3755947406512514,
+					7.522741851501165
+				],
+				[
+					1.979667318430444,
+					7.126784221954145
+				],
+				[
+					1.979667318430444,
+					6.730856799733142
+				],
+				[
+					1.5837398962094413,
+					6.33492937751253
+				],
+				[
+					1.5837398962094413,
+					5.939001955291528
+				],
+				[
+					1.5837398962094413,
+					5.543074533070525
+				],
+				[
+					1.5837398962094413,
+					5.147116903523896
+				],
+				[
+					1.1878124739886342,
+					4.751189481302894
+				],
+				[
+					1.1878124739886342,
+					4.355262059081891
+				],
+				[
+					0.791885051767827,
+					3.5634072146402764
+				],
+				[
+					0.791885051767827,
+					3.1674495850932565
+				],
+				[
+					0.39592742222080723,
+					2.771522162872254
+				],
+				[
+					0.39592742222080723,
+					2.3755947406516422
+				],
+				[
+					0.39592742222080723,
+					1.9796673184306395
+				],
+				[
+					0.39592742222080723,
+					1.583739896209637
+				],
+				[
+					0.39592742222080723,
+					1.1877822666626172
+				],
+				[
+					0.39592742222080723,
+					0.7918548444420054
+				],
+				[
+					0.39592742222080723,
+					0.3959274222210027
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					0,
+					0
+				]
+			],
+			"pressures": [],
+			"simulatePressure": true,
+			"lastCommittedPoint": [
+				0.9210797312548493,
+				0
+			]
+		},
+		{
+			"type": "diamond",
+			"version": 399,
+			"versionNonce": 841902310,
+			"isDeleted": false,
+			"id": "w5u2GYB-z8sxDt5qrg5zn",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2499.617830311781,
+			"y": 3910.5802809511492,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#a18072",
+			"width": 40,
+			"height": 142,
+			"seed": 108600294,
+			"groupIds": [
+				"VIUpxf8I5Tu4Ba1v8l67T"
+			],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "xtdSCVkf"
+				}
+			],
+			"updated": 1701641850232,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 422,
+			"versionNonce": 2004638758,
+			"isDeleted": false,
+			"id": "xtdSCVkf",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2514.7817707414683,
+			"y": 3951.4906821737463,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 9.672119140625,
+			"height": 60.179197554805796,
+			"seed": 1979232038,
+			"groupIds": [
+				"VIUpxf8I5Tu4Ba1v8l67T"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641850232,
+			"link": null,
+			"locked": false,
+			"fontSize": 12.035839510961159,
+			"fontFamily": 1,
+			"text": "T\nO\nP\nO",
+			"rawText": "TOPO",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "w5u2GYB-z8sxDt5qrg5zn",
+			"originalText": "TOPO",
+			"lineHeight": 1.25,
+			"baseline": 55
+		},
+		{
+			"type": "freedraw",
+			"version": 555,
+			"versionNonce": 489285478,
+			"isDeleted": false,
+			"id": "zWoABaxvPKE4sfk3Eul1W",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2514.6727756212417,
+			"y": 3914.947749535713,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#b2f2bb",
+			"width": 50.28356801252971,
+			"height": 70.47616861905554,
+			"seed": 1319361126,
+			"groupIds": [
+				"VIUpxf8I5Tu4Ba1v8l67T"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641850232,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					1.5837398962094413,
+					0
+				],
+				[
+					1.979667318430444,
+					0
+				],
+				[
+					2.771552370198271,
+					0
+				],
+				[
+					3.167479792419078,
+					0
+				],
+				[
+					3.563407214640081,
+					0
+				],
+				[
+					3.959334636860888,
+					0
+				],
+				[
+					4.355262059081696,
+					0
+				],
+				[
+					4.751219688628715,
+					0
+				],
+				[
+					5.147147110849522,
+					0
+				],
+				[
+					5.543074533070525,
+					-0.3959274222206117
+				],
+				[
+					5.9390019552913325,
+					-0.3959274222206117
+				],
+				[
+					6.334929377512335,
+					-0.7918850517676315
+				],
+				[
+					6.7308870070591595,
+					-1.1878124739886342
+				],
+				[
+					7.126814429279967,
+					-1.583739896209637
+				],
+				[
+					7.522741851500969,
+					-1.9796673184302487
+				],
+				[
+					7.918669273721776,
+					-1.9796673184302487
+				],
+				[
+					8.314596695942779,
+					-2.3755947406512514
+				],
+				[
+					8.710554325489603,
+					-2.3755947406512514
+				],
+				[
+					9.106481747710607,
+					-2.3755947406512514
+				],
+				[
+					9.502409169931413,
+					-2.771552370198271
+				],
+				[
+					9.898336592152221,
+					-2.771552370198271
+				],
+				[
+					10.294264014373223,
+					-2.771552370198271
+				],
+				[
+					10.690221643920243,
+					-2.771552370198271
+				],
+				[
+					11.08614906614105,
+					-2.771552370198271
+				],
+				[
+					11.482076488361857,
+					-2.771552370198271
+				],
+				[
+					12.669888962350491,
+					-2.771552370198271
+				],
+				[
+					13.461743806792496,
+					-2.771552370198271
+				],
+				[
+					14.25359865123411,
+					-2.771552370198271
+				],
+				[
+					15.045483703001938,
+					-2.771552370198271
+				],
+				[
+					15.441411125222745,
+					-2.3755947406512514
+				],
+				[
+					15.837338547443748,
+					-1.9796673184302487
+				],
+				[
+					16.629223599211574,
+					-1.583739896209637
+				],
+				[
+					17.421078443653386,
+					-1.1878124739886342
+				],
+				[
+					17.817005865874194,
+					-0.7918850517676315
+				],
+				[
+					18.212933288095194,
+					-0.3959274222206117
+				],
+				[
+					18.608890917642018,
+					0
+				],
+				[
+					19.00481833986302,
+					0
+				],
+				[
+					19.40074576208383,
+					0.3959274222210027
+				],
+				[
+					20.192600606525637,
+					0.7918548444420054
+				],
+				[
+					20.588558236072462,
+					1.1877822666626172
+				],
+				[
+					20.984485658293465,
+					1.583739896209637
+				],
+				[
+					20.984485658293465,
+					1.9796673184306395
+				],
+				[
+					21.776340502735277,
+					2.3755947406516422
+				],
+				[
+					22.17226792495608,
+					2.771522162872254
+				],
+				[
+					22.568225554502906,
+					3.1674495850932565
+				],
+				[
+					22.96415297672391,
+					3.5634072146402764
+				],
+				[
+					23.360080398944717,
+					3.959334636861279
+				],
+				[
+					23.75600782116572,
+					4.355262059081891
+				],
+				[
+					23.75600782116572,
+					4.751189481302894
+				],
+				[
+					23.75600782116572,
+					5.147116903523896
+				],
+				[
+					23.75600782116572,
+					5.543074533070525
+				],
+				[
+					23.75600782116572,
+					5.939001955291528
+				],
+				[
+					23.75600782116572,
+					6.33492937751253
+				],
+				[
+					23.75600782116572,
+					6.730856799733142
+				],
+				[
+					23.75600782116572,
+					7.126784221954145
+				],
+				[
+					23.75600782116572,
+					7.522741851501165
+				],
+				[
+					23.75600782116572,
+					7.918669273722167
+				],
+				[
+					23.75600782116572,
+					8.710524118163782
+				],
+				[
+					23.75600782116572,
+					9.502409169931413
+				],
+				[
+					23.75600782116572,
+					9.898336592152416
+				],
+				[
+					22.96415297672391,
+					10.690191436594422
+				],
+				[
+					22.568225554502906,
+					11.482076488362052
+				],
+				[
+					22.568225554502906,
+					11.878003910583056
+				],
+				[
+					22.17226792495608,
+					12.273931332804057
+				],
+				[
+					21.776340502735277,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					13.461743806792692
+				],
+				[
+					20.984485658293465,
+					13.857671229013304
+				],
+				[
+					20.588558236072462,
+					14.253598651234306
+				],
+				[
+					20.192600606525637,
+					14.64952607345531
+				],
+				[
+					19.796673184304638,
+					15.045453495675922
+				],
+				[
+					19.40074576208383,
+					15.44141112522294
+				],
+				[
+					19.00481833986302,
+					15.837338547443943
+				],
+				[
+					18.608890917642018,
+					16.233265969664945
+				],
+				[
+					18.212933288095194,
+					16.629193391885558
+				],
+				[
+					17.817005865874194,
+					17.02512081410656
+				],
+				[
+					17.421078443653386,
+					17.42107844365358
+				],
+				[
+					17.025151021432382,
+					17.817005865874194
+				],
+				[
+					16.629223599211574,
+					18.212933288095194
+				],
+				[
+					16.23326596966475,
+					18.608860710316197
+				],
+				[
+					15.837338547443748,
+					19.0047881325372
+				],
+				[
+					15.441411125222745,
+					19.40074576208383
+				],
+				[
+					15.441411125222745,
+					19.796673184304833
+				],
+				[
+					15.441411125222745,
+					20.192600606525833
+				],
+				[
+					15.441411125222745,
+					20.588528028746836
+				],
+				[
+					15.441411125222745,
+					20.98445545096745
+				],
+				[
+					15.441411125222745,
+					21.38041308051447
+				],
+				[
+					15.441411125222745,
+					21.776340502735472
+				],
+				[
+					15.441411125222745,
+					22.568195347177085
+				],
+				[
+					15.837338547443748,
+					23.75600782116572
+				],
+				[
+					16.23326596966475,
+					24.151935243386724
+				],
+				[
+					16.629223599211574,
+					24.547862665607724
+				],
+				[
+					17.025151021432382,
+					24.943790087828337
+				],
+				[
+					17.025151021432382,
+					25.339747717375356
+				],
+				[
+					17.025151021432382,
+					26.131602561817363
+				],
+				[
+					17.421078443653386,
+					26.131602561817363
+				],
+				[
+					17.817005865874194,
+					26.131602561817363
+				],
+				[
+					18.212933288095194,
+					26.131602561817363
+				],
+				[
+					18.608890917642018,
+					26.131602561817363
+				],
+				[
+					19.00481833986302,
+					26.131602561817363
+				],
+				[
+					19.796673184304638,
+					26.131602561817363
+				],
+				[
+					20.192600606525637,
+					26.131602561817363
+				],
+				[
+					21.380413080514273,
+					26.131602561817363
+				],
+				[
+					22.568225554502906,
+					26.131602561817363
+				],
+				[
+					24.15193524338653,
+					26.131602561817363
+				],
+				[
+					25.33974771737516,
+					26.131602561817363
+				],
+				[
+					27.3194150358058,
+					26.131602561817363
+				],
+				[
+					30.090937198678056,
+					26.131602561817363
+				],
+				[
+					32.46656214665532,
+					25.73567513959636
+				],
+				[
+					34.84215688730677,
+					25.73567513959636
+				],
+				[
+					36.821824205737215,
+					24.943790087828337
+				],
+				[
+					38.80149152416766,
+					24.943790087828337
+				],
+				[
+					40.385231420377295,
+					24.943790087828337
+				],
+				[
+					41.96894110926092,
+					24.943790087828337
+				],
+				[
+					43.94860842769136,
+					24.943790087828337
+				],
+				[
+					45.13642090167999,
+					24.943790087828337
+				],
+				[
+					46.324233375668626,
+					24.943790087828337
+				],
+				[
+					47.51201564233144,
+					24.943790087828337
+				],
+				[
+					48.30390069409927,
+					25.339747717375356
+				],
+				[
+					49.09575553854088,
+					25.73567513959636
+				],
+				[
+					49.491682960761885,
+					25.73567513959636
+				],
+				[
+					49.887610382982885,
+					25.73567513959636
+				],
+				[
+					50.28356801252971,
+					26.131602561817363
+				],
+				[
+					50.28356801252971,
+					26.527529984037972
+				],
+				[
+					50.28356801252971,
+					26.923457406258976
+				],
+				[
+					50.28356801252971,
+					27.319415035805996
+				],
+				[
+					50.28356801252971,
+					27.71534245802661
+				],
+				[
+					49.887610382982885,
+					28.903124724689615
+				],
+				[
+					49.09575553854088,
+					29.695009776457248
+				],
+				[
+					47.90794306455225,
+					30.486864620899254
+				],
+				[
+					46.324233375668626,
+					31.278749672666883
+				],
+				[
+					44.74049347945918,
+					32.0706045171085
+				],
+				[
+					43.94860842769136,
+					32.862459361550506
+				],
+				[
+					42.76082616102874,
+					33.654344413318135
+				],
+				[
+					41.1770862648191,
+					34.44619925776014
+				],
+				[
+					40.385231420377295,
+					35.23808430952777
+				],
+				[
+					38.80149152416766,
+					36.42586657619039
+				],
+				[
+					37.61367905017902,
+					36.821793998411394
+				],
+				[
+					36.821824205737215,
+					37.61367905017902
+				],
+				[
+					35.23808430952758,
+					38.40553389462103
+				],
+				[
+					34.44622946508596,
+					38.80146131684203
+				],
+				[
+					32.86248956887633,
+					39.19741894638866
+				],
+				[
+					31.278749672666688,
+					39.593346368609666
+				],
+				[
+					30.48689482822488,
+					39.989273790830666
+				],
+				[
+					28.903154932015436,
+					40.385201213051275
+				],
+				[
+					28.507227509794436,
+					40.78112863527228
+				],
+				[
+					27.3194150358058,
+					41.1770862648193
+				],
+				[
+					26.527560191363992,
+					41.5730136870403
+				],
+				[
+					26.131602561816972,
+					42.36486853148192
+				],
+				[
+					25.735675139596164,
+					42.36486853148192
+				],
+				[
+					25.33974771737516,
+					42.76079595370292
+				],
+				[
+					24.943820295154353,
+					43.15675358324994
+				],
+				[
+					24.547892872933545,
+					43.55268100547055
+				],
+				[
+					24.15193524338653,
+					43.94860842769155
+				],
+				[
+					23.360080398944717,
+					44.34453584991256
+				],
+				[
+					22.96415297672391,
+					44.34453584991256
+				],
+				[
+					22.568225554502906,
+					44.34453584991256
+				],
+				[
+					22.17226792495608,
+					44.34453584991256
+				],
+				[
+					21.776340502735277,
+					44.74046327213317
+				],
+				[
+					21.380413080514273,
+					45.13642090168019
+				],
+				[
+					20.984485658293465,
+					45.928275746121805
+				],
+				[
+					20.588558236072462,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					47.116088220110825
+				],
+				[
+					20.192600606525637,
+					47.51201564233144
+				],
+				[
+					19.796673184304638,
+					47.90794306455244
+				],
+				[
+					19.796673184304638,
+					48.30387048677345
+				],
+				[
+					19.40074576208383,
+					48.69979790899445
+				],
+				[
+					19.00481833986302,
+					49.49168296076208
+				],
+				[
+					18.608890917642018,
+					49.887610382983084
+				],
+				[
+					18.212933288095194,
+					51.07542285697171
+				],
+				[
+					17.817005865874194,
+					51.86727770141333
+				],
+				[
+					17.817005865874194,
+					52.263205123634336
+				],
+				[
+					17.817005865874194,
+					53.451017597622965
+				],
+				[
+					17.421078443653386,
+					54.24287244206458
+				],
+				[
+					17.421078443653386,
+					54.63879986428559
+				],
+				[
+					17.421078443653386,
+					55.43068491605361
+				],
+				[
+					17.421078443653386,
+					56.22253976049522
+				],
+				[
+					17.421078443653386,
+					56.61846718271622
+				],
+				[
+					17.421078443653386,
+					57.01442481226324
+				],
+				[
+					17.421078443653386,
+					57.80627965670486
+				],
+				[
+					17.421078443653386,
+					58.20220707892586
+				],
+				[
+					17.421078443653386,
+					59.390019552914495
+				],
+				[
+					17.421078443653386,
+					59.785946975135495
+				],
+				[
+					17.421078443653386,
+					60.57780181957711
+				],
+				[
+					17.421078443653386,
+					61.36968687134514
+				],
+				[
+					17.421078443653386,
+					61.76561429356575
+				],
+				[
+					17.421078443653386,
+					62.16154171578675
+				],
+				[
+					17.421078443653386,
+					62.557469138007754
+				],
+				[
+					17.421078443653386,
+					62.95342676755438
+				],
+				[
+					17.421078443653386,
+					63.34935418977538
+				],
+				[
+					17.025151021432382,
+					63.34935418977538
+				],
+				[
+					16.629223599211574,
+					63.34935418977538
+				],
+				[
+					16.23326596966475,
+					63.34935418977538
+				],
+				[
+					15.837338547443748,
+					63.34935418977538
+				],
+				[
+					15.441411125222745,
+					63.34935418977538
+				],
+				[
+					15.045483703001938,
+					63.74528161199638
+				],
+				[
+					14.64955628078113,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					64.141209034217
+				],
+				[
+					13.857671229013304,
+					64.537136456438
+				],
+				[
+					13.857671229013304,
+					64.93309408598502
+				],
+				[
+					13.857671229013304,
+					65.32902150820603
+				],
+				[
+					13.857671229013304,
+					65.72494893042663
+				],
+				[
+					13.857671229013304,
+					66.12087635264764
+				],
+				[
+					13.857671229013304,
+					66.51680377486863
+				],
+				[
+					13.461743806792496,
+					66.91276140441526
+				],
+				[
+					13.461743806792496,
+					67.30868882663627
+				],
+				[
+					13.065816384571495,
+					67.30868882663627
+				],
+				[
+					12.669888962350491,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					67.70461624885728
+				],
+				[
+					12.273931332803667,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					66.91276140441526
+				],
+				[
+					12.273931332803667,
+					66.51680377486863
+				],
+				[
+					12.669888962350491,
+					66.12087635264764
+				],
+				[
+					12.669888962350491,
+					65.72494893042663
+				],
+				[
+					13.065816384571495,
+					65.32902150820603
+				],
+				[
+					13.065816384571495,
+					64.93309408598502
+				],
+				[
+					13.461743806792496,
+					64.537136456438
+				],
+				[
+					13.461743806792496,
+					64.141209034217
+				],
+				[
+					13.461743806792496,
+					63.74528161199638
+				],
+				[
+					13.461743806792496,
+					63.34935418977538
+				],
+				[
+					13.857671229013304,
+					62.95342676755438
+				],
+				[
+					13.857671229013304,
+					62.557469138007754
+				],
+				[
+					13.857671229013304,
+					62.16154171578675
+				],
+				[
+					13.857671229013304,
+					61.76561429356575
+				],
+				[
+					13.857671229013304,
+					61.36968687134514
+				],
+				[
+					13.857671229013304,
+					60.97375944912413
+				],
+				[
+					13.857671229013304,
+					60.57780181957711
+				],
+				[
+					13.857671229013304,
+					60.18187439735611
+				],
+				[
+					13.857671229013304,
+					59.785946975135495
+				],
+				[
+					13.857671229013304,
+					59.390019552914495
+				],
+				[
+					13.857671229013304,
+					58.20220707892586
+				],
+				[
+					13.461743806792496,
+					57.80627965670486
+				],
+				[
+					13.461743806792496,
+					57.01442481226324
+				],
+				[
+					13.065816384571495,
+					56.22253976049522
+				],
+				[
+					13.065816384571495,
+					55.43068491605361
+				],
+				[
+					12.669888962350491,
+					54.63879986428559
+				],
+				[
+					12.669888962350491,
+					54.24287244206458
+				],
+				[
+					12.273931332803667,
+					53.84694501984397
+				],
+				[
+					12.273931332803667,
+					53.451017597622965
+				],
+				[
+					12.273931332803667,
+					53.055090175401965
+				],
+				[
+					12.273931332803667,
+					52.659132545855336
+				],
+				[
+					12.273931332803667,
+					52.263205123634336
+				],
+				[
+					12.273931332803667,
+					51.47135027919272
+				],
+				[
+					12.273931332803667,
+					51.07542285697171
+				],
+				[
+					11.87800391058286,
+					50.67946522742469
+				],
+				[
+					11.87800391058286,
+					50.28353780520369
+				],
+				[
+					11.482076488361857,
+					49.887610382983084
+				],
+				[
+					11.08614906614105,
+					49.49168296076208
+				],
+				[
+					11.08614906614105,
+					48.30387048677345
+				],
+				[
+					10.690221643920243,
+					47.51201564233144
+				],
+				[
+					10.690221643920243,
+					47.116088220110825
+				],
+				[
+					10.294264014373223,
+					45.928275746121805
+				],
+				[
+					10.294264014373223,
+					45.13642090168019
+				],
+				[
+					10.294264014373223,
+					44.74046327213317
+				],
+				[
+					10.294264014373223,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.55268100547055
+				],
+				[
+					9.898336592152221,
+					42.76079595370292
+				],
+				[
+					9.898336592152221,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.5730136870403
+				],
+				[
+					9.106481747710607,
+					40.78112863527228
+				],
+				[
+					9.106481747710607,
+					39.989273790830666
+				],
+				[
+					8.710554325489603,
+					39.19741894638866
+				],
+				[
+					8.314596695942779,
+					38.80146131684203
+				],
+				[
+					7.918669273721776,
+					38.40553389462103
+				],
+				[
+					7.918669273721776,
+					37.61367905017902
+				],
+				[
+					7.918669273721776,
+					37.217751627958414
+				],
+				[
+					7.918669273721776,
+					36.821793998411394
+				],
+				[
+					7.522741851500969,
+					36.42586657619039
+				],
+				[
+					7.126814429279967,
+					35.63401173174878
+				],
+				[
+					7.126814429279967,
+					34.84212667998075
+				],
+				[
+					7.126814429279967,
+					34.050271835539135
+				],
+				[
+					6.7308870070591595,
+					33.258416991097526
+				],
+				[
+					6.7308870070591595,
+					32.862459361550506
+				],
+				[
+					6.334929377512335,
+					32.0706045171085
+				],
+				[
+					5.9390019552913325,
+					31.278749672666883
+				],
+				[
+					5.9390019552913325,
+					30.882792043119863
+				],
+				[
+					5.9390019552913325,
+					30.486864620899254
+				],
+				[
+					5.543074533070525,
+					29.695009776457248
+				],
+				[
+					5.543074533070525,
+					28.903124724689615
+				],
+				[
+					5.543074533070525,
+					28.50719730246861
+				],
+				[
+					5.147147110849522,
+					27.71534245802661
+				],
+				[
+					5.147147110849522,
+					27.319415035805996
+				],
+				[
+					4.751219688628715,
+					26.527529984037972
+				],
+				[
+					4.751219688628715,
+					25.73567513959636
+				],
+				[
+					4.751219688628715,
+					25.339747717375356
+				],
+				[
+					4.751219688628715,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					23.75600782116572
+				],
+				[
+					4.355262059081696,
+					23.360080398945108
+				],
+				[
+					4.355262059081696,
+					22.964122769398088
+				],
+				[
+					4.355262059081696,
+					22.568195347177085
+				],
+				[
+					3.959334636860888,
+					22.172267924956476
+				],
+				[
+					3.959334636860888,
+					21.776340502735472
+				],
+				[
+					3.959334636860888,
+					21.38041308051447
+				],
+				[
+					3.959334636860888,
+					20.98445545096745
+				],
+				[
+					3.959334636860888,
+					20.588528028746836
+				],
+				[
+					3.959334636860888,
+					20.192600606525833
+				],
+				[
+					3.563407214640081,
+					19.796673184304833
+				],
+				[
+					3.167479792419078,
+					19.40074576208383
+				],
+				[
+					3.167479792419078,
+					19.0047881325372
+				],
+				[
+					3.167479792419078,
+					18.212933288095194
+				],
+				[
+					2.771552370198271,
+					17.02512081410656
+				],
+				[
+					2.771552370198271,
+					16.629193391885558
+				],
+				[
+					2.771552370198271,
+					15.44141112522294
+				],
+				[
+					2.771552370198271,
+					15.045453495675922
+				],
+				[
+					2.771552370198271,
+					14.64952607345531
+				],
+				[
+					2.3755947406512514,
+					14.253598651234306
+				],
+				[
+					2.3755947406512514,
+					13.857671229013304
+				],
+				[
+					2.3755947406512514,
+					13.461743806792692
+				],
+				[
+					2.3755947406512514,
+					13.065786177245672
+				],
+				[
+					2.3755947406512514,
+					12.66985875502467
+				],
+				[
+					2.3755947406512514,
+					12.273931332804057
+				],
+				[
+					2.3755947406512514,
+					11.878003910583056
+				],
+				[
+					2.3755947406512514,
+					11.482076488362052
+				],
+				[
+					2.3755947406512514,
+					11.086118858815032
+				],
+				[
+					2.3755947406512514,
+					10.690191436594422
+				],
+				[
+					2.3755947406512514,
+					10.294264014373418
+				],
+				[
+					2.3755947406512514,
+					9.898336592152416
+				],
+				[
+					2.3755947406512514,
+					9.502409169931413
+				],
+				[
+					2.3755947406512514,
+					9.106451540384784
+				],
+				[
+					2.3755947406512514,
+					8.710524118163782
+				],
+				[
+					2.3755947406512514,
+					8.314596695942779
+				],
+				[
+					2.3755947406512514,
+					7.918669273722167
+				],
+				[
+					2.3755947406512514,
+					7.522741851501165
+				],
+				[
+					1.979667318430444,
+					7.126784221954145
+				],
+				[
+					1.979667318430444,
+					6.730856799733142
+				],
+				[
+					1.5837398962094413,
+					6.33492937751253
+				],
+				[
+					1.5837398962094413,
+					5.939001955291528
+				],
+				[
+					1.5837398962094413,
+					5.543074533070525
+				],
+				[
+					1.5837398962094413,
+					5.147116903523896
+				],
+				[
+					1.1878124739886342,
+					4.751189481302894
+				],
+				[
+					1.1878124739886342,
+					4.355262059081891
+				],
+				[
+					0.791885051767827,
+					3.5634072146402764
+				],
+				[
+					0.791885051767827,
+					3.1674495850932565
+				],
+				[
+					0.39592742222080723,
+					2.771522162872254
+				],
+				[
+					0.39592742222080723,
+					2.3755947406516422
+				],
+				[
+					0.39592742222080723,
+					1.9796673184306395
+				],
+				[
+					0.39592742222080723,
+					1.583739896209637
+				],
+				[
+					0.39592742222080723,
+					1.1877822666626172
+				],
+				[
+					0.39592742222080723,
+					0.7918548444420054
+				],
+				[
+					0.39592742222080723,
+					0.3959274222210027
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					0,
+					0
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "diamond",
+			"version": 446,
+			"versionNonce": 1818087014,
+			"isDeleted": false,
+			"id": "3YphCpQzDVlgB-PvCXc68",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2491.314728540205,
+			"y": 3478.4377287623456,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#a18072",
+			"width": 40,
+			"height": 142,
+			"seed": 793909542,
+			"groupIds": [
+				"scmR7eKoRCII6qZuM2n5r"
+			],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "05hd6byE"
+				}
+			],
+			"updated": 1701641870922,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 469,
+			"versionNonce": 1369641382,
+			"isDeleted": false,
+			"id": "05hd6byE",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2506.4786689698926,
+			"y": 3519.3481299849427,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 9.672119140625,
+			"height": 60.179197554805796,
+			"seed": 759170150,
+			"groupIds": [
+				"scmR7eKoRCII6qZuM2n5r"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641870922,
+			"link": null,
+			"locked": false,
+			"fontSize": 12.035839510961159,
+			"fontFamily": 1,
+			"text": "T\nO\nP\nO",
+			"rawText": "TOPO",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": "3YphCpQzDVlgB-PvCXc68",
+			"originalText": "TOPO",
+			"lineHeight": 1.25,
+			"baseline": 55
+		},
+		{
+			"type": "freedraw",
+			"version": 602,
+			"versionNonce": 1004399846,
+			"isDeleted": false,
+			"id": "y-1v2Qj03Dqi3RiMG9Ip9",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2506.369673849666,
+			"y": 3482.805197346909,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#b2f2bb",
+			"width": 50.28356801252971,
+			"height": 70.47616861905554,
+			"seed": 1691256742,
+			"groupIds": [
+				"scmR7eKoRCII6qZuM2n5r"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641870922,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					1.5837398962094413,
+					0
+				],
+				[
+					1.979667318430444,
+					0
+				],
+				[
+					2.771552370198271,
+					0
+				],
+				[
+					3.167479792419078,
+					0
+				],
+				[
+					3.563407214640081,
+					0
+				],
+				[
+					3.959334636860888,
+					0
+				],
+				[
+					4.355262059081696,
+					0
+				],
+				[
+					4.751219688628715,
+					0
+				],
+				[
+					5.147147110849522,
+					0
+				],
+				[
+					5.543074533070525,
+					-0.3959274222206117
+				],
+				[
+					5.9390019552913325,
+					-0.3959274222206117
+				],
+				[
+					6.334929377512335,
+					-0.7918850517676315
+				],
+				[
+					6.7308870070591595,
+					-1.1878124739886342
+				],
+				[
+					7.126814429279967,
+					-1.583739896209637
+				],
+				[
+					7.522741851500969,
+					-1.9796673184302487
+				],
+				[
+					7.918669273721776,
+					-1.9796673184302487
+				],
+				[
+					8.314596695942779,
+					-2.3755947406512514
+				],
+				[
+					8.710554325489603,
+					-2.3755947406512514
+				],
+				[
+					9.106481747710607,
+					-2.3755947406512514
+				],
+				[
+					9.502409169931413,
+					-2.771552370198271
+				],
+				[
+					9.898336592152221,
+					-2.771552370198271
+				],
+				[
+					10.294264014373223,
+					-2.771552370198271
+				],
+				[
+					10.690221643920243,
+					-2.771552370198271
+				],
+				[
+					11.08614906614105,
+					-2.771552370198271
+				],
+				[
+					11.482076488361857,
+					-2.771552370198271
+				],
+				[
+					12.669888962350491,
+					-2.771552370198271
+				],
+				[
+					13.461743806792496,
+					-2.771552370198271
+				],
+				[
+					14.25359865123411,
+					-2.771552370198271
+				],
+				[
+					15.045483703001938,
+					-2.771552370198271
+				],
+				[
+					15.441411125222745,
+					-2.3755947406512514
+				],
+				[
+					15.837338547443748,
+					-1.9796673184302487
+				],
+				[
+					16.629223599211574,
+					-1.583739896209637
+				],
+				[
+					17.421078443653386,
+					-1.1878124739886342
+				],
+				[
+					17.817005865874194,
+					-0.7918850517676315
+				],
+				[
+					18.212933288095194,
+					-0.3959274222206117
+				],
+				[
+					18.608890917642018,
+					0
+				],
+				[
+					19.00481833986302,
+					0
+				],
+				[
+					19.40074576208383,
+					0.3959274222210027
+				],
+				[
+					20.192600606525637,
+					0.7918548444420054
+				],
+				[
+					20.588558236072462,
+					1.1877822666626172
+				],
+				[
+					20.984485658293465,
+					1.583739896209637
+				],
+				[
+					20.984485658293465,
+					1.9796673184306395
+				],
+				[
+					21.776340502735277,
+					2.3755947406516422
+				],
+				[
+					22.17226792495608,
+					2.771522162872254
+				],
+				[
+					22.568225554502906,
+					3.1674495850932565
+				],
+				[
+					22.96415297672391,
+					3.5634072146402764
+				],
+				[
+					23.360080398944717,
+					3.959334636861279
+				],
+				[
+					23.75600782116572,
+					4.355262059081891
+				],
+				[
+					23.75600782116572,
+					4.751189481302894
+				],
+				[
+					23.75600782116572,
+					5.147116903523896
+				],
+				[
+					23.75600782116572,
+					5.543074533070525
+				],
+				[
+					23.75600782116572,
+					5.939001955291528
+				],
+				[
+					23.75600782116572,
+					6.33492937751253
+				],
+				[
+					23.75600782116572,
+					6.730856799733142
+				],
+				[
+					23.75600782116572,
+					7.126784221954145
+				],
+				[
+					23.75600782116572,
+					7.522741851501165
+				],
+				[
+					23.75600782116572,
+					7.918669273722167
+				],
+				[
+					23.75600782116572,
+					8.710524118163782
+				],
+				[
+					23.75600782116572,
+					9.502409169931413
+				],
+				[
+					23.75600782116572,
+					9.898336592152416
+				],
+				[
+					22.96415297672391,
+					10.690191436594422
+				],
+				[
+					22.568225554502906,
+					11.482076488362052
+				],
+				[
+					22.568225554502906,
+					11.878003910583056
+				],
+				[
+					22.17226792495608,
+					12.273931332804057
+				],
+				[
+					21.776340502735277,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					12.66985875502467
+				],
+				[
+					21.380413080514273,
+					13.461743806792692
+				],
+				[
+					20.984485658293465,
+					13.857671229013304
+				],
+				[
+					20.588558236072462,
+					14.253598651234306
+				],
+				[
+					20.192600606525637,
+					14.64952607345531
+				],
+				[
+					19.796673184304638,
+					15.045453495675922
+				],
+				[
+					19.40074576208383,
+					15.44141112522294
+				],
+				[
+					19.00481833986302,
+					15.837338547443943
+				],
+				[
+					18.608890917642018,
+					16.233265969664945
+				],
+				[
+					18.212933288095194,
+					16.629193391885558
+				],
+				[
+					17.817005865874194,
+					17.02512081410656
+				],
+				[
+					17.421078443653386,
+					17.42107844365358
+				],
+				[
+					17.025151021432382,
+					17.817005865874194
+				],
+				[
+					16.629223599211574,
+					18.212933288095194
+				],
+				[
+					16.23326596966475,
+					18.608860710316197
+				],
+				[
+					15.837338547443748,
+					19.0047881325372
+				],
+				[
+					15.441411125222745,
+					19.40074576208383
+				],
+				[
+					15.441411125222745,
+					19.796673184304833
+				],
+				[
+					15.441411125222745,
+					20.192600606525833
+				],
+				[
+					15.441411125222745,
+					20.588528028746836
+				],
+				[
+					15.441411125222745,
+					20.98445545096745
+				],
+				[
+					15.441411125222745,
+					21.38041308051447
+				],
+				[
+					15.441411125222745,
+					21.776340502735472
+				],
+				[
+					15.441411125222745,
+					22.568195347177085
+				],
+				[
+					15.837338547443748,
+					23.75600782116572
+				],
+				[
+					16.23326596966475,
+					24.151935243386724
+				],
+				[
+					16.629223599211574,
+					24.547862665607724
+				],
+				[
+					17.025151021432382,
+					24.943790087828337
+				],
+				[
+					17.025151021432382,
+					25.339747717375356
+				],
+				[
+					17.025151021432382,
+					26.131602561817363
+				],
+				[
+					17.421078443653386,
+					26.131602561817363
+				],
+				[
+					17.817005865874194,
+					26.131602561817363
+				],
+				[
+					18.212933288095194,
+					26.131602561817363
+				],
+				[
+					18.608890917642018,
+					26.131602561817363
+				],
+				[
+					19.00481833986302,
+					26.131602561817363
+				],
+				[
+					19.796673184304638,
+					26.131602561817363
+				],
+				[
+					20.192600606525637,
+					26.131602561817363
+				],
+				[
+					21.380413080514273,
+					26.131602561817363
+				],
+				[
+					22.568225554502906,
+					26.131602561817363
+				],
+				[
+					24.15193524338653,
+					26.131602561817363
+				],
+				[
+					25.33974771737516,
+					26.131602561817363
+				],
+				[
+					27.3194150358058,
+					26.131602561817363
+				],
+				[
+					30.090937198678056,
+					26.131602561817363
+				],
+				[
+					32.46656214665532,
+					25.73567513959636
+				],
+				[
+					34.84215688730677,
+					25.73567513959636
+				],
+				[
+					36.821824205737215,
+					24.943790087828337
+				],
+				[
+					38.80149152416766,
+					24.943790087828337
+				],
+				[
+					40.385231420377295,
+					24.943790087828337
+				],
+				[
+					41.96894110926092,
+					24.943790087828337
+				],
+				[
+					43.94860842769136,
+					24.943790087828337
+				],
+				[
+					45.13642090167999,
+					24.943790087828337
+				],
+				[
+					46.324233375668626,
+					24.943790087828337
+				],
+				[
+					47.51201564233144,
+					24.943790087828337
+				],
+				[
+					48.30390069409927,
+					25.339747717375356
+				],
+				[
+					49.09575553854088,
+					25.73567513959636
+				],
+				[
+					49.491682960761885,
+					25.73567513959636
+				],
+				[
+					49.887610382982885,
+					25.73567513959636
+				],
+				[
+					50.28356801252971,
+					26.131602561817363
+				],
+				[
+					50.28356801252971,
+					26.527529984037972
+				],
+				[
+					50.28356801252971,
+					26.923457406258976
+				],
+				[
+					50.28356801252971,
+					27.319415035805996
+				],
+				[
+					50.28356801252971,
+					27.71534245802661
+				],
+				[
+					49.887610382982885,
+					28.903124724689615
+				],
+				[
+					49.09575553854088,
+					29.695009776457248
+				],
+				[
+					47.90794306455225,
+					30.486864620899254
+				],
+				[
+					46.324233375668626,
+					31.278749672666883
+				],
+				[
+					44.74049347945918,
+					32.0706045171085
+				],
+				[
+					43.94860842769136,
+					32.862459361550506
+				],
+				[
+					42.76082616102874,
+					33.654344413318135
+				],
+				[
+					41.1770862648191,
+					34.44619925776014
+				],
+				[
+					40.385231420377295,
+					35.23808430952777
+				],
+				[
+					38.80149152416766,
+					36.42586657619039
+				],
+				[
+					37.61367905017902,
+					36.821793998411394
+				],
+				[
+					36.821824205737215,
+					37.61367905017902
+				],
+				[
+					35.23808430952758,
+					38.40553389462103
+				],
+				[
+					34.44622946508596,
+					38.80146131684203
+				],
+				[
+					32.86248956887633,
+					39.19741894638866
+				],
+				[
+					31.278749672666688,
+					39.593346368609666
+				],
+				[
+					30.48689482822488,
+					39.989273790830666
+				],
+				[
+					28.903154932015436,
+					40.385201213051275
+				],
+				[
+					28.507227509794436,
+					40.78112863527228
+				],
+				[
+					27.3194150358058,
+					41.1770862648193
+				],
+				[
+					26.527560191363992,
+					41.5730136870403
+				],
+				[
+					26.131602561816972,
+					42.36486853148192
+				],
+				[
+					25.735675139596164,
+					42.36486853148192
+				],
+				[
+					25.33974771737516,
+					42.76079595370292
+				],
+				[
+					24.943820295154353,
+					43.15675358324994
+				],
+				[
+					24.547892872933545,
+					43.55268100547055
+				],
+				[
+					24.15193524338653,
+					43.94860842769155
+				],
+				[
+					23.360080398944717,
+					44.34453584991256
+				],
+				[
+					22.96415297672391,
+					44.34453584991256
+				],
+				[
+					22.568225554502906,
+					44.34453584991256
+				],
+				[
+					22.17226792495608,
+					44.34453584991256
+				],
+				[
+					21.776340502735277,
+					44.74046327213317
+				],
+				[
+					21.380413080514273,
+					45.13642090168019
+				],
+				[
+					20.984485658293465,
+					45.928275746121805
+				],
+				[
+					20.588558236072462,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					46.720130590563805
+				],
+				[
+					20.192600606525637,
+					47.116088220110825
+				],
+				[
+					20.192600606525637,
+					47.51201564233144
+				],
+				[
+					19.796673184304638,
+					47.90794306455244
+				],
+				[
+					19.796673184304638,
+					48.30387048677345
+				],
+				[
+					19.40074576208383,
+					48.69979790899445
+				],
+				[
+					19.00481833986302,
+					49.49168296076208
+				],
+				[
+					18.608890917642018,
+					49.887610382983084
+				],
+				[
+					18.212933288095194,
+					51.07542285697171
+				],
+				[
+					17.817005865874194,
+					51.86727770141333
+				],
+				[
+					17.817005865874194,
+					52.263205123634336
+				],
+				[
+					17.817005865874194,
+					53.451017597622965
+				],
+				[
+					17.421078443653386,
+					54.24287244206458
+				],
+				[
+					17.421078443653386,
+					54.63879986428559
+				],
+				[
+					17.421078443653386,
+					55.43068491605361
+				],
+				[
+					17.421078443653386,
+					56.22253976049522
+				],
+				[
+					17.421078443653386,
+					56.61846718271622
+				],
+				[
+					17.421078443653386,
+					57.01442481226324
+				],
+				[
+					17.421078443653386,
+					57.80627965670486
+				],
+				[
+					17.421078443653386,
+					58.20220707892586
+				],
+				[
+					17.421078443653386,
+					59.390019552914495
+				],
+				[
+					17.421078443653386,
+					59.785946975135495
+				],
+				[
+					17.421078443653386,
+					60.57780181957711
+				],
+				[
+					17.421078443653386,
+					61.36968687134514
+				],
+				[
+					17.421078443653386,
+					61.76561429356575
+				],
+				[
+					17.421078443653386,
+					62.16154171578675
+				],
+				[
+					17.421078443653386,
+					62.557469138007754
+				],
+				[
+					17.421078443653386,
+					62.95342676755438
+				],
+				[
+					17.421078443653386,
+					63.34935418977538
+				],
+				[
+					17.025151021432382,
+					63.34935418977538
+				],
+				[
+					16.629223599211574,
+					63.34935418977538
+				],
+				[
+					16.23326596966475,
+					63.34935418977538
+				],
+				[
+					15.837338547443748,
+					63.34935418977538
+				],
+				[
+					15.441411125222745,
+					63.34935418977538
+				],
+				[
+					15.045483703001938,
+					63.74528161199638
+				],
+				[
+					14.64955628078113,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					63.74528161199638
+				],
+				[
+					14.25359865123411,
+					64.141209034217
+				],
+				[
+					13.857671229013304,
+					64.537136456438
+				],
+				[
+					13.857671229013304,
+					64.93309408598502
+				],
+				[
+					13.857671229013304,
+					65.32902150820603
+				],
+				[
+					13.857671229013304,
+					65.72494893042663
+				],
+				[
+					13.857671229013304,
+					66.12087635264764
+				],
+				[
+					13.857671229013304,
+					66.51680377486863
+				],
+				[
+					13.461743806792496,
+					66.91276140441526
+				],
+				[
+					13.461743806792496,
+					67.30868882663627
+				],
+				[
+					13.065816384571495,
+					67.30868882663627
+				],
+				[
+					12.669888962350491,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					67.70461624885728
+				],
+				[
+					12.273931332803667,
+					67.30868882663627
+				],
+				[
+					12.273931332803667,
+					66.91276140441526
+				],
+				[
+					12.273931332803667,
+					66.51680377486863
+				],
+				[
+					12.669888962350491,
+					66.12087635264764
+				],
+				[
+					12.669888962350491,
+					65.72494893042663
+				],
+				[
+					13.065816384571495,
+					65.32902150820603
+				],
+				[
+					13.065816384571495,
+					64.93309408598502
+				],
+				[
+					13.461743806792496,
+					64.537136456438
+				],
+				[
+					13.461743806792496,
+					64.141209034217
+				],
+				[
+					13.461743806792496,
+					63.74528161199638
+				],
+				[
+					13.461743806792496,
+					63.34935418977538
+				],
+				[
+					13.857671229013304,
+					62.95342676755438
+				],
+				[
+					13.857671229013304,
+					62.557469138007754
+				],
+				[
+					13.857671229013304,
+					62.16154171578675
+				],
+				[
+					13.857671229013304,
+					61.76561429356575
+				],
+				[
+					13.857671229013304,
+					61.36968687134514
+				],
+				[
+					13.857671229013304,
+					60.97375944912413
+				],
+				[
+					13.857671229013304,
+					60.57780181957711
+				],
+				[
+					13.857671229013304,
+					60.18187439735611
+				],
+				[
+					13.857671229013304,
+					59.785946975135495
+				],
+				[
+					13.857671229013304,
+					59.390019552914495
+				],
+				[
+					13.857671229013304,
+					58.20220707892586
+				],
+				[
+					13.461743806792496,
+					57.80627965670486
+				],
+				[
+					13.461743806792496,
+					57.01442481226324
+				],
+				[
+					13.065816384571495,
+					56.22253976049522
+				],
+				[
+					13.065816384571495,
+					55.43068491605361
+				],
+				[
+					12.669888962350491,
+					54.63879986428559
+				],
+				[
+					12.669888962350491,
+					54.24287244206458
+				],
+				[
+					12.273931332803667,
+					53.84694501984397
+				],
+				[
+					12.273931332803667,
+					53.451017597622965
+				],
+				[
+					12.273931332803667,
+					53.055090175401965
+				],
+				[
+					12.273931332803667,
+					52.659132545855336
+				],
+				[
+					12.273931332803667,
+					52.263205123634336
+				],
+				[
+					12.273931332803667,
+					51.47135027919272
+				],
+				[
+					12.273931332803667,
+					51.07542285697171
+				],
+				[
+					11.87800391058286,
+					50.67946522742469
+				],
+				[
+					11.87800391058286,
+					50.28353780520369
+				],
+				[
+					11.482076488361857,
+					49.887610382983084
+				],
+				[
+					11.08614906614105,
+					49.49168296076208
+				],
+				[
+					11.08614906614105,
+					48.30387048677345
+				],
+				[
+					10.690221643920243,
+					47.51201564233144
+				],
+				[
+					10.690221643920243,
+					47.116088220110825
+				],
+				[
+					10.294264014373223,
+					45.928275746121805
+				],
+				[
+					10.294264014373223,
+					45.13642090168019
+				],
+				[
+					10.294264014373223,
+					44.74046327213317
+				],
+				[
+					10.294264014373223,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.94860842769155
+				],
+				[
+					9.898336592152221,
+					43.55268100547055
+				],
+				[
+					9.898336592152221,
+					42.76079595370292
+				],
+				[
+					9.898336592152221,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.96894110926092
+				],
+				[
+					9.502409169931413,
+					41.5730136870403
+				],
+				[
+					9.106481747710607,
+					40.78112863527228
+				],
+				[
+					9.106481747710607,
+					39.989273790830666
+				],
+				[
+					8.710554325489603,
+					39.19741894638866
+				],
+				[
+					8.314596695942779,
+					38.80146131684203
+				],
+				[
+					7.918669273721776,
+					38.40553389462103
+				],
+				[
+					7.918669273721776,
+					37.61367905017902
+				],
+				[
+					7.918669273721776,
+					37.217751627958414
+				],
+				[
+					7.918669273721776,
+					36.821793998411394
+				],
+				[
+					7.522741851500969,
+					36.42586657619039
+				],
+				[
+					7.126814429279967,
+					35.63401173174878
+				],
+				[
+					7.126814429279967,
+					34.84212667998075
+				],
+				[
+					7.126814429279967,
+					34.050271835539135
+				],
+				[
+					6.7308870070591595,
+					33.258416991097526
+				],
+				[
+					6.7308870070591595,
+					32.862459361550506
+				],
+				[
+					6.334929377512335,
+					32.0706045171085
+				],
+				[
+					5.9390019552913325,
+					31.278749672666883
+				],
+				[
+					5.9390019552913325,
+					30.882792043119863
+				],
+				[
+					5.9390019552913325,
+					30.486864620899254
+				],
+				[
+					5.543074533070525,
+					29.695009776457248
+				],
+				[
+					5.543074533070525,
+					28.903124724689615
+				],
+				[
+					5.543074533070525,
+					28.50719730246861
+				],
+				[
+					5.147147110849522,
+					27.71534245802661
+				],
+				[
+					5.147147110849522,
+					27.319415035805996
+				],
+				[
+					4.751219688628715,
+					26.527529984037972
+				],
+				[
+					4.751219688628715,
+					25.73567513959636
+				],
+				[
+					4.751219688628715,
+					25.339747717375356
+				],
+				[
+					4.751219688628715,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					24.547862665607724
+				],
+				[
+					4.355262059081696,
+					23.75600782116572
+				],
+				[
+					4.355262059081696,
+					23.360080398945108
+				],
+				[
+					4.355262059081696,
+					22.964122769398088
+				],
+				[
+					4.355262059081696,
+					22.568195347177085
+				],
+				[
+					3.959334636860888,
+					22.172267924956476
+				],
+				[
+					3.959334636860888,
+					21.776340502735472
+				],
+				[
+					3.959334636860888,
+					21.38041308051447
+				],
+				[
+					3.959334636860888,
+					20.98445545096745
+				],
+				[
+					3.959334636860888,
+					20.588528028746836
+				],
+				[
+					3.959334636860888,
+					20.192600606525833
+				],
+				[
+					3.563407214640081,
+					19.796673184304833
+				],
+				[
+					3.167479792419078,
+					19.40074576208383
+				],
+				[
+					3.167479792419078,
+					19.0047881325372
+				],
+				[
+					3.167479792419078,
+					18.212933288095194
+				],
+				[
+					2.771552370198271,
+					17.02512081410656
+				],
+				[
+					2.771552370198271,
+					16.629193391885558
+				],
+				[
+					2.771552370198271,
+					15.44141112522294
+				],
+				[
+					2.771552370198271,
+					15.045453495675922
+				],
+				[
+					2.771552370198271,
+					14.64952607345531
+				],
+				[
+					2.3755947406512514,
+					14.253598651234306
+				],
+				[
+					2.3755947406512514,
+					13.857671229013304
+				],
+				[
+					2.3755947406512514,
+					13.461743806792692
+				],
+				[
+					2.3755947406512514,
+					13.065786177245672
+				],
+				[
+					2.3755947406512514,
+					12.66985875502467
+				],
+				[
+					2.3755947406512514,
+					12.273931332804057
+				],
+				[
+					2.3755947406512514,
+					11.878003910583056
+				],
+				[
+					2.3755947406512514,
+					11.482076488362052
+				],
+				[
+					2.3755947406512514,
+					11.086118858815032
+				],
+				[
+					2.3755947406512514,
+					10.690191436594422
+				],
+				[
+					2.3755947406512514,
+					10.294264014373418
+				],
+				[
+					2.3755947406512514,
+					9.898336592152416
+				],
+				[
+					2.3755947406512514,
+					9.502409169931413
+				],
+				[
+					2.3755947406512514,
+					9.106451540384784
+				],
+				[
+					2.3755947406512514,
+					8.710524118163782
+				],
+				[
+					2.3755947406512514,
+					8.314596695942779
+				],
+				[
+					2.3755947406512514,
+					7.918669273722167
+				],
+				[
+					2.3755947406512514,
+					7.522741851501165
+				],
+				[
+					1.979667318430444,
+					7.126784221954145
+				],
+				[
+					1.979667318430444,
+					6.730856799733142
+				],
+				[
+					1.5837398962094413,
+					6.33492937751253
+				],
+				[
+					1.5837398962094413,
+					5.939001955291528
+				],
+				[
+					1.5837398962094413,
+					5.543074533070525
+				],
+				[
+					1.5837398962094413,
+					5.147116903523896
+				],
+				[
+					1.1878124739886342,
+					4.751189481302894
+				],
+				[
+					1.1878124739886342,
+					4.355262059081891
+				],
+				[
+					0.791885051767827,
+					3.5634072146402764
+				],
+				[
+					0.791885051767827,
+					3.1674495850932565
+				],
+				[
+					0.39592742222080723,
+					2.771522162872254
+				],
+				[
+					0.39592742222080723,
+					2.3755947406516422
+				],
+				[
+					0.39592742222080723,
+					1.9796673184306395
+				],
+				[
+					0.39592742222080723,
+					1.583739896209637
+				],
+				[
+					0.39592742222080723,
+					1.1877822666626172
+				],
+				[
+					0.39592742222080723,
+					0.7918548444420054
+				],
+				[
+					0.39592742222080723,
+					0.3959274222210027
+				],
+				[
+					0.39592742222080723,
+					0
+				],
+				[
+					0,
+					0
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 253,
+			"versionNonce": 549466362,
+			"isDeleted": false,
+			"id": "ZC2M1nFf4duonmduuy5YO",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1755.276596528247,
+			"y": 3632.214012242462,
+			"strokeColor": "#e03131",
+			"backgroundColor": "#d0bfff",
+			"width": 43.131852693594745,
+			"height": 47.66969279902126,
+			"seed": 1122921958,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641920797,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					-17.09063153414978,
+					-55.85267880699756
+				],
+				[
+					-20.309427977401125,
+					-56.8157064291622
+				],
+				[
+					-22.24072548932636,
+					-58.26023867829708
+				],
+				[
+					-24.17197388631565,
+					-58.74174330526742
+				],
+				[
+					-26.103271398240885,
+					-59.70477092743206
+				],
+				[
+					-29.322067841492228,
+					-61.630826171761335
+				],
+				[
+					-30.609566772818468,
+					-62.59385379392597
+				],
+				[
+					-32.540864284743705,
+					-64.51989067003119
+				],
+				[
+					-33.82836321606982,
+					-66.44594591436046
+				],
+				[
+					-35.11591126233199,
+					-68.3719827904657
+				],
+				[
+					-36.40341019365823,
+					-69.81653340782472
+				],
+				[
+					-37.04715965932128,
+					-71.74257028392995
+				],
+				[
+					-38.978457171246646,
+					-74.63165315042386
+				],
+				[
+					-38.978457171246646,
+					-76.55769002652909
+				],
+				[
+					-38.978457171246646,
+					-77.52071764869372
+				],
+				[
+					-38.978457171246646,
+					-79.446772893023
+				],
+				[
+					-38.978457171246646,
+					-79.92827751999329
+				],
+				[
+					-38.978457171246646,
+					-81.8543327643226
+				],
+				[
+					-38.978457171246646,
+					-82.81734201826315
+				],
+				[
+					-38.978457171246646,
+					-83.78036964042784
+				],
+				[
+					-38.33470770558346,
+					-84.74339726259248
+				],
+				[
+					-37.69095823992028,
+					-85.70642488475711
+				],
+				[
+					-36.40341019365823,
+					-86.18792951172736
+				],
+				[
+					-35.11591126233199,
+					-86.66945250692174
+				],
+				[
+					-33.82836321606982,
+					-87.15095713389204
+				],
+				[
+					-32.540864284743705,
+					-87.63246176086233
+				],
+				[
+					-31.253365353417593,
+					-87.63246176086233
+				],
+				[
+					-29.322067841492228,
+					-87.63246176086233
+				],
+				[
+					-28.03456891016612,
+					-87.63246176086233
+				],
+				[
+					-24.815772466914645,
+					-87.15095713389204
+				],
+				[
+					-24.17197388631565,
+					-86.66945250692174
+				],
+				[
+					-22.88447495498954,
+					-86.18792951172736
+				],
+				[
+					-21.596976023663174,
+					-84.74339726259248
+				],
+				[
+					-20.309427977401125,
+					-83.78036964042784
+				],
+				[
+					-19.66567851173807,
+					-83.2988650134575
+				],
+				[
+					-19.021929046074884,
+					-81.8543327643226
+				],
+				[
+					-18.378179580411828,
+					-81.37280976912822
+				],
+				[
+					-18.378179580411828,
+					-79.92827751999329
+				],
+				[
+					-18.378179580411828,
+					-79.446772893023
+				],
+				[
+					-18.378179580411828,
+					-78.96524989782864
+				],
+				[
+					-18.378179580411828,
+					-78.48374527085836
+				],
+				[
+					-18.378179580411828,
+					-78.00222227566397
+				],
+				[
+					-18.378179580411828,
+					-77.52071764869372
+				],
+				[
+					-18.378179580411828,
+					-77.03921302172348
+				],
+				[
+					-18.378179580411828,
+					-77.52071764869372
+				],
+				[
+					-18.378179580411828,
+					-79.92827751999329
+				],
+				[
+					-18.378179580411828,
+					-81.8543327643226
+				],
+				[
+					-17.734380999812707,
+					-85.70642488475711
+				],
+				[
+					-17.09063153414978,
+					-86.66945250692174
+				],
+				[
+					-16.446882068486595,
+					-89.07701237822137
+				],
+				[
+					-15.80313260282354,
+					-90.04002163216185
+				],
+				[
+					-15.159383137160484,
+					-91.48457224952088
+				],
+				[
+					-13.228085625235122,
+					-92.92910449865587
+				],
+				[
+					-12.584336159572196,
+					-93.8921321208205
+				],
+				[
+					-10.653038647646834,
+					-94.85514137476103
+				],
+				[
+					-9.365539716320722,
+					-95.33666436995539
+				],
+				[
+					-8.077991670058545,
+					-95.81816899692568
+				],
+				[
+					-6.790492738732434,
+					-96.29969199212007
+				],
+				[
+					-5.502993807406195,
+					-96.29969199212007
+				],
+				[
+					-4.215445761144016,
+					-96.29969199212007
+				],
+				[
+					-2.9279468298177775,
+					-96.29969199212007
+				],
+				[
+					-0.9966493178926719,
+					-96.29969199212007
+				],
+				[
+					-0.3528998522294877,
+					-95.81816899692568
+				],
+				[
+					0.2908496134335685,
+					-95.33666436995539
+				],
+				[
+					0.9345990790966212,
+					-94.37363674779075
+				],
+				[
+					1.5783976596957459,
+					-93.8921321208205
+				],
+				[
+					2.2221471253587985,
+					-92.92910449865587
+				],
+				[
+					2.8658965910219827,
+					-91.00304925432654
+				],
+				[
+					3.509646056685039,
+					-90.04002163216185
+				],
+				[
+					4.153395522348095,
+					-87.63246176086233
+				],
+				[
+					4.153395522348095,
+					-86.18792951172736
+				],
+				[
+					4.153395522348095,
+					-85.22490188956272
+				],
+				[
+					4.153395522348095,
+					-83.2988650134575
+				],
+				[
+					4.153395522348095,
+					-82.33583739129286
+				],
+				[
+					4.153395522348095,
+					-80.40978214696358
+				],
+				[
+					4.153395522348095,
+					-78.96524989782864
+				],
+				[
+					4.153395522348095,
+					-77.03921302172348
+				],
+				[
+					4.153395522348095,
+					-76.0761853995588
+				],
+				[
+					3.509646056685039,
+					-74.63165315042386
+				],
+				[
+					2.8658965910219827,
+					-72.70559790609458
+				],
+				[
+					2.2221471253587985,
+					-71.74257028392995
+				],
+				[
+					1.5783976596957459,
+					-69.81653340782472
+				],
+				[
+					0.9345990790966212,
+					-67.89047816349544
+				],
+				[
+					-0.3528998522294877,
+					-65.00141366522558
+				],
+				[
+					-2.9279468298177775,
+					-61.630826171761335
+				],
+				[
+					-5.502993807406195,
+					-59.22326630046172
+				],
+				[
+					-8.077991670058545,
+					-57.778734051326836
+				],
+				[
+					-10.653038647646834,
+					-55.85267880699756
+				],
+				[
+					-11.940586693909012,
+					-54.88965118483292
+				],
+				[
+					-14.515584556561361,
+					-52.9636143087277
+				],
+				[
+					-16.446882068486595,
+					-52.00058668656306
+				],
+				[
+					-18.378179580411828,
+					-50.55605443742809
+				],
+				[
+					-20.309427977401125,
+					-48.629999193098804
+				],
+				[
+					-20.309427977401125,
+					-48.629999193098804
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 573,
+			"versionNonce": 680003322,
+			"isDeleted": false,
+			"id": "6n_muzRZJn5GpdFnFG1co",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 3466.743925885924,
+			"y": 5391.600567746987,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#fab005",
+			"width": 93.7145996093741,
+			"height": 80.00017438616057,
+			"seed": 646441958,
+			"groupIds": [
+				"PTXyygmAZjdodme8O73Nn"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701642024547,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				],
+				[
+					-225.74690501352637,
+					-192.06029674277022
+				],
+				[
+					-224.76557776689532,
+					-193.9084773463661
+				],
+				[
+					-222.80299814124686,
+					-197.60485869721572
+				],
+				[
+					-221.3310259882037,
+					-201.30124004806532
+				],
+				[
+					-220.3497361753794,
+					-202.8853977288129
+				],
+				[
+					-220.10439500527002,
+					-204.7335783324088
+				],
+				[
+					-218.14177794581474,
+					-208.69398260610672
+				],
+				[
+					-217.40579186929313,
+					-210.27816043051217
+				],
+				[
+					-216.17916088635928,
+					-212.126341034108
+				],
+				[
+					-215.19787107353517,
+					-213.9745216377039
+				],
+				[
+					-213.97124009060133,
+					-215.29466646743208
+				],
+				[
+					-213.23525401407977,
+					-216.6148012253314
+				],
+				[
+					-213.23525401407977,
+					-217.14285714285688
+				],
+				[
+					-212.98995027777727,
+					-217.14285714285688
+				],
+				[
+					-211.76331929484343,
+					-216.08674530780593
+				],
+				[
+					-210.04600597169076,
+					-214.23856470421003
+				],
+				[
+					-208.08342634604236,
+					-211.3342521219053
+				],
+				[
+					-204.4035333972413,
+					-203.14942065166122
+				],
+				[
+					-202.4409163377859,
+					-198.66097053226673
+				],
+				[
+					-200.7236404484401,
+					-196.28472393931645
+				],
+				[
+					-199.00632712528733,
+					-194.4365433357205
+				],
+				[
+					-198.0250373124632,
+					-193.11640857782123
+				],
+				[
+					-198.0250373124632,
+					-192.8523655113151
+				],
+				[
+					-198.0250373124632,
+					-192.32431966561853
+				],
+				[
+					-196.79840632952943,
+					-190.74016198487095
+				],
+				[
+					-196.06242025300782,
+					-189.94807307266825
+				],
+				[
+					-196.06242025300782,
+					-189.42002722697163
+				],
+				[
+					-195.81711651670525,
+					-188.89196123761724
+				],
+				[
+					-195.81711651670525,
+					-188.0998924690723
+				],
+				[
+					-195.32643417648626,
+					-188.0998924690723
+				],
+				[
+					-195.0811304401837,
+					-188.0998924690723
+				],
+				[
+					-194.59048553377147,
+					-188.0998924690723
+				],
+				[
+					-187.23069963616928,
+					-190.21209599551656
+				],
+				[
+					-181.3428484578033,
+					-190.74016198487095
+				],
+				[
+					-174.47370746661323,
+					-191.53223075341583
+				],
+				[
+					-170.05786587509732,
+					-191.7962738199219
+				],
+				[
+					-167.84990764553243,
+					-192.8523655113151
+				],
+				[
+					-165.39664567966508,
+					-193.6444544235178
+				],
+				[
+					-163.92471096042868,
+					-193.6444544235178
+				],
+				[
+					-162.20739763727607,
+					-194.17250026921442
+				],
+				[
+					-160.73546291803973,
+					-194.17250026921442
+				],
+				[
+					-159.99947684151812,
+					-194.7005662585688
+				],
+				[
+					-159.99947684151812,
+					-194.4365433357205
+				],
+				[
+					-159.99947684151812,
+					-193.38043150066954
+				],
+				[
+					-160.49012174793023,
+					-191.53223075341583
+				],
+				[
+					-161.22610782445184,
+					-189.68405014981994
+				],
+				[
+					-162.94338371379763,
+					-186.51573478832472
+				],
+				[
+					-163.92471096042868,
+					-184.66753404107106
+				],
+				[
+					-165.64198684977447,
+					-182.81935343747517
+				],
+				[
+					-167.35926273912042,
+					-180.97115269022146
+				],
+				[
+					-168.5858937220541,
+					-179.12297208662554
+				],
+				[
+					-170.05786587509732,
+					-177.27479148302967
+				],
+				[
+					-172.02044550074572,
+					-174.37047890072498
+				],
+				[
+					-173.00177274737683,
+					-174.10645597787666
+				],
+				[
+					-173.7377588238984,
+					-173.31438720933173
+				],
+				[
+					-174.71904863672262,
+					-172.52229829712903
+				],
+				[
+					-175.4550347132443,
+					-171.73020938492633
+				],
+				[
+					-176.43632452606846,
+					-170.67411769353316
+				],
+				[
+					-179.13492766204536,
+					-168.29787110058288
+				],
+				[
+					-179.38023139834803,
+					-167.7698051112285
+				],
+				[
+					-179.38023139834803,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-166.71371341983524
+				],
+				[
+					-179.13492766204536,
+					-164.33746682688496
+				],
+				[
+					-177.9082966791117,
+					-161.96122023393468
+				],
+				[
+					-176.43632452606846,
+					-158.26483888308508
+				],
+				[
+					-174.47370746661323,
+					-154.0404116865389
+				],
+				[
+					-173.49241765378895,
+					-151.13611924789197
+				],
+				[
+					-172.26578667085533,
+					-148.23182680924512
+				],
+				[
+					-171.03915568792144,
+					-146.91169205134582
+				],
+				[
+					-170.05786587509732,
+					-145.06349130409208
+				],
+				[
+					-169.81252470498782,
+					-144.27142253554717
+				],
+				[
+					-169.56718353487832,
+					-143.7433565461928
+				],
+				[
+					-169.0765386284662,
+					-143.21531070049622
+				],
+				[
+					-168.83123489216354,
+					-142.9512877776479
+				],
+				[
+					-168.3405525519446,
+					-141.6311530197486
+				],
+				[
+					-168.3405525519446,
+					-141.36710995324248
+				],
+				[
+					-168.83123489216354,
+					-141.36710995324248
+				],
+				[
+					-170.54851078150944,
+					-141.8951759425969
+				],
+				[
+					-172.26578667085533,
+					-143.21531070049622
+				],
+				[
+					-175.4550347132443,
+					-145.3275142269404
+				],
+				[
+					-178.6442827556333,
+					-148.23182680924512
+				],
+				[
+					-181.3428484578033,
+					-150.08000741284098
+				],
+				[
+					-183.5508066873681,
+					-152.192231082943
+				],
+				[
+					-185.26808257671394,
+					-152.98429985148792
+				],
+				[
+					-187.23069963616928,
+					-154.3044346093872
+				],
+				[
+					-188.94797552551512,
+					-154.8325005987416
+				],
+				[
+					-189.19327926181774,
+					-154.8325005987416
+				],
+				[
+					-189.6839616020368,
+					-154.8325005987416
+				],
+				[
+					-189.92926533833935,
+					-154.8325005987416
+				],
+				[
+					-190.1746065084488,
+					-155.0965235215899
+				],
+				[
+					-191.4012374913824,
+					-155.0965235215899
+				],
+				[
+					-192.13722356790407,
+					-155.0965235215899
+				],
+				[
+					-193.1185133807283,
+					-155.0965235215899
+				],
+				[
+					-194.8357892700742,
+					-156.1526353566409
+				],
+				[
+					-195.5717753465958,
+					-156.41665827948918
+				],
+				[
+					-195.81711651670525,
+					-156.41665827948918
+				],
+				[
+					-196.06242025300782,
+					-156.94470412518575
+				],
+				[
+					-196.55306515941993,
+					-156.94470412518575
+				],
+				[
+					-196.79840632952943,
+					-156.94470412518575
+				],
+				[
+					-197.28905123594166,
+					-156.94470412518575
+				],
+				[
+					-197.53439240605104,
+					-157.20872704803406
+				],
+				[
+					-198.0250373124632,
+					-157.20872704803406
+				],
+				[
+					-198.2703784825727,
+					-157.20872704803406
+				],
+				[
+					-198.51568221887527,
+					-157.20872704803406
+				],
+				[
+					-199.25166829539683,
+					-157.20872704803406
+				],
+				[
+					-199.742313201809,
+					-157.47277011454017
+				],
+				[
+					-199.98765437191844,
+					-157.47277011454017
+				],
+				[
+					-200.47829927833067,
+					-157.47277011454017
+				],
+				[
+					-200.7236404484401,
+					-157.47277011454017
+				],
+				[
+					-202.68622007408862,
+					-155.62456936728648
+				],
+				[
+					-204.4035333972413,
+					-154.3044346093872
+				],
+				[
+					-206.3661130228897,
+					-152.4562540057913
+				],
+				[
+					-208.08342634604236,
+					-150.6080532585376
+				],
+				[
+					-209.8007022353882,
+					-148.7598726549417
+				],
+				[
+					-212.7446091076677,
+					-145.85558021629478
+				],
+				[
+					-215.19787107353517,
+					-143.7433565461928
+				],
+				[
+					-216.91514696288095,
+					-142.4232217882935
+				],
+				[
+					-217.89647420951206,
+					-141.6311530197486
+				],
+				[
+					-219.6137500988578,
+					-140.3110182618493
+				],
+				[
+					-220.8403810817917,
+					-139.51892934964658
+				],
+				[
+					-222.80299814124686,
+					-138.4628175145956
+				],
+				[
+					-224.02962912418064,
+					-138.19879459174732
+				],
+				[
+					-224.2749328604832,
+					-138.19879459174732
+				],
+				[
+					-224.52027403059276,
+					-137.67074874605072
+				],
+				[
+					-225.25626010711431,
+					-137.4067056795446
+				],
+				[
+					-225.74690501352637,
+					-137.1426827566963
+				],
+				[
+					-225.9922087498291,
+					-137.1426827566963
+				],
+				[
+					-226.72819482635066,
+					-137.1426827566963
+				],
+				[
+					-226.97353599646016,
+					-137.934771668899
+				],
+				[
+					-227.46418090287227,
+					-139.78295227249492
+				],
+				[
+					-227.95482580928427,
+					-140.57504118469762
+				],
+				[
+					-227.95482580928427,
+					-142.1591988654452
+				],
+				[
+					-228.20016697939383,
+					-144.0073794690411
+				],
+				[
+					-228.20016697939383,
+					-146.3836260619914
+				],
+				[
+					-227.7095220729817,
+					-149.02389557778997
+				],
+				[
+					-227.21883973276272,
+					-150.08000741284098
+				],
+				[
+					-227.21883973276272,
+					-150.87209632504369
+				],
+				[
+					-226.97353599646016,
+					-152.192231082943
+				],
+				[
+					-225.74690501352637,
+					-154.3044346093872
+				],
+				[
+					-225.501563843417,
+					-155.62456936728648
+				],
+				[
+					-225.01091893700476,
+					-156.68068120233747
+				],
+				[
+					-224.52027403059276,
+					-158.5288618059334
+				],
+				[
+					-224.52027403059276,
+					-160.11303963033873
+				],
+				[
+					-223.78428795407115,
+					-161.96122023393468
+				],
+				[
+					-223.29364304765897,
+					-163.80940083753055
+				],
+				[
+					-223.0483018775496,
+					-166.18564743048083
+				],
+				[
+					-223.0483018775496,
+					-168.03384817773457
+				],
+				[
+					-223.0483018775496,
+					-168.82591694627948
+				],
+				[
+					-223.0483018775496,
+					-169.08993986912776
+				],
+				[
+					-223.0483018775496,
+					-169.61800585848218
+				],
+				[
+					-223.78428795407115,
+					-170.67411769353316
+				],
+				[
+					-225.25626010711431,
+					-171.99425245143246
+				],
+				[
+					-227.21883973276272,
+					-173.8424330550284
+				],
+				[
+					-228.93615305591538,
+					-175.69061365862427
+				],
+				[
+					-231.38941502178284,
+					-178.06686025157455
+				],
+				[
+					-233.59733581754074,
+					-180.4431068445248
+				],
+				[
+					-236.29593895351775,
+					-183.08337636032348
+				],
+				[
+					-238.01321484286365,
+					-185.19560003042545
+				],
+				[
+					-240.95712171514316,
+					-187.5718264797179
+				],
+				[
+					-242.6743976044889,
+					-188.89196123761724
+				],
+				[
+					-244.39167349383473,
+					-190.74016198487095
+				],
+				[
+					-246.10898681698734,
+					-192.06029674277022
+				],
+				[
+					-247.82626270633324,
+					-193.11640857782123
+				],
+				[
+					-249.0528936892669,
+					-193.38043150066954
+				],
+				[
+					-250.2795246722007,
+					-194.17250026921442
+				],
+				[
+					-252.24214173165598,
+					-195.4926350271137
+				],
+				[
+					-252.48744546795865,
+					-196.02070101646814
+				],
+				[
+					-253.7140764508922,
+					-196.81276978501302
+				],
+				[
+					-253.2234315444802,
+					-196.81276978501302
+				],
+				[
+					-251.75145939143704,
+					-196.81276978501302
+				],
+				[
+					-248.80755251915753,
+					-196.81276978501302
+				],
+				[
+					-248.07156644263586,
+					-196.81276978501302
+				],
+				[
+					-246.10898681698734,
+					-196.81276978501302
+				],
+				[
+					-244.63701466394423,
+					-196.81276978501302
+				],
+				[
+					-242.91973877459833,
+					-196.81276978501302
+				],
+				[
+					-241.44776662155522,
+					-196.81276978501302
+				],
+				[
+					-239.48514956209988,
+					-196.81276978501302
+				],
+				[
+					-237.7678736727541,
+					-196.81276978501302
+				],
+				[
+					-236.0505977834082,
+					-196.5487468621647
+				],
+				[
+					-233.59733581754074,
+					-196.02070101646814
+				],
+				[
+					-232.61604600471668,
+					-195.75667809361983
+				],
+				[
+					-232.12536366449768,
+					-195.75667809361983
+				],
+				[
+					-230.8987326815639,
+					-194.96458918141713
+				],
+				[
+					-230.16278403884917,
+					-194.96458918141713
+				],
+				[
+					-228.93615305591538,
+					-194.4365433357205
+				],
+				[
+					-227.21883973276272,
+					-193.6444544235178
+				],
+				[
+					-226.48289109004804,
+					-193.6444544235178
+				],
+				[
+					-226.23754991993866,
+					-192.8523655113151
+				],
+				[
+					-225.501563843417,
+					-192.58834258846684
+				],
+				[
+					-224.52027403059276,
+					-192.06029674277022
+				],
+				[
+					-224.02962912418064,
+					-192.06029674277022
+				],
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 613,
+			"versionNonce": 498775270,
+			"isDeleted": false,
+			"id": "N8HpzNVfr4vDnkq72I7Ik",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2327.2752255642868,
+			"y": 4688.655602206314,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#fab005",
+			"width": 93.7145996093741,
+			"height": 80.00017438616057,
+			"seed": 1828305894,
+			"groupIds": [
+				"jw2rakp0X0N4M7eh4FxSj"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701643094724,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				],
+				[
+					-225.74690501352637,
+					-192.06029674277022
+				],
+				[
+					-224.76557776689532,
+					-193.9084773463661
+				],
+				[
+					-222.80299814124686,
+					-197.60485869721572
+				],
+				[
+					-221.3310259882037,
+					-201.30124004806532
+				],
+				[
+					-220.3497361753794,
+					-202.8853977288129
+				],
+				[
+					-220.10439500527002,
+					-204.7335783324088
+				],
+				[
+					-218.14177794581474,
+					-208.69398260610672
+				],
+				[
+					-217.40579186929313,
+					-210.27816043051217
+				],
+				[
+					-216.17916088635928,
+					-212.126341034108
+				],
+				[
+					-215.19787107353517,
+					-213.9745216377039
+				],
+				[
+					-213.97124009060133,
+					-215.29466646743208
+				],
+				[
+					-213.23525401407977,
+					-216.6148012253314
+				],
+				[
+					-213.23525401407977,
+					-217.14285714285688
+				],
+				[
+					-212.98995027777727,
+					-217.14285714285688
+				],
+				[
+					-211.76331929484343,
+					-216.08674530780593
+				],
+				[
+					-210.04600597169076,
+					-214.23856470421003
+				],
+				[
+					-208.08342634604236,
+					-211.3342521219053
+				],
+				[
+					-204.4035333972413,
+					-203.14942065166122
+				],
+				[
+					-202.4409163377859,
+					-198.66097053226673
+				],
+				[
+					-200.7236404484401,
+					-196.28472393931645
+				],
+				[
+					-199.00632712528733,
+					-194.4365433357205
+				],
+				[
+					-198.0250373124632,
+					-193.11640857782123
+				],
+				[
+					-198.0250373124632,
+					-192.8523655113151
+				],
+				[
+					-198.0250373124632,
+					-192.32431966561853
+				],
+				[
+					-196.79840632952943,
+					-190.74016198487095
+				],
+				[
+					-196.06242025300782,
+					-189.94807307266825
+				],
+				[
+					-196.06242025300782,
+					-189.42002722697163
+				],
+				[
+					-195.81711651670525,
+					-188.89196123761724
+				],
+				[
+					-195.81711651670525,
+					-188.0998924690723
+				],
+				[
+					-195.32643417648626,
+					-188.0998924690723
+				],
+				[
+					-195.0811304401837,
+					-188.0998924690723
+				],
+				[
+					-194.59048553377147,
+					-188.0998924690723
+				],
+				[
+					-187.23069963616928,
+					-190.21209599551656
+				],
+				[
+					-181.3428484578033,
+					-190.74016198487095
+				],
+				[
+					-174.47370746661323,
+					-191.53223075341583
+				],
+				[
+					-170.05786587509732,
+					-191.7962738199219
+				],
+				[
+					-167.84990764553243,
+					-192.8523655113151
+				],
+				[
+					-165.39664567966508,
+					-193.6444544235178
+				],
+				[
+					-163.92471096042868,
+					-193.6444544235178
+				],
+				[
+					-162.20739763727607,
+					-194.17250026921442
+				],
+				[
+					-160.73546291803973,
+					-194.17250026921442
+				],
+				[
+					-159.99947684151812,
+					-194.7005662585688
+				],
+				[
+					-159.99947684151812,
+					-194.4365433357205
+				],
+				[
+					-159.99947684151812,
+					-193.38043150066954
+				],
+				[
+					-160.49012174793023,
+					-191.53223075341583
+				],
+				[
+					-161.22610782445184,
+					-189.68405014981994
+				],
+				[
+					-162.94338371379763,
+					-186.51573478832472
+				],
+				[
+					-163.92471096042868,
+					-184.66753404107106
+				],
+				[
+					-165.64198684977447,
+					-182.81935343747517
+				],
+				[
+					-167.35926273912042,
+					-180.97115269022146
+				],
+				[
+					-168.5858937220541,
+					-179.12297208662554
+				],
+				[
+					-170.05786587509732,
+					-177.27479148302967
+				],
+				[
+					-172.02044550074572,
+					-174.37047890072498
+				],
+				[
+					-173.00177274737683,
+					-174.10645597787666
+				],
+				[
+					-173.7377588238984,
+					-173.31438720933173
+				],
+				[
+					-174.71904863672262,
+					-172.52229829712903
+				],
+				[
+					-175.4550347132443,
+					-171.73020938492633
+				],
+				[
+					-176.43632452606846,
+					-170.67411769353316
+				],
+				[
+					-179.13492766204536,
+					-168.29787110058288
+				],
+				[
+					-179.38023139834803,
+					-167.7698051112285
+				],
+				[
+					-179.38023139834803,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-166.71371341983524
+				],
+				[
+					-179.13492766204536,
+					-164.33746682688496
+				],
+				[
+					-177.9082966791117,
+					-161.96122023393468
+				],
+				[
+					-176.43632452606846,
+					-158.26483888308508
+				],
+				[
+					-174.47370746661323,
+					-154.0404116865389
+				],
+				[
+					-173.49241765378895,
+					-151.13611924789197
+				],
+				[
+					-172.26578667085533,
+					-148.23182680924512
+				],
+				[
+					-171.03915568792144,
+					-146.91169205134582
+				],
+				[
+					-170.05786587509732,
+					-145.06349130409208
+				],
+				[
+					-169.81252470498782,
+					-144.27142253554717
+				],
+				[
+					-169.56718353487832,
+					-143.7433565461928
+				],
+				[
+					-169.0765386284662,
+					-143.21531070049622
+				],
+				[
+					-168.83123489216354,
+					-142.9512877776479
+				],
+				[
+					-168.3405525519446,
+					-141.6311530197486
+				],
+				[
+					-168.3405525519446,
+					-141.36710995324248
+				],
+				[
+					-168.83123489216354,
+					-141.36710995324248
+				],
+				[
+					-170.54851078150944,
+					-141.8951759425969
+				],
+				[
+					-172.26578667085533,
+					-143.21531070049622
+				],
+				[
+					-175.4550347132443,
+					-145.3275142269404
+				],
+				[
+					-178.6442827556333,
+					-148.23182680924512
+				],
+				[
+					-181.3428484578033,
+					-150.08000741284098
+				],
+				[
+					-183.5508066873681,
+					-152.192231082943
+				],
+				[
+					-185.26808257671394,
+					-152.98429985148792
+				],
+				[
+					-187.23069963616928,
+					-154.3044346093872
+				],
+				[
+					-188.94797552551512,
+					-154.8325005987416
+				],
+				[
+					-189.19327926181774,
+					-154.8325005987416
+				],
+				[
+					-189.6839616020368,
+					-154.8325005987416
+				],
+				[
+					-189.92926533833935,
+					-154.8325005987416
+				],
+				[
+					-190.1746065084488,
+					-155.0965235215899
+				],
+				[
+					-191.4012374913824,
+					-155.0965235215899
+				],
+				[
+					-192.13722356790407,
+					-155.0965235215899
+				],
+				[
+					-193.1185133807283,
+					-155.0965235215899
+				],
+				[
+					-194.8357892700742,
+					-156.1526353566409
+				],
+				[
+					-195.5717753465958,
+					-156.41665827948918
+				],
+				[
+					-195.81711651670525,
+					-156.41665827948918
+				],
+				[
+					-196.06242025300782,
+					-156.94470412518575
+				],
+				[
+					-196.55306515941993,
+					-156.94470412518575
+				],
+				[
+					-196.79840632952943,
+					-156.94470412518575
+				],
+				[
+					-197.28905123594166,
+					-156.94470412518575
+				],
+				[
+					-197.53439240605104,
+					-157.20872704803406
+				],
+				[
+					-198.0250373124632,
+					-157.20872704803406
+				],
+				[
+					-198.2703784825727,
+					-157.20872704803406
+				],
+				[
+					-198.51568221887527,
+					-157.20872704803406
+				],
+				[
+					-199.25166829539683,
+					-157.20872704803406
+				],
+				[
+					-199.742313201809,
+					-157.47277011454017
+				],
+				[
+					-199.98765437191844,
+					-157.47277011454017
+				],
+				[
+					-200.47829927833067,
+					-157.47277011454017
+				],
+				[
+					-200.7236404484401,
+					-157.47277011454017
+				],
+				[
+					-202.68622007408862,
+					-155.62456936728648
+				],
+				[
+					-204.4035333972413,
+					-154.3044346093872
+				],
+				[
+					-206.3661130228897,
+					-152.4562540057913
+				],
+				[
+					-208.08342634604236,
+					-150.6080532585376
+				],
+				[
+					-209.8007022353882,
+					-148.7598726549417
+				],
+				[
+					-212.7446091076677,
+					-145.85558021629478
+				],
+				[
+					-215.19787107353517,
+					-143.7433565461928
+				],
+				[
+					-216.91514696288095,
+					-142.4232217882935
+				],
+				[
+					-217.89647420951206,
+					-141.6311530197486
+				],
+				[
+					-219.6137500988578,
+					-140.3110182618493
+				],
+				[
+					-220.8403810817917,
+					-139.51892934964658
+				],
+				[
+					-222.80299814124686,
+					-138.4628175145956
+				],
+				[
+					-224.02962912418064,
+					-138.19879459174732
+				],
+				[
+					-224.2749328604832,
+					-138.19879459174732
+				],
+				[
+					-224.52027403059276,
+					-137.67074874605072
+				],
+				[
+					-225.25626010711431,
+					-137.4067056795446
+				],
+				[
+					-225.74690501352637,
+					-137.1426827566963
+				],
+				[
+					-225.9922087498291,
+					-137.1426827566963
+				],
+				[
+					-226.72819482635066,
+					-137.1426827566963
+				],
+				[
+					-226.97353599646016,
+					-137.934771668899
+				],
+				[
+					-227.46418090287227,
+					-139.78295227249492
+				],
+				[
+					-227.95482580928427,
+					-140.57504118469762
+				],
+				[
+					-227.95482580928427,
+					-142.1591988654452
+				],
+				[
+					-228.20016697939383,
+					-144.0073794690411
+				],
+				[
+					-228.20016697939383,
+					-146.3836260619914
+				],
+				[
+					-227.7095220729817,
+					-149.02389557778997
+				],
+				[
+					-227.21883973276272,
+					-150.08000741284098
+				],
+				[
+					-227.21883973276272,
+					-150.87209632504369
+				],
+				[
+					-226.97353599646016,
+					-152.192231082943
+				],
+				[
+					-225.74690501352637,
+					-154.3044346093872
+				],
+				[
+					-225.501563843417,
+					-155.62456936728648
+				],
+				[
+					-225.01091893700476,
+					-156.68068120233747
+				],
+				[
+					-224.52027403059276,
+					-158.5288618059334
+				],
+				[
+					-224.52027403059276,
+					-160.11303963033873
+				],
+				[
+					-223.78428795407115,
+					-161.96122023393468
+				],
+				[
+					-223.29364304765897,
+					-163.80940083753055
+				],
+				[
+					-223.0483018775496,
+					-166.18564743048083
+				],
+				[
+					-223.0483018775496,
+					-168.03384817773457
+				],
+				[
+					-223.0483018775496,
+					-168.82591694627948
+				],
+				[
+					-223.0483018775496,
+					-169.08993986912776
+				],
+				[
+					-223.0483018775496,
+					-169.61800585848218
+				],
+				[
+					-223.78428795407115,
+					-170.67411769353316
+				],
+				[
+					-225.25626010711431,
+					-171.99425245143246
+				],
+				[
+					-227.21883973276272,
+					-173.8424330550284
+				],
+				[
+					-228.93615305591538,
+					-175.69061365862427
+				],
+				[
+					-231.38941502178284,
+					-178.06686025157455
+				],
+				[
+					-233.59733581754074,
+					-180.4431068445248
+				],
+				[
+					-236.29593895351775,
+					-183.08337636032348
+				],
+				[
+					-238.01321484286365,
+					-185.19560003042545
+				],
+				[
+					-240.95712171514316,
+					-187.5718264797179
+				],
+				[
+					-242.6743976044889,
+					-188.89196123761724
+				],
+				[
+					-244.39167349383473,
+					-190.74016198487095
+				],
+				[
+					-246.10898681698734,
+					-192.06029674277022
+				],
+				[
+					-247.82626270633324,
+					-193.11640857782123
+				],
+				[
+					-249.0528936892669,
+					-193.38043150066954
+				],
+				[
+					-250.2795246722007,
+					-194.17250026921442
+				],
+				[
+					-252.24214173165598,
+					-195.4926350271137
+				],
+				[
+					-252.48744546795865,
+					-196.02070101646814
+				],
+				[
+					-253.7140764508922,
+					-196.81276978501302
+				],
+				[
+					-253.2234315444802,
+					-196.81276978501302
+				],
+				[
+					-251.75145939143704,
+					-196.81276978501302
+				],
+				[
+					-248.80755251915753,
+					-196.81276978501302
+				],
+				[
+					-248.07156644263586,
+					-196.81276978501302
+				],
+				[
+					-246.10898681698734,
+					-196.81276978501302
+				],
+				[
+					-244.63701466394423,
+					-196.81276978501302
+				],
+				[
+					-242.91973877459833,
+					-196.81276978501302
+				],
+				[
+					-241.44776662155522,
+					-196.81276978501302
+				],
+				[
+					-239.48514956209988,
+					-196.81276978501302
+				],
+				[
+					-237.7678736727541,
+					-196.81276978501302
+				],
+				[
+					-236.0505977834082,
+					-196.5487468621647
+				],
+				[
+					-233.59733581754074,
+					-196.02070101646814
+				],
+				[
+					-232.61604600471668,
+					-195.75667809361983
+				],
+				[
+					-232.12536366449768,
+					-195.75667809361983
+				],
+				[
+					-230.8987326815639,
+					-194.96458918141713
+				],
+				[
+					-230.16278403884917,
+					-194.96458918141713
+				],
+				[
+					-228.93615305591538,
+					-194.4365433357205
+				],
+				[
+					-227.21883973276272,
+					-193.6444544235178
+				],
+				[
+					-226.48289109004804,
+					-193.6444544235178
+				],
+				[
+					-226.23754991993866,
+					-192.8523655113151
+				],
+				[
+					-225.501563843417,
+					-192.58834258846684
+				],
+				[
+					-224.52027403059276,
+					-192.06029674277022
+				],
+				[
+					-224.02962912418064,
+					-192.06029674277022
+				],
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"type": "freedraw",
+			"version": 511,
+			"versionNonce": 2006179302,
+			"isDeleted": false,
+			"id": "XR1gDblg_nYYgLuseTFSv",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 2820.4425873289606,
+			"y": 4980.874717848508,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#fab005",
+			"width": 93.7145996093741,
+			"height": 80.00017438616057,
+			"seed": 1560080314,
+			"groupIds": [
+				"61R1kGTCMqdLG4jqk_61Q"
+			],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1701641955048,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				],
+				[
+					-225.74690501352637,
+					-192.06029674277022
+				],
+				[
+					-224.76557776689532,
+					-193.9084773463661
+				],
+				[
+					-222.80299814124686,
+					-197.60485869721572
+				],
+				[
+					-221.3310259882037,
+					-201.30124004806532
+				],
+				[
+					-220.3497361753794,
+					-202.8853977288129
+				],
+				[
+					-220.10439500527002,
+					-204.7335783324088
+				],
+				[
+					-218.14177794581474,
+					-208.69398260610672
+				],
+				[
+					-217.40579186929313,
+					-210.27816043051217
+				],
+				[
+					-216.17916088635928,
+					-212.126341034108
+				],
+				[
+					-215.19787107353517,
+					-213.9745216377039
+				],
+				[
+					-213.97124009060133,
+					-215.29466646743208
+				],
+				[
+					-213.23525401407977,
+					-216.6148012253314
+				],
+				[
+					-213.23525401407977,
+					-217.14285714285688
+				],
+				[
+					-212.98995027777727,
+					-217.14285714285688
+				],
+				[
+					-211.76331929484343,
+					-216.08674530780593
+				],
+				[
+					-210.04600597169076,
+					-214.23856470421003
+				],
+				[
+					-208.08342634604236,
+					-211.3342521219053
+				],
+				[
+					-204.4035333972413,
+					-203.14942065166122
+				],
+				[
+					-202.4409163377859,
+					-198.66097053226673
+				],
+				[
+					-200.7236404484401,
+					-196.28472393931645
+				],
+				[
+					-199.00632712528733,
+					-194.4365433357205
+				],
+				[
+					-198.0250373124632,
+					-193.11640857782123
+				],
+				[
+					-198.0250373124632,
+					-192.8523655113151
+				],
+				[
+					-198.0250373124632,
+					-192.32431966561853
+				],
+				[
+					-196.79840632952943,
+					-190.74016198487095
+				],
+				[
+					-196.06242025300782,
+					-189.94807307266825
+				],
+				[
+					-196.06242025300782,
+					-189.42002722697163
+				],
+				[
+					-195.81711651670525,
+					-188.89196123761724
+				],
+				[
+					-195.81711651670525,
+					-188.0998924690723
+				],
+				[
+					-195.32643417648626,
+					-188.0998924690723
+				],
+				[
+					-195.0811304401837,
+					-188.0998924690723
+				],
+				[
+					-194.59048553377147,
+					-188.0998924690723
+				],
+				[
+					-187.23069963616928,
+					-190.21209599551656
+				],
+				[
+					-181.3428484578033,
+					-190.74016198487095
+				],
+				[
+					-174.47370746661323,
+					-191.53223075341583
+				],
+				[
+					-170.05786587509732,
+					-191.7962738199219
+				],
+				[
+					-167.84990764553243,
+					-192.8523655113151
+				],
+				[
+					-165.39664567966508,
+					-193.6444544235178
+				],
+				[
+					-163.92471096042868,
+					-193.6444544235178
+				],
+				[
+					-162.20739763727607,
+					-194.17250026921442
+				],
+				[
+					-160.73546291803973,
+					-194.17250026921442
+				],
+				[
+					-159.99947684151812,
+					-194.7005662585688
+				],
+				[
+					-159.99947684151812,
+					-194.4365433357205
+				],
+				[
+					-159.99947684151812,
+					-193.38043150066954
+				],
+				[
+					-160.49012174793023,
+					-191.53223075341583
+				],
+				[
+					-161.22610782445184,
+					-189.68405014981994
+				],
+				[
+					-162.94338371379763,
+					-186.51573478832472
+				],
+				[
+					-163.92471096042868,
+					-184.66753404107106
+				],
+				[
+					-165.64198684977447,
+					-182.81935343747517
+				],
+				[
+					-167.35926273912042,
+					-180.97115269022146
+				],
+				[
+					-168.5858937220541,
+					-179.12297208662554
+				],
+				[
+					-170.05786587509732,
+					-177.27479148302967
+				],
+				[
+					-172.02044550074572,
+					-174.37047890072498
+				],
+				[
+					-173.00177274737683,
+					-174.10645597787666
+				],
+				[
+					-173.7377588238984,
+					-173.31438720933173
+				],
+				[
+					-174.71904863672262,
+					-172.52229829712903
+				],
+				[
+					-175.4550347132443,
+					-171.73020938492633
+				],
+				[
+					-176.43632452606846,
+					-170.67411769353316
+				],
+				[
+					-179.13492766204536,
+					-168.29787110058288
+				],
+				[
+					-179.38023139834803,
+					-167.7698051112285
+				],
+				[
+					-179.38023139834803,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-167.50578218838018
+				],
+				[
+					-179.87091373856697,
+					-166.71371341983524
+				],
+				[
+					-179.13492766204536,
+					-164.33746682688496
+				],
+				[
+					-177.9082966791117,
+					-161.96122023393468
+				],
+				[
+					-176.43632452606846,
+					-158.26483888308508
+				],
+				[
+					-174.47370746661323,
+					-154.0404116865389
+				],
+				[
+					-173.49241765378895,
+					-151.13611924789197
+				],
+				[
+					-172.26578667085533,
+					-148.23182680924512
+				],
+				[
+					-171.03915568792144,
+					-146.91169205134582
+				],
+				[
+					-170.05786587509732,
+					-145.06349130409208
+				],
+				[
+					-169.81252470498782,
+					-144.27142253554717
+				],
+				[
+					-169.56718353487832,
+					-143.7433565461928
+				],
+				[
+					-169.0765386284662,
+					-143.21531070049622
+				],
+				[
+					-168.83123489216354,
+					-142.9512877776479
+				],
+				[
+					-168.3405525519446,
+					-141.6311530197486
+				],
+				[
+					-168.3405525519446,
+					-141.36710995324248
+				],
+				[
+					-168.83123489216354,
+					-141.36710995324248
+				],
+				[
+					-170.54851078150944,
+					-141.8951759425969
+				],
+				[
+					-172.26578667085533,
+					-143.21531070049622
+				],
+				[
+					-175.4550347132443,
+					-145.3275142269404
+				],
+				[
+					-178.6442827556333,
+					-148.23182680924512
+				],
+				[
+					-181.3428484578033,
+					-150.08000741284098
+				],
+				[
+					-183.5508066873681,
+					-152.192231082943
+				],
+				[
+					-185.26808257671394,
+					-152.98429985148792
+				],
+				[
+					-187.23069963616928,
+					-154.3044346093872
+				],
+				[
+					-188.94797552551512,
+					-154.8325005987416
+				],
+				[
+					-189.19327926181774,
+					-154.8325005987416
+				],
+				[
+					-189.6839616020368,
+					-154.8325005987416
+				],
+				[
+					-189.92926533833935,
+					-154.8325005987416
+				],
+				[
+					-190.1746065084488,
+					-155.0965235215899
+				],
+				[
+					-191.4012374913824,
+					-155.0965235215899
+				],
+				[
+					-192.13722356790407,
+					-155.0965235215899
+				],
+				[
+					-193.1185133807283,
+					-155.0965235215899
+				],
+				[
+					-194.8357892700742,
+					-156.1526353566409
+				],
+				[
+					-195.5717753465958,
+					-156.41665827948918
+				],
+				[
+					-195.81711651670525,
+					-156.41665827948918
+				],
+				[
+					-196.06242025300782,
+					-156.94470412518575
+				],
+				[
+					-196.55306515941993,
+					-156.94470412518575
+				],
+				[
+					-196.79840632952943,
+					-156.94470412518575
+				],
+				[
+					-197.28905123594166,
+					-156.94470412518575
+				],
+				[
+					-197.53439240605104,
+					-157.20872704803406
+				],
+				[
+					-198.0250373124632,
+					-157.20872704803406
+				],
+				[
+					-198.2703784825727,
+					-157.20872704803406
+				],
+				[
+					-198.51568221887527,
+					-157.20872704803406
+				],
+				[
+					-199.25166829539683,
+					-157.20872704803406
+				],
+				[
+					-199.742313201809,
+					-157.47277011454017
+				],
+				[
+					-199.98765437191844,
+					-157.47277011454017
+				],
+				[
+					-200.47829927833067,
+					-157.47277011454017
+				],
+				[
+					-200.7236404484401,
+					-157.47277011454017
+				],
+				[
+					-202.68622007408862,
+					-155.62456936728648
+				],
+				[
+					-204.4035333972413,
+					-154.3044346093872
+				],
+				[
+					-206.3661130228897,
+					-152.4562540057913
+				],
+				[
+					-208.08342634604236,
+					-150.6080532585376
+				],
+				[
+					-209.8007022353882,
+					-148.7598726549417
+				],
+				[
+					-212.7446091076677,
+					-145.85558021629478
+				],
+				[
+					-215.19787107353517,
+					-143.7433565461928
+				],
+				[
+					-216.91514696288095,
+					-142.4232217882935
+				],
+				[
+					-217.89647420951206,
+					-141.6311530197486
+				],
+				[
+					-219.6137500988578,
+					-140.3110182618493
+				],
+				[
+					-220.8403810817917,
+					-139.51892934964658
+				],
+				[
+					-222.80299814124686,
+					-138.4628175145956
+				],
+				[
+					-224.02962912418064,
+					-138.19879459174732
+				],
+				[
+					-224.2749328604832,
+					-138.19879459174732
+				],
+				[
+					-224.52027403059276,
+					-137.67074874605072
+				],
+				[
+					-225.25626010711431,
+					-137.4067056795446
+				],
+				[
+					-225.74690501352637,
+					-137.1426827566963
+				],
+				[
+					-225.9922087498291,
+					-137.1426827566963
+				],
+				[
+					-226.72819482635066,
+					-137.1426827566963
+				],
+				[
+					-226.97353599646016,
+					-137.934771668899
+				],
+				[
+					-227.46418090287227,
+					-139.78295227249492
+				],
+				[
+					-227.95482580928427,
+					-140.57504118469762
+				],
+				[
+					-227.95482580928427,
+					-142.1591988654452
+				],
+				[
+					-228.20016697939383,
+					-144.0073794690411
+				],
+				[
+					-228.20016697939383,
+					-146.3836260619914
+				],
+				[
+					-227.7095220729817,
+					-149.02389557778997
+				],
+				[
+					-227.21883973276272,
+					-150.08000741284098
+				],
+				[
+					-227.21883973276272,
+					-150.87209632504369
+				],
+				[
+					-226.97353599646016,
+					-152.192231082943
+				],
+				[
+					-225.74690501352637,
+					-154.3044346093872
+				],
+				[
+					-225.501563843417,
+					-155.62456936728648
+				],
+				[
+					-225.01091893700476,
+					-156.68068120233747
+				],
+				[
+					-224.52027403059276,
+					-158.5288618059334
+				],
+				[
+					-224.52027403059276,
+					-160.11303963033873
+				],
+				[
+					-223.78428795407115,
+					-161.96122023393468
+				],
+				[
+					-223.29364304765897,
+					-163.80940083753055
+				],
+				[
+					-223.0483018775496,
+					-166.18564743048083
+				],
+				[
+					-223.0483018775496,
+					-168.03384817773457
+				],
+				[
+					-223.0483018775496,
+					-168.82591694627948
+				],
+				[
+					-223.0483018775496,
+					-169.08993986912776
+				],
+				[
+					-223.0483018775496,
+					-169.61800585848218
+				],
+				[
+					-223.78428795407115,
+					-170.67411769353316
+				],
+				[
+					-225.25626010711431,
+					-171.99425245143246
+				],
+				[
+					-227.21883973276272,
+					-173.8424330550284
+				],
+				[
+					-228.93615305591538,
+					-175.69061365862427
+				],
+				[
+					-231.38941502178284,
+					-178.06686025157455
+				],
+				[
+					-233.59733581754074,
+					-180.4431068445248
+				],
+				[
+					-236.29593895351775,
+					-183.08337636032348
+				],
+				[
+					-238.01321484286365,
+					-185.19560003042545
+				],
+				[
+					-240.95712171514316,
+					-187.5718264797179
+				],
+				[
+					-242.6743976044889,
+					-188.89196123761724
+				],
+				[
+					-244.39167349383473,
+					-190.74016198487095
+				],
+				[
+					-246.10898681698734,
+					-192.06029674277022
+				],
+				[
+					-247.82626270633324,
+					-193.11640857782123
+				],
+				[
+					-249.0528936892669,
+					-193.38043150066954
+				],
+				[
+					-250.2795246722007,
+					-194.17250026921442
+				],
+				[
+					-252.24214173165598,
+					-195.4926350271137
+				],
+				[
+					-252.48744546795865,
+					-196.02070101646814
+				],
+				[
+					-253.7140764508922,
+					-196.81276978501302
+				],
+				[
+					-253.2234315444802,
+					-196.81276978501302
+				],
+				[
+					-251.75145939143704,
+					-196.81276978501302
+				],
+				[
+					-248.80755251915753,
+					-196.81276978501302
+				],
+				[
+					-248.07156644263586,
+					-196.81276978501302
+				],
+				[
+					-246.10898681698734,
+					-196.81276978501302
+				],
+				[
+					-244.63701466394423,
+					-196.81276978501302
+				],
+				[
+					-242.91973877459833,
+					-196.81276978501302
+				],
+				[
+					-241.44776662155522,
+					-196.81276978501302
+				],
+				[
+					-239.48514956209988,
+					-196.81276978501302
+				],
+				[
+					-237.7678736727541,
+					-196.81276978501302
+				],
+				[
+					-236.0505977834082,
+					-196.5487468621647
+				],
+				[
+					-233.59733581754074,
+					-196.02070101646814
+				],
+				[
+					-232.61604600471668,
+					-195.75667809361983
+				],
+				[
+					-232.12536366449768,
+					-195.75667809361983
+				],
+				[
+					-230.8987326815639,
+					-194.96458918141713
+				],
+				[
+					-230.16278403884917,
+					-194.96458918141713
+				],
+				[
+					-228.93615305591538,
+					-194.4365433357205
+				],
+				[
+					-227.21883973276272,
+					-193.6444544235178
+				],
+				[
+					-226.48289109004804,
+					-193.6444544235178
+				],
+				[
+					-226.23754991993866,
+					-192.8523655113151
+				],
+				[
+					-225.501563843417,
+					-192.58834258846684
+				],
+				[
+					-224.52027403059276,
+					-192.06029674277022
+				],
+				[
+					-224.02962912418064,
+					-192.06029674277022
+				],
+				[
+					-226.48289109004804,
+					-192.06029674277022
+				]
+			],
+			"lastCommittedPoint": null,
+			"simulatePressure": true,
+			"pressures": []
+		},
+		{
+			"id": "YhOgfCRZYe7_9ZUD2KLxp",
+			"type": "arrow",
+			"x": 1910.2117465915542,
+			"y": 4376.056978630222,
+			"width": 4.241705606868663,
+			"height": 108.16098500502085,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#a18072",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 760905722,
+			"version": 29,
+			"versionNonce": 1666645926,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1701643104737,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					4.241705606868663,
+					108.16098500502085
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "wP4qH-6uSn5l5f1drEjrG",
+				"focus": 0.07144074728764865,
+				"gap": 16.73882379716906
+			},
+			"endBinding": {
+				"elementId": "YJRmI2FY_pUZ-tK_rbV2x",
+				"focus": -0.14388937231261087,
+				"gap": 15.23273009168679
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "3rhLxnFJtxMJkipb_PhuI",
+			"type": "arrow",
+			"x": 2041.7337903353273,
+			"y": 4374.135507729659,
+			"width": 158.51612583058295,
+			"height": 144.00576658035425,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#ffc9c9",
+			"fillStyle": "cross-hatch",
+			"strokeWidth": 2,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"seed": 1533402938,
+			"version": 668,
+			"versionNonce": 621682106,
+			"isDeleted": true,
+			"boundElements": null,
+			"updated": 1701643101225,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-54.75500346016315,
+					53.59644970676163
+				],
+				[
+					103.7611223704198,
+					144.00576658035425
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": {
+				"elementId": "wP4qH-6uSn5l5f1drEjrG",
+				"focus": -0.5322009429258009,
+				"gap": 14.81735289660628
+			},
+			"endBinding": {
+				"elementId": "YJRmI2FY_pUZ-tK_rbV2x",
+				"focus": 0.9242717426930629,
+				"gap": 11.319295953631013
+			},
+			"startArrowhead": null,
+			"endArrowhead": "arrow"
+		},
+		{
+			"id": "PF2m1HcwGoXPq7qK7YOKU",
+			"type": "rectangle",
+			"x": 2304.681306976964,
+			"y": 4270.016765526374,
+			"width": 332.9663662287976,
+			"height": 103.91944120267635,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "#a18072",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"seed": 148508794,
+			"version": 51,
+			"versionNonce": 520035834,
+			"isDeleted": true,
+			"boundElements": null,
+			"updated": 1701643086617,
+			"link": null,
+			"locked": false
 		}
 	],
 	"appState": {
 		"theme": "light",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#1e1e1e",
-		"currentItemBackgroundColor": "transparent",
+		"currentItemBackgroundColor": "#a18072",
 		"currentItemFillStyle": "solid",
-		"currentItemStrokeWidth": 0.5,
+		"currentItemStrokeWidth": 1,
 		"currentItemStrokeStyle": "solid",
 		"currentItemRoughness": 1,
 		"currentItemOpacity": 100,
-		"currentItemFontFamily": 2,
+		"currentItemFontFamily": 1,
 		"currentItemFontSize": 28,
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": -2441.5343380056606,
-		"scrollY": 5528.146947958747,
+		"scrollX": -481.3198750172011,
+		"scrollY": -3054.8621782639007,
 		"zoom": {
-			"value": 0.562381363846298
+			"value": 0.37721538677809807
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
