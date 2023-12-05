@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  4 DEC 2023 17:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 02:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1180,18 +1180,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 174.
 
-Underfull \hbox (badness 1527) in paragraph at lines 176--180
-\TU/lmr/m/n/12 are essential for the nutrition and water
+Underfull \hbox (badness 1762) in paragraph at lines 176--180
+\TU/lmr/m/n/12 Guiana features a topography alternating
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 176--180
-\TU/lmr/m/n/12 factors like soil texture, nutrient content,
- []
-
-
-Underfull \hbox (badness 2376) in paragraph at lines 176--180
-\TU/lmr/m/n/12 topography, and water content (Freschet,
+Underfull \hbox (badness 1199) in paragraph at lines 176--180
+\TU/lmr/m/n/12 main factors influencing forest community
  []
 
 
@@ -1405,8 +1400,22 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[6]
-No file pedoP16-report.bbl.
+[6] (./pedoP16-report.bbl
+Underfull \hbox (badness 1496) in paragraph at lines 4--7
+\TU/lmr/m/n/12 L. H. Comas, B. Rewald, C. Roumet,
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 4--7
+\TU/lmr/m/n/12 caflor, I. Brunner, J. H. C. Cornelis-
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 4--7
+\TU/lmr/m/n/12 York, S. A. Batterman, M. Gomes de
+ []
+
+)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1572,9 +1581,7 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[7
-
-] 
+[7] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./pedoP16-report.aux)
  ***********
@@ -1582,15 +1589,15 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `pedoP16-report.out' has not changed.
-(rerunfilecheck)             Checksum: 9033B9F13803F02263BAB9597517BAC2;2431.
+(rerunfilecheck)             Checksum: 2E4F68332E7CE4B9F7EC5008B1E9B238;2675.
  ) 
 Here is how much of TeX's memory you used:
- 22178 strings out of 476893
- 425561 string characters out of 5803153
+ 22193 strings out of 476893
+ 425885 string characters out of 5803153
  1948189 words of memory out of 5000000
- 43700 multiletter control sequences out of 15000+600000
- 586635 words of font info for 127 fonts, out of 8000000 for 9000
+ 43707 multiletter control sequences out of 15000+600000
+ 586643 words of font info for 128 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 93i,12n,107p,1340b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,107p,1826b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on pedoP16-report.pdf (7 pages).
