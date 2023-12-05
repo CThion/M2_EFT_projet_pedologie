@@ -30,17 +30,12 @@ library(FSA)        #library for dunn test
 ```
 
 ```{r upload and structure data}
+#--upload and structure data
 #import data from last year project (36 Augur in the P16)
 dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")  
 
 #create a new column for topography that only contains the number of the topography 
 dataAugur2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAugur2022$topographie))
-#6: bas fonds
-#5: versant bas de pente
-#4: versant mi-pente
-#3: versant haut de pente
-#2: ...?
-#1: plateau
 
 #import botany data
 Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")
@@ -49,11 +44,10 @@ Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")
 Botany <- Botany %>% 
   na.omit %>%
   select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
-
 ```
 
 ```{r rename titles in Augur data}
-
+#--rename titles in Augur data
 dataAugur2022 <- dataAugur2022 %>% rename_at('% pente', ~'pente')
 dataAugur2022 <- dataAugur2022 %>% rename_at('Numéro horizon', ~'horizon')
 dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
@@ -62,16 +56,11 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
 dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
 dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
 dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
-
 ```
-
-
-We have 36 Augur points, of which some do not have corrected texture analysis so we do not consider these (22) and of these 22 there are 17 that are on the slope. Of these 17 only 13 have high silt class present in their texture data. Of the 22 texture available over all topography, there are 16 that have high texture present.
 
 
 ## check for correlation between topography and high silt depth occurences
 
-do also check of correlation without the "intermediate" samples (samples with no high silt in the Augur), as the value given to the "intermediate" samples might cause changes to the value of correlation
 
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
@@ -93,14 +82,13 @@ Augur_cor <- Augur_cor %>%
 #create new column with textures divided in three classes based upon their presence of silt
 Augur_cor$Silt_class <- ifelse(Augur_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
 
-#For every Augur point you define depth at which silt concentration becomes high, or if intermediate that it is 100 (!!Important to check this)
+#For every Augur point you define depth at which silt concentration becomes high, or if intermediate that it is 100
 Augur_cor <- Augur_cor %>%
   group_by(sondage_N) %>%
   mutate(
     final_depth = ifelse(any(Silt_class == "high"), 
                          min(depth_sup[Silt_class == "high"]), 
-                         100)
-  ) %>%
+                         100)) %>%
   ungroup() %>%
   distinct(sondage_N, .keep_all = TRUE) %>%
   select(sondage_N, final_depth, topo)
@@ -115,7 +103,6 @@ Elevation <- Elevation %>%
 
 #correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values of no HSD appearance)
 cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearman")
-
 cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
 c("spearman"))
 
@@ -127,60 +114,23 @@ shapiro.test(Elevation_filtered$final_depth)
 shapiro.test(Elevation_filtered$Elevation_Paracou_depth1)
 
 cor(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
-
 cor.test(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
 
 ```
 
-There is a correlation of - 0.634 between the topography and the depth at which silt occurs in high levels. This means that with higher elevation silt appears quicker in high concentrations (depth gets smaller).
-Without the intermediate: r = -0.593, it is only a little lower than earlier
-
-=> this causes multicollinearity in our model
-the effects of multicollinearity are that the predictions are way less precise and can quickly completely change of direction/relationship.     
-
-```{r little data visualisation for correlation}
-hist(Elevation$final_depth)
-hist(Elevation$Elevation_Paracou_depth1)
-# ggplot(Elevation, aes(x=Elevation_Paracou_depth1)) + geom_histogram()
-# ggplot(Elevation, aes(x=final_depth)) + geom_histogram()
-
-ggplot(Elevation, aes(x=as.factor(topo), y=final_depth)) + geom_boxplot() + geom_point()
-ggplot(Elevation, aes(x=Elevation_Paracou_depth1, y=final_depth)) + geom_point() + geom_smooth(method = "lm")
-
+```{r data visualisation for correlation}
 #create graph without Augurs that do not have high silt occurrences (they are all attributed 100 for analyses purposes)
 ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
-  geom_point(data = subset(Elevation, final_depth != 100)) +
-  geom_smooth(data = subset(Elevation, final_depth != 100), method = "lm") +
+  geom_point(data = subset(Elevation, final_depth <= 100)) +
+  geom_smooth(data = subset(Elevation, final_depth <= 100), method = "lm") +
   theme_minimal() + 
   labs(x = "Elevation (m)", y = "HSD (cm)", title = "HSD-Elevation relationship")
-
-#create graph without Augurs (they are all attributed 100 for analyses purposes)
-ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  theme_minimal() + 
-  labs(x = "Elevation (m)", y = "HSD (cm)", title = "HSD-Elevation relationship")
-
-#create graph without Augurs (they are all attributed 100 for analyses purposes)
-ggplot(Elevation, aes(x = final_depth, y = Elevation_Paracou_depth1)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  theme_minimal() + 
-  labs(x = "HSD", y = "Elevation", title = "HSD-Elevation relationship")
-  
-
 ```
-
-Assumptions for correlation test:
-linearity, normality
-
 
 ##Contour line analysis
 
 ```{r import contour data}
-#write_csv(Augur, "Em_Augur.csv")
 #import data in Qgis
-
 #read QGIS used data
 Contour_40to50 <- read.csv("Correct_Clip_40to50.csv")
 Contour_50to60 <- read.csv("Correct_Clip_50to60.csv")
@@ -190,18 +140,17 @@ Contour_80to90 <- read.csv("Correct_Clip_80to90.csv")
 Contour_90to100 <- read.csv("Correct_Clip_90to100.csv")
 Contour_100 <- read.csv("Correct_Clip_100.csv")
 
-#assign new column to all conotour line dataframes to be able to class them correctly
+#assign new column to all contour line dataframes to be able to class them correctly
 Contour_100$HSD_class <- "No High Silt"
-Contour_40to50$HSD_class <- "40to50"
-Contour_50to60$HSD_class <- "50to60"
-Contour_60to70$HSD_class <- "60to70"
-Contour_70to80$HSD_class <- "70to80"
-Contour_80to90$HSD_class <- "80to90"
-Contour_90to100$HSD_class <- "90to100"
+Contour_40to50$HSD_class <- "40-50"
+Contour_50to60$HSD_class <- "50-60"
+Contour_60to70$HSD_class <- "60-70"
+Contour_70to80$HSD_class <- "70-80"
+Contour_80to90$HSD_class <- "80-90"
+Contour_90to100$HSD_class <- "90-100"
 
 #create one contour line dataframe
 Total_contour <- rbind(Contour_100, Contour_40to50, Contour_50to60, Contour_60to70, Contour_70to80, Contour_80to90, Contour_90to100)
-
 ```
 
 
@@ -251,12 +200,12 @@ Area_7 <- Area_7 %>%
 
 #assign new column to all area dataframes to be able to class them correctly
 Area_7$HSD_class <- "No High Silt"
-Area_1$HSD_class <- "40to50"
-Area_2$HSD_class <- "50to60"
-Area_3$HSD_class <- "60to70"
-Area_4$HSD_class <- "70to80"
-Area_5$HSD_class <- "80to90"
-Area_6$HSD_class <- "90to100"
+Area_1$HSD_class <- "40-50"
+Area_2$HSD_class <- "50-60"
+Area_3$HSD_class <- "60-70"
+Area_4$HSD_class <- "70-80"
+Area_5$HSD_class <- "80-90"
+Area_6$HSD_class <- "90-100"
 
 #get total area per dataframe (so sum areas in each dataframe)
 # List of Area dataframes
@@ -292,16 +241,15 @@ Merged_contour <- merge(Area, Total_contour, by.x = "HSD_class", by.y = "HSD_cla
 #consider HSD class as a factor
 Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
 
-
 #create a continuous variable of HSD
 Merged_contour <- Merged_contour %>%
   mutate(HSD_cont = case_when(
-    HSD_class == "40to50" ~ 44,
-    HSD_class == "50to60" ~ 55,
-    HSD_class == "60to70" ~ 67,
-    HSD_class == "70to80" ~ 75,
-    HSD_class == "80to90" ~ 85,
-    HSD_class == "90to100" ~ 99,
+    HSD_class == "40-50" ~ 44,
+    HSD_class == "50-60" ~ 55,
+    HSD_class == "60-70" ~ 67,
+    HSD_class == "70-80" ~ 75,
+    HSD_class == "80-90" ~ 85,
+    HSD_class == "90-100" ~ 99,
     HSD_class == "No High Silt" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
@@ -311,7 +259,6 @@ Merged_contour <- Merged_contour %>%
 SumArea <- Merged_contour %>%
   distinct(area_class, .keep_all = TRUE) %>%
   select(area_class, HSD_class)
-
 ```
 
 
@@ -336,31 +283,25 @@ AGB_contour <- Merged_contour %>%
 
 #create a continuous variable of HSD
 AGB_contour$HSD_cont = c(105, 44, 55,67, 75, 85, 99)
-AGB_contour <- AGB_contour %>%
+AGB_contour <- AGB_contour %>% #add area in ha
   mutate(sp_richness_ha = sp_richness_density*10000,
-         tree_density_ha = tree_density*10000)
+         tree_density_ha = tree_density*10000) 
 
 ```
 
 
 ```{r analysis tree density}
+#--analysis tree density
+#do a general linear model with poisson distribution as mount_trees is a count
+#offset parameter is used to take plots area into acount (weighting by area)
 glm_density <- glm(amount_trees ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
 
 summary(glm_density)
 
-
-#plot to show tree density per HSD class
-plot(AGB_contour$HSD_class, AGB_contour$tree_density)
-
-ggplot(AGB_contour, aes(x = HSD_class, y = tree_density)) +
-  geom_point() +
-  labs(x = "HSD Class", y = "Tree density", title = "Number of trees in function of different HSD Classes") +
-  theme_minimal()
-
-#plot with ha instead of square meters
+#plot tree density ~ HSD, with ha instead of square meters
 augerPlot_density <- ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
   geom_point() +
-  labs(x = "HSD Class", y = "Tree density (per ha)", title = "(b)") +
+  labs(x = "HSD Class (cm)", y = "Tree density (per ha)", title = "(b)") +
   theme_minimal()
 augerPlot_density
 
@@ -372,23 +313,16 @@ pp<- sum(resid(glm_density, type = "pearson")^2)
 ```
 
 ```{r analysis species richness density}
+#--analysis species richness density
+#as for density, do a glm as richness is a count
 glm_richness <- glm(sp_richness ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
 
 summary(glm_richness)
 
-#plot to show species richness per HSD class
-plot(AGB_contour$HSD_class, AGB_contour$sp_richness_density)
-
-ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_density)) +
-  geom_point() +
-  labs(x = "HSD Class", y = "Species richness (proportioned by area)", title = "Species richness in function of different HSD Classes") +
-  scale_y_continuous(breaks = seq(min(AGB_contour$sp_richness_density), max(AGB_contour$sp_richness_density), by = 0.03), labels = function(x) sprintf("%.3f", x)) +
-  theme_minimal()
-
-#sp richness per ha
+#plot sp richness per ha ~ HSD
 augerPlot_richness <- ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
   geom_point() +
-  labs(x = "HSD Class", y = "Species richness (per ha)", title = "(a)") +
+  labs(x = "HSD Class (cm)", y = "Species richness (per ha)", title = "(a)") +
   scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200)) +
   theme_minimal()
 augerPlot_richness
@@ -398,57 +332,46 @@ augerPlot_richness
 pp<- sum(resid(glm_richness, type = "pearson")^2)
 1 - pchisq(pp, glm_richness$df.resid)
 ```
-40to50 HSD has much higher species richness per area, is this linked to a specific topography? why would this be?
 
 ```{r visual mean DBH}
-#DBH in function of different HSD classes
+#plot DBH in function of different HSD classes
 augerPlot_DBH <- ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
-  labs(x = "HSD Class", y = "DBH", title = "(c)") +
+  labs(x = "HSD Class (cm)", y = "DBH", title = "(c)") +
   theme_minimal()
 augerPlot_DBH
 
 
-library(ggplot2)
-# Filter the data
+# Filter the data to exclude trees with DBH<=10
 filtered_data <- subset(Merged_contour, DBH > 10)
 
 # Create the plot with the filtered data
 NEWaugerPlot_DBH <- ggplot(filtered_data, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
-  labs(x = "HSD Class", y = "DBH", title = "(c)") +
+  labs(x = "HSD Class (cm)", y = "DBH", title = "(c)") +
   theme_minimal()
-
-# Display the plot
 NEWaugerPlot_DBH
-
-
-#mean DBH (one value) per class
-ggplot(data = AGB_contour, aes(HSD_class, mean_DBH)) + geom_boxplot() + geom_point() +
-  theme_minimal()
-
 ```
 
 ```{r analysis of DBH with HSD}
+#--analysis of DBH with HSD
+#linear model between DBH and HSD corrected by log
 model_DBH <- lm(Merged_contour$DBH ~ log(Merged_contour$HSD_cont))
 
 #check assumptions with plots below
-autoplot(model_DBH)
-#or
 par(mfrow = c(2,2))
 plot(model_DBH)
 
-#non normal data
-#maybe make bigger groups of classes
+#non normal data, maybe make bigger groups of classes
 #create a continuous variable of HSD
 Merged_contour_new <- Merged_contour %>%
   mutate(HSD_class = case_when(
-    HSD_class == "40to50" ~ 60,
-    HSD_class == "50to60" ~ 60,
-    HSD_class == "60to70" ~ 60,
-    HSD_class == "70to80" ~ 80,
-    HSD_class == "80to90" ~ 80,
-    HSD_class == "90to100" ~ 80,
+    HSD_class == "40-50" ~ 60,
+    HSD_class == "50-60" ~ 60,
+    HSD_class == "60-70" ~ 60,
+    HSD_class == "70-80" ~ 80,
+    HSD_class == "80-90" ~ 80,
+    HSD_class == "90-100" ~ 80,
     HSD_class == "100" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
@@ -470,7 +393,7 @@ par(mfrow = c(2,2))
 plot(model_DBH_new)
 
 ```
-```{r filter out certaini DBH}
+```{r filter out certain DBH}
 # Filter data for DBH values between 0 and 10
 filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 
@@ -478,228 +401,7 @@ filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
 augerPlot_DBH_inf10 <- ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
   geom_boxplot() +
   geom_point() +
-  labs(x = "HSD Class", y = "DBH (max 10)", title = "(d)") +
+  labs(x = "HSD Class (cm)", y = "DBH (max 10)", title = "(d)") +
   theme_minimal()
 augerPlot_DBH_inf10
-
-#still no difference visible in mean, again outliers that play a big role
-
 ```
-
-
-for mean DBH consider HSD as continuous and see if there is a relationship, also look at max DBH (from the total DBH measurements to also check whether there is a link between this)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##############################################################################################
-##############################################################################################
-
-## Buffer zone analysis
- no idea abandoned now.
-
-```{r create Augur dataframe}
-
-Augur <- dataAugur2022 %>%
-  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Texture_2023"))
-
-#create new texture variable that contains some non-corrected textures
-Augur$final_texture <- ifelse(
-  is.na(dataAugur2022$Texture_2023) & !(dataAugur2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
-  dataAugur2022$texture,
-  dataAugur2022$Texture_2023
-)
-
-#create new column with textures divided in three classes based upon their presence of silt
-Augur$Silt_class <- ifelse(Augur$final_texture == "NA", NA, ifelse(
-  Augur$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur$final_texture %in% c("SL", "SA", "S"), "intermediate", "high")))
-
-
-Augur <- Augur %>% 
-  select(c("sondage_N", "arbre_plus_proche", "topo", "depth_sup", "Silt_class", "final_texture")) %>%
-  na.omit()
-
-```
-
-!There are multiple DBH measurements because some trees have multiple stems! => only keep biggest one
-
-
-```{r define silt appearance depth for every Augur point and merge with botany data}
-
-#creata dataframe in which for every Augur point you have defined depth at which silt concentration becomes high (or if no high it is 100 because consider it as "usefull soil for tree)
-
-Augur <- Augur %>% 
-  group_by(sondage_N) %>%  #group by Augur
-  mutate(depth = ifelse(any(Silt_class == "high"), 
-                         min(depth_sup[Silt_class == "high"]), 
-                         100) ) %>%
-  left_join(Botany, by = c("arbre_plus_proche" = "TreeID")) %>%
-  group_by(sondage_N) %>%
-  filter(DBH == max(DBH)) %>%
-  distinct(sondage_N, .keep_all = TRUE) %>%
-  select(c("sondage_N", "arbre_plus_proche", "topo", "depth", "DBH", "Family", "Genus", "species", "Xutm", "Yutm"))
-  
-```
-
-Points are grouped by distance from center point (arbre_plus_proche)
-
-```{r create good buffer dataframe}
-write_csv(Augur, "Em_Augur.csv")
-#import data in Qgis
-
-Buffer_points <- read.csv("Em_bufferpoints.csv")
-
-
-AGB_buffer <- Buffer_points %>%
-  group_by(sondage_N) %>%
-  mutate(full_species = paste(Genus, species, sep = " ")) %>%
-  summarise(amount_trees = n(),
-            sp_richness = n_distinct(full_species)
-            ) %>%
-  merge(Elevation, by.x = 'sondage_N', by.y = 'sondage_N') %>%
-  select(c("sondage_N", "sp_richness", "amount_trees", "Elevation_Paracou_depth1"))
-
-AGB_buffer <- AGB_buffer %>% rename_at('Elevation_Paracou_depth1', ~'elevation')
-
-Final <- Augur %>%
-  merge(AGB_buffer, by.x = 'sondage_N', by.y = 'sondage_N' )
-
-```
-
-#### data visualisation
-
-```{r quick plots}
-plot(Final$depth, Final$amount_trees)
-plot(Final$depth, Final$sp_richness)
-plot(Final$depth, Final$DBH)
-```
-
-limon and hummus link?
-
-
-#### test if there is an effect of the depth of the silt horizon appearance on the number of trees
-
-it might be interesting to look at type1 test because then you can put importance to your first variables that you put in
-
-```{r amount of trees in buffer zone}
-library(MASS)
-M1 <- glm.nb(amount_trees ~ elevation*depth, data = Final)
-M2 <- glm.nb(amount_trees ~ elevation + depth, data = Final)
-summary(M1)
-summary(M2)
-
-```
-
-very difficult to interpret these results as the predictor variables are strongly correlated, which 
-
-
-```{r aboveground biomass}
-M0 <- lm(Final$amount_trees ~ 1)
-M1 <- lm(Final$amount_trees ~ Final$elevation)
-M2 <- lm(Final$amount_trees ~ Final$depth)
-M3 <- lm(Final$amount_trees ~ Final$elevation + Final$depth, family = "poisson")
-M4 <- glm(Final$amount_trees ~ Final$elevation*Final$depth, family = "poisson")
-summary(M4)
-summary(M3)
-Anova(M4)
-anova(M4)  #if you take everything that depth also explains inside the topo (so sequence matters) then topo significantly explains the amount of trees
-
-#check assumptions for overdispersion for poisson regression
-overdisp_fun <- function(model) { rdf <- df.residual(model) 
-rp <- residuals(model,type="pearson") 
-Pearson.chisq <- sum(rp^2) 
-prat <- Pearson.chisq/rdf 
-pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE) 
-c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval) } 
-overdisp_fun(M1)
-
-install.packages("AER")
-library(AER)
-dispersiontest(M4)
-
-
-#kruskal?
-
-autoplot(M4)  #assumptions do not seem to be met!
-shapiro.test(Final$elevation)
-shapiro.test(Final$depth)
-shapiro.test(Final$amount_trees)
-hist(Final$amount_trees)
-
-# Anova(M0,M3)  #is there a difference by adding both depth and elevaiton in model
-# Anova(M1, M3)   #significant effect of adding depth to model with only elevation
-# 
-# Anova(M0, M1)  #significant effect of adding elevation
-# Anova(M1, M2)  #significant effect of adding depth to model with only elevation
-# Anova(M0, M2)  #significant effect of depth on model with nothing
-# Anova(M3, M4)
-# Anova(M3, M2)  #how interpreting this again?
-
-```
-
-
-
-```{r DBH}
-
-M0 <- lm(Final$DBH ~ 1)
-M1 <- lm(Final$DBH ~ Final$elevation)
-M2 <- lm(Final$DBH ~ Final$depth)
-M3 <- lm(Final$DBH ~ Final$elevation + Final$depth)
-M4 <- lm(Final$DBH ~ Final$elevation*Final$depth)
-
-
-
-# Anova(M0, M1)    #significant effect of adding elevation
-# Anova(M1, M2)    #significant effect of adding depth to model with only elevation (depth explains also things)
-# Anova(M0, M2)   #significant effect of adding depth to model with nothing
-# Anova(M0, M3) 
-# Anova(M3, M4)   #confused with interpretation
-# 
-# autoplot(M1)   #assumptions do not seem to be completed??
-# summary(M3) #how come here then no significance?
-
-
-
-autoplot(M4)
-shapiro.test(Final$DBH)
-
-```
-
-
-
-```{r species richness}
-
-library(MASS)
-# Fit a Negative Binomial regression model
-negbin_model <- glm.nb(amount_trees ~ elevation * depth, data = Final)
-
-# View summary of the model
-summary(negbin_model)
-
-M4 <- glm(Final$sp_richness ~ Final$elevation*Final$depth, family = "poisson")
-summary(M4)
-Anova(M4)
-autoplot(M4)
-shapiro.test(Final$sp_richness)
-hist(Final$sp_richness)
-dispersiontest(M4)
-```
-
-
-
-
