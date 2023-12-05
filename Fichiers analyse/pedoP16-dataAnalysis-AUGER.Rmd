@@ -1,5 +1,5 @@
 ---
-title: "pedo_Augur_Analysis"
+title: "pedo_Auger_Analysis"
 author: "EmilieSanvito"
 date: "2023-10-05"
 output: html_document
@@ -35,11 +35,11 @@ library(vcd)
 
 ```{r upload and structure data}
 #--upload and structure data
-#import data from last year project (36 Augur in the P16)
-dataAugur2022 <- read_excel("DataAuger2022.xlsx", na = "NA")  
+#import data from last year project (36 Auger in the P16)
+dataAuger2022 <- read_excel("DataAuger2022.xlsx", na = "NA")  
 
 #create a new column for topography that only contains the number of the topography 
-dataAugur2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAugur2022$topographie))
+dataAuger2022$topo <- as.numeric(gsub("[^0-9]+", "", dataAuger2022$topographie))
 
 #import botany data
 Botany <- read_excel("DataAuger2022.xlsx", na = "NA", sheet = "Data Giacomo")
@@ -50,39 +50,39 @@ Botany <- Botany %>%
   select(c("TreeID", "Family", "Genus", "species", "DBH", "Xutm", "Yutm"))
 ```
 
-```{r rename titles in Augur data}
-#--rename titles in Augur data
-dataAugur2022 <- dataAugur2022 %>% rename_at('% pente', ~'pente')
-dataAugur2022 <- dataAugur2022 %>% rename_at('Numéro horizon', ~'horizon')
-dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
-dataAugur2022 <- dataAugur2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
-dataAugur2022 <- dataAugur2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
-dataAugur2022 <- dataAugur2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
-dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
-dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
+```{r rename titles in Auger data}
+#--rename titles in Auger data
+dataAuger2022 <- dataAuger2022 %>% rename_at('% pente', ~'pente')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Numéro horizon', ~'horizon')
+dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite inférieure (cm)2', ~'depth_inf')
+dataAuger2022 <- dataAuger2022 %>% rename_at('profondeur limite supérieure (cm)', ~'depth_sup')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Epaisseur (cm)', ~'epaisseur')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Texture corrigée 2023', ~'Texture_2023')
+dataAuger2022 <- dataAuger2022 %>% rename_at('EG %', ~'stone_elements')
+dataAuger2022 <- dataAuger2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
 ```
 
 ## Include new corrected texture data
 
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
-Augur_cor <- dataAugur2022 %>% 
+Auger_cor <- dataAuger2022 %>% 
   select(c("sondage_N", "depth_sup", "texture", "Texture_2023", "topo", "arbre_plus_proche", "mica"))
 
 #create new texture variable that contains some additional corrected textures
-Augur_cor$final_texture <- ifelse(
-  is.na(dataAugur2022$Texture_2023) & !(dataAugur2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
-  dataAugur2022$texture,
-  dataAugur2022$Texture_2023
+Auger_cor$final_texture <- ifelse(
+  is.na(dataAuger2022$Texture_2023) & !(dataAuger2022$sondage_N %in% c("15.1", "15.2", "15.5", "15.7", "19.5", "19.7", "20.5")),
+  dataAuger2022$texture,
+  dataAuger2022$Texture_2023
 )
 
 #create dataframe with only final texture as texture, and then only eliminate the rows for which we have no data for
-Augur_cor <- Augur_cor %>%
+Auger_cor <- Auger_cor %>%
   select(c("sondage_N", "depth_sup", "final_texture", "topo", "mica")) %>%
   na.omit
 
 #create new column with textures divided in three classes based upon their presence of silt
-Augur_cor$Silt_class <- ifelse(Augur_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
+Auger_cor$Silt_class <- ifelse(Auger_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Auger_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
 ```
 
 
@@ -90,19 +90,19 @@ Augur_cor$Silt_class <- ifelse(Augur_cor$final_texture %in% c("A", "Alo", "AS"),
 
 ```{r}
 # filter out all data that isn't on the slope (drainage type DLS)
-Augur_cor_mica <- Augur_cor %>%
+Auger_cor_mica <- Auger_cor %>%
   filter(topo %in% c("5", "4", "3"))
 
 # set mica and silt_class as factor 
-Augur_cor_mica$mica=as.factor(Augur_cor_mica$mica)
-Augur_cor_mica$Silt_class=as.factor(Augur_cor_mica$Silt_class)
+Auger_cor_mica$mica=as.factor(Auger_cor_mica$mica)
+Auger_cor_mica$Silt_class=as.factor(Auger_cor_mica$Silt_class)
 
 # Perform the chi-squared test (don't take ordinal )
-chi_sq_test <- chisq.test(Augur_cor_mica$mica, Augur_cor_mica$Silt_class)
+chi_sq_test <- chisq.test(Auger_cor_mica$mica, Auger_cor_mica$Silt_class)
 print(chi_sq_test)
 
 # Create a contingency table
-contingency_table <- table(Augur_cor_mica$mica, Augur_cor_mica$Silt_class)
+contingency_table <- table(Auger_cor_mica$mica, Auger_cor_mica$Silt_class)
 print(contingency_table)
 
 # Obtain Cramér's V and other statistics
@@ -110,17 +110,17 @@ assoc_stats <- assocstats(contingency_table)
 print(assoc_stats)
 
 #reverte silt class for ease of reading plot
-Augur_cor_mica$Silt_class_revert <- factor(Augur_cor_mica$Silt_class, 
-                                  levels = rev(levels(Augur_cor_mica$Silt_class)))
+Auger_cor_mica$Silt_class_revert <- factor(Auger_cor_mica$Silt_class, 
+                                  levels = rev(levels(Auger_cor_mica$Silt_class)))
 
 colSilt <- viridis(3) #color for silt content classes
 
 #mosaic plot of silt class with mica
-augerPlot_micaCor <- ggplot(data=Augur_cor_mica) +
+augerPlot_micaCor <- ggplot(data=Auger_cor_mica) +
    geom_mosaic(aes(x = product(Silt_class_revert, mica), 
                    fill = Silt_class_revert))+
    labs(title = "Mica Silt relation") +
-   scale_fill_manual(name = "silt content", values = setNames(colSilt, levels(Augur_cor_mica$Silt_class_revert)))+
+   scale_fill_manual(name = "silt content", values = setNames(colSilt, levels(Auger_cor_mica$Silt_class_revert)))+
    theme_minimal()
 augerPlot_micaCor
 # ggsave("pedoP16-plots/augerPlot_micaCor.png", plot = augerPlot_micaCor)
@@ -130,49 +130,44 @@ augerPlot_micaCor
 ## check for correlation between topography and high silt depth occurences
 
 ```{r part for correlation test}
-#For every Augur point you define depth at which silt concentration becomes high, or if intermediate that it is 100
-Augur_cor <- Augur_cor %>%
+#For every Auger point you define depth at which silt concentration becomes high (HSD), or if intermediate that it is 100
+Auger_cor <- Auger_cor %>%
   group_by(sondage_N) %>%
   mutate(
-    final_depth = ifelse(any(Silt_class == "high"), 
+    HSD = ifelse(any(Silt_class == "high"), 
                          min(depth_sup[Silt_class == "high"]), 
                          100)) %>%
   ungroup() %>%
   distinct(sondage_N, .keep_all = TRUE) %>%
-  select(sondage_N, final_depth, topo)
+  select(sondage_N, HSD, topo)
 
 #import elevation data of topography
 Elevation <- read.csv("Elevation_exact.csv")
 
 #merge two dataframes 
 Elevation <- Elevation %>%
-  select(c("sondage_N", "Elevation_Paracou_depth1")) %>%
-  merge(Augur_cor, by.x = 'sondage_N', by.y = 'sondage_N')
+  select(sondage_N, Elevation_Paracou_depth1) %>%
+  rename(Elevation_Paracou = Elevation_Paracou_depth1) %>%
+  merge(Auger_cor, by = 'sondage_N')
 
-#correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of final depth because much more values of no HSD appearance)
-cor(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = "spearman")
-cor.test(Elevation$Elevation_Paracou_depth1, Elevation$final_depth, method = 
+#check normality of data for correlation test
+shapiro.test(Elevation$HSD)
+shapiro.test(Elevation$Elevation_Paracou)
+
+#correlation test between topography and high silt depth appearance, spearman method instead of pearson due to non-normality (of HSD because much more values of no HSD appearance)
+cor.test(Elevation$Elevation_Paracou, Elevation$HSD, method = 
 c("spearman"))
-
-#Filter out rows where final_depth is 100
-Elevation_filtered <- Elevation[Elevation$final_depth != 100,]
-
-# Correlation test between topography and high silt depth appearance, pearson method
-shapiro.test(Elevation_filtered$final_depth)
-shapiro.test(Elevation_filtered$Elevation_Paracou_depth1)
-
-cor(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
-cor.test(Elevation_filtered$Elevation_Paracou_depth1, Elevation_filtered$final_depth, method = "pearson")
 
 ```
 
 ```{r data visualisation for correlation}
-#create graph without Augurs that do not have high silt occurrences (they are all attributed 100 for analyses purposes)
-ggplot(Elevation, aes(x = Elevation_Paracou_depth1, y = final_depth)) +
-  geom_point(data = subset(Elevation, final_depth <= 100)) +
-  geom_smooth(data = subset(Elevation, final_depth <= 100), method = "lm") +
+#create graph with elevation and HSD relationship plotted
+augerPlot_correlation <- ggplot(Elevation, aes(x = Elevation_Paracou, y = HSD)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
   theme_minimal() + 
   labs(x = "Elevation (m)", y = "HSD (cm)", title = "HSD-Elevation relationship")
+augerPlot_correlation
 ```
 
 ##Contour line analysis
@@ -206,45 +201,36 @@ Total_contour <- rbind(Contour_100, Contour_40to50, Contour_50to60, Contour_60to
 #import area data
 Area_1 <- read.csv("Correct_Poly_40to50.csv")
 Area_1 <- Area_1 %>%
-  select(id, Area_1)
-Area_1$Area <- Area_1$Area_1 
-Area_1 <- Area_1 %>%
-  select(id, Area)
+  select(id, Area_1) %>%
+  rename(Area = Area_1)
+
 
 Area_2 <- read.csv("Correct_Em_50to60.csv")
-Area_2$Area <- Area_2$area_1 
 Area_2 <- Area_2 %>%
-  select(id, Area)
+  select(id, area_1) %>%
+  rename(Area = area_1)
 
 Area_3 <- read.csv("Correct_Em_60to70.csv")
 
 Area_4 <- read.csv("Correct_Poly_70to80.csv")
 Area_4 <- Area_4 %>%
-  select(id, Area_1)
-Area_4$Area <- Area_4$Area_1 
-Area_4 <- Area_4 %>%
-  select(id, Area)
+  select(id, Area_1) %>%
+  rename(Area = Area_1)
 
 Area_5 <- read.csv("Correct_Poly_80to90.csv")
 Area_5 <- Area_5 %>%
-  select(id, Area_1)
-Area_5$Area <- Area_5$Area_1 
-Area_5 <- Area_5 %>%
-  select(id, Area)
+  select(id, Area_1) %>%
+  rename(Area = Area_1)
 
 Area_6 <- read.csv("Correct_Poly_90to100.csv")
 Area_6 <- Area_6 %>%
-  select(id, Area_1)
-Area_6$Area <- Area_6$Area_1 
-Area_6 <- Area_6 %>%
-  select(id, Area)
+  select(id, Area_1) %>%
+  rename(Area = Area_1)
 
 Area_7 <- read.csv("Correct_Poly_100.csv")
 Area_7 <- Area_7 %>%
-  select(id, Area_1)
-Area_7$Area <- Area_7$Area_1 
-Area_7 <- Area_7 %>%
-  select(id, Area)
+  select(id, Area_1) %>%
+  rename(Area = Area_1)
 
 #assign new column to all area dataframes to be able to class them correctly
 Area_7$HSD_class <- "No High Silt"
@@ -292,12 +278,12 @@ Merged_contour$HSD_class <- as.factor(Merged_contour$HSD_class)
 #create a continuous variable of HSD
 Merged_contour <- Merged_contour %>%
   mutate(HSD_cont = case_when(
-    HSD_class == "40-50" ~ 44,
+    HSD_class == "40-50" ~ 45,
     HSD_class == "50-60" ~ 55,
-    HSD_class == "60-70" ~ 67,
+    HSD_class == "60-70" ~ 65,
     HSD_class == "70-80" ~ 75,
     HSD_class == "80-90" ~ 85,
-    HSD_class == "90-100" ~ 99,
+    HSD_class == "90-100" ~ 95,
     HSD_class == "No High Silt" ~ 105,
     # Add more conditions for other HSD_class values here
     TRUE ~ NA_real_
@@ -340,8 +326,8 @@ AGB_contour <- AGB_contour %>% #add area in ha
 
 ```{r analysis tree density}
 #--analysis tree density
-#do a general linear model with poisson distribution as mount_trees is a count
-#offset parameter is used to take plots area into acount (weighting by area)
+#do a general linear model with poisson distribution as amount_trees is a count
+#offset parameter is used to take plots area into account (weighting by area)
 glm_density <- glm(amount_trees ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
 
 summary(glm_density)
@@ -349,19 +335,21 @@ summary(glm_density)
 #plot tree density ~ HSD, with ha instead of square meters
 augerPlot_density <- ggplot(AGB_contour, aes(x = HSD_class, y = tree_density_ha)) +
   geom_point() +
-  labs(x = "HSD Class (cm)", y = "Tree density (per ha)", title = "(b)") +
+  labs(x = "HSD class (cm)", y = "Tree density (per ha)", title = "(b)") +
   theme_minimal()
 augerPlot_density
 
 #check overdispersion
 #If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
-pp<- sum(resid(glm_density, type = "pearson")^2)
-1 - pchisq(pp, glm_density$df.resid)
+pp <- sum(resid(glm_density, type = "pearson")^2)
+overdispersion_parameter_density <- 1 - pchisq(pp, glm_density$df.resid)
+overdispersion_parameter_density
 
 ```
 
-```{r analysis species richness density}
-#--analysis species richness density
+
+```{r analysis species richness}
+#--analysis species richness 
 #as for density, do a glm as richness is a count
 glm_richness <- glm(sp_richness ~ HSD_cont, data = AGB_contour, family = poisson(link = "log"), offset = log(area_class))
 
@@ -370,7 +358,7 @@ summary(glm_richness)
 #plot sp richness per ha ~ HSD
 augerPlot_richness <- ggplot(AGB_contour, aes(x = HSD_class, y = sp_richness_ha)) +
   geom_point() +
-  labs(x = "HSD Class (cm)", y = "Species richness (per ha)", title = "(a)") +
+  labs(x = "HSD class (cm)", y = "Species richness (per ha)", title = "(a)") +
   scale_y_continuous(breaks = seq(min(0), max(AGB_contour$sp_richness_ha), by = 200)) +
   theme_minimal()
 augerPlot_richness
@@ -378,27 +366,27 @@ augerPlot_richness
 #check overdispersion
 #If this parameter approaches 2 this might indicate over or under dispersion (and thus a bad fitting model). 
 pp<- sum(resid(glm_richness, type = "pearson")^2)
-1 - pchisq(pp, glm_richness$df.resid)
+overdispersion_parameter_richness <- 1 - pchisq(pp, glm_richness$df.resid)
+overdispersion_parameter_richness
 ```
 
-```{r visual mean DBH}
+```{r analysis DBH}
 #plot DBH in function of different HSD classes
 augerPlot_DBH <- ggplot(Merged_contour, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
-  labs(x = "HSD Class (cm)", y = "DBH", title = "(c)") +
+  labs(x = "HSD class (cm)", y = "DBH (cm)", title = "(c)") +
   theme_minimal()
 augerPlot_DBH
 
-
-# Filter the data to exclude trees with DBH<=10
-filtered_data <- subset(Merged_contour, DBH > 10)
+# Filter the data to exclude trees with DBH<=50
+DBH_50 <- subset(Merged_contour, DBH > 50)
 
 # Create the plot with the filtered data
-NEWaugerPlot_DBH <- ggplot(filtered_data, aes(x = HSD_class, y = DBH)) + 
+augerPlot_DBH_50 <- ggplot(DBH_50, aes(x = HSD_class, y = DBH)) + 
   geom_boxplot() + 
-  labs(x = "HSD Class (cm)", y = "DBH", title = "(c)") +
+  labs(x = "HSD class (cm)", y = "DBH (cm)", title = "(d)") +
   theme_minimal()
-NEWaugerPlot_DBH
+augerPlot_DBH_50
 ```
 
 ```{r analysis of DBH with HSD}
@@ -410,46 +398,5 @@ model_DBH <- lm(Merged_contour$DBH ~ log(Merged_contour$HSD_cont))
 par(mfrow = c(2,2))
 plot(model_DBH)
 
-#non normal data, maybe make bigger groups of classes
-#create a continuous variable of HSD
-Merged_contour_new <- Merged_contour %>%
-  mutate(HSD_class = case_when(
-    HSD_class == "40-50" ~ 60,
-    HSD_class == "50-60" ~ 60,
-    HSD_class == "60-70" ~ 60,
-    HSD_class == "70-80" ~ 80,
-    HSD_class == "80-90" ~ 80,
-    HSD_class == "90-100" ~ 80,
-    HSD_class == "100" ~ 105,
-    # Add more conditions for other HSD_class values here
-    TRUE ~ NA_real_
-  ))
-
-#make it so the HSD_class is seen as a factor
-Merged_contour_new$HSD_class <- as.factor(Merged_contour_new$HSD_class)
-
-#plot the DBH and HSD class that are grouped together
-ggplot(data = Merged_contour_new, aes(HSD_class, DBH)) + geom_boxplot()  #still no difference
-
-#create model with fewer classes
-model_DBH_new <- lm(Merged_contour_new$DBH ~ Merged_contour_new$HSD_cont)
-
-#check assumptions with plots below
-autoplot(model_DBH_new)                #nothing changed in assumptions either, still not met
-#or
-par(mfrow = c(2,2))
-plot(model_DBH_new)
-
-```
-```{r filter out certain DBH}
-# Filter data for DBH values between 0 and 10
-filtered_DBH <- subset(Merged_contour, DBH >= 0 & DBH <= 10)
-
-# Plot the filtered data
-augerPlot_DBH_inf10 <- ggplot(data = filtered_DBH, aes(HSD_class, DBH)) +
-  geom_boxplot() +
-  geom_point() +
-  labs(x = "HSD Class (cm)", y = "DBH (max 10)", title = "(d)") +
-  theme_minimal()
-augerPlot_DBH_inf10
+#no linear dependency
 ```
