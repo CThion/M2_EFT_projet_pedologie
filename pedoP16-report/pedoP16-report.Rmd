@@ -1,34 +1,41 @@
 ---
-title: "Title of the Article"
+title: "Impact of superficial lateral drainage on tree root distribution and forest community structure in French Guiana"
 author:
-  - name: "First Author's name"
+  - name: "SANVITO Emilie"
     authsuperscript: 1*
-  - name: "Second Author's name"
+  - name: "DOBETSBERGER Greta"
     authsuperscript: 2
+  - name: "THION Clément"
+    authsuperscript: 3
 affiliation:
   - affsuperscript: 1
-    dptuniv: "Department / University"
+    dptuniv: "Tropimundo"
     address: >
       Street address,
       Zip code,
-      Country.
+      Belgium.
   - affsuperscript: 2
-    dptuniv: "Department / University"
+    dptuniv: "Université des Antilles"
     address: >
       Street address,
       Zip code,
-      Country.
+      France.
+  - affsuperscript: 3
+    dptuniv: "AgroParisTech Montpellier"
+    address: >
+      648 Rue Jean François Breton,
+      34090,
+      France.
 corrauthor:
-    email: name@company.com
-    url: https://www.company.com
+    email: emilie@sanvito.be
 abstract: >
   This study investigates the impact of drainage barriers on tree root distribution and forest structure in Paracou, French Guiana. Using the depth at which a horizon high in silt (HSD, high silt depth) occurs as a proxy for drainage barrier, the study explores the relationship between drainage barriers, topography, and forest community structure. Despite expectations of reduced root density in soil horizons with high silt content, no significant reduction of root density was found. Species richness and tree density showed a slight but significant decrease with increasing HSD, while diameter at breast height (DBH) exhibited minimal variation.  The strong association between silt and mica content suggests the potential use of mica as a practical proxy for silt in future studies, streamlining data collection. These findings contribute valuable insights into the complexity of soil-root interactions in tropical ecosystems. Further research with increased sampling density and direct data collection is recommended to refine and expand upon these initial observations.
-keywords: [root vertical density, tropical forest structure, drainage, drought]
+keywords: [root, tropical forest, community structure, drainage, pedology, drought, Paracou, French Guyana]
 journalinfo: "Publication reference"
 archive: "DOI: xxx/xx"
 # Date format: '%Y %B %d' for distill
 date: "`r format(Sys.time(), '%Y %B %d')`"
-url: https://GitHubID.github.io/Repository/
+url: git@github.com:CThion/M2_EFT_projet_pedologie.git
 github-repo: GitHubID/Repository
 lang: en-US
 otherlangs: [fr-FR,it]
@@ -37,7 +44,7 @@ corrauthorlabel: Corresponding author
 bibliography: references.bib
 biblio-style: chicago
 toc-depth: 3
-fontsize: 10pt
+fontsize: 12pt
 preamble: >
   \hyphenation{bio-di-ver-si-ty sap-lings}
 always_allow_html: yes
@@ -58,8 +65,8 @@ output:
         github: yes
   bookdown::html_document2:
     base_format: distill::distill_article
-    toc: yes
-    toc_float: yes
+    toc: no
+    toc_float: no
     code_folding: show
     highlight_downlit: yes
   bookdown::word_document2: default
