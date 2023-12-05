@@ -1,7 +1,0 @@
-name: unknown
-datum: wgs84
-ellps: wgs84
-proj: utm
-zone: 38
-south: defined
-no_defs: defined

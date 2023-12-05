@@ -1,3 +1,0 @@
-COMMAND: v.in.ogr -o input="Em_augur.shp" output="grass_Em_augur" min_area=0.0001 type="" snap=-1
-GISDBASE: C:\Users\emili\OneDrive\Documents\OneDrive\M2_EFT_projet_pedologie\Qgis\GRASS
-LOCATION: FrenchGuiana MAPSET: grass_first USER: emilie DATE: Wed Nov 29 10:28:43 2023
