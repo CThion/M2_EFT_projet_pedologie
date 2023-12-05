@@ -28,9 +28,9 @@ library(FSA)        #library for dunn test
 
 library(viridis) #to use color gradient
 library(ggmosaic) #to do mosaic plot
-# save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
+save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
 
-library(vdc)
+library(vcd)
 ```
 
 ```{r upload and structure data}
@@ -123,6 +123,7 @@ augerPlot_micaCor <- ggplot(data=Augur_cor_mica) +
    scale_fill_manual(name = "silt content", values = setNames(colSilt, levels(Augur_cor_mica$Silt_class_revert)))+
    theme_minimal()
 augerPlot_micaCor
+# ggsave("pedoP16-plots/augerPlot_micaCor.png", plot = augerPlot_micaCor)
 ```
 
 
