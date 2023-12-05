@@ -26,7 +26,11 @@ library(ggfortify)   #for autoplot function
 library(datasets)   #library for KW test
 library(FSA)        #library for dunn test
 
+library(viridis) #to use color gradient
+library(ggmosaic) #to do mosaic plot
 # save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
+
+library(vdc)
 ```
 
 ```{r upload and structure data}
@@ -58,14 +62,12 @@ dataAugur2022 <- dataAugur2022 %>% rename_at('EG %', ~'stone_elements')
 dataAugur2022 <- dataAugur2022 %>% rename_at('Réserve eau utile (mm) NEW...35', ~'water_reservoir')
 ```
 
-
-## check for correlation between topography and high silt depth occurences
-
+## Include new corrected texture data
 
 ```{r part for correlation test}
 #create a cleaner dataframe with only necessary informations
 Augur_cor <- dataAugur2022 %>% 
-  select(c("sondage_N", "depth_sup", "texture", "Texture_2023", "topo", "arbre_plus_proche"))
+  select(c("sondage_N", "depth_sup", "texture", "Texture_2023", "topo", "arbre_plus_proche", "mica"))
 
 #create new texture variable that contains some additional corrected textures
 Augur_cor$final_texture <- ifelse(
@@ -76,12 +78,57 @@ Augur_cor$final_texture <- ifelse(
 
 #create dataframe with only final texture as texture, and then only eliminate the rows for which we have no data for
 Augur_cor <- Augur_cor %>%
-  select(c("sondage_N", "depth_sup", "final_texture", "topo")) %>%
+  select(c("sondage_N", "depth_sup", "final_texture", "topo", "mica")) %>%
   na.omit
 
 #create new column with textures divided in three classes based upon their presence of silt
 Augur_cor$Silt_class <- ifelse(Augur_cor$final_texture %in% c("A", "Alo", "AS"), "low", ifelse(Augur_cor$final_texture %in% c("SL", "SA", "S"), "intermediate", "high"))
+```
 
+
+## Test mica correlation with silt content
+
+```{r}
+# filter out all data that isn't on the slope (drainage type DLS)
+Augur_cor_mica <- Augur_cor %>%
+  filter(topo %in% c("5", "4", "3"))
+
+# set mica and silt_class as factor 
+Augur_cor_mica$mica=as.factor(Augur_cor_mica$mica)
+Augur_cor_mica$Silt_class=as.factor(Augur_cor_mica$Silt_class)
+
+# Perform the chi-squared test (don't take ordinal )
+chi_sq_test <- chisq.test(Augur_cor_mica$mica, Augur_cor_mica$Silt_class)
+print(chi_sq_test)
+
+# Create a contingency table
+contingency_table <- table(Augur_cor_mica$mica, Augur_cor_mica$Silt_class)
+print(contingency_table)
+
+# Obtain Cramér's V and other statistics
+assoc_stats <- assocstats(contingency_table)
+print(assoc_stats)
+
+#reverte silt class for ease of reading plot
+Augur_cor_mica$Silt_class_revert <- factor(Augur_cor_mica$Silt_class, 
+                                  levels = rev(levels(Augur_cor_mica$Silt_class)))
+
+colSilt <- viridis(3) #color for silt content classes
+
+#mosaic plot of silt class with mica
+augerPlot_micaCor <- ggplot(data=Augur_cor_mica) +
+   geom_mosaic(aes(x = product(Silt_class_revert, mica), 
+                   fill = Silt_class_revert))+
+   labs(title = "Mica Silt relation") +
+   scale_fill_manual(name = "silt content", values = setNames(colSilt, levels(Augur_cor_mica$Silt_class_revert)))+
+   theme_minimal()
+augerPlot_micaCor
+```
+
+
+## check for correlation between topography and high silt depth occurences
+
+```{r part for correlation test}
 #For every Augur point you define depth at which silt concentration becomes high, or if intermediate that it is 100
 Augur_cor <- Augur_cor %>%
   group_by(sondage_N) %>%

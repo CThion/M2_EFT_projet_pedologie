@@ -186,21 +186,24 @@ Muscovite (white mica) degrades into kaolinite (Nicolini et al. 2009) with a par
 All analyses were performed in R (version 4.2.2) (R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/) and QGIS (version 3.28 Firenze).
 
 # Results
-```{r, echo=FALSE}
+```{r include=FALSE}
 load(file = "pedoP16_data-PIT.rda") #load data for pit analysis
 load(file = "pedoP16_data-AUGER.rda") #load data for auger analysis
 library(cowplot) #to plot several ggplot on a single frame
 library(ggplot2) #for theme function
+```
 
+
+```{r include=FALSE}
 #create a function to ajuste plot labels when using cowplot
 adjust_plot <- function(plot, title_size = 6, legend_size = 4) {
   plot +
     theme(
-      plot.title = element_text(size = title_size),
-      legend.text = element_text(size = legend_size),
-      legend.title = element_text(size = legend_size),
-      axis.title = element_text(size = 4),
-      axis.text = element_text(size = 3),
+      plot.title = element_text(size = 12),
+      legend.text = element_text(size = 6),
+      legend.title = element_text(size = 6),
+      axis.title = element_text(size = 9),
+      axis.text = element_text(size = 5),
       legend.spacing = unit(4, units = "mm"),
       legend.key.size = unit(2,units = "mm")
     )
@@ -214,8 +217,8 @@ In contrast to our expectations, the four pits show similar root index variation
 
 ```{r pit, echo=FALSE, fig.cap="(ref:pit)", fig.env="figure*", out.extra=""}
 plot_grid(
-  adjust_plot(plot_rootBiomassSilt), 
-  adjust_plot(plot_SiltcontentProfile),
+  adjust_plot(pitPlot_SiltcontentProfile),
+  adjust_plot(pitPlot_rootIndexSilt), 
   nrow = 1, ncol = 2
 )
 ```
@@ -230,19 +233,6 @@ Fig. 2c and 2d illustrate the relationship between the DBH and HSD classes. The 
 (ref:auger) Forest structure indicators relation with HSD (high silt depth) class. a) Species richness (per ha) in function of HSD classes, b) Tree density (per ha) in function of HSD classes, c) DBH (diameter at breast height) in function of HSD classes, d) DBH filtered (max value = 10 cm) in function of HSD classes
 
 ```{r auger, echo=FALSE, fig.cap="(ref:auger)", fig.env="figure*", out.extra=""}
-adjust_plot <- function(plot, title_size = 6, legend_size = 4) {
-  plot +
-    theme(
-      plot.title = element_text(size = title_size),
-      legend.text = element_text(size = legend_size),
-      legend.title = element_text(size = legend_size),
-      axis.title = element_text(size = 4),
-      axis.text = element_text(size = 3),
-      legend.spacing = unit(4, units = "mm"),
-      legend.key.size = unit(2,units = "mm")
-    )
-}
-
 plot_grid(
   adjust_plot(augerPlot_richness), 
   adjust_plot(augerPlot_density),
@@ -279,3 +269,30 @@ Caution is necessary when interpreting these results. Firstly, we chose to use o
 Our findings indicate a strong association between silt and mica content. Therefore, we can deduct that with high silt content we have a high mica content. Given the easy to detect micas due to their shiny nature, defining the HSD by looking at high mica content instead of high silt might simplify and expedite the data collection process. This approach may offer a more efficient means of assessing drainage barrier depth in Paracou. 
 
 With our study, we showed that soil-root interactions are highly relevant and influence tree community structure. By exploring the connections between superficial lateral drainage on slopes, forest structure indicators and root density, we hope to/try to/provided? provide insights on how drainage barriers might affect forest communities (in Paracou). However, further studies on a larger scale are needed to gain a clearer picture of how Amazonian forests will develop in the future (are we allowed to say this, although ALT is already trying to do that?).
+
+# Appendix
+
+(ref:paracouPlotLocation) Map of the Plot 16 at Paracou, adapted from  Dogny Piette and Corbera Serrajorada (2022).
+
+<aside>
+```{r paracouPlotLocation, fig.cap="(ref:paracouPlotLocation)", echo=FALSE, out.width='90%'}
+knitr::include_graphics("images/paracouPlotLocation.png")
+```
+</aside>
+
+
+(ref:Final_ContourHSD_map) HSD contour line map of subplots 14, 15, 19 and 20 of the P16.
+<aside>
+```{r Final_ContourHSD_map, fig.cap="(ref:Final_ContourHSD_map)", echo=FALSE, out.width='90%'}
+knitr::include_graphics("images/Final_ContourHSD_map.png")
+```
+</aside>
+
+
+(ref:augerPlot_micaCor) Mosaic plot displaying the relationship between mica and silt content. Dark grey represents high silt content, grey represents moderate silt content, and light grey signifies low silt content. Mica content ranges from 0 to 3, denoting low (0) to high (3) levels.
+<aside>
+```{r augerPlot_micaCor, fig.cap="(ref:augerPlot_micaCor)", echo=FALSE, out.width='90%'}
+knitr::include_graphics("images/augerPlot_micaCor.png")
+```
+</aside>
+
