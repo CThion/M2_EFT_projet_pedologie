@@ -28,7 +28,7 @@ library(FSA)        #library for dunn test
 
 library(viridis) #to use color gradient
 library(ggmosaic) #to do mosaic plot
-save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
+#save(list = ls(all.names = TRUE), file = "pedoP16_data-AUGER.rda") #save all data
 
 library(vcd)
 ```
