@@ -214,13 +214,13 @@ Pit excavation allows the collection of root distribution data \citep{freschetSt
 
 We implemented a standardized experimental design, ensuring uniform topographical conditions for the soil pits. All pits were excavated at a mid-slope position with a consistent inclination of 17-18\%, characterized by superficial lateral drainage . Potential pits were prospected using an auger in order to dig pits with maximum HSD variability. Based on \citep{epronSpatialVariationSoil2006} we expected the HSD to be between 60 cm and 80 cm deep. Rectangular pits, 100 cm deep and 50 cm wide, were dug with pickaxes and spades.
 
-After cleaning the exposed soil surface in the pits by scraping, colour and texture changes were used to identify horizons (Appendix C-3) on one side of the pit \citep{ferryGeneseFonctionnementHydrique2003}. For each horizon, the depth was measured, mica content was visually estimated from 0 (no mica) to 3 (high mica content), and soil samples were moistened to estimate the texture by touch \citep{jahnGuidelinesSoilDescription2006}. We used \citet{jamagneSoilMappingVital1977} soil texture triangle. For two sides of the pit, we counted the roots using a 100 x 50 cm grid subdivided in squares of 10 x 10 cm \citep{freschetStartingGuideRoot2021}, to characterise RVD. In each square, roots were counted and classified by diameter (\textless{} 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm).
+After cleaning the exposed soil surface in the pits by scraping, colour and texture changes were used to identify horizons (Appendix C Fig. @ref(fig:pitPlot\_TextureProfile)) on one side of the pit \citep{ferryGeneseFonctionnementHydrique2003}. For each horizon, the depth was measured, mica content was visually estimated from 0 (no mica) to 3 (high mica content), and soil samples were moistened to estimate the texture by touch \citep{jahnGuidelinesSoilDescription2006}. We used \citet{jamagneSoilMappingVital1977} soil texture triangle. For two sides of the pit, we counted the roots using a 100 x 50 cm grid subdivided in squares of 10 x 10 cm \citep{freschetStartingGuideRoot2021}, to characterise RVD. In each square, roots were counted and classified by diameter (\textless{} 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm).
 
 \hypertarget{auger-and-botanical-data}{%
 \subsection{Auger and botanical data}\label{auger-and-botanical-data}}
 
-In addition to our pit data, we used 36 auger samples collected during a 2022 data collection campaign on the P16 of Paracou, in the subplots 14, 15, 19 and 20 (Appendix 1 Fig. 1). In contrast to the pit data collection, root abundance was not sampled. For the complete auger collection method, we refer to \citet{dognypietteAbioticFactorsRelated}.
-The botanical data corresponds to the 2020 inventory of the GUYAFOR tree database, which monitors trees of diameter at Breast Height (DBH) superior to 10 cm. In our study area, this data was completed with data from the ALT project, which also included trees of \(DBH > 1\) cm.
+In addition to our pit data, we used 36 auger samples collected during a 2022 data collection campaign on the P16 of Paracou, in the subplots 14, 15, 19 and 20 (Appendix A, Fig. \ref{fig:HSDMapwithBFandPL}). The auger samples were positioned with a spacing of 33 meters between each sampling point. In contrast to the pit data collection, root abundance was not sampled. For the complete auger collection method, we refer to \citet{dognypietteAbioticFactorsRelated}.
+The botanical data corresponds to the 2020 inventory of the GUYAFOR tree database, which monitors trees of Diameter at Breast Height (DBH) superior to 10 cm. In our study area, this data was completed with data from the ALT project, which also included trees of DBH \textgreater{} 1 cm.
 
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
@@ -228,17 +228,20 @@ The botanical data corresponds to the 2020 inventory of the GUYAFOR tree databas
 \hypertarget{pit-data-analysis}{%
 \subsubsection{Pit data analysis}\label{pit-data-analysis}}
 
-As for the auger data, soil textures in the pits were grouped into \enquote{high}, \enquote{intermediate}, and \enquote{low} silt content. Given the small sample size (4 pits), we chose to only conduct a visual analysis, concentrating on discernible tendencies. As roots were counted per layer of 10 cm, and soil texture was determined per soil horizon, we assigned a texture class to every 10 cm of the soil.
-Root index was calculated by weighting each root count with its corresponding maximum diameter class. We then assessed the relation between root index and silt content. Root index was compared between pits for a specific depth range to account for the effect that root index decreases exponentially with depth.
+We regrouped the soil textures into a categorial variable \enquote{silt content}, identified using the texture triangle \citep{jamagneSoilMappingVital1977}: low (A, Alo, AS), intermediate (SL, SA, S), and high (LSA, LAS, LS). We defined the depth (cm) at which the silt content changed to high for each pit, which we refer to as \enquote{high silt depth} (HSD). HSD is used to determine the depth of the drainage barrier, which is characterised by a silty texture \citep{ferryGeneseFonctionnementHydrique2003, humbelCaracterisationParMesures1978}. Given the small sample size (4 pits), we chose to only conduct visual analysis of HSD effect on RVD. As roots were counted per layer of 10 cm, and soil texture was determined per soil horizon, we assigned a texture class to every 10 cm layer of the soil.
+
+In order to approximate root biomass, a root index was calculated by weighing each root count with its corresponding minimum diameter class and summing the totality weighted count. Using the minimum diameter causes leadsus to an underestimation ofe the total root biomass but although it remains valuable is still useful for pit comparison.\\
+\(RI_d = \sum_{i=1}^4 r_i n_i\), with \(d\) the layer depth (cm), \(i\) the indice of the diameter class (\textless{} 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm), \(r_i \in [1, 2, 5, 10]\) the minimum root diameter, \(n_i\) the count of root in diameter class \(i\). The minimum root diameter of the first class (\textless2mm) is set to 1mm as we assume it is the smallest diameter detectable by bare eye.
+
+We then assessed the relation between root index and silt content. Root index was compared between pits 2 and 3 at the depth of 50-70 cm. This depth range is where maximum HSD variation between two pits occurs. Fixing the depth accounts for the effect that root index decreases exponentially with depth. We calculated the decrease of root index in the selected depth range (total root index at 50-70 cm divided by total root index at 0-50 cm) for pits 2 and 3 and compared them.
 
 \hypertarget{auger-and-botanical-data-analysis}{%
 \subsubsection{Auger and botanical data analysis}\label{auger-and-botanical-data-analysis}}
 
-Out of the 36 auger measurements available, we focused our analysis on the subset of 29 measurements that included texture class data. The auger points were located using the coordinates of the closest inventoried tree on the plot. We regrouped the soil textures into a categorial variable \enquote{silt content}, based on silt content deducted from the texture triangle (Jamagne, 1977): low (A, Alo, AS), intermediate (SL, SA, S), and high (LSA, LAS, LS). We defined the depth (cm) at which the silt content changed to high for each auger sample, which we refer to as \enquote{high silt depth} (HSD). HSD is used to indicate the depth of the drainage barrier, which has a silty-clay texture (Ferry, 2002; Humbel, 1978). For auger points without any horizons high in silt, we defined a depth of 100 cm, which is the maximum depth of the auger measurements. As topography, besides drainage type, strongly influences forest community structure (Baldeck et al.~2013), we did a correlation test (Spearman method due to non-normality of HSD) between elevation (m) and HSD (cm).
-We map the area where auger samples were taken and created contour lines based on the values of HSD of the different auger points (Appendix 1, Fig. 2). The contour lines were created with the Contour Plugin in QGIS. We employed 10 cm contour line intervals, resulting in the formation of seven distinct HSD classes, spanning depths from 40 cm to 100 cm. With this approach, we successfully interpolated HSD values spatially across nearly the entire 4-ha study area. Every tree on the map could therefore be linked to a certain HSD class and the corresponding coverage area of each HSD class was also determined.
-Species richness and total number of trees per HSD class were calculated for the trees on slopes. Due to the ordinal nature of the different HSD classes, they cannot be considered as a categorical variable in an Anova test. Hence, we assigned a specific intermediate HSD value to each HSD class; for example, an HSD class ranging from 40 to 50 cm was designated the value of 45. This creates a continuous HSD-value, allowing us to perform a Poisson regression for both species richness and number of trees (HSD continuous values as predictor, species richness or number of trees as response, offset= log(area per HSD class) ). The area The relationship between DBH and HSD did not show a distinct linear dependency (Fig. 1c and 1d), making it difficult to construct a precise model.
-Muscovite (white mica) degrades into kaolinite (Nicolini et al.~2009) with a particle size classified as silts. Thus, to complement our detection of the drainage barrier, we try to use mica content as a complementary proxy of silt content. A chi-squared test was done to quantitatively assess the association between silt content (categorical variable) and mica content (categorical variable) in the different horizons of the auger data.
-
+Out of the 36 auger measurements available, we focused our analysis on the subset of 29 measurements that contained texture class data. The auger points were located using the coordinates of the closest inventoried tree on the plot. As for the pit data , soil textures in the pits were grouped into \enquote{high}, \enquote{intermediate}, and \enquote{low} silt content, and HSD was defined for each auger point following the same methodology as employed for the pit data. We defined the depth (cm) at which the silt content changed to high for each auger sample, which we refer to as \enquote{high silt depth} (HSD). HSD is used to indicate the depth of the drainage barrier, characterised by a silty texture (Ferry, 2002; Humbel, 1978). For auger points without any horizons high in silt, we defined HSD to be 100 cm, which is the maximum depth of the auger measurements . As topography, besides drainage type, strongly influences forest community structure (Baldeck et al., 2013; Ferry et al., 2010) and can be correlated with soil texture and drainage (Epron, 2006), we did a correlation test (Spearman method due to non-normality of HSD) between elevation (m) and HSD (cm).\\
+We mapped the area where auger samples were taken and created contour lines based on the values of HSD of the different auger points (Appendix A Fig. 4). The contour lines were created with the Contour Plugin in QGIS. We employed 10 cm contour line intervals, resulting in the formation of seven distinct HSD classes, from 40 cm to 100 cm deep. With this approach, we interpolated HSD values spatially across nearly the entire 4 ha study area. Every tree on the map could therefore be linked to a certain HSD class and the corresponding coverage area (m2) of each HSD class was also determined.
+Only slopes were considered during further analysis. Topographical data comes from Dourdain (2022), which defines slope as the zone with a slope \textgreater{} 25 \% and the absence of a permanent water table , no deeper than 1 m in the middle of the dry season. For each HSD class species richness was extracted from the botanical data by counting the number of species present in the area. The total number of trees was extracted by counting the number of trees present in the area. Due to the ordinal nature of the different HSD classes, they cannot be considered as a categorical variable. Hence, we assigned a specific intermediate HSD value to each HSD class. For example, an HSD class from 40 cm to 50 cm was designated the value of 45 cm. This creates a continuous HSD-value, allowing us to perform a Poisson regression for both species richness and number of trees (HSD continuous values as predictor, species richness or number of trees as response). The areas covered by a specific HSD class varied between 1015 m2 (HSD 40-50 cm) and 5494 m2 (HSD 90-100 cm), with the total area considered being 21055 m2 . To take into account that some HSD classes cover a bigger area than others, offset is set to logarithm of area per HSD class in the model. This way the number of trees and species richness per area are modelled. The relationship between DBH (cm) and HSD (cm) did not show linear dependency (Fig. 3c and 3d), making it difficult to construct a precise model.\\
+Muscovite (white mica) degrades into kaolinite (Nicolini et al.~2009) with a particle size classified as silts . Thus, to complement our detection of the drainage barrier, we try to use mica content as a complementary indicator of silt content. A chi-squared test was done to quantitatively assess the association between silt content (categorical variable) and mica content (categorical variable) in the different horizons of the auger data. Cramer's V was calculated to indicate the strength and direction of the association. We tried to replace silt content by mica content for the pit data analysis, and verified whether the results were similar.
 All analyses were performed in R (version 4.2.2) (R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL \url{https://www.R-project.org/}) and QGIS (version 3.28 Firenze).
 
 \hypertarget{results}{%
@@ -337,7 +340,67 @@ Le temps passe et la mort approche.
 
 }
 
-\caption{HSD contour line map of subplots 14, 15, 19 and 20 of the P16.}(\#fig:HSD_MapwithBFandPL)
+\caption{HSD contour line map of subplots 14, 15, 19 and 20 of the P16.}\label{fig:HSDMapwithBFandPL}
+\end{figure}
+
+\normalsize
+
+
+
+\scriptsize
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/augerPlot_micaCor} 
+
+}
+
+\caption{Mosaic plot displaying the relationship between mica and silt content. Dark grey represents high silt content, grey represents moderate silt content, and light grey signifies low silt content. Mica content ranges from 0 to 3, denoting low (0) to high (3) levels.}\label{fig:augerPlotmicaCor}
+\end{figure}
+
+\normalsize
+
+
+
+\scriptsize
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{pedoP16-report_files/figure-latex/pitPlotdiameterClassDistinct-1} 
+
+}
+
+\caption{Root quantity for all diameter classes for all pits. rd1, rd2, rd3, rd4 correspond respectively with diameter classes of \textless{} 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm. For silt content, hight is LSA or LAS, intermediate is SL or SA, and low is AS or A.}\label{fig:pitPlotdiameterClassDistinct}
+\end{figure}
+
+\normalsize
+
+
+
+\scriptsize
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{pedoP16-report_files/figure-latex/pitPlotrootIndexMicas-1} 
+
+}
+
+\caption{Root index across soil depths in different pits, considering varying levels of mica content ranging from low (0) to high (3).}\label{fig:pitPlotrootIndexMicas}
+\end{figure}
+
+\normalsize
+
+
+
+\scriptsize
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{pedoP16-report_files/figure-latex/pitPlotTextureProfile-1} 
+
+}
+
+\caption{Soil texture profiles of the four pits.}\label{fig:pitPlotTextureProfile}
 \end{figure}
 
 \normalsize
