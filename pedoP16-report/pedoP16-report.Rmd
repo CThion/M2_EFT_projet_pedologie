@@ -188,7 +188,7 @@ The botanical data corresponds to the 2020 inventory of the GUYAFOR tree databas
 
 ### Pit data analysis
 
-We regrouped the soil textures into a categorial variable “silt content”, identified using the texture triangle [@jamagneSoilMappingVital1977]: low (A, Alo, AS), intermediate (SL, SA, S), and high (LSA, LAS, LS). We defined the depth (cm) at which the silt content changed to high for each pit, which we refer to as “high silt depth” (HSD). HSD is used to determine the depth of the drainage barrier, which is characterised by a silty texture [@ferryGeneseFonctionnementHydrique2003; @humbelCaracterisationParMesures1978]. Given the small sample size (4 pits), we chose to only conduct visual analysis of HSD effect on RVD. As roots were counted per layer of 10 cm, and soil texture was determined per soil horizon, we assigned a texture class to every 10 cm layer of the soil.
+We regrouped the soil textures into a categorial variable “silt content”, identified using the texture triangle [@jamagneSoilMappingVital1977]: low (A, Alo, AS), intermediate (SL, SA, S), and high (LSA, LAS, LS). We defined the depth (cm) at which the silt content changed to high for each pit, which we refer to as “high silt depth” (HSD). HSD is used to determine the depth of the drainage barrier, which is characterised by a silty texture [@ferryGeneseFonctionnementHydrique2003; @humbelCaracterisationParMesures1978]. Given the small sample size (4 pits), we chose to only conduct visual analysis of HSD effect on RVD. As roots were counted per layer of 10 cm, and soil texture was determined per soil horizon, we assigned a texture class to every 10 cm layer of the soil. 
 
 In order to approximate root biomass, a root index was calculated by weighing each root count with its corresponding minimum diameter class and summing the totality weighted count. Using the minimum diameter leads to an underestimation of the total root biomass, although it remains valuable for pit comparison.
 $RI_d = \sum_{i=1}^4 r_i n_i$, with $d$ the layer depth (cm), $i$ the indice of the diameter class (< 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm), $r_i \in [1, 2, 5, 10]$ the minimum root diameter, $n_i$ the count of root in diameter class $i$. The minimum root diameter of the first class (<2mm) is set to 1mm as we assume it is the smallest diameter detectable by bare eye.
@@ -308,9 +308,7 @@ We are grateful to our supervisors Vincyane Badouard, Pierre-André Wagner for t
 
 # Appendix
 
-Le temps passe et la mort approche.
-
-\break
+## Appendix A
 
 (ref:HSDMapwithBFandPL) HSD contour line map of subplots 14, 15, 19 and 20 of the P16.
 
@@ -320,6 +318,7 @@ knitr::include_graphics("images/HSD_MapwithBFandPL.png")
 ```
 </aside>
 
+## Appendix B
 
 (ref:augerPlotmicaCor) Mosaic plot displaying the relationship between mica and silt content. Dark grey represents high silt content, grey represents moderate silt content, and light grey signifies low silt content. Mica content ranges from 0 to 3, denoting low (0) to high (3) levels.
 
@@ -328,6 +327,8 @@ knitr::include_graphics("images/HSD_MapwithBFandPL.png")
 knitr::include_graphics("images/augerPlot_micaCor.png")
 ```
 </aside>
+
+## Appendix C
 
 (ref:pitPlotdiameterClassDistinct) Root quantity for all diameter classes for all pits. rd1, rd2, rd3, rd4 correspond respectively with diameter classes of < 2 mm, 2-5 mm, 5-10 mm and ≥ 10 mm. For silt content, hight is LSA or LAS, intermediate is SL or SA, and low is AS or A.
 
