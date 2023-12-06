@@ -141,7 +141,7 @@ set.seed(973)
 
 # Introduction
 
-In tropical ecology, the relationship between root distribution and soil abiotic factors is crucial to forest community structure [@schlesingerBioticFeedbacksGlobal1991; @bardgettGoingUndergroundRoot2014]. Roots are essential for the nutrition and water uptake of trees [@hutchingsUNDERSTANDINGCONSEQUENCESSOIL2003; @hodgeRootDecisions2009]. Their  distribution is driven by factors like soil texture, nutrient content, topography, and water content [@freschetStartingGuideRoot2021]. 
+In tropical ecology, the relationship between root distribution and soil abiotic factors is crucial to forest community structure [@bardgettGoingUndergroundRoot2014]. Roots are essential for the nutrition and water uptake of trees [@hutchingsUNDERSTANDINGCONSEQUENCESSOIL2003; @hodgeRootDecisions2009]. Their  distribution is driven by factors like soil texture, nutrient content, topography, and water content [@freschetStartingGuideRoot2021]. 
 
 A large part of the forests in French Guiana features a topography alternating between hills and valleys [@ferryGeneseFonctionnementHydrique2003]. Acrisol [@iussworkinggroupwrbWorldReferenceBase2022], characterised by a superficial lateral drainage (SLD), is the typical soil type on slopes [@fanHydrologicRegulationPlant2017]. Acrisol is characterised by a silty  texture horizon with low permeability that functions as a drainage barrier in the soil [@ferryGeneseFonctionnementHydrique2003; @humbelCaracterisationParMesures1978]. 
 
@@ -253,44 +253,38 @@ A significant but small decrease (p-value = 0.00245; Estimate = -0.0044) in spec
 Fig. 3c and 3d illustrate the relationship between the DBH and HSD classes. The mean DBH values and quantiles are very similar over all classes (mean = 4,9 cm), primarily due to the high representation of trees with small diameter (minimum diameter count > 1 cm).  A pattern is visible in the maximum values of the outliers, representing trees with a DBH > 50 cm, which increases with HSD class.
 
 
-(ref:auger) Forest structure indicators relation with HSD (high silt depth) class (cm). a) Species richness (per ha) in function of HSD classes, b) Tree density (per ha) in function of HSD classes, c) DBH (diameter at breast height in cm) in function of HSD classes, d) DBH filtered (max value = 10 cm) in function of HSD classes 
+(ref:auger) Forest structure indicators relation with HSD (high silt depth) class (cm). a) Species richness (per ha) in function of HSD classes, b) Tree density (per ha) in function of HSD classes, c) DBH (diameter at breast height in cm) in function of HSD classes, d) DBH filtered (max value = 50 cm) in function of HSD classes 
 
 ```{r auger, echo=FALSE, fig.cap="(ref:auger)", fig.env="figure*", out.extra=""}
 plot_grid(
   adjust_plot(augerPlot_richness), 
   adjust_plot(augerPlot_density),
   adjust_plot(augerPlot_DBH), 
-  adjust_plot(augerPlot_DBH_inf10),
+  adjust_plot(augerPlot_DBH_50),
   nrow = 2, ncol = 2
 )
 ```
 
-## Mica as a proxy for silt
-
-The chi-squared test assessing the association between silt and mica content in the auger samples was highly significant (χ² = 49.994, df = 6, p = 4.715e-09). Cramer’s V was 0.574, supporting a strong positive association. The Kruskal-Wallis showed a similar significance (χ² = 39.456, df = 2, p = 2.706e-09) and a Kruskal’s τ(x,y)= 0.561, 0.231, which also confirms a strong association. The association is depicted in a mosaic plot in Appendix 2 (Fig. 1). illustrating an increase of silt content with rising mica content.  
+A significant negative correlation was found between elevation (m) and HSD (cm) (rho = - 0,634; p-value = 0.0002246). A higher position along the topographical gradient therefore indicates lower HSD.
 
 
 # Discussion
 
-## Root distribution with HSD and depth
-Our findings align with literature, illustrating that most roots are present within the first 30 cm of the soil (Freshet, 2021; Schenk and Jackson, 2002). HSD range across the pits, spanning from 50 cm to 70 cm (Fig. 1a), coincides with the depth range (60-80 cm) of the drainage barrier identified by Epron et al. (2006). 
+## Root distribution with HSD and  depth:
 
-We expected the HSD to act as a barrier for roots, and therefore to find less roots below the HSD, as was observed by Humbel (1978). However, there is no discernible effect of HSD on the vertical root distribution (Fig. 1b), no matter the root diameter observed (Appendix 2 Fig. 2). Roots of certain species can penetrate the drainage barrier and might be adapted to the drought constraints this can pose (Ferry, 2003). The absence of an observed effect may also be due to the narrow depth range of 20 cm, within which the two pits exhibited differences in silt content. Additionally, the restricted sample size of 4 pits precluded the performance of a statistical test. More soil pits would be needed to study root distribution in additional soil profiles. However, soil pit profiles are a very time-consuming and destructive method, despite the essential insights they provide for root and soil analysis. 
+Our findings on RVD align with the literature, illustrating that most roots are present within the first 30 cm of the soil [@freschetStartingGuideRoot2021; @schenkGlobalBiogeographyRoots2002]. HSD ranges across the pits, spanning from 50 cm to 70 cm (Fig. 2a), coincides with the depth range (60-80 cm) of the drainage barrier identified by @epronSpatialVariationSoil2006. This strengthens our choice to use of HSD as an estimator of the drainage barrier depth.  
 
-## Predicting forest structure indicators with HSD 
+We expected that the drainage barrier restricts roots, and therefore to find less roots below the HSD, as was observed by @humbelCaracterisationParMesures1978.     However, there is no visually discernible effect of HSD on vertical root distribution (Fig. 2b), no matter the root diameter (Appendix C, Fig. 6). The absence of an HSD effect might be because roots of certain species can penetrate the drainage barrier, which suggests a deeper water uptake and therefore higher drought resistance [@ferryGeneseFonctionnementHydrique2003]. The absence of an observed effect may also be due to the small HSD variation between the sampled pits (maximum variation of 20 cm). Additionally, the small sample size of 4 pits precluded the performance of a statistical test. More soil pits would be needed to study root distribution in additional soil profiles. 
 
-No linear dependency was found between HSD and DBH measurements (Fig. 2c). The mean DBH values appear consistent over all HSD classes (Fig. 2d). A trend can be observed in the outliers per class, where the maximum DBH value increases with HSD class. This observation might indicate that trees can achieve a larger DBH in soils with fewer drainage restrictions. 
-As DBH did not vary significantly between different HSD classes, tree density variation indirectly indicates variations in basal area. We found a significant negative effect of HSD on density, with a maximum tree density per ha observed at a medium HSD between 60 and 70 cm. This indicates that as the drainage barrier is closer to the surface, tree density is higher. Sabatier (1998) found no effect of drainage type, and therefore no effect of the appearance of HSD, on tree density. But they only looked at trees with a DBH > 10 cm, in contrast to this study (DBH > 1 cm). Tree density increases significantly by considering also smaller trees. Therefore, considering smaller trees might show that in that case there is an effect of HSD on tree density. Small trees can benefit from the drainage barrier, as the barrier prevents water from “percolating?” deep into the soil, making it easier for them to take up water. Bigger trees have deeper roots and therefore might not be affected by the HSD, as seen in Sabatier (1998).  Moreover, the varying species composition across different HSD classes and their adaptability to soil constraints and water availability may contribute to the observed differences in tree densities between different HSD classes.
-Species richness also decreases with HSD class (Fig. 2a). This trend is confirmed by Sabatier (1998), who found that there are more species present on soils with SLD. 
-We observed a robust correlation (rho = - 0,634) in our data between elevation and HSD, which is similar with the study of Epron (2006) on the same research station. As elevation increases, the depth of the restricting layer also increases. This is not surprising, as the drainage barrier defines the drainage type, and topography and drainage type are strongly linked (Allié et al., 2015). This can also help to explain the decreasing trend of species richness with HSD as Allié et al. (2015) showed that species richness is higher in mid-slope positions.
-This correlation makes it difficult to distinguish drainage barrier effect on community structure from other effects associated with the topography, like the nutrient content (source) or the inclination. The study of drainage barrier depth variation may contribute to the study of forest structuration as it characterises microenvironment, particularly for the response to drought (Schwartz, 2020). 
-Caution is necessary when interpreting these results. Firstly, we chose to use only seven classes to keep significant HSD variation, thus with only one value per class the test relies on seven values only. Secondly, HSD was spatially extrapolated over 4 ha based on auger measurements distanced 33 m from each other. Diverse soil textures and soil profiles can be found within a short geographical distance, which was also observed with our pits. To improve our study design, an autocorrelation test for short distance HSD measurements could have been valuable to determine the maximum extrapolation distance of HSD. This would allow a more precise linkage between botanical data and HSD values.
 
 ## Mica-silt correlation
 
-Our findings indicate a strong association between silt and mica content. Therefore, we can deduct that with high silt content we have a high mica content. Given the easy to detect micas due to their shiny nature, defining the HSD by looking at high mica content instead of high silt might simplify and expedite the data collection process. This approach may offer a more efficient means of assessing drainage barrier depth in Paracou. 
+Our findings indicate a strong association between silt and mica content. Given that mica is shiny and easily detectable, identifying HSD by high mica content instead of high silt content might simplify and expedite the data collection process. This approach may offer a more efficient means of assessing drainage barrier depth in Paracou.
 
-With our study, we showed that soil-root interactions are highly relevant and influence tree community structure. By exploring the connections between superficial lateral drainage on slopes, forest structure indicators and root density, we hope to/try to/provided? provide insights on how drainage barriers might affect forest communities (in Paracou). However, further studies on a larger scale are needed to gain a clearer picture of how Amazonian forests will develop in the future (are we allowed to say this, although ALT is already trying to do that?).
+# Acknowledgements
+
+We are grateful to our supervisors Vincyane Badouard, Pierre-André Wagner for their support and patience. Further we want to thank our colleagues from the FTH module 2023 and the EFT Master 2022, who provided preliminary work and data. We thank Timothy Chubb for support with scientific writing and language. We are also grateful to Lucia Clarotto, Stéphane Traissac, Camille Salmon and Mélaine Aubry-Kientz for the fruitful discussions on general context of this study and suggestions of determinant methodological choices.
+
 
 # Appendix
 

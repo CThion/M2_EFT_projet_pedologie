@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 21:10
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1259,32 +1259,22 @@ Underfull \hbox (badness 2020) in paragraph at lines 233--235
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 241--246
-\TU/lmr/m/n/12 the coordinates of the closest inventoried
- []
-
-
-Underfull \hbox (badness 4454) in paragraph at lines 241--246
-\TU/lmr/m/n/12 drainage type, strongly influences forest
- []
-
-
-Underfull \hbox (badness 1297) in paragraph at lines 241--246
+Underfull \hbox (badness 1297) in paragraph at lines 243--247
 \TU/lmr/m/n/12 the number of trees present in the area.
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 241--246
+Underfull \hbox (badness 1803) in paragraph at lines 243--247
 \TU/lmr/m/n/12 between silt content (categorical variable)
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 241--246
+Underfull \hbox (badness 1107) in paragraph at lines 243--247
 \TU/lmr/m/n/12 (2022). R: A language and environment
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 241--246
+Underfull \hbox (badness 3168) in paragraph at lines 243--247
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][][][]$[][]\TU/lmr/m/n/12 ) and QGIS
  []
 
@@ -1300,6 +1290,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: pedoP16-report_files/figure-latex/pit-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/pit-1.pdf>
+Missing character: There is no χ (U+03C7) in font [lmroman12-regular]:mapping=tex-text;!
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
 (fancyhdr)                Make it at least 25.39978pt, for example:
@@ -1311,26 +1302,18 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 File: pedoP16-report_files/figure-latex/auger-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/auger-1.pdf>
 
-Underfull \hbox (badness 7522) in paragraph at lines 292--293
-[]\TU/lmr/m/n/12 Figure 2 Forest structure indicators
- []
-
-Missing character: There is no χ (U+03C7) in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no χ (U+03C7) in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no τ (U+03C4) in font [lmroman12-regular]:mapping=tex-text;!
-
-Underfull \hbox (badness 1043) in paragraph at lines 307--308
-\TU/lmr/m/n/12 depth range of 20 cm, within which the
+Underfull \hbox (badness 2753) in paragraph at lines 295--296
+[]\TU/lmr/m/n/12 A significant negative correlation was
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 307--308
-\TU/lmr/m/n/12 study root distribution in additional soil
+Underfull \hbox (badness 2142) in paragraph at lines 295--296
+\TU/lmr/m/n/12 position along the topographical gradient
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
-\TU/lmr/m/n/12 time-consuming and destructive method,
+Underfull \hbox (badness 1210) in paragraph at lines 305--306
+\TU/lmr/m/n/12 restricts roots, and therefore to find less
  []
 
 
@@ -1341,52 +1324,17 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
 [5]
-Underfull \hbox (badness 1107) in paragraph at lines 312--318
-\TU/lmr/m/n/12 No linear dependency was found between
+Underfull \hbox (badness 1715) in paragraph at lines 315--316
+\TU/lmr/m/n/12 Badouard, Pierre-André Wagner for their
  []
 
 
-Underfull \hbox (badness 1331) in paragraph at lines 312--318
-\TU/lmr/m/n/12 mean DBH values appear consistent over
+Underfull \hbox (badness 1983) in paragraph at lines 315--316
+\TU/lmr/m/n/12 fruitful discussions on general context of
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 312--318
-\TU/lmr/m/n/12 observed in the outliers per class, where
- []
-
-
-Underfull \hbox (badness 2020) in paragraph at lines 312--318
-\TU/lmr/m/n/12 the maximum DBH value increases with
- []
-
-
-Underfull \hbox (badness 2277) in paragraph at lines 312--318
-\TU/lmr/m/n/12 increases significantly by considering also
- []
-
-
-Underfull \hbox (badness 2245) in paragraph at lines 312--318
-\TU/lmr/m/n/12 contribute to the observed differences in
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 312--318
-\TU/lmr/m/n/12 classes to keep significant HSD variation,
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 312--318
-\TU/lmr/m/n/12 an autocorrelation test for short distance
- []
-
-
-Underfull \hbox (badness 1983) in paragraph at lines 312--318
-\TU/lmr/m/n/12 to determine the maximum extrapolation
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3724) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -1396,29 +1344,6 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
 [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 324--325
-\TU/lmr/m/n/12 tree community structure. By exploring
- []
-
-
-Underfull \hbox (badness 1082) in paragraph at lines 324--325
-\TU/lmr/m/n/12 provide insights on how drainage barriers
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Package fancyhdr Warning: \headheight is too small (11.0pt): 
-(fancyhdr)                Make it at least 25.39978pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.39978pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
-
-[7]
 File: images/HSD_MapwithBFandPL.png Graphic file (type bmp)
 <images/HSD_MapwithBFandPL.png>
 File: images/augerPlot_micaCor.png Graphic file (type bmp)
@@ -1432,6 +1357,15 @@ File: pedoP16-report_files/figure-latex/pitPlotrootIndexMicas-1.pdf Graphic file
 File: pedoP16-report_files/figure-latex/pitPlotTextureProfile-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/pitPlotTextureProfile-1.pdf>
 (./pedoP16-report.bbl
+Underfull \hbox (badness 3449) in paragraph at lines 4--7
+\TU/lmr/m/n/12 R. John, B. L. Turner, R. Valencia,
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 4--7
+\TU/lmr/m/n/12 N. Gunatilleke, S. Gunatilleke, S. Bun-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
 (fancyhdr)                Make it at least 25.39978pt, for example:
@@ -1439,52 +1373,64 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[8]
-Underfull \hbox (badness 1226) in paragraph at lines 24--27
+[7]
+Underfull \hbox (badness 1226) in paragraph at lines 33--36
 \TU/lmr/m/n/12 sur socle cristallin en Guyane.  \TU/lmr/m/it/12 Revue
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 29--32
+Underfull \hbox (badness 2359) in paragraph at lines 38--41
+[]\TU/lmr/m/n/12 Ferry, B., F. Morneau, J.-D. Bontemps,
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 43--46
 \TU/lmr/m/n/12 L. H. Comas, B. Rewald, C. Roumet,
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 29--32
+Underfull \hbox (badness 2512) in paragraph at lines 43--46
 \TU/lmr/m/n/12 caflor, I. Brunner, J. H. C. Cornelis-
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 29--32
+Underfull \hbox (badness 1348) in paragraph at lines 43--46
 \TU/lmr/m/n/12 York, S. A. Batterman, M. Gomes de
  []
 
 
-Underfull \hbox (badness 3780) in paragraph at lines 39--42
+Underfull \hbox (badness 3780) in paragraph at lines 53--56
 []\TU/lmr/m/n/12 Humbel, F.-X. (1978).  Caractérisation,
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 44--47
-\TU/lmr/m/n/12 Wijesinghe (2003, September).  TO-
+Underfull \hbox (badness 1331) in paragraph at lines 73--76
+[]\TU/lmr/m/n/12 Nicolini, K. P., K. C. Lombardi, W. H.
  []
 
 
-Underfull \hbox (badness 2689) in paragraph at lines 69--72
+Underfull \hbox (badness 2689) in paragraph at lines 93--96
 \TU/lmr/m/n/12 in the Global Climatic System: Will
  []
 
 
-Overfull \hbox (712.41612pt too wide) in paragraph at lines 69--72
+Overfull \hbox (712.41612pt too wide) in paragraph at lines 93--96
 \TU/lmr/m/n/12 https://books.google.com/books?hl=en&lr=&id=Tyrc32Pk5MkC&oi=fnd&pg=PA159&dq=schlesinger+1991+belowground+carbon&ots=H8FvPVl1Uu&sig=QLeYVZ3uS7MYJz1b-
  []
 
 
-Overfull \hbox (223.15211pt too wide) in paragraph at lines 69--72
+Overfull \hbox (223.15211pt too wide) in paragraph at lines 93--96
 \TU/lmr/m/n/12 SB18BiM7kc#v=onepage&q=schlesinger%201991%20belowground%20carbon&f=false. 
  []
 
-)
+
+Package fancyhdr Warning: \headheight is too small (11.0pt): 
+(fancyhdr)                Make it at least 25.39978pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.39978pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
+
+[8])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1650,7 +1596,9 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[9] 
+[9
+
+] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./pedoP16-report.aux)
  ***********
@@ -1658,15 +1606,15 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `pedoP16-report.out' has not changed.
-(rerunfilecheck)             Checksum: 41A398C1D83A0E0D617AF1C554C26B6D;2616.
+(rerunfilecheck)             Checksum: B5B3C30B7E2378C4E3E391BC86B12F6A;2244.
  ) 
 Here is how much of TeX's memory you used:
- 22335 strings out of 476893
- 431806 string characters out of 5803153
+ 22349 strings out of 476893
+ 432349 string characters out of 5803153
  1948189 words of memory out of 5000000
- 43841 multiletter control sequences out of 15000+600000
+ 43855 multiletter control sequences out of 15000+600000
  586643 words of font info for 128 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 93i,12n,107p,1513b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,107p,1552b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on pedoP16-report.pdf (9 pages).
