@@ -248,7 +248,7 @@ plot_grid(
 
 ## Mica as an indicator for silt
 
-The chi-squared test assessing the association between silt and mica content in the auger samples was highly significant (χ² = 57.154, p-value < 0.001). Cramer’s V, assessing the strength and direction of the association, was 0.58, supporting a strong positive relationship. The association is depicted in a mosaic plot in Appendix Fig. 5, illustrating an increase of silt content with rising mica content. By replacing mica content with silt content in the pit data analysis where the relation between root index and silt content are assessed, we found a similar result (Appendix Fig. 7).
+The chi-squared test assessing the association between silt and mica content in the auger samples was highly significant (chi-square = 57.154, p-value < 0.001). Cramer’s V, assessing the strength and direction of the association, was 0.58, supporting a strong positive relationship. The association is depicted in a mosaic plot in Appendix Fig. 5, illustrating an increase of silt content with rising mica content. By replacing mica content with silt content in the pit data analysis where the relation between root index and silt content are assessed, we found a similar result (Appendix Fig. 7).
 
 ## Auger data
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 23:44
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1231,7 +1231,16 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 [3]
 File: pedoP16-report_files/figure-latex/pit-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/pit-1.pdf>
-Missing character: There is no χ (U+03C7) in font [lmroman10-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 1226) in paragraph at lines 276--277
+\TU/lmr/m/n/10.95 between silt and mica content in the auger
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 276--277
+\TU/lmr/m/n/10.95 samples was highly significant (chi-square =
+ []
+
 
 Underfull \hbox (badness 1622) in paragraph at lines 281--282
 \TU/lmr/m/n/10.95 A significant but small decrease (p-value =
@@ -1348,10 +1357,6 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
 [7]
-Underfull \hbox (badness 1975) in paragraph at lines 47--50
-\TU/lmr/m/n/10.95 Soudzilovskaia, A. Stokes, T. Sun, O. J.
- []
-
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
 (fancyhdr)                Make it at least 22.76004pt, for example:
@@ -1360,6 +1365,11 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
 [8]
+Underfull \hbox (badness 1975) in paragraph at lines 47--50
+\TU/lmr/m/n/10.95 Soudzilovskaia, A. Stokes, T. Sun, O. J.
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 57--60
 []\TU/lmr/m/n/10.95 Humbel, F.-X. (1978).  Caractérisation,
  []
@@ -1565,6 +1575,6 @@ Here is how much of TeX's memory you used:
  43831 multiletter control sequences out of 15000+600000
  580399 words of font info for 111 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 93i,12n,107p,1556b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,107p,1556b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on pedoP16-report.pdf (9 pages).
