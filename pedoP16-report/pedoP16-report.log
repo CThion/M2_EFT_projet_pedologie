@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 22:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 23:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1176,8 +1176,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 2538) in paragraph at lines 178--179
-[][]\TU/lmr/m/n/10.95 2022[][]), characterised by a superficial lateral
+Underfull \hbox (badness 7649) in paragraph at lines 178--179
+\TU/lmr/m/n/10.95 features a topography alternating between
  []
 
 
@@ -1197,7 +1197,7 @@ Underfull \hbox (badness 1253) in paragraph at lines 184--185
  []
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 192--194
+Underfull \hbox (badness 1325) in paragraph at lines 192--193
 \TU/lmr/m/n/10.95 a poorly draining, loamy saprolite, typically
  []
 
@@ -1205,9 +1205,7 @@ File: images/Pitlocations2.png Graphic file (type bmp)
 <images/Pitlocations2.png>
 Missing character: There is no ≥ (U+2265) in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 2027) in paragraph at lines 222--224
-\TU/lmr/m/n/10.95 and Corbera Serrajordia[][] ([][]Dogny Piette and
- []
+Package natbib Warning: Citation `dognypietteAbioticFactorsRelated' on page 2 undefined on input line 221.
 
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -1219,7 +1217,7 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 [2]
 Missing character: There is no ≥ (U+2265) in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 2065) in paragraph at lines 243--244
+Underfull \hbox (badness 2065) in paragraph at lines 242--243
 \TU/lmr/m/n/10.95 we interpolated HSD values spatially across
  []
 
@@ -1235,12 +1233,12 @@ File: pedoP16-report_files/figure-latex/pit-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/pit-1.pdf>
 Missing character: There is no χ (U+03C7) in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 1622) in paragraph at lines 282--283
+Underfull \hbox (badness 1622) in paragraph at lines 281--282
 \TU/lmr/m/n/10.95 A significant but small decrease (p-value =
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 282--283
+Underfull \hbox (badness 1360) in paragraph at lines 281--282
 \TU/lmr/m/n/10.95 This range contains the uppermost observed
  []
 
@@ -1262,28 +1260,33 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
 [5]
-Underfull \hbox (badness 1264) in paragraph at lines 325--326
+Underfull \hbox (badness 1264) in paragraph at lines 324--325
 []\TU/lmr/m/n/10.95 While the mean DBH remains consistent
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 325--326
+Underfull \hbox (badness 1292) in paragraph at lines 324--325
 \TU/lmr/m/n/10.95 the drainage barrier affects trees throughout
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 327--328
-\TU/lmr/m/n/10.95 contradicts [][]Epron et al.[][] ([][]2006[][]) discovery of
+Underfull \hbox (badness 1331) in paragraph at lines 326--327
+\TU/lmr/m/n/10.95 an elevation range predominantly covering a
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 327--328
-\TU/lmr/m/n/10.95 deeper drainage barriers at higher elevations.
+Underfull \hbox (badness 1478) in paragraph at lines 326--327
+\TU/lmr/m/n/10.95 topographic gradient from slopes to bottom-
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 327--328
-\TU/lmr/m/n/10.95 correlation between topography and drainage
+Underfull \hbox (badness 1983) in paragraph at lines 326--327
+\TU/lmr/m/n/10.95 the impermeable silty texture horizon likely
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 326--327
+\TU/lmr/m/n/10.95 disappears towards the bottomlands ([][]Boulet
  []
 
 
@@ -1297,12 +1300,12 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
 [6]
-Underfull \hbox (badness 1033) in paragraph at lines 331--332
+Underfull \hbox (badness 1033) in paragraph at lines 330--331
 \TU/lmr/m/n/10.95 drainage barrier on root vertical distribution
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 331--332
+Underfull \hbox (badness 1210) in paragraph at lines 330--331
 \TU/lmr/m/n/10.95 maximum DBH increases when the drainage
  []
 
@@ -1310,26 +1313,20 @@ Underfull \hbox (badness 1210) in paragraph at lines 331--332
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 336--337
-\TU/lmr/m/n/10.95 our colleagues from the FTH module 2023
+Underfull \hbox (badness 1087) in paragraph at lines 335--336
+\TU/lmr/m/n/10.95 support and patience. Further we want to
  []
 
 
-Underfull \hbox (badness 2237) in paragraph at lines 336--337
+Underfull \hbox (badness 1248) in paragraph at lines 335--336
+\TU/lmr/m/n/10.95 thank our colleagues from the FTH module
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 335--336
 \TU/lmr/m/n/10.95 Aubry-Kientz for the fruitful discussions on
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Package fancyhdr Warning: \headheight is too small (11.0pt): 
-(fancyhdr)                Make it at least 22.76004pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.76004pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
-
-[7]
 File: images/HSD_MapwithBFandPL.png Graphic file (type bmp)
 <images/HSD_MapwithBFandPL.png>
 File: images/augerPlot_micaCor.png Graphic file (type bmp)
@@ -1350,29 +1347,9 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
-[8]
-Underfull \hbox (badness 1975) in paragraph at lines 52--55
+[7]
+Underfull \hbox (badness 1975) in paragraph at lines 47--50
 \TU/lmr/m/n/10.95 Soudzilovskaia, A. Stokes, T. Sun, O. J.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
-[]\TU/lmr/m/n/10.95 Humbel, F.-X. (1978).  Caractérisation,
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 62--65
-\TU/lmr/m/n/10.95 par des mesures physiques, hydriques et
- []
-
-
-Underfull \hbox (badness 5924) in paragraph at lines 87--90
-\TU/lmr/m/n/10.95 L. Bréchet, E. A. Courtois, J. Chave,
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 102--105
-\TU/lmr/m/n/10.95 Global Biogeography of Roots.  \TU/lmr/m/it/10.95 Ecological
  []
 
 
@@ -1382,7 +1359,27 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
-[9])
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+[]\TU/lmr/m/n/10.95 Humbel, F.-X. (1978).  Caractérisation,
+ []
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 57--60
+\TU/lmr/m/n/10.95 par des mesures physiques, hydriques et
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 82--85
+\TU/lmr/m/n/10.95 L. Bréchet, E. A. Courtois, J. Chave,
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 97--100
+\TU/lmr/m/n/10.95 Global Biogeography of Roots.  \TU/lmr/m/it/10.95 Ecological
+ []
+
+)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1542,15 +1539,16 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {italian/target}  =>  {italian}
 >  {it/target}  =>  {italian}.
 
+Package natbib Warning: There were undefined citations.
+
+
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
 (fancyhdr)                Make it at least 22.76004pt, for example:
 (fancyhdr)                \setlength{\headheight}{22.76004pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.76004pt}.
 
-[10
-
-] 
+[9] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./pedoP16-report.aux)
  ***********
@@ -1561,12 +1559,12 @@ Package rerunfilecheck Info: File `pedoP16-report.out' has not changed.
 (rerunfilecheck)             Checksum: A11CDE05F50727121385DCAA0A6B8A30;2707.
  ) 
 Here is how much of TeX's memory you used:
- 22327 strings out of 476893
- 432161 string characters out of 5803153
+ 22324 strings out of 476893
+ 432041 string characters out of 5803153
  1946189 words of memory out of 5000000
- 43834 multiletter control sequences out of 15000+600000
+ 43831 multiletter control sequences out of 15000+600000
  580399 words of font info for 111 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 93i,12n,107p,1541b,554s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,107p,1556b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on pedoP16-report.pdf (10 pages).
+Output written on pedoP16-report.pdf (9 pages).
