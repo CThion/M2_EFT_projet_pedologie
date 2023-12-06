@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 21:31
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.22)  5 DEC 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1180,31 +1180,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 174.
 
-Underfull \hbox (badness 2384) in paragraph at lines 176--177
-\TU/lmr/m/n/12 root distribution and soil abiotic factors
- []
-
-
-Underfull \hbox (badness 2922) in paragraph at lines 176--177
-\TU/lmr/m/n/12 is crucial to forest community structure
- []
-
-
-Underfull \hbox (badness 1590) in paragraph at lines 176--177
-\TU/lmr/m/n/12 ([][]Schlesinger[][], [][]1991[][]; [][]Bardgett et al.[][], [][]2014[][]).
- []
-
-
-Underfull \hbox (badness 1264) in paragraph at lines 176--177
-\TU/lmr/m/n/12 Roots are essential for the nutrition and
- []
-
-
-Underfull \hbox (badness 3000) in paragraph at lines 176--177
-\TU/lmr/m/n/12 topography, and water content ([][]Freschet
- []
-
-
 Underfull \hbox (badness 1087) in paragraph at lines 178--179
 []\TU/lmr/m/n/12 A large part of the forests in French
  []
@@ -1302,17 +1277,17 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 File: pedoP16-report_files/figure-latex/auger-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/auger-1.pdf>
 
-Underfull \hbox (badness 2753) in paragraph at lines 295--296
+Underfull \hbox (badness 2753) in paragraph at lines 296--297
 []\TU/lmr/m/n/12 A significant negative correlation was
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 295--296
+Underfull \hbox (badness 2142) in paragraph at lines 296--297
 \TU/lmr/m/n/12 position along the topographical gradient
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 305--306
+Underfull \hbox (badness 1210) in paragraph at lines 306--307
 \TU/lmr/m/n/12 restricts roots, and therefore to find less
  []
 
@@ -1324,18 +1299,6 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
 [5]
-Underfull \hbox (badness 1715) in paragraph at lines 315--316
-\TU/lmr/m/n/12 Badouard, Pierre-André Wagner for their
- []
-
-
-Underfull \hbox (badness 1983) in paragraph at lines 315--316
-\TU/lmr/m/n/12 fruitful discussions on general context of
- []
-
-
-Underfull \vbox (badness 3724) has occurred while \output is active []
-
 
 Package fancyhdr Warning: \headheight is too small (11.0pt): 
 (fancyhdr)                Make it at least 25.39978pt, for example:
@@ -1344,6 +1307,61 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
 [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 322--323
+\TU/lmr/m/n/12 and soil profiles can be found within a
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 322--323
+\TU/lmr/m/n/12 an autocorrelation test for short distance
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 322--323
+\TU/lmr/m/n/12 to determine the maximum extrapolation
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 322--323
+\TU/lmr/m/n/12 precise connection between botanical data
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 324--325
+\TU/lmr/m/n/12 tree community structure. By exploring
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 324--325
+\TU/lmr/m/n/12 for intermediate HSD classes (50-70 cm),
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (11.0pt): 
+(fancyhdr)                Make it at least 25.39978pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.39978pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
+
+[7]
+Underfull \hbox (badness 1715) in paragraph at lines 329--330
+\TU/lmr/m/n/12 Badouard, Pierre-André Wagner for their
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 329--330
+\TU/lmr/m/n/12 fruitful discussions on general context of
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: images/HSD_MapwithBFandPL.png Graphic file (type bmp)
 <images/HSD_MapwithBFandPL.png>
 File: images/augerPlot_micaCor.png Graphic file (type bmp)
@@ -1357,12 +1375,17 @@ File: pedoP16-report_files/figure-latex/pitPlotrootIndexMicas-1.pdf Graphic file
 File: pedoP16-report_files/figure-latex/pitPlotTextureProfile-1.pdf Graphic file (type pdf)
 <use pedoP16-report_files/figure-latex/pitPlotTextureProfile-1.pdf>
 (./pedoP16-report.bbl
-Underfull \hbox (badness 3449) in paragraph at lines 4--7
+Underfull \hbox (badness 1442) in paragraph at lines 4--7
+\TU/lmr/m/n/12 April).  Pervasive Local-Scale Tree-Soil
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 9--12
 \TU/lmr/m/n/12 R. John, B. L. Turner, R. Valencia,
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 4--7
+Underfull \hbox (badness 1009) in paragraph at lines 9--12
 \TU/lmr/m/n/12 N. Gunatilleke, S. Gunatilleke, S. Bun-
  []
 
@@ -1373,54 +1396,29 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[7]
-Underfull \hbox (badness 1226) in paragraph at lines 33--36
+[8]
+Underfull \hbox (badness 1226) in paragraph at lines 42--45
 \TU/lmr/m/n/12 sur socle cristallin en Guyane.  \TU/lmr/m/it/12 Revue
  []
 
 
-Underfull \hbox (badness 2359) in paragraph at lines 38--41
+Underfull \hbox (badness 2359) in paragraph at lines 47--50
 []\TU/lmr/m/n/12 Ferry, B., F. Morneau, J.-D. Bontemps,
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 43--46
+Underfull \hbox (badness 1496) in paragraph at lines 52--55
 \TU/lmr/m/n/12 L. H. Comas, B. Rewald, C. Roumet,
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 43--46
+Underfull \hbox (badness 2512) in paragraph at lines 52--55
 \TU/lmr/m/n/12 caflor, I. Brunner, J. H. C. Cornelis-
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 43--46
+Underfull \hbox (badness 1348) in paragraph at lines 52--55
 \TU/lmr/m/n/12 York, S. A. Batterman, M. Gomes de
- []
-
-
-Underfull \hbox (badness 3780) in paragraph at lines 53--56
-[]\TU/lmr/m/n/12 Humbel, F.-X. (1978).  Caractérisation,
- []
-
-
-Underfull \hbox (badness 1331) in paragraph at lines 73--76
-[]\TU/lmr/m/n/12 Nicolini, K. P., K. C. Lombardi, W. H.
- []
-
-
-Underfull \hbox (badness 2689) in paragraph at lines 93--96
-\TU/lmr/m/n/12 in the Global Climatic System: Will
- []
-
-
-Overfull \hbox (712.41612pt too wide) in paragraph at lines 93--96
-\TU/lmr/m/n/12 https://books.google.com/books?hl=en&lr=&id=Tyrc32Pk5MkC&oi=fnd&pg=PA159&dq=schlesinger+1991+belowground+carbon&ots=H8FvPVl1Uu&sig=QLeYVZ3uS7MYJz1b-
- []
-
-
-Overfull \hbox (223.15211pt too wide) in paragraph at lines 93--96
-\TU/lmr/m/n/12 SB18BiM7kc#v=onepage&q=schlesinger%201991%20belowground%20carbon&f=false. 
  []
 
 
@@ -1430,7 +1428,22 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[8])
+[9]
+Underfull \hbox (badness 3780) in paragraph at lines 62--65
+[]\TU/lmr/m/n/12 Humbel, F.-X. (1978).  Caractérisation,
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 82--85
+[]\TU/lmr/m/n/12 Nicolini, K. P., K. C. Lombardi, W. H.
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 87--90
+\TU/lmr/m/n/12 sio, O. Grau, J. Llusià, R. Ogaya,
+ []
+
+)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1596,9 +1609,7 @@ Package fancyhdr Warning: \headheight is too small (11.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-14.39978pt}.
 
-[9
-
-] 
+[10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./pedoP16-report.aux)
  ***********
@@ -1606,15 +1617,15 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `pedoP16-report.out' has not changed.
-(rerunfilecheck)             Checksum: B5B3C30B7E2378C4E3E391BC86B12F6A;2244.
+(rerunfilecheck)             Checksum: CD75C1AA851D646268F03911ECD0BC8A;2552.
  ) 
 Here is how much of TeX's memory you used:
- 22349 strings out of 476893
- 432349 string characters out of 5803153
+ 22362 strings out of 476893
+ 432929 string characters out of 5803153
  1948189 words of memory out of 5000000
- 43855 multiletter control sequences out of 15000+600000
+ 43868 multiletter control sequences out of 15000+600000
  586643 words of font info for 128 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 93i,12n,107p,1552b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,107p,1552b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on pedoP16-report.pdf (9 pages).
+Output written on pedoP16-report.pdf (10 pages).
