@@ -1,0 +1,323 @@
+---
+title: 'Master EFT: pédologie de la P16 de Paracou'
+author: "Clément Thion, Emilie Sanvito, Greta Dobetsberger"
+date: "2023-12-05"
+output: 
+  html_document:
+    code_folding: hide
+    fig_caption: true
+    fig_height: 6
+    fig_width: 8
+    keep_md: true
+    number_sections: true
+    toc: true
+    toc_depth: 3
+    fig_path: "pedoP16-plots/"
+editor_options:
+  chunk_output_type: inline
+  markdown: 
+    wrap: 72
+---
+# Data pre-treatment
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(corrplot)
+library(FactoMineR) # Pour l'analyse en composantes principales
+library(factoextra) # Pour la représentation de l'ACP
+library(viridis)
+require("rstudioapi")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+```{r}
+save(list = ls(all.names = TRUE), file = "pedoP16_data-PIT.rda") #to save all data
+# load("pedoP16_data-PIT.rda")
+```
+
+
+```{r}
+#import data of each pit
+dataPitP1 <- read_excel("FOSSE 1-4.xlsx", sheet=1, na="NA")
+dataPitP2 <- read_excel("FOSSE 1-4.xlsx", sheet=2, na="NA")
+dataPitP3 <- read_excel("FOSSE 1-4.xlsx", sheet=3, na="NA")
+dataPitP4 <- read_excel("FOSSE 1-4.xlsx", sheet=4, na="NA")
+
+#add a the variable pit to distinguish each sheet data before merging them
+dataPitP1$pit <- rep("P1", 100); dataPitP2$pit <- rep("P2", 100); dataPitP3$pit <- rep("P3", 100); dataPitP4$pit <- rep("P4", 100) 
+
+dataPit <- rbind(dataPitP1, dataPitP2, dataPitP3, dataPitP4)#merge them in one unique dataframe
+remove(dataPitP1, dataPitP2, dataPitP3, dataPitP4) #remove separated sheets
+
+#convert depth code (P1 to P10) to their corresponding depth value (10 to 100cm)
+dataPit$depth <- as.factor(dataPit$depth)
+levels(dataPit$depth)  <- c("10", "100", "20", "30", "40", "50", "60", "70", "80", "90")
+dataPit$depth <- as.numeric(as.character(dataPit$depth))
+
+#we split the side variable into two different one: sideOrient and sideNumber
+dataPit$exposure <- as.factor(dataPit$exposure)
+dataPit$exposure_orient <- substr(dataPit$exposure, 8, 20)#create side Orient and sideNumber
+dataPit$exposure_number <- substr(dataPit$exposure, 6, 7)
+dataPit <- dataPit[,!names(dataPit) =="exposure"]#remove side variable since it has been split
+
+#--DEFINE ALL VARIABLE TYPE--
+dataPit$rd1 <- as.numeric(dataPit$rd1)
+dataPit$rd2 <- as.numeric(dataPit$rd2)
+dataPit$rd3 <- as.numeric(dataPit$rd3)
+dataPit$rd4 <- as.numeric(dataPit$rd4)
+dataPit$texture <- as.factor(dataPit$texture)
+dataPit$texture <- factor(dataPit$texture, levels = rev(levels(dataPit$texture)))
+dataPit$micas <- as.factor(dataPit$micas)
+dataPit$coarse_element <- as.numeric(dataPit$coarse_element)
+dataPit$water_reserve <- as.numeric(dataPit$water_reserve)
+dataPit$humidity <- as.factor(dataPit$humidity)
+dataPit$structure_type <- as.factor(dataPit$structure_type)
+dataPit$structure_size <- as.character(dataPit$structure_size)
+dataPit$density <- as.factor(dataPit$density)
+dataPit$smudges <- as.numeric(dataPit$smudges)
+dataPit$colour1 <- as.factor(dataPit$colour1)
+dataPit$colour2 <- as.factor(dataPit$colour2)
+dataPit$pit <- as.factor(dataPit$pit) #change levels from Fx to Px (english)
+levels(dataPit$pit) <- c("P1", "P2", "P3", "P4")
+dataPit$exposure_orient <- as.factor(dataPit$exposure_orient)
+dataPit$exposure_number <- as.factor(dataPit$exposure_number)
+```
+
+## Reorganization of data
+
+### Silt class
+
+```{r}
+#--regroupe soil textures into silt class
+silt_content <- c(LSA= "high", LAS= "high", SL= "intermediate", SA="intermediate", AS="low", A="low")
+dataPit$siltcontent<-silt_content[substr(dataPit$texture, 1, 3)]
+dataPit$siltcontent <- as.ordered(dataPit$siltcontent) #ordered by silt content amount
+```
+
+
+### By layer
+
+```{r}
+#--regroup data by layer of 10cm. Each pit is made of 10 layers of 10cm depth by 50cm long
+#we select the variable we are intrested in
+dataPitLayer <- dataPit %>%
+  select(c(pit, depth, texture, siltcontent, rd1, rd2, rd3, rd4, micas)) %>%
+  group_by(pit, depth) %>% 
+  summarise(
+    texture=unique(texture),
+    siltcontent=unique(siltcontent),
+    rd1= mean(rd1),
+    rd2=mean(rd2),
+    rd3=mean(rd3),
+    rd4=mean(rd4),
+    root=mean(rd1+rd2+rd3+rd4),
+    micas=unique(micas))
+ungroup(dataPitLayer)
+```
+
+### By horizon
+
+```{r}
+#--here we regroupe layer by horizon of texture
+dataPitHorizon <- dataPitLayer #initialize dataPitHorizon dataframe
+dataPitHorizon <- dataPitHorizon %>% mutate(thickness=depth*0+10) #initialize thickness variable. 1 layer has a 10cm thickness. Horizon thickness will be 10 times the number of layer it is composed of
+dataPitHorizon$micas <- as.numeric(dataPitHorizon$micas) #switching to numeric just for calculation in the loop
+
+#make a loop for aggregate all layer with identical texture
+d=1 #counter id
+while(!is.na(dataPitHorizon$texture[d+1])){#while it remains layer to analyse
+  up <- dataPitHorizon$texture[d]
+  down <- dataPitHorizon$texture[d+1]
+  if(up==down){#if the next layer has the same texture
+    #aggregate down layer with top layer
+    dataPitHorizon$rd1[d] <- dataPitHorizon$rd1[d] + dataPitHorizon$rd1[d+1] 
+    dataPitHorizon$rd2[d] <- dataPitHorizon$rd2[d]+ dataPitHorizon$rd2[d+1]
+    dataPitHorizon$rd3[d] <- dataPitHorizon$rd3[d]+ dataPitHorizon$rd3[d+1] 
+    dataPitHorizon$rd4[d] <- dataPitHorizon$rd4[d]+ dataPitHorizon$rd4[d+1] 
+    dataPitHorizon$root[d] <- dataPitHorizon$root[d]+ dataPitHorizon$root[d+1]
+    dataPitHorizon$thickness[d] <- dataPitHorizon$thickness[d]+10
+    dataPitHorizon$micas[d] <- dataPitHorizon$micas[d] + dataPitHorizon$micas[d+1]
+    
+    #remove down layer
+    dataPitHorizon <- dataPitHorizon[-(d+1),] 
+    #don't change d: the down is coming up
+  }
+  else{d <- d+1} #change d: going down
+}
+
+#meaning micas by thickness/10, which is equivalent to the number of layers in one given horizon, so that we have the mean mica content for each horizon
+dataPitHorizon$micas <- round(dataPitHorizon$micas / (dataPitHorizon$thickness/10))
+dataPitHorizon$micas <- ifelse(dataPitHorizon$micas>3, 3, dataPitHorizon$micas)
+dataPitHorizon$micas <- as.factor(dataPitHorizon$micas)
+
+remove(d, down, up) #remove temporary variables
+```
+
+## Root Index
+
+```{r}
+#--root Index by horizon
+# For the calculation of root Index, we weight each root count by the diameter of the root class. The diameter classes are in millimeter: d1: $<2$, d2: $2-5$, d3: $5-10$ and d4: $≥ 10$.
+dataPitHorizon <- dataPitHorizon %>% mutate(
+  rootIndex=round((rd1+rd2*2+rd3*5+rd4*10), 2)) #add rootIndex variable
+
+# root Index by layer
+dataPitLayer <- dataPitLayer %>% mutate(
+  rootIndex=(rd1+rd2*2+rd3*5+rd4*10))
+```
+
+# Descriptive analysis of silt effect on root Index
+## root Index ratio
+```{r}
+#calculation of rootIndex decrease ratio between soil over and under HSD, for the two pit of interest.
+P2all <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P2")])#total rootIndex
+P2inter <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P2" & dataPitLayer$siltcontent=="intermediate")])#root index for intermediar silt content
+P2high <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P2" & dataPitLayer$siltcontent=="high")])#root index for high silt content
+P2top <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P2" & between(dataPitLayer$depth, 0, 50))])#root index above focus range
+P2foc <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P2" & between(dataPitLayer$depth, 50, 70))])#root index within focus range
+
+#same calculations for P3
+P3all <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P3")])
+P3inter <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P3" & dataPitLayer$siltcontent=="intermediate")])
+P3high <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P3" & dataPitLayer$siltcontent=="high")])
+P3top <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P3" & between(dataPitLayer$depth, 0, 50))])
+P3foc <- sum(dataPitLayer$rootIndex[which(dataPitLayer$pit=="P3" & between(dataPitLayer$depth, 50, 70))])
+P3inter/P3all
+P3high/P3all
+P3high/P3inter
+
+#intresting ratios
+P2inter/P2all
+P2high/P2all
+P2high/P2inter
+P2foc/P2top
+P3foc/P3top
+```
+
+## soil profils
+
+```{r}
+#====texture profile plot====
+colTex <- viridis(6) #texture color set
+
+pitPlot_TextureProfile <- ggplot(dataPitHorizon, 
+                         aes(x = pit, 
+                             y = thickness, 
+                             fill = texture))+
+  geom_bar(stat = "identity") +  # Stacked bar plot
+  labs(x = "Pit", y = "Depth (cm)", title = "Texture profile of the 4 pits") +
+  scale_fill_discrete(name = "Texture") +  # Legend title for texture
+  scale_y_continuous(breaks = seq(0, 100, by = 10), labels = c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0")) + #set absis order
+  # scale_fill_manual(name = "texture", values = c("A" = colTex[1], "AS" = colTex[2], "SA" = colTex[3], "SL" = colTex[4], "LSA" = colTex[5], "LAS"=colTex[6])) +
+  theme(legend.position = "right") + # Adjust legend position if needed
+  theme_minimal()
+pitPlot_TextureProfile
+#ggsave("pedoP16-plots/TextureProfile.png", plot = pitPlot_TextureProfile)
+```
+
+
+```{r}
+#====silt content plot====
+#set unordered silt content variable for only consider depth as ordering variable
+dataPitHorizon$siltcontent_unordered <- factor(dataPitHorizon$siltcontent, 
+                                     ordered=FALSE,
+                                     levels = unique(dataPitHorizon$siltcontent))
+
+colSilt <- viridis(3, option="D") #color for silt content classes
+
+# Use y_labels for axis labels, thickness for plotting
+pitPlot_SiltcontentProfile <- ggplot(dataPitHorizon, 
+                                  aes(x = pit, 
+                                      y = thickness)) +
+  geom_bar(stat = "identity", aes(fill = siltcontent_unordered)) +
+  labs(x = "Pit", y = "Depth (cm)", title = "Silt content profile of the four pits") +
+  scale_fill_discrete(name = "Silt content") +
+  geom_rect(data = NULL, aes(xmin = 1.5, xmax = 3.5, ymin = 53, ymax = 27),
+            fill = "transparent", color = "black", size = 1, inherit.aes = FALSE) +
+  annotate("text", x = 1.6, y = 47, label = "Focus range", hjust = 0, vjust = 0, color = "black") +
+  scale_fill_manual(name = "Silt content", values = c("low" = colSilt[1], "intermediate" = colSilt[2], "high" = colSilt[3])) +
+  scale_y_continuous(labels = rev(seq(0, 100, by = 25))) + #manualy change y text so that is correspond to the depth and not to the thickness (otherwise goes from 100 to 0). This is still coherent with thickness values.
+  theme(legend.position = "right") +
+  theme_minimal()
+
+pitPlot_SiltcontentProfile
+#ggsave("pedoP16-plots/SiltcontentProfile.png", plot = pitPlot_SiltcontentProfile)
+```
+
+
+## root Index ~ silt + micas
+
+```{r}
+#====plot rootindex ~ silt content====
+selected_pit <- c("P1", "P2", "P3", "P4") # Selecting a specific pit
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+data_subset <- subset(data_subset, between(depth, 0, 100)) # Selecting a specific depth range
+data_subset <- transform(data_subset, siltcontent = factor(siltcontent, levels = unique(siltcontent)))# Set the order of siltcontent levels within each pit
+
+data_subset$siltcontent <- factor(data_subset$siltcontent, levels = c("low", "intermediate", "high"))
+
+pitPlot_rootIndexSilt <- ggplot(data_subset, aes(x = depth, y = rootIndex, color = siltcontent, shape = pit, group = pit)) +
+  geom_path() +
+  geom_point(size = 3) +
+  labs(x = "Depth (cm)", y = "Root index", title = "Root index by silt content across pits") +
+  scale_x_continuous(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) +
+  scale_shape_discrete(name = "Pit") +
+  scale_color_manual(name = "Silt content", values = c("low" = colSilt[1], "intermediate" = colSilt[2], "high" = colSilt[3])) +
+  theme_minimal()
+
+pitPlot_rootIndexSilt
+#ggsave("pedoP16-plots/rootIndexSilt.png", plot = pitPlot_rootIndexSilt)
+```
+
+```{r}
+#====plot rootindex ~ mica content====
+colMicas <- viridis(4)
+selected_pit <- c("P1", "P2", "P3", "P4") # Selecting a specific pit
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+data_subset <- subset(data_subset, between(depth, 0, 100)) # Selecting a specific depth range
+data_subset <- transform(data_subset, micas = factor(micas, levels = unique(micas))) # Set the order of siltcontent levels within each pit
+
+# Reorder the levels of the 'micas' variable for the legend
+data_subset$micas <- factor(data_subset$micas, levels = c("0", "1", "2", "3"))
+
+pitPlot_rootIndexMicas <- ggplot(data_subset, aes(x = depth, y = rootIndex, color = micas, shape = pit, group = pit)) +
+  geom_path() +
+  geom_point(size = 3) +
+  labs(x = "Depth (cm)", y = "Root index", title = "Root index by micas content across pits") +
+  scale_x_continuous(breaks = seq(0, 100, by = 10), labels = rev(c("100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"))) +
+  scale_shape_discrete(name = "Pit") +
+  scale_color_manual(name = "Micas", values = c("0" = colMicas[1], "1" = colMicas[2], "2" = colMicas[3], "3" = colMicas[4])) +
+  theme_minimal()
+
+pitPlot_rootIndexMicas
+#ggsave("pedoP16-plots/rootIndexMicas.png", plot = pitPlot_rootIndexMicas)
+```
+
+## Distinction of root diameter
+
+```{r}
+#====plot number of root per diameter ~ siltcontent====
+# Selecting a specific pit
+selected_pit <- c("P1", "P2", "P3", "P4")
+data_subset <- subset(dataPitLayer, pit %in% selected_pit)
+data_subset <- subset(data_subset, depth >= 0)
+data_subset <- transform(data_subset, siltcontent = factor(siltcontent, levels = unique(siltcontent)))# Set the order of siltcontent levels within each pit
+data_subset_long <- gather(data_subset, diameter_class, value, rd1:rd4)# Reshaping the data to long format to include all diameter classes into one column
+data_subset_long$siltcontent <- factor(data_subset$siltcontent, levels = c("low", "intermediate", "high")) #reoder for legend
+
+pitPlot_diameterClassDistinct <- ggplot(data_subset_long, aes(x = depth, y = value, color = siltcontent, shape = pit, group = interaction(pit, texture))) +
+  geom_path() +
+  geom_point(size = 3) +
+  labs(x = "Depth (cm)", y = "Root quantity", title = "Root quantity for all diameter classes for all pits") +
+  scale_color_discrete(name = "Silt content") +
+  scale_linetype_discrete(name = "Pit") +
+  facet_wrap(~diameter_class, scales = "free_y", ncol = 2) +
+  scale_color_manual(name = "Silt content", values = c("low" = colSilt[1], "intermediate" = colSilt[2], "high" = colSilt[3])) +
+  theme_minimal()
+
+pitPlot_diameterClassDistinct
+#ggsave("pedoP16-plots/diameterClassDistinct.png", plot = pitPlot_diameterClassDistinct)
+```
+
