@@ -1,27 +1,29 @@
 #### 1. ROOTS MATTER
+Good morning, thank you all for being here. We are going to present your ou study project for the humid tropical forest master degree that we all have taken here.
+
 ![[Pasted image 20231217230458.png]]
 *Fig1 adapted from Freshet et al. 2021*
-Roots are essential for the nutrition and water uptake of trees. It is a complexe subject of research, with a lot of different trait associated. They are difficult to measure compared with aboveground tree part traits, so root traits studies are few compared with studies on other tree traits.
 
-On this figure you can see all the different trait categories related to root study.  
+- when studying forest community structure, the relationship between root distribution and soil abiotic factors is crucial
+- Roots are essential for the nutrition and water uptake of trees. It is a complexe subject of research, with a lot of different traits associated. 
+- They are difficult to measure compared with aboveground tree part traits, so root traits studies are few compared with studies on other tree traits.
+- Those traits are driven by biotic and abiotic factors, which include soil texture, topography and drainage type.
 
-Those traits are modulated by biotic and abiotic factors, of which soil texture, topography and drainage type play a big part.
-
----
+*==Drainage type is on of the main factors influencing forest community structure, according to Pélissier et al., 2002; Sabatier et al., 1997).==* 
 #### ACRISOLS: the DRAINAGE BARRIER
 ![[Pasted image 20231217223727.png]]
 *Drainage type and drainage barrier effect on root*
-Drainage type is on of the main factors influencing forest community structure, according to Pélissier et al., 2002; Sabatier et al., 1997). 
+We are interested in acrisols, which are common soil type in tropical lands. 
+
 Here you can see the two main type of drainage associated with acrisol.
 ↪ as you can see, there is a important variation of the thickness and the depth of the silty horizon with de type of drainage
-- DVD has more that one meter of soil before reaching the drainage barrier, then a great water reserve
-- SLD has a thinner soil with poor water reserve
-
+- DVD has more that one meter of soil before reaching the drainage barrier, where SLD has a thinner soil 
+- Therefor SLD has a smaller water reserve than DVD
 #### ACRISOL EFFECT ON ROOT DISTRIBUTION
 ![[Pasted image 20231217223654.png]]
 Focusing on SLD, this type of drainage is particularly restricting for trees.
 ↪ poor water reserve of SLD induces a **hydric stress** during the dry season
-↪ SLD induces **temporary water table** during the wet season, which create an anoxic environment for roots
+↪ during the wet season, SLD induces **temporary water table**, which create an anoxic environment for roots
 ↪ RVD is expected to be stop by the change rapid change of texture induced by the drainage barrier (Humbel, 1976; Ferry 2003) 
 
 With our study, we tried to adresse drainage barrier restriction on roots
